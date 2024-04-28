@@ -1,0 +1,10 @@
+COUNTRIES = {
+	c:SZI = {
+		effect_starting_technology_tier_5_tech = yes
+		activate_law = law_type:law_national_supremacy
+		activate_law = law_type:law_traditionalism	
+		activate_law = law_type:law_outlawed_dissent
+		activate_law = law_type:law_land_based_taxation
+		activate_law = law_type:law_slave_trade
+	}
+}

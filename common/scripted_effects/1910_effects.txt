@@ -1,0 +1,95 @@
+add_to_multi_alliance = {
+	IF = {
+		limit = {
+			$ALLIANCE$ = 1
+		}
+		add_to_global_variable_list = {
+			name = central_powers
+			target = $COUNTRY$
+		}
+		$COUNTRY$ = {
+			set_variable = central_powers
+		}
+
+	}
+	else_if = {
+		limit = {
+			$ALLIANCE$ = 2
+		}
+		add_to_global_variable_list = {
+			name = entente
+			target = $COUNTRY$
+		}
+		$COUNTRY$ = {
+			set_variable = entente
+		}
+	}
+}
+
+trigger_world_war = {
+	IF = {
+		limit = {
+			NOT = { has_global_variable = world_war_1_begun }
+		}
+		set_global_variable = world_war_1_begun
+		$INIT$ = {
+			create_diplomatic_play = {
+				name = world_war_1_dp
+				escalation = 90
+				war = yes
+				target_country = $COUNTRY$ # should be serbia
+				type = dp_make_protectorate
+				handle_annexation_as_civil_war = no
+
+
+
+
+				# add_war_goal = {
+				#     holder = c:AUS
+				#     type = make_protectorate
+				#     country = c:SER
+				# }
+			}
+		}
+
+		random_diplomatic_play = {
+			limit = {
+				initiator = $INIT$
+				target    = $COUNTRY$
+				is_diplomatic_play_type = dp_make_protectorate # uhhh this line might be wrong
+			}
+			set_global_variable = {
+				name  = world_war
+				value = THIS
+			}
+		}
+
+	}
+}
+
+
+enter_world_war_attacker_side = {
+	IF = {
+		limit = {
+			has_global_variable = world_war_1_begun
+		}
+		global_var:world_war = {
+			add_initiator_backers = {
+				$COUNTRY$
+			}
+		}
+	}
+}
+enter_world_war_defender_side = {
+	IF = {
+		limit = {
+			has_global_variable = world_war_1_begun
+			has_global_variable = world_war
+		}
+		global_var:world_war = {
+			add_target_backers = {
+				$COUNTRY$
+			}
+		}
+	}
+}

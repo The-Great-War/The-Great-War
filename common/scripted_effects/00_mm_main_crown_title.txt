@@ -1,0 +1,54 @@
+main_crown_title = { 
+	if  = {
+		limit = {
+			root = c:HUN
+			c:HUN = {
+				has_diplomatic_pact = {
+					who = c:AUS	
+					type = dual_monarchy					
+				}
+			}
+		}
+		c:HUN = {
+			remove_diplomatic_pact = {
+				country = c:AUS	
+				type = dual_monarchy
+			}
+		}
+		c:AUS = {
+			create_diplomatic_pact = {
+				country = c:HUN	
+				type = dual_monarchy
+			}
+		}
+	}
+	if   = {
+		limit  = {
+			root = c:AUS
+			c:AUS = {
+				has_diplomatic_pact = {
+					who = c:HUN	
+					type = dual_monarchy
+				}
+			}
+		}
+		c:AUS = {
+			remove_diplomatic_pact = {
+				country = c:HUN	
+				type = dual_monarchy
+			}
+		}
+		c:HUN = {
+			create_diplomatic_pact = {
+				country = c:AUS	
+				type = dual_monarchy
+			}
+		}
+	}
+
+}
+
+
+
+
+

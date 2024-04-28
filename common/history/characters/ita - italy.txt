@@ -1,0 +1,8 @@
+﻿CHARACTERS = {
+	c:ITA ?= {
+
+		create_character = {
+			template = sar_victor_emmanuel_iii_template
+		}
+	}
+}

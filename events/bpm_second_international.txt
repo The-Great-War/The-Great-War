@@ -1,0 +1,250 @@
+﻿namespace = bpm_2nd_intl
+
+bpm_2nd_intl.1 = { # Seeds of a New International
+	type = country_event
+	placement = root
+
+	event_image = { video = "gfx/event_pictures/europenorthamerica_political_extremism.bk2" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/political_extremism"
+	icon = "gfx/interface/icons/event_icons/secondIntl.dds"
+	title = bpm_2nd_intl.1.t
+	desc = bpm_2nd_intl.1.d
+	flavor = bpm_2nd_intl.1.f
+	duration = 3
+
+	trigger = {
+		#OR = {
+		#	is_player = yes
+		#	AND = {
+		#		game_date > 1881.2.1
+		#		exists = c:SWI
+		#		this = c:SWI
+		#	}
+		#	AND = {
+		#		game_date > 1881.2.1
+		#		NOT = { exists = c:SWI }
+		#		has_global_highest_gdp = yes
+		#	}
+		#}
+		#game_date > 1880.1.1
+		#NOT = { has_global_variable = second_intl_attempted_var }
+	}
+
+	immediate = {
+		set_global_variable = second_intl_attempted_var
+	}
+
+	option = {
+		name = bpm_2nd_intl.1.a
+		default_option = yes
+		trigger_event = { id = bpm_2nd_intl.2 days = 60 }
+	}
+}
+
+bpm_2nd_intl.2 = { # The International and its Discontents
+	type = country_event
+	placement = root
+
+	event_image = { video = "gfx/event_pictures/southamerica_election.bk2" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/political_extremism"
+	icon = "gfx/interface/icons/event_icons/secondIntl.dds"
+	title = bpm_2nd_intl.2.t
+	desc = bpm_2nd_intl.2.d
+	flavor = bpm_2nd_intl.2.f
+	duration = 3
+
+	trigger = {}
+
+	immediate = {
+		set_global_variable = second_intl_first_split_var
+	}
+
+	option = {
+		name = bpm_2nd_intl.2.a
+		default_option = yes
+		trigger_event = { id = bpm_2nd_intl.3 days = 30 }
+	}
+}
+
+bpm_2nd_intl.201 = { # Our Socialists Split!
+	type = country_event
+	placement = root
+
+	event_image = { video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/political_extremism"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	title = bpm_2nd_intl.2b.t
+	desc = bpm_2nd_intl.2b.d
+	flavor = bpm_2nd_intl.2b.f
+	duration = 3
+
+	trigger = {} # Triggered from bpm_socialist_split.2
+
+	option = {
+		name = bpm_2nd_intl.2b.a
+		default_option = yes
+	}
+}
+
+bpm_2nd_intl.3 = { # The Possibilist International
+	type = country_event
+	placement = root
+
+	event_image = { video = "gfx/event_pictures/unspecific_ruler_speaking_to_people.bk2" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/political_extremism"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	title = bpm_2nd_intl.3.t
+	desc = bpm_2nd_intl.3.d
+	flavor = bpm_2nd_intl.3.f
+	duration = 3
+
+	trigger = {}
+
+	option = {
+		name = bpm_2nd_intl.3.a
+		default_option = yes
+		trigger_event = { id = bpm_2nd_intl.4 days = 30 }
+	}
+}
+
+bpm_2nd_intl.4 = { # The Social Democrat International
+	type = country_event
+	placement = root
+
+	event_image = { video = "gfx/event_pictures/unspecific_politicians_arguing.bk2" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/political_extremism"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	title = bpm_2nd_intl.4.t
+	desc = bpm_2nd_intl.4.d
+	flavor = bpm_2nd_intl.4.f
+	duration = 3
+
+	trigger = {}
+
+	option = {
+		name = bpm_2nd_intl.4.a
+		default_option = yes
+		trigger_event = { id = bpm_2nd_intl.5 days = 30 }
+	}
+}
+
+bpm_2nd_intl.5 = { # After the Congresses
+	type = country_event
+	placement = root
+
+	event_image = { video = "gfx/event_pictures/asia_union_leader.bk2" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/political_extremism"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	title = bpm_2nd_intl.5.t
+	desc = bpm_2nd_intl.5.d
+	flavor = bpm_2nd_intl.5.f
+	duration = 3
+
+	trigger = {}
+
+	option = {
+		name = bpm_2nd_intl.5.a
+		default_option = yes
+		if = {
+			limit = { bpm_is_leading_player_with_fallback = yes }
+			trigger_event = { id = bpm_2nd_intl.6 days = 90 }
+		}
+	}
+}
+
+bpm_2nd_intl.6 = { # Sera le Genre Humain?
+	type = country_event
+	placement = root
+
+	event_image = { video = "gfx/event_pictures/middleeast_middleclass_cafe.bk2" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/political_extremism"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	title = bpm_2nd_intl.6.t
+	desc = bpm_2nd_intl.6.d
+	flavor = bpm_2nd_intl.6.f
+	duration = 3
+
+	trigger = {}
+	immediate = {
+		set_global_variable = second_intl_chain_complete_var
+	}
+
+	option = {
+		name = bpm_2nd_intl.6.a
+		default_option = yes
+	}
+	option = {
+		name = bpm_2nd_intl.6.b
+		set_global_variable = second_intl_disunited_var
+	}
+}
+
+bpm_2nd_intl.7 = { # Party unity?
+	type = country_event
+	placement = root
+
+	event_image = { video = "gfx/event_pictures/unspecific_politicians_arguing.bk2" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/political_extremism"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	title = bpm_2nd_intl.7.t
+	desc = bpm_2nd_intl.7.d
+	flavor = bpm_2nd_intl.7.f
+	duration = 3
+
+	trigger = { 
+		has_global_variable = second_intl_chain_complete_var
+		NOT = {
+			has_variable = local_second_intl_finished_var
+		}
+	}
+	immediate = {
+		set_variable = local_second_intl_finished_var
+		trigger_event = { id = bpm_2nd_intl.8 years = 10 }
+	}
+
+	option = {
+		default_option = yes
+		name = bpm_2nd_intl.7.a
+
+		ai_chance = {
+			base = 70
+			modifier = {
+				trigger = {
+					has_global_variable = second_intl_disunited_var
+				}
+				add = -40
+			}
+		}
+	}
+	option = {
+		name = bpm_2nd_intl.7.b
+
+		set_variable = local_socialists_disunited_var
+		update_party_support = yes
+		ai_chance = {
+			base = 30
+			modifier = {
+				trigger = {
+					has_global_variable = second_intl_disunited_var
+				}
+				add = 40
+			}
+		}
+	}
+}
+
+bpm_2nd_intl.8 = { # Heroic Period
+	type = country_event
+	placement = root
+	hidden = yes
+
+	immediate = { set_global_variable = global_socialist_heroic_period }
+}

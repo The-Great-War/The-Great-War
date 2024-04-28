@@ -1,0 +1,11 @@
+colors = {
+	todo_purple = rgb { 1 0.4 0.6 }
+	highlight = 	hsv360 	{	195	25	100	}
+
+	brun = {222 193 158}
+	white = {250 250 250}
+	frenchblue = {25 25 112}
+	austriawhite = { 211  220  240 }
+	germanreich = { 30 30 35}  
+	rednew = { 60 0 0 } 
+}

@@ -1,0 +1,17 @@
+﻿SM_expand_building = {
+	set_local_variable = {
+		name = SM_expand_building_levels
+		value = $levels$
+	}
+	while = {
+		limit = { 
+			local_var:SM_expand_building_levels > 0
+		}
+		change_local_variable = {
+			name = SM_expand_building_levels
+			subtract = 1
+		}
+		start_building_construction = $building$
+	}
+	
+}

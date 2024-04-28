@@ -1,0 +1,96 @@
+﻿namespace = world_war_1
+
+world_war_1.1 = {
+    type = country_event
+    placement = root
+    hidden = no
+
+    title = world_war_1.1.t
+    desc = world_war_1.1.d
+    flavor = world_war_1.1.f
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+
+    trigger = {
+        # Trigger conditions for the event to fire
+        exists = c:AUS
+        exists = c:SER
+        exists = c:GER
+        exists = c:ITA
+        exists = c:FRA
+        exists = c:RUS
+        exists = c:GBR
+        game_date >= 1911.1.1
+    }
+
+    event_image = {
+        # There are two types of event images: video and texture
+        # video should be a bk2 (Bink Video) file
+        video = "gfx/event_pictures/southamerica_public_figure_assassination.bk2"
+        # Static images are called 'texture' instead
+        # texture should be a dds (DirectDraw Surface) file
+        # texture = "gfx/texture.dds"
+    }
+
+    option = {
+        name = world_war_1.1.1
+        c:AUS = {
+            trigger_world_war = {
+                COUNTRY = c:SER
+                INIT = c:AUS
+            }
+            heir = {
+                kill_character = THIS
+            }
+        }
+    }
+}
+
+world_war_1.2 = {
+    type = country_event
+    placement = root
+    hidden = no
+
+
+    title = world_war_1.2.t
+    desc = world_war_1.2.d
+
+    trigger = {
+        has_global_variable = world_war_1_begun
+    }
+    option = {
+        name = world_war_1.2.1
+        every_country = {
+            limit = {
+                is_in_entente = {
+                    COUNTRY = THIS
+                }
+            }
+            THIS = {
+                save_scope_as = supporting_country
+            }
+            enter_world_war_defender_side = {
+                COUNTRY = scope:supporting_country
+            }
+        }
+    }
+    option = {
+        name = world_war_1.2.2
+        every_country = {
+            limit = {
+                is_in_central_powers = {
+                    COUNTRY = THIS
+                }
+            }
+            THIS = {
+                save_scope_as = supporting_country
+            }
+            enter_world_war_attacker_side = {
+                COUNTRY = scope:supporting_country
+            }
+        }
+    }
+}

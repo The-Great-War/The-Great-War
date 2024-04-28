@@ -1,0 +1,62 @@
+﻿DIPLOMACY = {
+	# Entente
+	c:GBR = {
+		create_diplomatic_pact = {
+			country = c:POR
+			type = defensive_pact
+		}
+		create_diplomatic_pact = {
+			country = c:FRA
+			type = alliance
+		}
+		create_diplomatic_pact = {
+			country = c:RUS
+			type = alliance
+		}
+		add_to_multi_alliance = {
+			COUNTRY = c:GBR
+			ALLIANCE = 2 # Entente
+		}
+	}
+	c:FRA = {
+		create_diplomatic_pact = {
+			country = c:RUS
+			type = alliance
+		}
+		add_to_multi_alliance = {
+			COUNTRY = c:FRA
+			ALLIANCE = 2 # Entente
+		}
+	}
+	c:RUS = {
+		add_to_multi_alliance = {
+			COUNTRY = c:RUS
+			ALLIANCE = 2 # Entente
+		}
+	}
+	# Dual Alliance
+	c:GER = {
+		create_diplomatic_pact = {
+			country = c:AUS
+			type = alliance
+		}
+		add_to_multi_alliance = {
+			COUNTRY = c:GER
+			ALLIANCE = 1 # Central Powers
+		}
+		create_diplomatic_pact = {
+			country = c:ITA
+			type = alliance
+		}
+	}
+	c:AUS = {
+		create_diplomatic_pact = {
+			country = c:ITA
+			type = defensive_pact
+		}
+		add_to_multi_alliance = {
+			COUNTRY = c:AUS
+			ALLIANCE = 1 # Central Powers
+		}
+	}
+}

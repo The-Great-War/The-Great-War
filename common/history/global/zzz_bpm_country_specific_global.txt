@@ -1,0 +1,372 @@
+﻿GLOBAL = {
+
+	c:USA = {
+		ig:ig_rural_folk = { 
+			remove_ideology = ideology_agrarian_jeffersonian
+		}
+
+		ig:ig_petty_bourgeoisie = { 
+			add_ideology = ideology_cit_immigrant_nationalist
+		}
+
+		every_interest_group = {
+			limit = {
+				has_ideology = ideology:ideology_gov_radical_monarchist
+			}
+			remove_ideology = ideology_gov_radical_monarchist
+			add_ideology = ideology_gov_liberal_republican
+		}
+
+		every_interest_group = {
+			limit = {
+				has_ideology = ideology:ideology_dop_authoritarian_democrat
+			}
+			remove_ideology = ideology_dop_authoritarian_democrat
+			add_ideology = ideology_dop_moderate_democrat
+		}
+
+		every_interest_group = {
+			limit = {
+				has_ideology = ideology:ideology_dop_autocrat
+			}
+			remove_ideology = ideology_dop_autocrat
+			add_ideology = ideology_dop_authoritarian_democrat
+		}
+
+		every_interest_group = {
+			limit = {
+				has_ideology = ideology:ideology_rel_radical_moralist
+			}
+			remove_ideology = ideology_rel_radical_moralist
+			add_ideology = ideology_rel_moralist
+		}
+
+		every_interest_group = {
+			limit = {
+				has_ideology = ideology:ideology_sta_powerful_state
+			}
+			remove_ideology = ideology_sta_powerful_state
+			add_ideology = ideology_sta_federated_state
+		}
+
+		every_interest_group = {
+			limit = {
+				has_ideology = ideology:ideology_sta_weak_state
+			}
+			remove_ideology = ideology_sta_weak_state
+			add_ideology = ideology_sta_federated_state
+		}
+
+		ig:ig_devout = {
+			leader = {
+				set_ideology = ideology:ideology_moderate
+			}
+		}
+
+		ig:ig_reactionaries = {
+			bpm_remove_all_sta_ideologies = yes
+			bpm_remove_all_ban_ideologies = yes
+			bpm_remove_all_rel_ideologies = yes
+			add_ideology = ideology_rel_secularist
+			add_ideology = ideology_sta_decentralized_state
+			add_ideology = ideology_ban_averse
+		}
+
+		ig:ig_conservatives = {
+			bpm_remove_all_cit_ideologies = yes
+			bpm_remove_all_eco_ideologies = yes
+			bpm_remove_all_rel_ideologies = yes
+			add_ideology = ideology_rel_secularist
+			add_ideology = ideology_cit_immigrant_nationalist
+			add_ideology = ideology_eco_modern_agrarian
+		}
+
+		ig:ig_liberals = {
+			bpm_remove_all_eco_ideologies = yes
+			bpm_remove_all_cit_ideologies = yes
+			add_ideology = ideology_eco_interventionist
+			add_ideology = ideology_cit_liberal_nationalist
+		}
+
+		ig:ig_radicals = {
+			bpm_remove_all_rel_ideologies = yes
+			add_ideology = ideology_rel_moralist
+		}
+
+		activate_law = law_type:law_illegal_labor_unions
+		activate_law = law_type:law_women_own_property
+	}
+
+	c:TUR = {
+		every_interest_group = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_cit_nationalist
+					is_interest_group_type = ig_landowners
+				}
+			}
+			bpm_remove_all_cit_ideologies = yes
+			add_ideology = ideology_cit_multiethnic_nationalist
+		}
+	}
+
+	c:JAP = {
+		every_interest_group = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_eco_serf_economy
+					is_interest_group_type = ig_landowners
+				}
+			}
+			bpm_remove_all_eco_ideologies = yes
+			add_ideology = ideology_eco_trad_isolationist
+		}
+	}
+
+	c:KOR = {
+		every_interest_group = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_eco_serf_economy
+					is_interest_group_type = ig_landowners
+				}
+			}
+			bpm_remove_all_eco_ideologies = yes
+			add_ideology = ideology_eco_trad_isolationist
+		}
+	}
+
+	c:CHI = {
+		every_interest_group = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_cit_nationalist
+					is_interest_group_type = ig_devout
+				}
+			}
+			bpm_remove_all_cit_ideologies = yes
+			add_ideology = ideology_cit_multiethnic_nationalist
+		}
+	}
+
+	# TODO: certain devout should be absolutist
+
+	c:GBR = {
+		if = {
+			limit = { exists = py:liberal_party }
+			py:liberal_party = {
+				set_ruling_party = yes
+			}				
+		}
+		activate_law = law_type:law_limited_labor_unions
+	}
+	every_country = {
+		limit = { is_subject_of = c:GBR }
+		activate_law = law_type:law_limited_labor_unions
+		if = {
+			limit = { bpm_country_is_in_new_world = yes }
+			activate_law = law_type:law_national_militia
+		}
+	}
+
+	c:FRA = {
+		if = {
+			limit = { exists = py:conservative_party }
+			py:conservative_party = {
+				set_ruling_party = yes
+			}				
+		}
+		activate_law = law_type:law_illegal_labor_unions
+	}
+
+	c:BEL = {
+		if = {
+			limit = { exists = py:conservative_party }
+			py:conservative_party = {
+				set_ruling_party = yes
+			}				
+		}
+		activate_law = law_type:law_illegal_labor_unions
+	}
+
+	c:NET = {
+		activate_law = law_type:law_oligarchy
+		activate_law = law_type:law_appointed_bureaucrats
+	}
+
+	c:POR = {
+		activate_law = law_type:law_landed_voting
+		if = {
+			limit = { exists = py:conservative_party }
+			py:conservative_party = {
+				set_ruling_party = yes
+			}				
+		}
+		ig:ig_reactionaries = {
+				set_interest_group_name = ig_integralists
+				bpm_remove_all_dop_ideologies = yes
+				add_ideology = ideology_dop_autocrat
+				bpm_remove_all_sta_ideologies = yes
+				add_ideology = ideology_sta_decentralized_state
+				bpm_remove_all_cit_ideologies = yes
+				add_ideology = ideology_cit_multiethnic_nationalist
+		}	
+	}
+
+	c:FRA = {
+		ig:ig_conservatives = { set_interest_group_name = ig_orleanists_right }
+		ig:ig_liberals = { set_interest_group_name = ig_orleanists_left }
+		ig:ig_reactionaries = { 
+			set_interest_group_name = ig_legitimists
+			bpm_remove_all_sta_ideologies = yes
+			add_ideology = ideology_sta_decentralized_state
+		}
+		if = {
+			limit = {
+				has_dlc_feature = voice_of_the_people_content
+			}
+			add_journal_entry = {
+				type = je_conquest_of_algeria
+			}
+		}
+	}
+
+	c:SPA = {
+		ig:ig_reactionaries = { 
+			set_interest_group_name = ig_carlists
+			bpm_remove_all_dop_ideologies = yes
+			add_ideology = ideology_dop_autocrat
+			bpm_remove_all_sta_ideologies = yes
+			add_ideology = ideology_sta_decentralized_state
+			bpm_remove_all_cit_ideologies = yes
+			add_ideology = ideology_cit_multiethnic_nationalist
+		}
+	}
+
+	c:RUS = {
+		# Both Zapadniks and Slavophiles were anti-serfdom.
+		ig:ig_reactionaries = {
+			leader = { set_ideology = ideology:ideology_serfdom_reformer }
+			bpm_remove_all_eco_ideologies = yes
+			add_ideology = ideology_eco_conservative_agrarian
+			bpm_reorder_ideologies = yes
+		}
+		ig:ig_conservatives = { leader = { set_ideology = ideology:ideology_serfdom_reformer } }
+	}
+
+	# CENTRALIZATION LAWS
+	every_country = {
+		limit = {
+			OR = {
+				this = c:BEL
+				this = c:NET
+				this = c:LIB
+				country_has_primary_culture = cu:boer
+				bpm_country_is_in_new_world = yes
+			}
+		}
+		activate_law = law_type:law_federated
+		set_institution_investment_level = {
+			institution = institution_centralization
+			level = 2
+		}
+	}
+
+	every_country = {
+		limit = {
+			OR = {
+				this = c:FRA
+				this = c:MEX
+				this = c:KRA
+				this = c:SWE
+				this = c:NOR
+				this = c:DEN
+				this = c:GRE
+				this = c:POR
+				this = c:EGY
+				this = c:KOR
+				country_has_primary_culture = cu:north_german
+				country_has_primary_culture = cu:south_german
+				country_has_primary_culture = cu:north_italian
+			}
+		}
+		activate_law = law_type:law_unitary
+		set_institution_investment_level = {
+			institution = institution_centralization
+			level = 1
+		}
+	}
+
+	every_country = {
+		limit = {
+			OR = {
+				this = c:SWI
+				this = c:ARG
+				this = c:JAP
+				this = c:SOK
+			}
+		}
+		activate_law = law_type:law_confederated
+		set_institution_investment_level = {
+			institution = institution_centralization
+			level = 3
+		}
+	}
+
+	every_country = {
+		limit = {
+			OR = {
+				this = c:GBR
+				this = c:AUS
+				this = c:PRU
+				this = c:SPA
+				this = c:DAI
+			}
+		}
+		activate_law = law_type:law_devolved
+		set_institution_investment_level = {
+			institution = institution_centralization
+			level = 1
+		}
+	}
+
+	every_country = {
+		activate_law = law_type:law_purchased_officers
+	}
+
+	every_country = {
+		limit = { 
+			OR = {
+				has_law = law_type:law_chiefdom
+				has_law = law_type:law_monarchy
+				has_law = law_type:law_theocracy
+			}
+			NOR = {
+				this = c:GBR
+				this = c:NET
+				this = c:BEL
+				bpm_country_is_in_new_world = yes
+			}
+		}
+		activate_law = law_type:law_noble_officers
+	 }
+ 
+	every_country = {
+		limit = { 
+			OR = {
+				this = c:PRU
+				this = c:FRA
+				this = c:USA
+			}
+		}
+		activate_law = law_type:law_professional_officers
+	}
+
+	every_country = {
+		every_interest_group = {
+			limit = { bpm_ig_enabled = yes }
+			bpm_reorder_ideologies = yes
+		}
+	}
+ 
+}

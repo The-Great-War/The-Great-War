@@ -1,0 +1,13 @@
+COUNTRIES = {
+	c:BLH = {
+		effect_starting_technology_tier_4_tech = yes
+		
+		activate_law = law_type:law_serfdom
+		activate_law = law_type:law_traditionalism
+		activate_law = law_type:law_land_based_taxation	
+
+		ig:ig_devout = {
+			set_interest_group_name = ig_sunni_madrasahs
+		}	
+	}
+}

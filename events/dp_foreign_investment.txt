@@ -1,0 +1,959 @@
+﻿
+namespace = SM_foreign_investment
+
+SM_foreign_investment.1 = {
+	type = country_event
+	placement = ROOT
+
+    title = SM_foreign_investment.1.t
+    desc = SM_foreign_investment.1.d
+    flavor = SM_foreign_investment.1.f
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	
+	option = {
+		name = CANCEL
+		default_option = yes
+	}
+
+	option = {
+		trigger = {
+			modifier:country_construction_add >= 5
+		}
+		name = SM_foreign_investment.low_investment.short_term
+		scope:target_country = {
+			add_modifier = {
+				name = SM_foreign_investment_receiver_low
+				years = 1
+			}
+		}
+		add_modifier = {
+			name = SM_foreign_investment_provider_low
+			years = 1
+		}
+	}
+
+	option = {
+		trigger = {
+			modifier:country_construction_add >= 5
+		}
+		name = SM_foreign_investment.low_investment.medium_term
+		scope:target_country = {
+			add_modifier = {
+				name = SM_foreign_investment_receiver_low
+				years = 3
+			}
+		}
+		add_modifier = {
+			name = SM_foreign_investment_provider_low
+			years = 3
+		}
+	}
+
+	option = {
+		trigger = {
+			modifier:country_construction_add >= 5
+		}
+		name = SM_foreign_investment.low_investment.long_term
+		scope:target_country = {
+			add_modifier = {
+				name = SM_foreign_investment_receiver_low
+				years = 10
+			}
+		}
+		add_modifier = {
+			name = SM_foreign_investment_provider_low
+			years = 10
+		}
+	}
+
+	option = {
+		trigger = {
+			modifier:country_construction_add >= 20
+		}
+		name = SM_foreign_investment.medium_investment.short_term
+		scope:target_country = {
+			add_modifier = {
+				name = SM_foreign_investment_receiver_medium
+				years = 1
+			}
+		}
+		add_modifier = {
+			name = SM_foreign_investment_provider_medium
+			years = 1
+		}
+	}
+
+	option = {
+		trigger = {
+			modifier:country_construction_add >= 20
+		}
+		name = SM_foreign_investment.medium_investment.medium_term
+		scope:target_country = {
+			add_modifier = {
+				name = SM_foreign_investment_receiver_medium
+				years = 3
+			}
+		}
+		add_modifier = {
+			name = SM_foreign_investment_provider_medium
+			years = 3
+		}
+	}
+
+	option = {
+		trigger = {
+			modifier:country_construction_add >= 20
+		}
+		name = SM_foreign_investment.medium_investment.long_term
+		scope:target_country = {
+			add_modifier = {
+				name = SM_foreign_investment_receiver_medium
+				years = 10
+			}
+		}
+		add_modifier = {
+			name = SM_foreign_investment_provider_medium
+			years = 10
+		}
+	}
+
+	option = {
+		trigger = {
+			modifier:country_construction_add >= 100
+		}
+		name = SM_foreign_investment.high_investment.short_term
+		scope:target_country = {
+			add_modifier = {
+				name = SM_foreign_investment_receiver_high
+				years = 1
+			}
+		}
+		add_modifier = {
+			name = SM_foreign_investment_provider_high
+			years = 1
+		}
+	}
+
+	option = {
+		trigger = {
+			modifier:country_construction_add >= 100
+		}
+		name = SM_foreign_investment.high_investment.medium_term
+		scope:target_country = {
+			add_modifier = {
+				name = SM_foreign_investment_receiver_high
+				years = 3
+			}
+		}
+		add_modifier = {
+			name = SM_foreign_investment_provider_high
+			years = 3
+		}
+	}
+
+	option = {
+		trigger = {
+			modifier:country_construction_add >= 100
+		}
+		name = SM_foreign_investment.high_investment.long_term
+		scope:target_country = {
+			add_modifier = {
+				name = SM_foreign_investment_receiver_high
+				years = 10
+			}
+		}
+		add_modifier = {
+			name = SM_foreign_investment_provider_high
+			years = 10
+		}
+	}
+
+	option = {
+		trigger = {
+			modifier:country_construction_add >= 500
+		}
+		name = SM_foreign_investment.very_high_investment.short_term
+		scope:target_country = {
+			add_modifier = {
+				name = SM_foreign_investment_receiver_very_high
+				years = 1
+			}
+		}
+		add_modifier = {
+			name = SM_foreign_investment_provider_very_high
+			years = 1
+		}
+	}
+
+	option = {
+		trigger = {
+			modifier:country_construction_add >= 500
+		}
+		name = SM_foreign_investment.very_high_investment.medium_term
+		scope:target_country = {
+			add_modifier = {
+				name = SM_foreign_investment_receiver_very_high
+				years = 3
+			}
+		}
+		add_modifier = {
+			name = SM_foreign_investment_provider_very_high
+			years = 3
+		}
+	}
+
+	option = {
+		trigger = {
+			modifier:country_construction_add >= 500
+		}
+		name = SM_foreign_investment.very_high_investment.long_term
+		scope:target_country = {
+			add_modifier = {
+				name = SM_foreign_investment_receiver_very_high
+				years = 10
+			}
+		}
+		add_modifier = {
+			name = SM_foreign_investment_provider_very_high
+			years = 10
+		}
+	}
+}
+
+SM_foreign_investment.10 = {
+	type = country_event
+	placement = ROOT
+
+    title = SM_foreign_investment.10.t
+    desc = SM_foreign_investment.10.d
+    flavor = SM_foreign_investment.10.f
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+
+	immediate = {
+		scope:target_country = {
+			every_scope_state = {
+				add_to_local_variable_list = {
+					name = SM_foreign_investment_states
+					target = this
+				}
+			}
+		}
+		every_in_local_list = {
+			variable = SM_foreign_investment_states
+	
+			if = {
+				limit = {
+					NOT = {
+						exists = scope:SM_foreign_investment_building_target_0
+					}
+				}
+				this = {
+					save_scope_as = SM_foreign_investment_building_target_0
+				}
+			}
+						
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_1   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_1  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_2   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_2  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_3   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_3  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_4   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_4  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_5   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_5  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_6   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_6  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_7   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_7  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_8   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_8  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_9   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_9  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_10   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_10  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_11   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_11  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_12   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_12  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_13   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_13  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_14   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_14  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_15   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_15  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_16   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_16  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_17   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_17  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_18   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_18  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_19   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_19  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_20   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_20  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_21   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_21  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_22   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_22  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_23   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_23  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_24   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_24  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_25   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_25  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_26   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_26  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_27   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_27  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_28   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_28  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_29   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_29  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_30   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_30  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_31   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_31  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_32   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_32  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_33   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_33  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_34   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_34  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_35   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_35  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_36   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_36  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_37   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_37  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_38   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_38  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_39   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_39  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_40   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_40  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_41   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_41  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_42   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_42  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_43   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_43  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_44   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_44  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_45   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_45  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_46   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_46  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_47   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_47  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_48   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_48  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_49   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_49  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_50   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_50  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_51   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_51  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_52   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_52  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_53   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_53  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_54   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_54  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_55   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_55  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_56   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_56  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_57   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_57  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_58   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_58  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_59   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_59  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_60   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_60  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_61   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_61  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_62   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_62  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_63   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_63  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_64   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_64  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_65   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_65  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_66   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_66  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_67   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_67  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_68   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_68  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_69   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_69  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_70   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_70  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_71   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_71  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_72   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_72  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_73   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_73  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_74   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_74  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_75   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_75  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_76   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_76  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_77   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_77  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_78   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_78  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_79   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_79  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_80   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_80  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_81   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_81  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_82   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_82  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_83   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_83  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_84   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_84  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_85   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_85  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_86   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_86  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_87   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_87  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_88   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_88  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_89   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_89  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_90   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_90  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_91   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_91  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_92   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_92  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_93   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_93  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_94   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_94  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_95   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_95  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_96   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_96  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_97   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_97  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_98   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_98  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_99   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_99  } } 
+			else_if = {  limit = {   NOT = {    exists = scope:SM_foreign_investment_building_target_100   }  }  this = {   save_scope_as = SM_foreign_investment_building_target_100  } } 
+		}
+	}
+	
+	option = {
+		name = CANCEL
+		default_option = yes
+	}
+
+	option = {
+		trigger = {
+			exists = scope:SM_foreign_investment_building_target_0
+		}
+		name = SM_foreign_investment_building_target_0
+		scope:SM_foreign_investment_building_target_0 = {
+			save_scope_as = SM_foreign_investment_building_target
+		}
+		trigger_event = {
+			id = SM_foreign_investment.20
+			days = 0
+			popup = yes
+		}
+	}
+
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_1   }   name = SM_foreign_investment_building_target_1   scope:SM_foreign_investment_building_target_1 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_2   }   name = SM_foreign_investment_building_target_2   scope:SM_foreign_investment_building_target_2 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_3   }   name = SM_foreign_investment_building_target_3   scope:SM_foreign_investment_building_target_3 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_4   }   name = SM_foreign_investment_building_target_4   scope:SM_foreign_investment_building_target_4 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_5   }   name = SM_foreign_investment_building_target_5   scope:SM_foreign_investment_building_target_5 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_6   }   name = SM_foreign_investment_building_target_6   scope:SM_foreign_investment_building_target_6 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_7   }   name = SM_foreign_investment_building_target_7   scope:SM_foreign_investment_building_target_7 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_8   }   name = SM_foreign_investment_building_target_8   scope:SM_foreign_investment_building_target_8 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_9   }   name = SM_foreign_investment_building_target_9   scope:SM_foreign_investment_building_target_9 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_10   }   name = SM_foreign_investment_building_target_10   scope:SM_foreign_investment_building_target_10 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_11   }   name = SM_foreign_investment_building_target_11   scope:SM_foreign_investment_building_target_11 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_12   }   name = SM_foreign_investment_building_target_12   scope:SM_foreign_investment_building_target_12 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_13   }   name = SM_foreign_investment_building_target_13   scope:SM_foreign_investment_building_target_13 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_14   }   name = SM_foreign_investment_building_target_14   scope:SM_foreign_investment_building_target_14 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_15   }   name = SM_foreign_investment_building_target_15   scope:SM_foreign_investment_building_target_15 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_16   }   name = SM_foreign_investment_building_target_16   scope:SM_foreign_investment_building_target_16 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_17   }   name = SM_foreign_investment_building_target_17   scope:SM_foreign_investment_building_target_17 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_18   }   name = SM_foreign_investment_building_target_18   scope:SM_foreign_investment_building_target_18 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_19   }   name = SM_foreign_investment_building_target_19   scope:SM_foreign_investment_building_target_19 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_20   }   name = SM_foreign_investment_building_target_20   scope:SM_foreign_investment_building_target_20 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_21   }   name = SM_foreign_investment_building_target_21   scope:SM_foreign_investment_building_target_21 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_22   }   name = SM_foreign_investment_building_target_22   scope:SM_foreign_investment_building_target_22 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_23   }   name = SM_foreign_investment_building_target_23   scope:SM_foreign_investment_building_target_23 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_24   }   name = SM_foreign_investment_building_target_24   scope:SM_foreign_investment_building_target_24 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_25   }   name = SM_foreign_investment_building_target_25   scope:SM_foreign_investment_building_target_25 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_26   }   name = SM_foreign_investment_building_target_26   scope:SM_foreign_investment_building_target_26 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_27   }   name = SM_foreign_investment_building_target_27   scope:SM_foreign_investment_building_target_27 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_28   }   name = SM_foreign_investment_building_target_28   scope:SM_foreign_investment_building_target_28 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_29   }   name = SM_foreign_investment_building_target_29   scope:SM_foreign_investment_building_target_29 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_30   }   name = SM_foreign_investment_building_target_30   scope:SM_foreign_investment_building_target_30 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_31   }   name = SM_foreign_investment_building_target_31   scope:SM_foreign_investment_building_target_31 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_32   }   name = SM_foreign_investment_building_target_32   scope:SM_foreign_investment_building_target_32 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_33   }   name = SM_foreign_investment_building_target_33   scope:SM_foreign_investment_building_target_33 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_34   }   name = SM_foreign_investment_building_target_34   scope:SM_foreign_investment_building_target_34 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_35   }   name = SM_foreign_investment_building_target_35   scope:SM_foreign_investment_building_target_35 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_36   }   name = SM_foreign_investment_building_target_36   scope:SM_foreign_investment_building_target_36 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_37   }   name = SM_foreign_investment_building_target_37   scope:SM_foreign_investment_building_target_37 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_38   }   name = SM_foreign_investment_building_target_38   scope:SM_foreign_investment_building_target_38 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_39   }   name = SM_foreign_investment_building_target_39   scope:SM_foreign_investment_building_target_39 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_40   }   name = SM_foreign_investment_building_target_40   scope:SM_foreign_investment_building_target_40 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_41   }   name = SM_foreign_investment_building_target_41   scope:SM_foreign_investment_building_target_41 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_42   }   name = SM_foreign_investment_building_target_42   scope:SM_foreign_investment_building_target_42 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_43   }   name = SM_foreign_investment_building_target_43   scope:SM_foreign_investment_building_target_43 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_44   }   name = SM_foreign_investment_building_target_44   scope:SM_foreign_investment_building_target_44 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_45   }   name = SM_foreign_investment_building_target_45   scope:SM_foreign_investment_building_target_45 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_46   }   name = SM_foreign_investment_building_target_46   scope:SM_foreign_investment_building_target_46 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_47   }   name = SM_foreign_investment_building_target_47   scope:SM_foreign_investment_building_target_47 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_48   }   name = SM_foreign_investment_building_target_48   scope:SM_foreign_investment_building_target_48 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_49   }   name = SM_foreign_investment_building_target_49   scope:SM_foreign_investment_building_target_49 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_50   }   name = SM_foreign_investment_building_target_50   scope:SM_foreign_investment_building_target_50 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_51   }   name = SM_foreign_investment_building_target_51   scope:SM_foreign_investment_building_target_51 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_52   }   name = SM_foreign_investment_building_target_52   scope:SM_foreign_investment_building_target_52 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_53   }   name = SM_foreign_investment_building_target_53   scope:SM_foreign_investment_building_target_53 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_54   }   name = SM_foreign_investment_building_target_54   scope:SM_foreign_investment_building_target_54 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_55   }   name = SM_foreign_investment_building_target_55   scope:SM_foreign_investment_building_target_55 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_56   }   name = SM_foreign_investment_building_target_56   scope:SM_foreign_investment_building_target_56 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_57   }   name = SM_foreign_investment_building_target_57   scope:SM_foreign_investment_building_target_57 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_58   }   name = SM_foreign_investment_building_target_58   scope:SM_foreign_investment_building_target_58 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_59   }   name = SM_foreign_investment_building_target_59   scope:SM_foreign_investment_building_target_59 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_60   }   name = SM_foreign_investment_building_target_60   scope:SM_foreign_investment_building_target_60 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_61   }   name = SM_foreign_investment_building_target_61   scope:SM_foreign_investment_building_target_61 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_62   }   name = SM_foreign_investment_building_target_62   scope:SM_foreign_investment_building_target_62 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_63   }   name = SM_foreign_investment_building_target_63   scope:SM_foreign_investment_building_target_63 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_64   }   name = SM_foreign_investment_building_target_64   scope:SM_foreign_investment_building_target_64 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_65   }   name = SM_foreign_investment_building_target_65   scope:SM_foreign_investment_building_target_65 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_66   }   name = SM_foreign_investment_building_target_66   scope:SM_foreign_investment_building_target_66 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_67   }   name = SM_foreign_investment_building_target_67   scope:SM_foreign_investment_building_target_67 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_68   }   name = SM_foreign_investment_building_target_68   scope:SM_foreign_investment_building_target_68 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_69   }   name = SM_foreign_investment_building_target_69   scope:SM_foreign_investment_building_target_69 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_70   }   name = SM_foreign_investment_building_target_70   scope:SM_foreign_investment_building_target_70 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_71   }   name = SM_foreign_investment_building_target_71   scope:SM_foreign_investment_building_target_71 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_72   }   name = SM_foreign_investment_building_target_72   scope:SM_foreign_investment_building_target_72 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_73   }   name = SM_foreign_investment_building_target_73   scope:SM_foreign_investment_building_target_73 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_74   }   name = SM_foreign_investment_building_target_74   scope:SM_foreign_investment_building_target_74 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_75   }   name = SM_foreign_investment_building_target_75   scope:SM_foreign_investment_building_target_75 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_76   }   name = SM_foreign_investment_building_target_76   scope:SM_foreign_investment_building_target_76 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_77   }   name = SM_foreign_investment_building_target_77   scope:SM_foreign_investment_building_target_77 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_78   }   name = SM_foreign_investment_building_target_78   scope:SM_foreign_investment_building_target_78 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_79   }   name = SM_foreign_investment_building_target_79   scope:SM_foreign_investment_building_target_79 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_80   }   name = SM_foreign_investment_building_target_80   scope:SM_foreign_investment_building_target_80 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_81   }   name = SM_foreign_investment_building_target_81   scope:SM_foreign_investment_building_target_81 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_82   }   name = SM_foreign_investment_building_target_82   scope:SM_foreign_investment_building_target_82 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_83   }   name = SM_foreign_investment_building_target_83   scope:SM_foreign_investment_building_target_83 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_84   }   name = SM_foreign_investment_building_target_84   scope:SM_foreign_investment_building_target_84 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_85   }   name = SM_foreign_investment_building_target_85   scope:SM_foreign_investment_building_target_85 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_86   }   name = SM_foreign_investment_building_target_86   scope:SM_foreign_investment_building_target_86 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_87   }   name = SM_foreign_investment_building_target_87   scope:SM_foreign_investment_building_target_87 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_88   }   name = SM_foreign_investment_building_target_88   scope:SM_foreign_investment_building_target_88 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_89   }   name = SM_foreign_investment_building_target_89   scope:SM_foreign_investment_building_target_89 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_90   }   name = SM_foreign_investment_building_target_90   scope:SM_foreign_investment_building_target_90 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_91   }   name = SM_foreign_investment_building_target_91   scope:SM_foreign_investment_building_target_91 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_92   }   name = SM_foreign_investment_building_target_92   scope:SM_foreign_investment_building_target_92 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_93   }   name = SM_foreign_investment_building_target_93   scope:SM_foreign_investment_building_target_93 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_94   }   name = SM_foreign_investment_building_target_94   scope:SM_foreign_investment_building_target_94 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_95   }   name = SM_foreign_investment_building_target_95   scope:SM_foreign_investment_building_target_95 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_96   }   name = SM_foreign_investment_building_target_96   scope:SM_foreign_investment_building_target_96 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_97   }   name = SM_foreign_investment_building_target_97   scope:SM_foreign_investment_building_target_97 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_98   }   name = SM_foreign_investment_building_target_98   scope:SM_foreign_investment_building_target_98 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_99   }   name = SM_foreign_investment_building_target_99   scope:SM_foreign_investment_building_target_99 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_100   }   name = SM_foreign_investment_building_target_100   scope:SM_foreign_investment_building_target_100 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+}
+
+SM_foreign_investment.11 = {
+	type = country_event
+	placement = ROOT
+
+    title = SM_foreign_investment.10.t
+    desc = SM_foreign_investment.10.d
+    flavor = SM_foreign_investment.10.f
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	
+	option = {
+		name = CANCEL
+		default_option = yes
+	}
+
+	option = {
+		trigger = {
+			exists = scope:SM_foreign_investment_building_target_0
+		}
+		name = SM_foreign_investment_building_target_0
+		scope:SM_foreign_investment_building_target_0 = {
+			save_scope_as = SM_foreign_investment_building_target
+		}
+		trigger_event = {
+			id = SM_foreign_investment.20
+			days = 0
+			popup = yes
+		}
+	}
+
+
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_1   }   name = SM_foreign_investment_building_target_1   scope:SM_foreign_investment_building_target_1 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_2   }   name = SM_foreign_investment_building_target_2   scope:SM_foreign_investment_building_target_2 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_3   }   name = SM_foreign_investment_building_target_3   scope:SM_foreign_investment_building_target_3 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_4   }   name = SM_foreign_investment_building_target_4   scope:SM_foreign_investment_building_target_4 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_5   }   name = SM_foreign_investment_building_target_5   scope:SM_foreign_investment_building_target_5 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_6   }   name = SM_foreign_investment_building_target_6   scope:SM_foreign_investment_building_target_6 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_7   }   name = SM_foreign_investment_building_target_7   scope:SM_foreign_investment_building_target_7 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_8   }   name = SM_foreign_investment_building_target_8   scope:SM_foreign_investment_building_target_8 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_9   }   name = SM_foreign_investment_building_target_9   scope:SM_foreign_investment_building_target_9 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_10   }   name = SM_foreign_investment_building_target_10   scope:SM_foreign_investment_building_target_10 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_11   }   name = SM_foreign_investment_building_target_11   scope:SM_foreign_investment_building_target_11 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_12   }   name = SM_foreign_investment_building_target_12   scope:SM_foreign_investment_building_target_12 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_13   }   name = SM_foreign_investment_building_target_13   scope:SM_foreign_investment_building_target_13 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_14   }   name = SM_foreign_investment_building_target_14   scope:SM_foreign_investment_building_target_14 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_15   }   name = SM_foreign_investment_building_target_15   scope:SM_foreign_investment_building_target_15 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_16   }   name = SM_foreign_investment_building_target_16   scope:SM_foreign_investment_building_target_16 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_17   }   name = SM_foreign_investment_building_target_17   scope:SM_foreign_investment_building_target_17 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_18   }   name = SM_foreign_investment_building_target_18   scope:SM_foreign_investment_building_target_18 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_19   }   name = SM_foreign_investment_building_target_19   scope:SM_foreign_investment_building_target_19 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_20   }   name = SM_foreign_investment_building_target_20   scope:SM_foreign_investment_building_target_20 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_21   }   name = SM_foreign_investment_building_target_21   scope:SM_foreign_investment_building_target_21 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_22   }   name = SM_foreign_investment_building_target_22   scope:SM_foreign_investment_building_target_22 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_23   }   name = SM_foreign_investment_building_target_23   scope:SM_foreign_investment_building_target_23 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_24   }   name = SM_foreign_investment_building_target_24   scope:SM_foreign_investment_building_target_24 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_25   }   name = SM_foreign_investment_building_target_25   scope:SM_foreign_investment_building_target_25 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_26   }   name = SM_foreign_investment_building_target_26   scope:SM_foreign_investment_building_target_26 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_27   }   name = SM_foreign_investment_building_target_27   scope:SM_foreign_investment_building_target_27 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_28   }   name = SM_foreign_investment_building_target_28   scope:SM_foreign_investment_building_target_28 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_29   }   name = SM_foreign_investment_building_target_29   scope:SM_foreign_investment_building_target_29 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_30   }   name = SM_foreign_investment_building_target_30   scope:SM_foreign_investment_building_target_30 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_31   }   name = SM_foreign_investment_building_target_31   scope:SM_foreign_investment_building_target_31 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_32   }   name = SM_foreign_investment_building_target_32   scope:SM_foreign_investment_building_target_32 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_33   }   name = SM_foreign_investment_building_target_33   scope:SM_foreign_investment_building_target_33 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_34   }   name = SM_foreign_investment_building_target_34   scope:SM_foreign_investment_building_target_34 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_35   }   name = SM_foreign_investment_building_target_35   scope:SM_foreign_investment_building_target_35 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_36   }   name = SM_foreign_investment_building_target_36   scope:SM_foreign_investment_building_target_36 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_37   }   name = SM_foreign_investment_building_target_37   scope:SM_foreign_investment_building_target_37 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_38   }   name = SM_foreign_investment_building_target_38   scope:SM_foreign_investment_building_target_38 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_39   }   name = SM_foreign_investment_building_target_39   scope:SM_foreign_investment_building_target_39 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_40   }   name = SM_foreign_investment_building_target_40   scope:SM_foreign_investment_building_target_40 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_41   }   name = SM_foreign_investment_building_target_41   scope:SM_foreign_investment_building_target_41 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_42   }   name = SM_foreign_investment_building_target_42   scope:SM_foreign_investment_building_target_42 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_43   }   name = SM_foreign_investment_building_target_43   scope:SM_foreign_investment_building_target_43 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_44   }   name = SM_foreign_investment_building_target_44   scope:SM_foreign_investment_building_target_44 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_45   }   name = SM_foreign_investment_building_target_45   scope:SM_foreign_investment_building_target_45 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_46   }   name = SM_foreign_investment_building_target_46   scope:SM_foreign_investment_building_target_46 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_47   }   name = SM_foreign_investment_building_target_47   scope:SM_foreign_investment_building_target_47 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_48   }   name = SM_foreign_investment_building_target_48   scope:SM_foreign_investment_building_target_48 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_49   }   name = SM_foreign_investment_building_target_49   scope:SM_foreign_investment_building_target_49 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_50   }   name = SM_foreign_investment_building_target_50   scope:SM_foreign_investment_building_target_50 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_51   }   name = SM_foreign_investment_building_target_51   scope:SM_foreign_investment_building_target_51 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_52   }   name = SM_foreign_investment_building_target_52   scope:SM_foreign_investment_building_target_52 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_53   }   name = SM_foreign_investment_building_target_53   scope:SM_foreign_investment_building_target_53 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_54   }   name = SM_foreign_investment_building_target_54   scope:SM_foreign_investment_building_target_54 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_55   }   name = SM_foreign_investment_building_target_55   scope:SM_foreign_investment_building_target_55 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_56   }   name = SM_foreign_investment_building_target_56   scope:SM_foreign_investment_building_target_56 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_57   }   name = SM_foreign_investment_building_target_57   scope:SM_foreign_investment_building_target_57 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_58   }   name = SM_foreign_investment_building_target_58   scope:SM_foreign_investment_building_target_58 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_59   }   name = SM_foreign_investment_building_target_59   scope:SM_foreign_investment_building_target_59 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_60   }   name = SM_foreign_investment_building_target_60   scope:SM_foreign_investment_building_target_60 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_61   }   name = SM_foreign_investment_building_target_61   scope:SM_foreign_investment_building_target_61 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_62   }   name = SM_foreign_investment_building_target_62   scope:SM_foreign_investment_building_target_62 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_63   }   name = SM_foreign_investment_building_target_63   scope:SM_foreign_investment_building_target_63 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_64   }   name = SM_foreign_investment_building_target_64   scope:SM_foreign_investment_building_target_64 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_65   }   name = SM_foreign_investment_building_target_65   scope:SM_foreign_investment_building_target_65 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_66   }   name = SM_foreign_investment_building_target_66   scope:SM_foreign_investment_building_target_66 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_67   }   name = SM_foreign_investment_building_target_67   scope:SM_foreign_investment_building_target_67 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_68   }   name = SM_foreign_investment_building_target_68   scope:SM_foreign_investment_building_target_68 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_69   }   name = SM_foreign_investment_building_target_69   scope:SM_foreign_investment_building_target_69 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_70   }   name = SM_foreign_investment_building_target_70   scope:SM_foreign_investment_building_target_70 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_71   }   name = SM_foreign_investment_building_target_71   scope:SM_foreign_investment_building_target_71 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_72   }   name = SM_foreign_investment_building_target_72   scope:SM_foreign_investment_building_target_72 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_73   }   name = SM_foreign_investment_building_target_73   scope:SM_foreign_investment_building_target_73 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_74   }   name = SM_foreign_investment_building_target_74   scope:SM_foreign_investment_building_target_74 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_75   }   name = SM_foreign_investment_building_target_75   scope:SM_foreign_investment_building_target_75 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_76   }   name = SM_foreign_investment_building_target_76   scope:SM_foreign_investment_building_target_76 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_77   }   name = SM_foreign_investment_building_target_77   scope:SM_foreign_investment_building_target_77 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_78   }   name = SM_foreign_investment_building_target_78   scope:SM_foreign_investment_building_target_78 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_79   }   name = SM_foreign_investment_building_target_79   scope:SM_foreign_investment_building_target_79 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_80   }   name = SM_foreign_investment_building_target_80   scope:SM_foreign_investment_building_target_80 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_81   }   name = SM_foreign_investment_building_target_81   scope:SM_foreign_investment_building_target_81 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_82   }   name = SM_foreign_investment_building_target_82   scope:SM_foreign_investment_building_target_82 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_83   }   name = SM_foreign_investment_building_target_83   scope:SM_foreign_investment_building_target_83 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_84   }   name = SM_foreign_investment_building_target_84   scope:SM_foreign_investment_building_target_84 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_85   }   name = SM_foreign_investment_building_target_85   scope:SM_foreign_investment_building_target_85 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_86   }   name = SM_foreign_investment_building_target_86   scope:SM_foreign_investment_building_target_86 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_87   }   name = SM_foreign_investment_building_target_87   scope:SM_foreign_investment_building_target_87 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_88   }   name = SM_foreign_investment_building_target_88   scope:SM_foreign_investment_building_target_88 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_89   }   name = SM_foreign_investment_building_target_89   scope:SM_foreign_investment_building_target_89 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_90   }   name = SM_foreign_investment_building_target_90   scope:SM_foreign_investment_building_target_90 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_91   }   name = SM_foreign_investment_building_target_91   scope:SM_foreign_investment_building_target_91 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_92   }   name = SM_foreign_investment_building_target_92   scope:SM_foreign_investment_building_target_92 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_93   }   name = SM_foreign_investment_building_target_93   scope:SM_foreign_investment_building_target_93 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_94   }   name = SM_foreign_investment_building_target_94   scope:SM_foreign_investment_building_target_94 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_95   }   name = SM_foreign_investment_building_target_95   scope:SM_foreign_investment_building_target_95 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_96   }   name = SM_foreign_investment_building_target_96   scope:SM_foreign_investment_building_target_96 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_97   }   name = SM_foreign_investment_building_target_97   scope:SM_foreign_investment_building_target_97 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_98   }   name = SM_foreign_investment_building_target_98   scope:SM_foreign_investment_building_target_98 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_99   }   name = SM_foreign_investment_building_target_99   scope:SM_foreign_investment_building_target_99 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+	option = {   trigger = {    exists = scope:SM_foreign_investment_building_target_100   }   name = SM_foreign_investment_building_target_100   scope:SM_foreign_investment_building_target_100 = {    save_scope_as = SM_foreign_investment_building_target   }   trigger_event = {    id = SM_foreign_investment.20    days = 0    popup = yes   }  } 
+}
+
+SM_foreign_investment.20 = {
+	type = country_event
+	placement = ROOT
+
+    title = SM_foreign_investment.20.t
+    desc = SM_foreign_investment.20.d
+    flavor = SM_foreign_investment.20.f
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+
+	option = {
+		name = CANCEL
+		default_option = yes
+	}
+	
+	option = {
+		name = BACK
+		trigger_event = {
+			id = SM_foreign_investment.11
+			days = 0
+			popup = yes
+		}
+	}
+
+	
+	option = {
+		name = SM_expand_agriculture_option_name
+		trigger_event = {
+			id = SM_foreign_investment.100
+			days = 0
+			popup = yes
+		}
+	}
+	
+	option = {
+		name = SM_expand_plantations_option_name
+		trigger_event = {
+			id = SM_foreign_investment.200
+			days = 0
+			popup = yes
+		}
+	}
+	
+	option = {
+		name = SM_expand_resources_option_name
+		trigger_event = {
+			id = SM_foreign_investment.300
+			days = 0
+			popup = yes
+		}
+	}
+
+	option = {
+		name = SM_expand_infrastructure_option_name
+		trigger_event = {
+			id = SM_foreign_investment.400
+			days = 0
+			popup = yes
+		}
+	}
+}
+
+
+
+SM_foreign_investment.100 = {
+	type = country_event
+	placement = ROOT
+
+    title = SM_foreign_investment.100.t
+    desc = SM_foreign_investment.100.d
+    flavor = SM_foreign_investment.100.f
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	immediate = {
+		scope:SM_foreign_investment_building_target = {
+
+    if = {     limit = {any_scope_building = { is_building_type = building_maize_farm }}     set_local_variable = {      name = SM_can_expand_building_maize_farm     }    }    else = {     start_building_construction = building_maize_farm     if = {      limit = {any_scope_building = { is_building_type = building_maize_farm }}      set_local_variable = {       name = SM_can_expand_building_maize_farm      }      remove_building = building_maize_farm     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_rye_farm }}     set_local_variable = {      name = SM_can_expand_building_rye_farm     }    }    else = {     start_building_construction = building_rye_farm     if = {      limit = {any_scope_building = { is_building_type = building_rye_farm }}      set_local_variable = {       name = SM_can_expand_building_rye_farm      }      remove_building = building_rye_farm     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_livestock_ranch }}     set_local_variable = {      name = SM_can_expand_building_livestock_ranch     }    }    else = {     start_building_construction = building_livestock_ranch     if = {      limit = {any_scope_building = { is_building_type = building_livestock_ranch }}      set_local_variable = {       name = SM_can_expand_building_livestock_ranch      }      remove_building = building_livestock_ranch     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_wheat_farm }}     set_local_variable = {      name = SM_can_expand_building_wheat_farm     }    }    else = {     start_building_construction = building_wheat_farm     if = {      limit = {any_scope_building = { is_building_type = building_wheat_farm }}      set_local_variable = {       name = SM_can_expand_building_wheat_farm      }      remove_building = building_wheat_farm     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_rice_farm }}     set_local_variable = {      name = SM_can_expand_building_rice_farm     }    }    else = {     start_building_construction = building_rice_farm     if = {      limit = {any_scope_building = { is_building_type = building_rice_farm }}      set_local_variable = {       name = SM_can_expand_building_rice_farm      }      remove_building = building_rice_farm     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_millet_farm }}     set_local_variable = {      name = SM_can_expand_building_millet_farm     }    }    else = {     start_building_construction = building_millet_farm     if = {      limit = {any_scope_building = { is_building_type = building_millet_farm }}      set_local_variable = {       name = SM_can_expand_building_millet_farm      }      remove_building = building_millet_farm     }    } 
+	    }
+    }
+	option = {
+		name = CANCEL
+		default_option = yes
+	}
+
+#	option = {
+#		name = BACK
+#		trigger_event = {
+#			id = SM_foreign_investment.20
+#			days = 0
+#			popup = yes
+#		}
+#	}
+
+
+  option = {         name = SM_build_building_maize_farm_1   trigger = {    has_local_variable = SM_can_expand_building_maize_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_maize_farm    SM_expand_building = {     building = building_maize_farm     levels = 0    }   }  } 
+  option = {         name = SM_build_building_maize_farm_5   trigger = {    has_local_variable = SM_can_expand_building_maize_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_maize_farm    SM_expand_building = {     building = building_maize_farm     levels = 4    }   }  } 
+  option = {         name = SM_build_building_maize_farm_25   trigger = {    has_local_variable = SM_can_expand_building_maize_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_maize_farm    SM_expand_building = {     building = building_maize_farm     levels = 24    }   }  } 
+  option = {         name = SM_build_building_maize_farm_200   trigger = {    has_local_variable = SM_can_expand_building_maize_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_maize_farm    SM_expand_building = {     building = building_maize_farm     levels = 199    }   }  } 
+  option = {         name = SM_build_building_rye_farm_1   trigger = {    has_local_variable = SM_can_expand_building_rye_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_rye_farm    SM_expand_building = {     building = building_rye_farm     levels = 0    }   }  } 
+  option = {         name = SM_build_building_rye_farm_5   trigger = {    has_local_variable = SM_can_expand_building_rye_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_rye_farm    SM_expand_building = {     building = building_rye_farm     levels = 4    }   }  } 
+  option = {         name = SM_build_building_rye_farm_25   trigger = {    has_local_variable = SM_can_expand_building_rye_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_rye_farm    SM_expand_building = {     building = building_rye_farm     levels = 24    }   }  } 
+  option = {         name = SM_build_building_rye_farm_200   trigger = {    has_local_variable = SM_can_expand_building_rye_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_rye_farm    SM_expand_building = {     building = building_rye_farm     levels = 199    }   }  } 
+  option = {         name = SM_build_building_livestock_ranch_1   trigger = {    has_local_variable = SM_can_expand_building_livestock_ranch   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_livestock_ranch    SM_expand_building = {     building = building_livestock_ranch     levels = 0    }   }  } 
+  option = {         name = SM_build_building_livestock_ranch_5   trigger = {    has_local_variable = SM_can_expand_building_livestock_ranch   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_livestock_ranch    SM_expand_building = {     building = building_livestock_ranch     levels = 4    }   }  } 
+  option = {         name = SM_build_building_livestock_ranch_25   trigger = {    has_local_variable = SM_can_expand_building_livestock_ranch   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_livestock_ranch    SM_expand_building = {     building = building_livestock_ranch     levels = 24    }   }  } 
+  option = {         name = SM_build_building_livestock_ranch_200   trigger = {    has_local_variable = SM_can_expand_building_livestock_ranch   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_livestock_ranch    SM_expand_building = {     building = building_livestock_ranch     levels = 199    }   }  } 
+  option = {         name = SM_build_building_wheat_farm_1   trigger = {    has_local_variable = SM_can_expand_building_wheat_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_wheat_farm    SM_expand_building = {     building = building_wheat_farm     levels = 0    }   }  } 
+  option = {         name = SM_build_building_wheat_farm_5   trigger = {    has_local_variable = SM_can_expand_building_wheat_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_wheat_farm    SM_expand_building = {     building = building_wheat_farm     levels = 4    }   }  } 
+  option = {         name = SM_build_building_wheat_farm_25   trigger = {    has_local_variable = SM_can_expand_building_wheat_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_wheat_farm    SM_expand_building = {     building = building_wheat_farm     levels = 24    }   }  } 
+  option = {         name = SM_build_building_wheat_farm_200   trigger = {    has_local_variable = SM_can_expand_building_wheat_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_wheat_farm    SM_expand_building = {     building = building_wheat_farm     levels = 199    }   }  } 
+  option = {         name = SM_build_building_rice_farm_1   trigger = {    has_local_variable = SM_can_expand_building_rice_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_rice_farm    SM_expand_building = {     building = building_rice_farm     levels = 0    }   }  } 
+  option = {         name = SM_build_building_rice_farm_5   trigger = {    has_local_variable = SM_can_expand_building_rice_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_rice_farm    SM_expand_building = {     building = building_rice_farm     levels = 4    }   }  } 
+  option = {         name = SM_build_building_rice_farm_25   trigger = {    has_local_variable = SM_can_expand_building_rice_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_rice_farm    SM_expand_building = {     building = building_rice_farm     levels = 24    }   }  } 
+  option = {         name = SM_build_building_rice_farm_200   trigger = {    has_local_variable = SM_can_expand_building_rice_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_rice_farm    SM_expand_building = {     building = building_rice_farm     levels = 199    }   }  } 
+  option = {         name = SM_build_building_millet_farm_1   trigger = {    has_local_variable = SM_can_expand_building_millet_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_millet_farm    SM_expand_building = {     building = building_millet_farm     levels = 0    }   }  } 
+  option = {         name = SM_build_building_millet_farm_5   trigger = {    has_local_variable = SM_can_expand_building_millet_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_millet_farm    SM_expand_building = {     building = building_millet_farm     levels = 4    }   }  } 
+  option = {         name = SM_build_building_millet_farm_25   trigger = {    has_local_variable = SM_can_expand_building_millet_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_millet_farm    SM_expand_building = {     building = building_millet_farm     levels = 24    }   }  } 
+  option = {         name = SM_build_building_millet_farm_200   trigger = {    has_local_variable = SM_can_expand_building_millet_farm   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_millet_farm    SM_expand_building = {     building = building_millet_farm     levels = 199    }   }  } 
+}
+
+SM_foreign_investment.200 = {
+	type = country_event
+	placement = ROOT
+
+    title = SM_foreign_investment.200.t
+    desc = SM_foreign_investment.200.d
+    flavor = SM_foreign_investment.200.f
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	immediate = {
+		scope:SM_foreign_investment_building_target = {
+
+    if = {     limit = {any_scope_building = { is_building_type = building_opium_plantation }}     set_local_variable = {      name = SM_can_expand_building_opium_plantation     }    }    else = {     start_building_construction = building_opium_plantation     if = {      limit = {any_scope_building = { is_building_type = building_opium_plantation }}      set_local_variable = {       name = SM_can_expand_building_opium_plantation      }      remove_building = building_opium_plantation     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_tea_plantation }}     set_local_variable = {      name = SM_can_expand_building_tea_plantation     }    }    else = {     start_building_construction = building_tea_plantation     if = {      limit = {any_scope_building = { is_building_type = building_tea_plantation }}      set_local_variable = {       name = SM_can_expand_building_tea_plantation      }      remove_building = building_tea_plantation     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_dye_plantation }}     set_local_variable = {      name = SM_can_expand_building_dye_plantation     }    }    else = {     start_building_construction = building_dye_plantation     if = {      limit = {any_scope_building = { is_building_type = building_dye_plantation }}      set_local_variable = {       name = SM_can_expand_building_dye_plantation      }      remove_building = building_dye_plantation     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_banana_plantation }}     set_local_variable = {      name = SM_can_expand_building_banana_plantation     }    }    else = {     start_building_construction = building_banana_plantation     if = {      limit = {any_scope_building = { is_building_type = building_banana_plantation }}      set_local_variable = {       name = SM_can_expand_building_banana_plantation      }      remove_building = building_banana_plantation     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_cotton_plantation }}     set_local_variable = {      name = SM_can_expand_building_cotton_plantation     }    }    else = {     start_building_construction = building_cotton_plantation     if = {      limit = {any_scope_building = { is_building_type = building_cotton_plantation }}      set_local_variable = {       name = SM_can_expand_building_cotton_plantation      }      remove_building = building_cotton_plantation     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_coffee_plantation }}     set_local_variable = {      name = SM_can_expand_building_coffee_plantation     }    }    else = {     start_building_construction = building_coffee_plantation     if = {      limit = {any_scope_building = { is_building_type = building_coffee_plantation }}      set_local_variable = {       name = SM_can_expand_building_coffee_plantation      }      remove_building = building_coffee_plantation     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_silk_plantation }}     set_local_variable = {      name = SM_can_expand_building_silk_plantation     }    }    else = {     start_building_construction = building_silk_plantation     if = {      limit = {any_scope_building = { is_building_type = building_silk_plantation }}      set_local_variable = {       name = SM_can_expand_building_silk_plantation      }      remove_building = building_silk_plantation     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_sugar_plantation }}     set_local_variable = {      name = SM_can_expand_building_sugar_plantation     }    }    else = {     start_building_construction = building_sugar_plantation     if = {      limit = {any_scope_building = { is_building_type = building_sugar_plantation }}      set_local_variable = {       name = SM_can_expand_building_sugar_plantation      }      remove_building = building_sugar_plantation     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_tobacco_plantation }}     set_local_variable = {      name = SM_can_expand_building_tobacco_plantation     }    }    else = {     start_building_construction = building_tobacco_plantation     if = {      limit = {any_scope_building = { is_building_type = building_tobacco_plantation }}      set_local_variable = {       name = SM_can_expand_building_tobacco_plantation      }      remove_building = building_tobacco_plantation     }    } 
+	    }
+    }
+	option = {
+		name = CANCEL
+		default_option = yes
+	}
+
+#	option = {
+#		name = BACK
+#		trigger_event = {
+#			id = SM_foreign_investment.20
+#			days = 0
+#			popup = yes
+#		}
+#	}
+
+
+  option = {         name = SM_build_building_opium_plantation_1   trigger = {    has_local_variable = SM_can_expand_building_opium_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_opium_plantation    SM_expand_building = {     building = building_opium_plantation     levels = 0    }   }  } 
+  option = {         name = SM_build_building_opium_plantation_5   trigger = {    has_local_variable = SM_can_expand_building_opium_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_opium_plantation    SM_expand_building = {     building = building_opium_plantation     levels = 4    }   }  } 
+  option = {         name = SM_build_building_opium_plantation_25   trigger = {    has_local_variable = SM_can_expand_building_opium_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_opium_plantation    SM_expand_building = {     building = building_opium_plantation     levels = 24    }   }  } 
+  option = {         name = SM_build_building_opium_plantation_200   trigger = {    has_local_variable = SM_can_expand_building_opium_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_opium_plantation    SM_expand_building = {     building = building_opium_plantation     levels = 199    }   }  } 
+  option = {         name = SM_build_building_tea_plantation_1   trigger = {    has_local_variable = SM_can_expand_building_tea_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_tea_plantation    SM_expand_building = {     building = building_tea_plantation     levels = 0    }   }  } 
+  option = {         name = SM_build_building_tea_plantation_5   trigger = {    has_local_variable = SM_can_expand_building_tea_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_tea_plantation    SM_expand_building = {     building = building_tea_plantation     levels = 4    }   }  } 
+  option = {         name = SM_build_building_tea_plantation_25   trigger = {    has_local_variable = SM_can_expand_building_tea_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_tea_plantation    SM_expand_building = {     building = building_tea_plantation     levels = 24    }   }  } 
+  option = {         name = SM_build_building_tea_plantation_200   trigger = {    has_local_variable = SM_can_expand_building_tea_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_tea_plantation    SM_expand_building = {     building = building_tea_plantation     levels = 199    }   }  } 
+  option = {         name = SM_build_building_dye_plantation_1   trigger = {    has_local_variable = SM_can_expand_building_dye_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_dye_plantation    SM_expand_building = {     building = building_dye_plantation     levels = 0    }   }  } 
+  option = {         name = SM_build_building_dye_plantation_5   trigger = {    has_local_variable = SM_can_expand_building_dye_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_dye_plantation    SM_expand_building = {     building = building_dye_plantation     levels = 4    }   }  } 
+  option = {         name = SM_build_building_dye_plantation_25   trigger = {    has_local_variable = SM_can_expand_building_dye_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_dye_plantation    SM_expand_building = {     building = building_dye_plantation     levels = 24    }   }  } 
+  option = {         name = SM_build_building_dye_plantation_200   trigger = {    has_local_variable = SM_can_expand_building_dye_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_dye_plantation    SM_expand_building = {     building = building_dye_plantation     levels = 199    }   }  } 
+  option = {         name = SM_build_building_banana_plantation_1   trigger = {    has_local_variable = SM_can_expand_building_banana_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_banana_plantation    SM_expand_building = {     building = building_banana_plantation     levels = 0    }   }  } 
+  option = {         name = SM_build_building_banana_plantation_5   trigger = {    has_local_variable = SM_can_expand_building_banana_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_banana_plantation    SM_expand_building = {     building = building_banana_plantation     levels = 4    }   }  } 
+  option = {         name = SM_build_building_banana_plantation_25   trigger = {    has_local_variable = SM_can_expand_building_banana_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_banana_plantation    SM_expand_building = {     building = building_banana_plantation     levels = 24    }   }  } 
+  option = {         name = SM_build_building_banana_plantation_200   trigger = {    has_local_variable = SM_can_expand_building_banana_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_banana_plantation    SM_expand_building = {     building = building_banana_plantation     levels = 199    }   }  } 
+  option = {         name = SM_build_building_cotton_plantation_1   trigger = {    has_local_variable = SM_can_expand_building_cotton_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_cotton_plantation    SM_expand_building = {     building = building_cotton_plantation     levels = 0    }   }  } 
+  option = {         name = SM_build_building_cotton_plantation_5   trigger = {    has_local_variable = SM_can_expand_building_cotton_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_cotton_plantation    SM_expand_building = {     building = building_cotton_plantation     levels = 4    }   }  } 
+  option = {         name = SM_build_building_cotton_plantation_25   trigger = {    has_local_variable = SM_can_expand_building_cotton_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_cotton_plantation    SM_expand_building = {     building = building_cotton_plantation     levels = 24    }   }  } 
+  option = {         name = SM_build_building_cotton_plantation_200   trigger = {    has_local_variable = SM_can_expand_building_cotton_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_cotton_plantation    SM_expand_building = {     building = building_cotton_plantation     levels = 199    }   }  } 
+  option = {         name = SM_build_building_coffee_plantation_1   trigger = {    has_local_variable = SM_can_expand_building_coffee_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_coffee_plantation    SM_expand_building = {     building = building_coffee_plantation     levels = 0    }   }  } 
+  option = {         name = SM_build_building_coffee_plantation_5   trigger = {    has_local_variable = SM_can_expand_building_coffee_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_coffee_plantation    SM_expand_building = {     building = building_coffee_plantation     levels = 4    }   }  } 
+  option = {         name = SM_build_building_coffee_plantation_25   trigger = {    has_local_variable = SM_can_expand_building_coffee_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_coffee_plantation    SM_expand_building = {     building = building_coffee_plantation     levels = 24    }   }  } 
+  option = {         name = SM_build_building_coffee_plantation_200   trigger = {    has_local_variable = SM_can_expand_building_coffee_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_coffee_plantation    SM_expand_building = {     building = building_coffee_plantation     levels = 199    }   }  } 
+  option = {         name = SM_build_building_silk_plantation_1   trigger = {    has_local_variable = SM_can_expand_building_silk_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_silk_plantation    SM_expand_building = {     building = building_silk_plantation     levels = 0    }   }  } 
+  option = {         name = SM_build_building_silk_plantation_5   trigger = {    has_local_variable = SM_can_expand_building_silk_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_silk_plantation    SM_expand_building = {     building = building_silk_plantation     levels = 4    }   }  } 
+  option = {         name = SM_build_building_silk_plantation_25   trigger = {    has_local_variable = SM_can_expand_building_silk_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_silk_plantation    SM_expand_building = {     building = building_silk_plantation     levels = 24    }   }  } 
+  option = {         name = SM_build_building_silk_plantation_200   trigger = {    has_local_variable = SM_can_expand_building_silk_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_silk_plantation    SM_expand_building = {     building = building_silk_plantation     levels = 199    }   }  } 
+  option = {         name = SM_build_building_sugar_plantation_1   trigger = {    has_local_variable = SM_can_expand_building_sugar_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_sugar_plantation    SM_expand_building = {     building = building_sugar_plantation     levels = 0    }   }  } 
+  option = {         name = SM_build_building_sugar_plantation_5   trigger = {    has_local_variable = SM_can_expand_building_sugar_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_sugar_plantation    SM_expand_building = {     building = building_sugar_plantation     levels = 4    }   }  } 
+  option = {         name = SM_build_building_sugar_plantation_25   trigger = {    has_local_variable = SM_can_expand_building_sugar_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_sugar_plantation    SM_expand_building = {     building = building_sugar_plantation     levels = 24    }   }  } 
+  option = {         name = SM_build_building_sugar_plantation_200   trigger = {    has_local_variable = SM_can_expand_building_sugar_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_sugar_plantation    SM_expand_building = {     building = building_sugar_plantation     levels = 199    }   }  } 
+  option = {         name = SM_build_building_tobacco_plantation_1   trigger = {    has_local_variable = SM_can_expand_building_tobacco_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_tobacco_plantation    SM_expand_building = {     building = building_tobacco_plantation     levels = 0    }   }  } 
+  option = {         name = SM_build_building_tobacco_plantation_5   trigger = {    has_local_variable = SM_can_expand_building_tobacco_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_tobacco_plantation    SM_expand_building = {     building = building_tobacco_plantation     levels = 4    }   }  } 
+  option = {         name = SM_build_building_tobacco_plantation_25   trigger = {    has_local_variable = SM_can_expand_building_tobacco_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_tobacco_plantation    SM_expand_building = {     building = building_tobacco_plantation     levels = 24    }   }  } 
+  option = {         name = SM_build_building_tobacco_plantation_200   trigger = {    has_local_variable = SM_can_expand_building_tobacco_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_tobacco_plantation    SM_expand_building = {     building = building_tobacco_plantation     levels = 199    }   }  } 
+}
+
+
+SM_foreign_investment.300 = {
+	type = country_event
+	placement = ROOT
+
+    title = SM_foreign_investment.300.t
+    desc = SM_foreign_investment.300.d
+    flavor = SM_foreign_investment.300.f
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	immediate = {
+		scope:SM_foreign_investment_building_target = {
+
+    if = {     limit = {any_scope_building = { is_building_type = building_iron_mine }}     set_local_variable = {      name = SM_can_expand_building_iron_mine     }    }    else = {     start_building_construction = building_iron_mine     if = {      limit = {any_scope_building = { is_building_type = building_iron_mine }}      set_local_variable = {       name = SM_can_expand_building_iron_mine      }      remove_building = building_iron_mine     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_lead_mine }}     set_local_variable = {      name = SM_can_expand_building_lead_mine     }    }    else = {     start_building_construction = building_lead_mine     if = {      limit = {any_scope_building = { is_building_type = building_lead_mine }}      set_local_variable = {       name = SM_can_expand_building_lead_mine      }      remove_building = building_lead_mine     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_logging_camp }}     set_local_variable = {      name = SM_can_expand_building_logging_camp     }    }    else = {     start_building_construction = building_logging_camp     if = {      limit = {any_scope_building = { is_building_type = building_logging_camp }}      set_local_variable = {       name = SM_can_expand_building_logging_camp      }      remove_building = building_logging_camp     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_coal_mine }}     set_local_variable = {      name = SM_can_expand_building_coal_mine     }    }    else = {     start_building_construction = building_coal_mine     if = {      limit = {any_scope_building = { is_building_type = building_coal_mine }}      set_local_variable = {       name = SM_can_expand_building_coal_mine      }      remove_building = building_coal_mine     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_oil_rig }}     set_local_variable = {      name = SM_can_expand_building_oil_rig     }    }    else = {     start_building_construction = building_oil_rig     if = {      limit = {any_scope_building = { is_building_type = building_oil_rig }}      set_local_variable = {       name = SM_can_expand_building_oil_rig      }      remove_building = building_oil_rig     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_rubber_plantation }}     set_local_variable = {      name = SM_can_expand_building_rubber_plantation     }    }    else = {     start_building_construction = building_rubber_plantation     if = {      limit = {any_scope_building = { is_building_type = building_rubber_plantation }}      set_local_variable = {       name = SM_can_expand_building_rubber_plantation      }      remove_building = building_rubber_plantation     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_fishing_wharf }}     set_local_variable = {      name = SM_can_expand_building_fishing_wharf     }    }    else = {     start_building_construction = building_fishing_wharf     if = {      limit = {any_scope_building = { is_building_type = building_fishing_wharf }}      set_local_variable = {       name = SM_can_expand_building_fishing_wharf      }      remove_building = building_fishing_wharf     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_gold_mine }}     set_local_variable = {      name = SM_can_expand_building_gold_mine     }    }    else = {     start_building_construction = building_gold_mine     if = {      limit = {any_scope_building = { is_building_type = building_gold_mine }}      set_local_variable = {       name = SM_can_expand_building_gold_mine      }      remove_building = building_gold_mine     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_whaling_station }}     set_local_variable = {      name = SM_can_expand_building_whaling_station     }    }    else = {     start_building_construction = building_whaling_station     if = {      limit = {any_scope_building = { is_building_type = building_whaling_station }}      set_local_variable = {       name = SM_can_expand_building_whaling_station      }      remove_building = building_whaling_station     }    } 
+    if = {     limit = {any_scope_building = { is_building_type = building_sulfur_mine }}     set_local_variable = {      name = SM_can_expand_building_sulfur_mine     }    }    else = {     start_building_construction = building_sulfur_mine     if = {      limit = {any_scope_building = { is_building_type = building_sulfur_mine }}      set_local_variable = {       name = SM_can_expand_building_sulfur_mine      }      remove_building = building_sulfur_mine     }    } 
+	    }
+    }
+	option = {
+		name = CANCEL
+		default_option = yes
+	}
+
+#	option = {
+#		name = BACK
+#		trigger_event = {
+#			id = SM_foreign_investment.20
+#			days = 0
+#			popup = yes
+#		}
+#	}
+
+
+  option = {         name = SM_build_building_iron_mine_1   trigger = {    has_local_variable = SM_can_expand_building_iron_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_iron_mine    SM_expand_building = {     building = building_iron_mine     levels = 0    }   }  } 
+  option = {         name = SM_build_building_iron_mine_5   trigger = {    has_local_variable = SM_can_expand_building_iron_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_iron_mine    SM_expand_building = {     building = building_iron_mine     levels = 4    }   }  } 
+  option = {         name = SM_build_building_iron_mine_15   trigger = {    has_local_variable = SM_can_expand_building_iron_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_iron_mine    SM_expand_building = {     building = building_iron_mine     levels = 14    }   }  } 
+  option = {         name = SM_build_building_iron_mine_50   trigger = {    has_local_variable = SM_can_expand_building_iron_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_iron_mine    SM_expand_building = {     building = building_iron_mine     levels = 49    }   }  } 
+  option = {         name = SM_build_building_lead_mine_1   trigger = {    has_local_variable = SM_can_expand_building_lead_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_lead_mine    SM_expand_building = {     building = building_lead_mine     levels = 0    }   }  } 
+  option = {         name = SM_build_building_lead_mine_5   trigger = {    has_local_variable = SM_can_expand_building_lead_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_lead_mine    SM_expand_building = {     building = building_lead_mine     levels = 4    }   }  } 
+  option = {         name = SM_build_building_lead_mine_15   trigger = {    has_local_variable = SM_can_expand_building_lead_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_lead_mine    SM_expand_building = {     building = building_lead_mine     levels = 14    }   }  } 
+  option = {         name = SM_build_building_lead_mine_50   trigger = {    has_local_variable = SM_can_expand_building_lead_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_lead_mine    SM_expand_building = {     building = building_lead_mine     levels = 49    }   }  } 
+  option = {         name = SM_build_building_logging_camp_1   trigger = {    has_local_variable = SM_can_expand_building_logging_camp   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_logging_camp    SM_expand_building = {     building = building_logging_camp     levels = 0    }   }  } 
+  option = {         name = SM_build_building_logging_camp_5   trigger = {    has_local_variable = SM_can_expand_building_logging_camp   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_logging_camp    SM_expand_building = {     building = building_logging_camp     levels = 4    }   }  } 
+  option = {         name = SM_build_building_logging_camp_15   trigger = {    has_local_variable = SM_can_expand_building_logging_camp   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_logging_camp    SM_expand_building = {     building = building_logging_camp     levels = 14    }   }  } 
+  option = {         name = SM_build_building_logging_camp_50   trigger = {    has_local_variable = SM_can_expand_building_logging_camp   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_logging_camp    SM_expand_building = {     building = building_logging_camp     levels = 49    }   }  } 
+  option = {         name = SM_build_building_coal_mine_1   trigger = {    has_local_variable = SM_can_expand_building_coal_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_coal_mine    SM_expand_building = {     building = building_coal_mine     levels = 0    }   }  } 
+  option = {         name = SM_build_building_coal_mine_5   trigger = {    has_local_variable = SM_can_expand_building_coal_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_coal_mine    SM_expand_building = {     building = building_coal_mine     levels = 4    }   }  } 
+  option = {         name = SM_build_building_coal_mine_15   trigger = {    has_local_variable = SM_can_expand_building_coal_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_coal_mine    SM_expand_building = {     building = building_coal_mine     levels = 14    }   }  } 
+  option = {         name = SM_build_building_coal_mine_50   trigger = {    has_local_variable = SM_can_expand_building_coal_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_coal_mine    SM_expand_building = {     building = building_coal_mine     levels = 49    }   }  } 
+  option = {         name = SM_build_building_oil_rig_1   trigger = {    has_local_variable = SM_can_expand_building_oil_rig   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_oil_rig    SM_expand_building = {     building = building_oil_rig     levels = 0    }   }  } 
+  option = {         name = SM_build_building_oil_rig_5   trigger = {    has_local_variable = SM_can_expand_building_oil_rig   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_oil_rig    SM_expand_building = {     building = building_oil_rig     levels = 4    }   }  } 
+  option = {         name = SM_build_building_oil_rig_15   trigger = {    has_local_variable = SM_can_expand_building_oil_rig   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_oil_rig    SM_expand_building = {     building = building_oil_rig     levels = 14    }   }  } 
+  option = {         name = SM_build_building_oil_rig_50   trigger = {    has_local_variable = SM_can_expand_building_oil_rig   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_oil_rig    SM_expand_building = {     building = building_oil_rig     levels = 49    }   }  } 
+  option = {         name = SM_build_building_rubber_plantation_1   trigger = {    has_local_variable = SM_can_expand_building_rubber_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_rubber_plantation    SM_expand_building = {     building = building_rubber_plantation     levels = 0    }   }  } 
+  option = {         name = SM_build_building_rubber_plantation_5   trigger = {    has_local_variable = SM_can_expand_building_rubber_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_rubber_plantation    SM_expand_building = {     building = building_rubber_plantation     levels = 4    }   }  } 
+  option = {         name = SM_build_building_rubber_plantation_15   trigger = {    has_local_variable = SM_can_expand_building_rubber_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_rubber_plantation    SM_expand_building = {     building = building_rubber_plantation     levels = 14    }   }  } 
+  option = {         name = SM_build_building_rubber_plantation_50   trigger = {    has_local_variable = SM_can_expand_building_rubber_plantation   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_rubber_plantation    SM_expand_building = {     building = building_rubber_plantation     levels = 49    }   }  } 
+  option = {         name = SM_build_building_fishing_wharf_1   trigger = {    has_local_variable = SM_can_expand_building_fishing_wharf   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_fishing_wharf    SM_expand_building = {     building = building_fishing_wharf     levels = 0    }   }  } 
+  option = {         name = SM_build_building_fishing_wharf_5   trigger = {    has_local_variable = SM_can_expand_building_fishing_wharf   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_fishing_wharf    SM_expand_building = {     building = building_fishing_wharf     levels = 4    }   }  } 
+  option = {         name = SM_build_building_fishing_wharf_15   trigger = {    has_local_variable = SM_can_expand_building_fishing_wharf   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_fishing_wharf    SM_expand_building = {     building = building_fishing_wharf     levels = 14    }   }  } 
+  option = {         name = SM_build_building_fishing_wharf_50   trigger = {    has_local_variable = SM_can_expand_building_fishing_wharf   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_fishing_wharf    SM_expand_building = {     building = building_fishing_wharf     levels = 49    }   }  } 
+  option = {         name = SM_build_building_gold_mine_1   trigger = {    has_local_variable = SM_can_expand_building_gold_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_gold_mine    SM_expand_building = {     building = building_gold_mine     levels = 0    }   }  } 
+  option = {         name = SM_build_building_gold_mine_5   trigger = {    has_local_variable = SM_can_expand_building_gold_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_gold_mine    SM_expand_building = {     building = building_gold_mine     levels = 4    }   }  } 
+  option = {         name = SM_build_building_gold_mine_15   trigger = {    has_local_variable = SM_can_expand_building_gold_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_gold_mine    SM_expand_building = {     building = building_gold_mine     levels = 14    }   }  } 
+  option = {         name = SM_build_building_gold_mine_50   trigger = {    has_local_variable = SM_can_expand_building_gold_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_gold_mine    SM_expand_building = {     building = building_gold_mine     levels = 49    }   }  } 
+  option = {         name = SM_build_building_whaling_station_1   trigger = {    has_local_variable = SM_can_expand_building_whaling_station   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_whaling_station    SM_expand_building = {     building = building_whaling_station     levels = 0    }   }  } 
+  option = {         name = SM_build_building_whaling_station_5   trigger = {    has_local_variable = SM_can_expand_building_whaling_station   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_whaling_station    SM_expand_building = {     building = building_whaling_station     levels = 4    }   }  } 
+  option = {         name = SM_build_building_whaling_station_15   trigger = {    has_local_variable = SM_can_expand_building_whaling_station   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_whaling_station    SM_expand_building = {     building = building_whaling_station     levels = 14    }   }  } 
+  option = {         name = SM_build_building_whaling_station_50   trigger = {    has_local_variable = SM_can_expand_building_whaling_station   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_whaling_station    SM_expand_building = {     building = building_whaling_station     levels = 49    }   }  } 
+  option = {         name = SM_build_building_sulfur_mine_1   trigger = {    has_local_variable = SM_can_expand_building_sulfur_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_sulfur_mine    SM_expand_building = {     building = building_sulfur_mine     levels = 0    }   }  } 
+  option = {         name = SM_build_building_sulfur_mine_5   trigger = {    has_local_variable = SM_can_expand_building_sulfur_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_sulfur_mine    SM_expand_building = {     building = building_sulfur_mine     levels = 4    }   }  } 
+  option = {         name = SM_build_building_sulfur_mine_15   trigger = {    has_local_variable = SM_can_expand_building_sulfur_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_sulfur_mine    SM_expand_building = {     building = building_sulfur_mine     levels = 14    }   }  } 
+  option = {         name = SM_build_building_sulfur_mine_50   trigger = {    has_local_variable = SM_can_expand_building_sulfur_mine   }   scope:SM_foreign_investment_building_target = {    start_building_construction = building_sulfur_mine    SM_expand_building = {     building = building_sulfur_mine     levels = 49    }   }  } 
+}
+
+
+SM_foreign_investment.400 = {
+	type = country_event
+	placement = ROOT
+
+    title = SM_foreign_investment.400.t
+    desc = SM_foreign_investment.400.d
+    flavor = SM_foreign_investment.400.f
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	immediate = {
+		scope:SM_foreign_investment_building_target = {
+
+
+
+
+	    }
+    }
+	option = {
+		name = CANCEL
+		default_option = yes
+	}
+
+#	option = {
+#		name = BACK
+#		trigger_event = {
+#			id = SM_foreign_investment.20
+#			days = 0
+#			popup = yes
+#		}
+#	}
+
+
+  option = {         name = SM_build_building_railway_1   scope:SM_foreign_investment_building_target = {    start_building_construction = building_railway    SM_expand_building = {     building = building_railway     levels = 0    }   }  } 
+  option = {         name = SM_build_building_railway_3   scope:SM_foreign_investment_building_target = {    start_building_construction = building_railway    SM_expand_building = {     building = building_railway     levels = 2    }   }  } 
+  option = {         name = SM_build_building_railway_7   scope:SM_foreign_investment_building_target = {    start_building_construction = building_railway    SM_expand_building = {     building = building_railway     levels = 6    }   }  } 
+  option = {         name = SM_build_building_railway_15   scope:SM_foreign_investment_building_target = {    start_building_construction = building_railway    SM_expand_building = {     building = building_railway     levels = 14    }   }  } 
+  option = {         name = SM_build_building_port_1   scope:SM_foreign_investment_building_target = {    start_building_construction = building_port    SM_expand_building = {     building = building_port     levels = 0    }   }  } 
+  option = {         name = SM_build_building_port_3   scope:SM_foreign_investment_building_target = {    start_building_construction = building_port    SM_expand_building = {     building = building_port     levels = 2    }   }  } 
+  option = {         name = SM_build_building_port_7   scope:SM_foreign_investment_building_target = {    start_building_construction = building_port    SM_expand_building = {     building = building_port     levels = 6    }   }  } 
+  option = {         name = SM_build_building_port_15   scope:SM_foreign_investment_building_target = {    start_building_construction = building_port    SM_expand_building = {     building = building_port     levels = 14    }   }  } 
+  option = {         name = SM_build_building_government_administration_1   scope:SM_foreign_investment_building_target = {    start_building_construction = building_government_administration    SM_expand_building = {     building = building_government_administration     levels = 0    }   }  } 
+  option = {         name = SM_build_building_government_administration_3   scope:SM_foreign_investment_building_target = {    start_building_construction = building_government_administration    SM_expand_building = {     building = building_government_administration     levels = 2    }   }  } 
+  option = {         name = SM_build_building_government_administration_7   scope:SM_foreign_investment_building_target = {    start_building_construction = building_government_administration    SM_expand_building = {     building = building_government_administration     levels = 6    }   }  } 
+  option = {         name = SM_build_building_government_administration_15   scope:SM_foreign_investment_building_target = {    start_building_construction = building_government_administration    SM_expand_building = {     building = building_government_administration     levels = 14    }   }  } 
+}

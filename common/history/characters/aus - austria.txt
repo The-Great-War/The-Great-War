@@ -1,0 +1,8 @@
+﻿CHARACTERS = {
+	c:AUS ?= {
+		create_character = {
+			template = aus_franz_josef_I_habsburg_template
+		}
+	}
+}
+

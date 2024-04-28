@@ -1,0 +1,13 @@
+﻿{
+  "name" : "The Great War",
+  "id" : "",
+  "version" : "0.1.0",
+  "game_id" : "victoria3",
+  "supported_game_version" : "1.6.*",
+  "short_description" : "The Great War (TGW) is a total-conversion Victoria III mod set in the year 1900",
+  "tags" : [],
+  "relationships" : [],
+  "game_custom_data" : {
+    "multiplayer_synchronized" : true
+  }
+}

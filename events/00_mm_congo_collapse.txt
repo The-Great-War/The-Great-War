@@ -1,0 +1,68 @@
+﻿namespace = congo_collapse
+
+# Independent British East India Company decides how to proceed
+
+congo_collapse.1 = {
+	type = country_event
+	placement = root
+	hidden = yes
+
+	title = "Congo collapse"
+	
+	duration = 3
+	
+	trigger = {
+	}
+
+	immediate = {
+		capital = {
+			save_scope_as = capital_scope
+		}
+		
+		# All remaining Central American states secede
+		if = {
+			limit = {
+				exists = s:STATE_CHAD.region_state:COG
+				s:STATE_CHAD.region_state:COG = {
+					is_capital = no
+				}
+			}
+			create_country = {
+				tag = CHD
+				origin = this
+				state = s:STATE_CHAD.region_state:COG
+			}
+			c:CHD = { save_scope_as = scope_CHD }
+			if = {
+				limit = { exists = s:STATE_WADDAI.region_state:COG }
+				s:STATE_WADDAI.region_state:COG = { set_state_owner = c:CHD }
+			}
+		}
+		if = {
+			limit = {
+				exists = s:STATE_UBANGI_SHARI.region_state:COG
+				s:STATE_UBANGI_SHARI.region_state:COG = {
+					is_capital = no
+				}
+			}
+			create_country = {
+				tag = CAR
+				origin = this
+				state = s:STATE_UBANGI_SHARI.region_state:COG
+			}
+        }
+		if = {
+			limit = {
+				exists = s:STATE_GABON.region_state:COG
+				s:STATE_GABON.region_state:COG = {
+					is_capital = no
+				}
+			}
+			create_country = {
+				tag = GAB
+				origin = this
+				state = s:STATE_GABON.region_state:COG
+			}
+        }
+	}
+}

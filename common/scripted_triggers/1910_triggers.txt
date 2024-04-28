@@ -1,0 +1,104 @@
+﻿both_are_in_given_multi_alliance = {
+	OR = {
+		# Central Powers
+		AND = {
+			$ALLIANCE$ = 1
+			AND = {
+				$MAIN_COUNTRY$ = {
+					is_target_in_global_variable_list = {
+						name = central_powers
+						target = $MAIN_COUNTRY$
+					}
+				}
+				$SECONDARY_COUNTRY$ = {
+					is_target_in_global_variable_list = {
+						name = central_powers
+						target = $SECONDARY_COUNTRY$
+					}
+				}
+			}
+		}
+		# Entente
+		AND = {
+			$ALLIANCE$ = 2
+			AND = {
+				$MAIN_COUNTRY$ = {
+					is_target_in_global_variable_list = {
+						name = entente
+						target = $MAIN_COUNTRY$
+					}
+				}
+				$SECONDARY_COUNTRY$ = {
+					is_target_in_global_variable_list = {
+						name = entente
+						target = $SECONDARY_COUNTRY$
+					}
+				}
+			}
+		}
+	}
+}
+
+both_are_in_any_multi_alliance = {
+	OR = {
+		# Central Powers
+		AND = {
+			$MAIN_COUNTRY$ = {
+				is_target_in_global_variable_list = {
+					name = central_powers
+					target = $MAIN_COUNTRY$
+				}
+			}
+			$SECONDARY_COUNTRY$ = {
+				is_target_in_global_variable_list = {
+					name = central_powers
+					target = $SECONDARY_COUNTRY$
+				}
+			}
+		}
+		# Entente
+		AND = {
+			$MAIN_COUNTRY$ = {
+				is_target_in_global_variable_list = {
+					name = entente
+					target = $MAIN_COUNTRY$
+				}
+			}
+			$SECONDARY_COUNTRY$ = {
+				is_target_in_global_variable_list = {
+					name = entente
+					target = $SECONDARY_COUNTRY$
+				}
+			}
+		}
+	}
+}
+
+
+is_in_entente = {
+	$COUNTRY$ = {
+		OR = {
+			is_target_in_global_variable_list = {
+				name = entente
+				target = $COUNTRY$
+			}
+			has_variable = entente
+		}
+	}
+}
+
+is_in_central_powers = {
+	$COUNTRY$ = {
+		OR = {
+			is_target_in_global_variable_list = {
+				name = central_powers
+				target = $COUNTRY$
+			}
+			has_variable = central_powers
+		}
+	}
+}
+
+cede_bolshevik_states = {
+	state_population <= 1250000
+}

@@ -1,0 +1,10 @@
+﻿CHARACTERS = {
+	c:GBR ?= {
+		create_character = {
+			template = gbr_queen_victoria_template			
+		}
+		create_character = {
+			template = gbr_king_edward_vii			
+		}
+	}
+}

@@ -1,0 +1,41 @@
+﻿COUNTRIES = {
+	c:YUC = {
+		set_tax_level = medium
+
+		effect_starting_technology_tier_3_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_oligarchy
+		activate_law = law_type:law_cultural_exclusion
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_religious_schools
+		activate_law = law_type:law_censorship
+		activate_law = law_type:law_per_capita_based_taxation
+
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 1
+		}		
+		activate_law = law_type:law_censorship
+		
+		ig:ig_intelligentsia = { # Barragan was head of state, on paper
+			add_ruling_interest_group = yes
+		}
+		
+		ig:ig_armed_forces = {
+			add_ruling_interest_group = yes
+			add_ideology = ideology_caudillismo
+		}
+
+		ig:ig_landowners = {
+			remove_ideology = ideology_paternalistic
+			add_ideology = ideology_caudillismo
+		}
+
+		ig:ig_devout = {
+			add_ruling_interest_group = yes
+			set_interest_group_name = ig_catholic_church
+		}
+	}
+}

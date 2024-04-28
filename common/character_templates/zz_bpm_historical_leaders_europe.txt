@@ -1,0 +1,279 @@
+﻿gbr_o_connor_template = {
+    first_name = Feargus
+    last_name = O_Connor
+    historical = yes
+    culture = cu:irish
+    birth_date = 1796.1.1
+    ig_leader = yes
+    interest_group = ig_radicals
+    ideology = ideology_radical
+    traits = {
+        charismatic
+    }
+    interest_group_leader_usage = {
+        country_trigger = {
+            exists = c:GBR
+            this = c:GBR
+        }
+        interest_group_trigger = {
+            is_marginal = no
+            OR = {
+                is_interest_group_type = ig_liberals
+                is_interest_group_type = ig_radicals
+                is_interest_group_type = ig_intelligentsia
+                is_interest_group_type = ig_trade_unions
+                is_interest_group_type = ig_petty_bourgeoisie
+            }
+        }   
+        earliest_usage_date = 1836.1.1
+        latest_usage_date = 1852.1.1    
+        chance = 10
+    } 
+}
+
+
+gbr_wellington_character_template = {
+    first_name = Arthur
+    last_name = Wellesley
+    historical = yes
+    culture = cu:british
+    female = no
+    religion = protestant
+    ideology = ideology_jingoist_leader
+    interest_group = ig_conservatives
+    birth_date = 1769.5.1
+    traits = {
+        celebrity_commander
+        expert_defensive_strategist
+        brave
+    }   
+    interest_group_leader_usage = {
+        country_trigger = {
+            exists = c:GBR
+            this = c:GBR
+        }
+        interest_group_trigger = {
+            is_marginal = no
+            OR = {
+                is_interest_group_type = ig_industrialists
+                is_interest_group_type = ig_landowners
+            }
+        }   
+        earliest_usage_date = 1836.1.1
+        latest_usage_date = 1852.1.1    
+        chance = 75
+    }   
+}
+gbr_disraeli_character_template = {
+    first_name = Benjamin
+    last_name = Disraeli
+    historical = yes
+    culture = cu:british
+    female = no
+    religion = protestant
+    ideology = ideology_corporatist_leader
+    interest_group = ig_conservatives
+    birth_date = 1804.1.1
+    traits = { 
+        expert_political_operator
+        ambitious
+        romantic
+    }   
+    interest_group_leader_usage = {
+        country_trigger = {
+            exists = c:GBR
+            this = c:GBR
+        }
+        interest_group_trigger = {
+            is_marginal = no
+            OR = {
+                is_interest_group_type = ig_landowners
+                is_interest_group_type = ig_conservatives
+            }
+        }   
+        earliest_usage_date = 1868.1.1
+        latest_usage_date = 1880.1.1    
+        chance = 75
+    }   
+}
+gbr_gladstone_character_template = { # Gladstone, market liberal, intelligentsia
+    first_name = William
+    last_name = Gladstone
+    historical = yes
+    culture = cu:british
+    female = no
+    religion = protestant
+    ideology = ideology_market_liberal
+    interest_group = ig_liberals
+    birth_date = 1809.1.1
+    traits = {
+        expert_political_operator
+        charismatic
+        inspirational_orator
+    }   
+    interest_group_leader_usage = {
+        country_trigger = {
+            exists = c:GBR
+            this = c:GBR
+        }
+        interest_group_trigger = {
+            is_marginal = no
+            OR = {
+                is_interest_group_type = ig_intelligentsia     
+                is_interest_group_type = ig_liberals    
+            }
+        }   
+        earliest_usage_date = 1865.1.1
+        latest_usage_date = 1894.1.1
+        chance = 50
+    }   
+}
+gbr_temple_character_template = { # Viscount Palmerston
+    first_name = Henry
+    last_name = Temple
+    historical = yes
+    culture = cu:british
+    female = no
+    religion = protestant
+    ideology = ideology_market_liberal
+    interest_group = ig_liberals
+    birth_date = 1784.8.20
+    traits = {
+        experienced_diplomat
+        charismatic
+        persistent
+    }   
+    interest_group_leader_usage = {
+        country_trigger = {
+            exists = c:GBR
+            this = c:GBR
+        }
+        interest_group_trigger = {
+            is_marginal = no
+            OR = {
+                is_interest_group_type = ig_intelligentsia     
+                is_interest_group_type = ig_liberals    
+            }       
+        }   
+        earliest_usage_date = 1836.1.1
+        latest_usage_date = 1865.1.1
+        chance = 75
+    }   
+}
+
+# Prussia - PRU
+pru_bismarck_character_template = {
+    first_name = Otto
+    last_name = von_Bismarck
+    historical = yes
+    culture = cu:north_german
+    female = no
+    religion = protestant
+    ideology = ideology_corporatist_leader
+    interest_group = ig_landowners
+    birth_date = 1815.4.1
+    traits = {
+        experienced_political_operator
+        masterful_diplomat
+        direct
+    }   
+    interest_group_leader_usage = {
+        country_trigger = {
+            OR = {
+                AND = { 
+                    exists = c:PRU
+                    this = c:PRU
+                }
+                AND = { 
+                    NOT = { exists = c:PRU }
+                    exists = c:GER
+                    this = c:GER
+                    c:GER = { owns_entire_state_region = STATE_BRANDENBURG }
+                }
+                NOT = {
+                    has_global_variable = bismarck_variable
+                }
+            }
+        }
+        interest_group_trigger = {
+            is_marginal = no
+            is_interest_group_type = ig_landowners
+        }   
+        earliest_usage_date = 1847.1.1
+        latest_usage_date = 1884.1.1
+        chance = 75
+    }   
+}
+
+pru_wilhelm_IV_hohenzollern_template = {
+    # Frederick William IV of Prussia
+    first_name = "Friedrich_Wilhelm"
+    last_name = "von_Hohenzollern"
+    historical = yes
+    heir = yes
+    age = 41
+    interest_group = ig_conservatives
+    ideology = ideology_royalist
+    traits = {
+        reserved
+        romantic
+    }
+    on_created = {
+        set_variable = is_married
+    }
+}
+
+# Turkey & the Ottoman Empire - TUR
+tur_koca_mustafa_reshid_pasha = { # Damad (or Damat) Mehmed Asi Pasha, grand vizier in 1852-1853
+    first_name = Damad_Mehmed
+    last_name = Ali
+    historical = yes
+    culture = cu:turkish
+    female = no
+    religion = sunni
+    ideology = ideology_reformer
+    interest_group = ig_conservatives
+    birth_date = 1813.1.1
+    traits = {
+        tactful
+    }   
+    interest_group_leader_usage = {
+        country_trigger = {
+            exists = c:TUR
+            this = c:TUR
+        }
+        interest_group_trigger = {
+            is_marginal = no
+            is_interest_group_type = ig_conservatives
+        }   
+        earliest_usage_date = 1845.1.1
+        latest_usage_date = 1860.1.1
+        chance = 25
+    }   
+}
+tur_mahmut_osmanoglu_template = {
+    # Mahmud II of the Ottoman Empire
+    first_name = Mahmut
+    last_name = Osmanoglu
+    historical = yes
+    ruler = yes
+    birth_date = 1785.7.20
+    dna = dna_mahmud_02
+    interest_group = ig_conservatives
+    ideology = ideology_moderate
+    traits = {
+        ambitious
+    }
+}
+tur_abdulmecid_osmanoglu_template = {
+    first_name = Abdulmecid
+    last_name = Osmanoglu
+    historical = yes
+    heir = yes
+    birth_date = 1823.4.25
+    interest_group = ig_conservatives
+    ideology = ideology_reformer
+    traits = {
+        trait_child
+    }
+}

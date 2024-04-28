@@ -1,0 +1,19 @@
+namespace = test_2
+
+test_2.1 = {	
+	type = country_event
+	placement = root
+	hidden = yes
+
+
+	title = "Main crown title"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {	
+	}
+		
+}

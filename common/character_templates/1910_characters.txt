@@ -1,0 +1,32 @@
+﻿	### OTOMANS
+
+tur_abdulhamid_template = {
+    first_name = Abdulhamid
+    last_name = Osmanoglu
+    historical = yes
+    ruler = yes
+    birth_date = 1842.9.21
+    interest_group = ig_landowners
+    culture = cu:turkish
+    ideology = ideology_moderate
+}
+
+
+
+
+
+AUS_franz_ferdinand = {
+	first_name = franz_ferdinand
+	last_name = von_Habsburg
+	historical = yes
+	ig_leader = no
+	culture = cu:north_german
+	female = no
+	heir = yes
+	interest_group = ig_petty_bourgeoisie
+	birth_date = 1863.12.18
+	traits = {
+		persistent
+	}
+}
+

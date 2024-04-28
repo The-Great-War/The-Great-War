@@ -1,0 +1,9 @@
+﻿# NOTE: "Pasha" is a title, not a name. However, due to some Ottoman Turkish names lacking a last name, it is used in place of one
+
+CHARACTERS = {
+	c:TUR ?= {
+		create_character = {
+			template = tur_abdulhamid_template
+		}
+	}
+}

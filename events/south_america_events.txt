@@ -1,0 +1,13 @@
+﻿namespace = south_america
+
+south_america.1 = {
+}
+south_america.2 = {
+}
+south_america.3 = {
+}
+south_america.5 = {
+}
+south_america.6 = { 
+}
+

@@ -1,0 +1,60 @@
+﻿### France character template file ###
+
+# 1910 french president
+
+fra_armand_fallieres_template = {
+    first_name = "Armand"
+    last_name = "Fallieres"
+    historical = yes
+    birth_date = 1841.11.6
+   # dna = dna_giovanni_gentille
+    interest_group = ig_intelligentsia
+    ideology = ideology_radical
+	ig_leader = yes
+    traits = {
+        tactful
+		statesman
+    }
+    on_created = {
+        set_variable = is_married
+    }
+}
+
+
+
+fra_raymond_poincare_template = {
+    # add dna to this guy at one point
+	# Republican Left (1910)
+    first_name = "Raymond"
+    last_name = "Poincare"
+    historical = yes
+    birth_date = 1860.8.20
+   # dna = dna_giovanni_gentille
+    interest_group = ig_industrialists
+    ideology = ideology_radical
+	ig_leader = yes
+    traits = {
+		ambitious
+    }
+    on_created = {
+        set_variable = is_married
+    }
+}
+
+fra_emile_loubet_template = {
+    # Émile Loubet
+    first_name = "E_mile"
+    last_name = "Loubet"
+    historical = yes
+    ruler = yes
+    birth_date = 1838.12.30
+    interest_group = ig_rural_folk
+    ideology = ideology_republican_leader
+	ig_leader = yes
+    traits = {
+        tactful
+    }
+    on_created = {
+        set_variable = is_married
+    }
+}

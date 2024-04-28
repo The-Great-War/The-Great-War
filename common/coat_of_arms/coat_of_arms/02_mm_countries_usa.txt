@@ -1,0 +1,15 @@
+@usa_canton_width = 0.5
+@usa_canton_height = @[ 1 / 13 * 7 ]
+
+USA_15 = { 
+	pattern = "pattern_solid.tga" 
+	color1 = "white" 
+
+	sub = { 
+		parent = "sub_USA_stripes" 
+	} 
+	sub = { 
+		parent = "sub_USA_canton_15" 
+		instance = { scale = { @usa_canton_width @usa_canton_height } } 
+	} 
+}

@@ -1,0 +1,54 @@
+﻿bpm_officer_law_change_effect = {
+	# Remove old officers 
+	custom_tooltip = {
+		text = bpm_law_effect_tt_officer_law_change
+		every_scope_admiral = {
+			kill_character = {
+				value = yes 
+				hidden = yes
+			}
+		}
+		every_scope_general = {
+			kill_character = {
+				value = yes 
+				hidden = yes
+			}
+		}
+	}
+
+	# Add a penalty modifier to country
+	add_modifier = {
+		name = bpm_high_command_chaos
+		years = 1
+	}
+}
+
+# Removing anarcho-monarchism and so on
+bpm_fix_stupid_law_combinations = {
+	if = { # Enforcing CR for anarchy
+		limit = {
+			has_law = law_type:law_anarchy
+			NOT = { has_law = law_type:law_council_republic }
+		}
+
+		activate_law = law_type:law_council_republic
+	}
+
+	if = { # Enforcing minimum censorship for party ban laws
+		limit = {
+			has_law = law_type:law_protected_speech
+			NOT = { has_law = law_type:law_no_party_bans }
+			NOT = { has_law = law_type:law_party_single }
+		}
+
+		activate_law = law_type:law_right_of_assembly
+	}
+}
+
+
+bpm_deactivate_syndicalism = {
+	if = {
+		limit = { has_law = law_type:law_syndicalism }
+		activate_law = law_type:law_all_labor_unions_allowed
+	}
+}

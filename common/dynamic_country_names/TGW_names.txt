@@ -1,0 +1,1304 @@
+﻿ITC = { 
+	dynamic_country_name = {
+		name = dyn_c_Italian_Cyrenaica 
+		adjective = ITC_ADJ
+
+		is_main_tag_only = yes
+		priority = 2
+		
+		trigger = {
+			exists = c:ITA
+			c:ITA = {
+				has_diplomatic_pact = {
+					who = c:ITC
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+TRI = { 
+	dynamic_country_name = {
+		name = dyn_c_Italian_Tripolitania
+		adjective = TRI_ADJ
+
+		is_main_tag_only = yes
+		priority = 2
+		
+		trigger = {
+			exists = c:ITA
+			c:ITA = {
+				has_diplomatic_pact = {
+					who = c:TRI
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_Ottoman_Tripolitania
+		adjective = TRI_ADJ
+
+		is_main_tag_only = yes
+		priority = 2
+		
+		trigger = {
+			exists = c:TUR
+			c:TUR = {
+				has_diplomatic_pact = {
+					who = c:TRI
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+DOM = { 
+	dynamic_country_name = {
+		name = dyn_c_DOM_viceroyalty
+		adjective = DOM_ADJ
+
+		is_main_tag_only = yes
+		priority = 15
+		
+		trigger = {
+			exists = c:SPA
+			c:SPA = {
+				has_diplomatic_pact = {
+					who = c:DOM
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+LIB = { 
+	dynamic_country_name = {
+		name = dyn_c_liberia_compagny
+		adjective = LIB_ADJ
+
+		is_main_tag_only = yes
+		priority = 15
+		
+		trigger = {
+			exists = c:USA
+			c:USA = {
+				has_diplomatic_pact = {
+					who = c:LIB
+					type = chartered_company
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+LUC = { 
+	dynamic_country_name = {
+		name = dyn_c_lucca_napoleon
+		adjective = LUC_ADJ
+
+		is_main_tag_only = yes
+		priority = 15
+		
+		trigger = {
+			exists = c:FRA
+			c:FRA = {
+				has_diplomatic_pact = {
+					who = c:LUC
+					type = napoleonian_personal_union
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+LOU = { 
+	dynamic_country_name = {
+		name = dyn_c_french_louisiana
+		adjective = LOU_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:FRA
+			c:FRA = {
+				has_diplomatic_pact = {
+					who = c:LOU
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+SAR = { 
+	dynamic_country_name = {
+		name = dyn_c_sardinia
+		adjective = SAR_ADJ
+		
+		is_main_tag_only = yes
+		priority = 2
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { owns_entire_state_region = STATE_PIEDMONT }
+			}
+		}
+	}
+}
+QUE = { # Quebec
+	dynamic_country_name = {
+		name = dyn_c_lower_canada
+		adjective = dyn_c_lower_canada_adj
+
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:QUE
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+ONT = { # Ontario
+	dynamic_country_name = {
+		name = dyn_c_upper_canada
+		adjective = dyn_c_upper_canada_adj
+
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:ONT
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+HND = { 
+	dynamic_country_name = {
+		name = dyn_c_maharata_confederation
+		adjective = HND_ADJ
+
+		possible = {
+			exists = c:HND
+			THIS = c:HND
+			trigger = {
+				game_date < 1900.1.1
+			}
+		}
+	}
+}
+MEX = { 
+	dynamic_country_name = {
+		name = dyn_c_MEX_viceroyalty
+		adjective = MEX_ADJ
+
+		is_main_tag_only = yes
+		priority = 0
+
+		trigger = {
+			exists = c:SPA
+			c:SPA = {
+				has_diplomatic_pact = {
+					who = c:MEX
+					type = real_union
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+CUB = { 
+	dynamic_country_name = {
+		name = dyn_c_CUB_viceroyalty
+		adjective = CUB_ADJ
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = c:SPA
+			c:SPA = {
+				has_diplomatic_pact = {
+					who = c:CUB
+					type = real_union
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+VNZ = { 
+	dynamic_country_name = {
+		name = dyn_c_VNZ_viceroyalty
+		adjective = VNZ_ADJ
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = c:SPA
+			c:SPA = {
+				has_diplomatic_pact = {
+					who = c:VNZ
+					type = real_union
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+PEU = { 
+	dynamic_country_name = {
+		name = dyn_c_PEU_viceroyalty
+		adjective = PEU_ADJ
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = c:SPA
+			c:SPA = {
+				has_diplomatic_pact = {
+					who = c:PEU
+					type = real_union
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+ARG = { 
+	dynamic_country_name = {
+		name = dyn_c_ARG_viceroyalty
+		adjective = ARG_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:SPA
+			c:SPA = {
+				has_diplomatic_pact = {
+					who = c:ARG
+					type = real_union
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+CHL = { 
+	dynamic_country_name = {
+		name = dyn_c_CHL_viceroyalty
+		adjective = CHL_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:SPA
+			c:SPA = {
+				has_diplomatic_pact = {
+					who = c:CHL
+					type = real_union
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+CGO = { 
+	dynamic_country_name = {
+		name = dyn_c_CGO_viceroyalty
+		adjective = CGO_ADJ
+
+		priority = 2
+		trigger = {
+			exists = c:SPA
+			c:SPA = {
+				has_diplomatic_pact = {
+					who = c:CGO
+					type = real_union
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+ITA = { 
+	dynamic_country_name = {
+		name = dyn_c_italian_napoleon
+		adjective = ITA_ADJ
+
+		is_main_tag_only = yes
+		priority = 45
+		
+		trigger = {
+			exists = c:FRA
+			c:FRA = {
+				has_diplomatic_pact = {
+					who = c:ITA
+					type = napoleonian_personal_union
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+ERI = { 
+	dynamic_country_name = {
+		name = dyn_c_Italian_Eritrea
+		adjective = ERI_ADJ
+
+		is_main_tag_only = yes
+		priority = 2
+		
+		trigger = {
+			exists = c:ITA
+			c:ITA = {
+				has_diplomatic_pact = {
+					who = c:ERI
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+SOL = { 
+	dynamic_country_name = {
+		name = dyn_c_Italian_Somalia
+		adjective = SOL_ADJ
+
+		is_main_tag_only = yes
+		priority = 2
+		
+		trigger = {
+			exists = c:ITA
+			c:ITA = {
+				has_diplomatic_pact = {
+					who = c:SOL
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+SOM = {
+	dynamic_country_name = {
+		name = dyn_c_British_Somaliland_Protectorate
+		adjective = SOM_ADJ
+
+		is_main_tag_only = yes
+		priority = 2
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:SOM
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+ANG = {
+	dynamic_country_name = {
+		name = dyn_c_ANG
+		adjective = ANG_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:POR
+			c:POR = {
+				has_diplomatic_pact = {
+					who = c:ANG
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+MOZ = {
+	dynamic_country_name = {
+		name = dyn_c_MOZ
+		adjective = MOZ_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:POR
+			c:POR = {
+				has_diplomatic_pact = {
+					who = c:MOZ
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+TCO = {
+	dynamic_country_name = {
+		name = dyn_c_Belgian_Congo
+		adjective = TCO_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:BEL
+			c:BEL = {
+				has_diplomatic_pact = {
+					who = c:TCO
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+KOR = { # South Korea
+	dynamic_country_name = {
+		name = dyn_c_kor
+		adjective = dyn_c_kor_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				owns_entire_state_region = STATE_SEOUL
+				owns_entire_state_region = STATE_BUSAN
+				NOT = { owns_entire_state_region = STATE_SARIWON }
+				NOT = { owns_entire_state_region = STATE_PYONGYANG }
+			}
+		}
+	}
+}
+LIT = {
+	dynamic_country_name = {
+		name = dyn_c_Courland
+		adjective = LIT_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:RUS
+			c:RUS = {
+				has_diplomatic_pact = {
+					who = c:LIT
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+LAT = {
+	dynamic_country_name = {
+		name = dyn_c_Livonia
+		adjective = LAT_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:RUS
+			c:RUS = {
+				has_diplomatic_pact = {
+					who = c:LAT
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+RUS = {
+	dynamic_country_name = {
+		name = dyn_c_Russian_Empire
+		adjective = RUS_ADJ
+
+		is_main_tag_only = yes
+		priority = 250
+
+		possible = {
+			exists = c:RUS
+			THIS = c:RUS
+			trigger = {
+				coa_absolute_monarchy_trigger = yes
+			}
+		}
+	}
+}
+
+PER = { 
+	dynamic_country_name = {
+		name = dyn_c_persia
+		adjective = dyn_c_persia_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor = {
+				has_law = law_type:law_monarchy
+			}
+		}
+	}
+}
+BUR = {
+	dynamic_country_name = {
+		name = dyn_c_Konbaung_Empire
+		adjective = BUR_ADJ
+
+		is_main_tag_only = yes
+		priority = 2
+		
+		possible = {
+			exists = c:BUR
+			THIS = c:BUR
+			trigger = {
+				has_variable = test_1
+			}
+		}
+	}
+}
+GER = {
+	dynamic_country_name = {
+		name = dyn_c_German_Empire
+		adjective = GER_ADJ
+
+		is_main_tag_only = yes
+		priority = 2
+		
+		trigger = {
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_autocracy
+					has_law = law_type:law_monarchy
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_German_Reich
+		adjective = GER_ADJ
+
+		is_main_tag_only = yes
+		priority = 3
+		
+		trigger = {
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_autocracy
+					has_law = law_type:law_presidential_republic
+				}
+			}
+		}
+	}
+}
+DPK = { # North Korea
+	dynamic_country_name = {
+		name = dyn_c_dpk
+		adjective = dyn_c_dpk_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { owns_entire_state_region = STATE_SEOUL }
+				NOT = { owns_entire_state_region = STATE_BUSAN }
+				owns_entire_state_region = STATE_SARIWON
+				owns_entire_state_region = STATE_PYONGYANG
+			}
+		}
+	}
+} 
+DAI = {
+	dynamic_country_name = {
+		name = dyn_c_French_Indochina
+		adjective = DAI_ADJ
+
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = c:FRA
+			c:FRA = {
+				has_diplomatic_pact = {
+					who = c:DAI
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+
+
+CHI = { # China
+	dynamic_country_name = {
+		name = dyn_c_great_qing
+		adjective = dyn_c_great_qing_adj
+
+		is_main_tag_only = yes
+		priority = 0
+
+		trigger = {
+			coa_def_monarchy_flag_trigger = yes
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_peoples_republic_of_china
+		adjective = CHI_ADJ
+
+		is_main_tag_only = yes
+		priority = 0
+
+		trigger = {
+			coa_def_communist_flag_trigger = yes
+		}
+	}
+}
+
+SAF = { # South Africa
+	dynamic_country_name = {
+		name = dyn_c_Union_of_South_Africa
+		adjective = SAF_ADJ
+
+		is_main_tag_only = yes
+		priority = 2
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:SAF
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+AST = {
+	dynamic_country_name = {
+		name = dyn_c_Commonwealth_of_Australia
+		adjective = AST_ADJ
+
+		is_main_tag_only = yes
+		priority = 2
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:AST
+					type = dominion
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+CAN = {
+	dynamic_country_name = {
+		name = dyn_c_Dominion_of_Canada
+		adjective = CAN_ADJ
+
+		is_main_tag_only = yes
+		priority = 2
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:CAN
+					type = dominion
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+
+AUS = {
+	dynamic_country_name = {
+		name = dyn_c_austria-hungary
+		adjective = dyn_c_austria-hungary_adj
+		is_main_tag_only = yes
+		priority = 20
+		trigger = {
+			exists = c:AUS
+		}
+	}
+}
+
+LTO = {
+	dynamic_country_name = {
+		name = dyn_c_Basutoland
+		adjective = LTO_ADJ
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:LTO
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+BLA = {
+	dynamic_country_name = {
+		name = dyn_c_Solomon_Islands
+		adjective = BLA_ADJ
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:BLA
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+BIC = {
+	dynamic_country_name = {
+		name = dyn_c_british_raj
+		adjective = BIC_ADJ
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:BIC
+					type = dominion
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+JAP = {
+	dynamic_country_name = {
+		name = dyn_c_Japan
+		adjective = JAP_ADJ
+
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_monarchy
+
+				}
+			}
+		}
+	}
+}
+GAM = {
+	dynamic_country_name = {
+		name = dyn_c_Colonial_GAM
+		adjective = GAM_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:GAM
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+SOK = {
+	dynamic_country_name = {
+		name = dyn_c_Colonial_Nigeria
+		adjective = SOK_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:SOK
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+ASH = {
+	dynamic_country_name = {
+		name = dyn_c_Colonial_Gold_Coast
+		adjective = ASH_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:ASH
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+KEN = {
+	dynamic_country_name = {
+		name = dyn_c_British_East_Africa
+		adjective = KEN_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:KEN
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+TSW = {
+	dynamic_country_name = {
+		name = dyn_c_Bechuanaland
+		adjective = TSW_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:TSW
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+NRB = {
+	dynamic_country_name = {
+		name = dyn_c_British_North_Borneo
+		adjective = NRB_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:NRB
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+ZAM = {
+	dynamic_country_name = {
+		name = dyn_c_Northern_Rhodesia
+		adjective = ZAM_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:ZAM
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+MWI = {
+	dynamic_country_name = {
+		name = dyn_c_Nyasaland
+		adjective = MWI_ADJ
+		
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:MWI
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+ZIM = {
+	dynamic_country_name = {
+		name = dyn_c_Southern_Rhodesia
+		adjective = ZIM_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:ZIM
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+BLZ = {
+	dynamic_country_name = {
+		name = dyn_c_British_Honduras
+		adjective = BLZ_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:BLZ
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+CMU = {
+	dynamic_country_name = {
+		name = dyn_c_Kamerun 
+		adjective = CMU_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:GER
+			c:GER = {
+				has_diplomatic_pact = {
+					who = c:CMU
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+NAI = {
+	dynamic_country_name = {
+		name = dyn_c_German_South_West_Africa
+		adjective = NAI_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:GER
+			c:GER = {
+				has_diplomatic_pact = {
+					who = c:NAI
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+TAN = {
+	dynamic_country_name = {
+		name = dyn_c_German_East_Africa
+		adjective = TAN_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:GER
+			c:GER = {
+				has_diplomatic_pact = {
+					who = c:TAN
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+SUD = {
+	dynamic_country_name = {
+		name = dyn_c_Anglo_Egyptian_Sudan
+		adjective = SUD_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:SUD
+					type = dominion
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+PPN = {
+	dynamic_country_name = {
+		name = dyn_c_German_New_Guinea
+		adjective = PPN_ADJ
+
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = c:GER
+			c:GER = {
+				has_diplomatic_pact = {
+					who = c:PPN
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+PPU = {
+	dynamic_country_name = {
+		name = dyn_c_Territory_of_Papua
+		adjective = PPU_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				has_diplomatic_pact = {
+					who = c:PPU
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+DAH = {
+	dynamic_country_name = {
+		name = dyn_c_Dahomey
+		adjective = DAH_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:FRA
+			c:FRA = {
+				has_diplomatic_pact = {
+					who = c:DAH
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+ZAI = {
+	dynamic_country_name = {
+		name = dyn_c_Yemen
+		adjective = ZAI_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:TUR
+			c:TUR = {
+				has_diplomatic_pact = {
+					who = c:ZAI
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+POL = {
+	dynamic_country_name = {
+		name = dyn_c_poland
+		adjective = POL_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:RUS
+			c:RUS = {
+				has_diplomatic_pact = {
+					who = c:POL
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_poland_sub_fra
+		adjective = POL_ADJ
+
+		is_main_tag_only = yes
+		priority = 25
+		
+		trigger = {
+			exists = c:FRA
+			c:FRA = {
+				has_diplomatic_pact = {
+					who = c:POL
+					type = french_client_state
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+MAD = {
+	dynamic_country_name = {
+		name = dyn_c_Madagascar
+		adjective = MAD_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:FRA
+			c:FRA = {
+				has_diplomatic_pact = {
+					who = c:MAD
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+MAL = {
+	dynamic_country_name = {
+		name = dyn_c_French_West_Africa
+		adjective = MAL_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:FRA
+			c:FRA = {
+				has_diplomatic_pact = {
+					who = c:MAL
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+COG = {
+	dynamic_country_name = {
+		name = dyn_c_French_Equatorial_Africa
+		adjective = COG_ADJ
+
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:FRA
+			c:FRA = {
+				has_diplomatic_pact = {
+					who = c:COG
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}

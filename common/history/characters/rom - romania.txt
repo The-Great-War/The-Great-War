@@ -1,0 +1,19 @@
+﻿CHARACTERS = {
+	c:ROM ?= {
+		create_character = {
+			first_name = "Carol"
+			last_name = hohenzollern_sigmaringen
+			historical = yes
+			ruler = yes
+			birth_date = 1839.4.20
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			traits = {
+				cautious
+			}
+			on_created = {
+				set_variable = is_married
+			}
+		}	
+	}
+}

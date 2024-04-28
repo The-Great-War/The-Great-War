@@ -1,0 +1,217 @@
+﻿POPS = {
+ 	s:STATE_SAN_SALVADOR = { 
+ 		region_state:ELS = { 
+ 			create_pop = {
+ 				culture = central_american
+ 				size = 428213
+ 			}
+ 		}
+ 	}
+ 	s:STATE_GUATEMALA = { 
+ 		region_state:GUA = { 
+ 			create_pop = {
+ 				culture = central_american
+ 				size = 164503
+ 			}
+ 			create_pop = {
+ 				culture = mayan
+ 				size = 312203
+ 			}
+ 		}
+ 		region_state:BLZ = { 
+ 			create_pop = {
+ 				culture = british
+ 				size = 104
+ 			}
+ 			create_pop = {
+ 				culture = afro_caribbean
+ 				size = 7105
+ 			}
+ 		}
+ 	}
+ 	s:STATE_HONDURAS = { 
+ 		region_state:HON = { 
+ 			create_pop = {
+ 				culture = central_american
+ 				size = 384731
+ 			}
+ 			create_pop = {
+ 				culture = miskito
+ 				size = 3000
+ 			}
+ 		}
+ 	}
+ 	s:STATE_NICARAGUA = { 
+ 		region_state:NIC = { 
+ 			create_pop = {
+ 				culture = central_american
+ 				size = 283402
+ 			}
+ 			create_pop = {
+ 				culture = miskito
+ 				size = 3991
+ 			}
+ 			create_pop = {
+ 				culture = miskito
+ 				religion = catholic
+ 				size = 10
+ 			}
+ 		}
+ 	}
+ 	s:STATE_COSTA_RICA = { 
+ 		region_state:COS = { 
+ 			create_pop = {
+ 				culture = central_american
+ 				size = 84010
+ 			}
+ 		}
+ 	}
+ 	s:STATE_PANAMA = { 
+ 		region_state:PNM = { 
+ 			create_pop = {
+ 				culture = central_american
+ 				size = 87457
+ 			}
+ 			create_pop = {
+ 				culture = north_andean
+ 				size = 3874
+ 			}
+ 			create_pop = {
+ 				culture = afro_caribeno
+ 				size = 32400
+ 			}
+ 			create_pop = {
+ 				culture = cariban
+ 				size = 4000
+ 			}
+ 		}
+ 		region_state:USA = { 
+ 			create_pop = {
+ 				culture = central_american
+ 				size = 87618
+ 			}
+ 			create_pop = {
+ 				culture = cariban
+ 				size = 4000
+ 			}
+ 			create_pop = {
+ 				culture = afro_caribeno
+ 				size = 32400
+ 			}
+ 			create_pop = {
+ 				culture = north_andean
+ 				size = 3966
+ 			}
+ 		}
+ 	}
+ 	s:STATE_HAITI = { 
+ 		region_state:HAI = { 
+ 			create_pop = {
+ 				culture = afro_antillean
+ 				size = 316848
+ 			}
+ 			create_pop = {
+ 				culture = afro_caribeno
+ 				size = 40000
+ 			}
+ 			create_pop = {
+ 				culture = caribeno
+ 				size = 40000
+ 			}
+ 		}
+ 	}
+ 	s:STATE_SANTO_DOMINGO = { 
+ 		region_state:DOM = { 
+ 			create_pop = {
+ 				culture = afro_caribeno
+ 				size = 24018
+ 			}
+ 			create_pop = {
+ 				culture = caribeno
+ 				size = 19954
+ 			}
+ 			create_pop = {
+ 				culture = afro_antillean
+ 				size = 225764
+ 			}
+ 		}
+ 	}
+ 	s:STATE_PUERTO_RICO = { 
+ 		region_state:PCO = {
+			create_pop = {
+				culture = caribeno
+				size = 19954
+			}
+		}
+ 	}
+ 	s:STATE_BAHAMAS = { 
+ 		region_state:BAH = { 
+ 			create_pop = {
+ 				culture = afro_caribbean
+ 				size = 100392
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				size = 19028
+ 			}
+ 		}
+ 		region_state:TCI = { 
+ 			create_pop = {
+ 				culture = afro_caribbean
+ 				size = 100370
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				size = 19123
+ 			}
+ 		}
+ 	}
+ 	s:STATE_WEST_INDIES = { 
+ 		region_state:DEN = { 
+ 			create_pop = {
+ 				culture = afro_caribbean
+ 				size = 39938
+ 			}
+ 		}
+ 		region_state:FRA = { 
+ 			create_pop = {
+ 				culture = afro_antillean
+ 				size = 215639
+ 			}
+ 		}
+ 		region_state:BWI = { 
+ 			create_pop = {
+ 				culture = afro_caribbean
+ 				size = 234783
+ 			}
+ 		}
+ 	}
+ 	s:STATE_JAMAICA = { 
+ 		region_state:JAM = { 
+ 			create_pop = {
+ 				culture = afro_caribbean
+ 				size = 358595
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				size = 22873
+ 			}
+ 		}
+ 	}
+ 	s:STATE_CUBA = { 
+ 		region_state:CUB = { 
+ 			create_pop = {
+ 				culture = caribeno
+ 				size = 461384
+ 			}
+ 			create_pop = {
+ 				culture = afro_caribeno
+ 				size = 441029
+ 			}
+ 			create_pop = {
+ 				culture = spanish
+ 				size = 21938
+ 			}
+ 		}
+ 	}
+}

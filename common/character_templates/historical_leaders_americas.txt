@@ -1,0 +1,18 @@
+﻿usa_mckinley_template = {
+    # add dna to this guy at one point
+    first_name = "William"
+    last_name = "McKinley"
+    historical = yes
+    birth_date = 1843.1.29
+   # dna = dna_giovanni_gentille
+    interest_group = ig_industrialists
+    ideology = ideology_protectionist
+	ig_leader = yes
+	ruler = yes
+    traits = {
+		ambitious
+    }
+    on_created = {
+        set_variable = is_married
+    }
+}

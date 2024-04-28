@@ -1,0 +1,20 @@
+﻿namespace = tgw_utils
+
+tgw_utils.1 = {
+	type = country_event
+	placement = root
+	hidden = yes
+	trigger = {
+	}
+	immediate = {
+		owner = {
+			if = {
+				limit = {
+					has_law = law_type:law_council_republic
+				}
+				activate_law = law_type:law_socialist_labor_unions
+				activate_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
+}

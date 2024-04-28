@@ -1,0 +1,9 @@
+﻿CHARACTERS = {
+	c:JAP ?= {
+	
+		create_character = {
+			template = jap_meiji_yamato_template
+		}
+		
+	}
+}

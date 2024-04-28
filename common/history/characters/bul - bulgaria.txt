@@ -1,0 +1,8 @@
+﻿CHARACTERS = {
+	c:BUL ?= {
+
+		create_character = {
+			template = bul_ferdinand_i_saxe_coburg_gotha_template
+		}
+	}
+}

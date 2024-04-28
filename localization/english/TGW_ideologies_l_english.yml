@@ -1,0 +1,12 @@
+﻿l_english:
+ ideology_corporatist: "National Corporatist"
+ ideology_corporatist_leader: "National Corporatism"
+ ideology_royalist: "Monarchist"
+ ideology_agrarian_jeffersonian: "Agrarian Democrat"
+ ideology_agrarian_jeffersonian_desc: "#lore This group believes that the smallholding farmer class forms the foundation of the country, supporting agarianism as the basis for a free society.#!"
+ ideology_anarchist: "Anarcho-Communist"
+ ideology_anarchist_desc: "#lore This leader seeks the abolishment of hierarchy, authority and the state, leaving people to govern themselves. #!"
+ ideology_authoritarian: "Paternal Autocrat"
+ ideology_ethno_nationalist: "Ultranationalist"
+ is_in_world_war: "Is in a protracted European conflict with multiple powers"
+ has_succumbed_to_bolshevik_demands: "Has succumbed to Bolshevik demands"

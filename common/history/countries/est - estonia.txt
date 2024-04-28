@@ -1,0 +1,11 @@
+COUNTRIES = {
+	c:EST = {
+		effect_starting_technology_1922_tech_minor = yes
+		
+        set_ruling_interest_groups = {
+        	ig_landowners
+        }
+
+		activate_law = law_type:law_presidential_republic
+	}
+}

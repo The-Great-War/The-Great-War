@@ -1,0 +1,540 @@
+﻿  l_english:
+  
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+# French Client State
+
+  french_client_state: "French Client State"
+  french_client_state_action_name: "[concept_french_client_state]"
+  french_client_state_action_propose_name: "Make into [concept_french_client_state]"
+  french_client_state_action_break_name: "Break French Client State"
+  french_client_state_action_ask_to_break_name: "Demand Independence"
+  french_client_state_desc: "#header $french_client_state$#!\n$TOOLTIP_DELIMITER$\nA [concept_diplomatic_pact] that establishes a [concept_french_client_state] type [concept_subject] relationship between two [Concept('concept_country', '$concept_countries$')]."
+  french_client_state_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] is a [concept_french_client_state] under [SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName]"
+  french_client_state_action_notification_name: "Demand for beccomee a member of the French Client State"
+  french_client_state_action_notification_desc: "[INITIATOR_COUNTRY.GetName] demands that we submit to them and form a [concept_french_client_state]."
+  french_client_state_action_notification_break_name: "French Client State Broken"
+  french_client_state_action_notification_break_desc: "[INITIATOR_COUNTRY.GetName] has dissolved our [concept_french_client_state]."
+  french_client_state_proposal_notification_break_name: "Demand for Independence"
+  french_client_state_proposal_notification_break_desc: "[INITIATOR_COUNTRY.GetName] are demanding that we end our [concept_french_client_state] with them."
+  french_client_state_proposal_notification_break_effects_desc: "If we accept, they will become fully independent."
+  french_client_state_proposal_break_accepted_name: "Independence Granted"
+  french_client_state_proposal_break_accepted_desc: "[TARGET_COUNTRY.GetName] accepted the demand to end our [concept_french_client_state]. We are independent once again."
+  french_client_state_proposal_break_declined_name: "Independence Refused"
+  french_client_state_proposal_break_declined_desc: "[TARGET_COUNTRY.GetName] refused the demand to end our [concept_french_client_state]."
+  french_client_state_proposal_third_party_break_accepted_name: "Independence Granted"
+  french_client_state_proposal_third_party_break_accepted_desc: "[TARGET_COUNTRY.GetName] ended their [concept_french_client_state] with [INITIATOR_COUNTRY.GetName], granting them full independence."
+  french_client_state_proposal_third_party_break_declined_name: "Independence Refused"
+  french_client_state_proposal_third_party_break_declined_desc: "[TARGET_COUNTRY.GetName] refused to end their [concept_french_client_state] with [INITIATOR_COUNTRY.GetName]."
+  subject_type_french_client_state: "[concept_french_client_state]"
+  french_client_state_effect_desc_global: "Becomes a member of the [concept_french_client_state]"
+  french_client_state_effect_desc_first: "[TARGET_COUNTRY.GetName] becomes a [COUNTRY.GetAdjectiveNoFlag] [concept_french_client_state]"
+  french_client_state_effect_desc_third: "[AddTextIf(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self),TARGET_COUNTRY.GetNameNoFlag)][AddTextIf(Not(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self)),TARGET_COUNTRY.GetName)] becomes a [concept_french_client_state] of [COUNTRY.GetName]"
+  DIPLOMATIC_ACCEPTANCE_CONFEDERATION: "We are in a [concept_french_client_state] with [SCOPE.GetRootScope.GetCountry.GetName]"
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+# Napoleonian Personal Union
+
+  napoleonian_personal_union: "Napoleonian Personal Union"
+  napoleonian_personal_union_action_name: "[concept_napoleonian_personal_union]"
+  napoleonian_personal_union_action_propose_name: "Make into [concept_napoleonian_personal_union]"
+  napoleonian_personal_union_action_break_name: "Grant Independence"
+  napoleonian_personal_union_action_ask_to_break_name: "Demand Independence"
+  napoleonian_personal_union_desc: "#header $napoleonian_personal_union$#!\n$TOOLTIP_DELIMITER$\nA [concept_diplomatic_pact] that establishes a [concept_napoleonian_personal_union] type [concept_subject] relationship between two [Concept('concept_country', '$concept_countries$')]."
+  napoleonian_personal_union_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] is a [concept_napoleonian_personal_union] of [SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName]."
+  napoleonian_personal_union_action_notification_name: "Demand for Union"
+  napoleonian_personal_union_action_notification_desc: "[INITIATOR_COUNTRY.GetName] demands that we submit to them and form a [concept_napoleonian_personal_union]."
+  napoleonian_personal_union_action_notification_break_name: "Independence Granted"
+  napoleonian_personal_union_action_notification_break_desc: "[INITIATOR_COUNTRY.GetName] have ended our [concept_napoleonian_personal_union]. We are independent once again."
+  napoleonian_personal_union_proposal_notification_break_name: "Demand for Independence"
+  napoleonian_personal_union_proposal_notification_break_desc: "[INITIATOR_COUNTRY.GetName] are demanding that we end our [concept_napoleonian_personal_union] with them."
+  napoleonian_personal_union_proposal_notification_break_effects_desc: "If we accept, they will become fully independent."
+  napoleonian_personal_union_proposal_break_accepted_name: "Independence Granted"
+  napoleonian_personal_union_proposal_break_accepted_desc: "[TARGET_COUNTRY.GetName] accepted the demand to end our [concept_napoleonian_personal_union]. We are independent once again."
+  napoleonian_personal_union_proposal_break_declined_name: "Independence Refused"
+  napoleonian_personal_union_proposal_break_declined_desc: "[TARGET_COUNTRY.GetName] refused the demand to end our [concept_napoleonian_personal_union]."
+  napoleonian_personal_union_proposal_third_party_break_accepted_name: "Independence Granted"
+  napoleonian_personal_union_proposal_third_party_break_accepted_desc: "[TARGET_COUNTRY.GetName] ended their [concept_napoleonian_personal_union] with [INITIATOR_COUNTRY.GetName], granting them full independence."
+  napoleonian_personal_union_proposal_third_party_break_declined_name: "Independence Refused"
+  napoleonian_personal_union_proposal_third_party_break_declined_desc: "[TARGET_COUNTRY.GetName] refused to end their [concept_napoleonian_personal_union] with [INITIATOR_COUNTRY.GetName]."
+  subject_type_napoleonian_personal_union: "[concept_napoleonian_personal_union]"
+
+  napoleonian_personal_union_effect_desc_global: "Becomes a [concept_napoleonian_personal_union]"
+  napoleonian_personal_union_effect_desc_first: "[TARGET_COUNTRY.GetName] becomes a [COUNTRY.GetAdjectiveNoFlag] [concept_napoleonian_personal_union]"
+  napoleonian_personal_union_effect_desc_third: "[AddTextIf(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self),TARGET_COUNTRY.GetNameNoFlag)][AddTextIf(Not(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self)),TARGET_COUNTRY.GetName)] becomes a [concept_napoleonian_personal_union] of [COUNTRY.GetName]"
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+# Viceroyalty
+
+  viceroyalty: "Viceroyalty"
+  viceroyalty_action_name: "[concept_viceroyalty]"
+  viceroyalty_action_propose_name: "Make into [concept_viceroyalty]"
+  viceroyalty_action_break_name: "Grant Independence"
+  viceroyalty_action_ask_to_break_name: "Demand Independence"
+  viceroyalty_desc: "#header $viceroyalty$#!\n$TOOLTIP_DELIMITER$\nA [concept_diplomatic_pact] that establishes a [concept_viceroyalty] type [concept_subject] relationship between two [Concept('concept_country', '$concept_countries$')]."
+  viceroyalty_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] is in a [concept_viceroyalty] under [SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName]."
+  viceroyalty_action_notification_name: "Demand for Union"
+  viceroyalty_action_notification_desc: "[INITIATOR_COUNTRY.GetName] demands that we submit to them and form a [concept_viceroyalty]."
+  viceroyalty_action_notification_break_name: "Independence Granted"
+  viceroyalty_action_notification_break_desc: "[INITIATOR_COUNTRY.GetName] have ended our [concept_viceroyalty]. We are independent once again."
+  viceroyalty_proposal_notification_break_name: "Demand for Independence"
+  viceroyalty_proposal_notification_break_desc: "[INITIATOR_COUNTRY.GetName] are demanding that we end our [concept_viceroyalty] with them."
+  viceroyalty_proposal_notification_break_effects_desc: "If we accept, they will become fully independent."
+  viceroyalty_proposal_break_accepted_name: "Independence Granted"
+  viceroyalty_proposal_break_accepted_desc: "[TARGET_COUNTRY.GetName] accepted the demand to end our [concept_viceroyalty]. We are independent once again."
+  viceroyalty_proposal_break_declined_name: "Independence Refused"
+  viceroyalty_proposal_break_declined_desc: "[TARGET_COUNTRY.GetName] refused the demand to end our [concept_viceroyalty]."
+  viceroyalty_proposal_third_party_break_accepted_name: "Independence Granted"
+  viceroyalty_proposal_third_party_break_accepted_desc: "[TARGET_COUNTRY.GetName] ended their [concept_viceroyalty] with [INITIATOR_COUNTRY.GetName], granting them full independence."
+  viceroyalty_proposal_third_party_break_declined_name: "Independence Refused"
+  viceroyalty_proposal_third_party_break_declined_desc: "[TARGET_COUNTRY.GetName] refused to end their [concept_viceroyalty] with [INITIATOR_COUNTRY.GetName]."
+  subject_type_viceroyalty: "[concept_viceroyalty]"
+
+  viceroyalty_effect_desc_global: "Becomes a [concept_viceroyalty]"
+  viceroyalty_effect_desc_first: "[TARGET_COUNTRY.GetName] becomes a [COUNTRY.GetAdjectiveNoFlag] [concept_viceroyalty]"
+  viceroyalty_effect_desc_third: "[AddTextIf(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self),TARGET_COUNTRY.GetNameNoFlag)][AddTextIf(Not(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self)),TARGET_COUNTRY.GetName)] becomes a [concept_viceroyalty] of [COUNTRY.GetName]"
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+# Dual monarchy
+
+  dual_monarchy: "Dual monarchy"
+  dual_monarchy_action_name: "[concept_dual_monarchy]"
+  dual_monarchy_action_propose_name: "Make into [concept_dual_monarchy]"
+  dual_monarchy_action_break_name: "Grant Independence"
+  dual_monarchy_action_ask_to_break_name: "Demand Independence"
+  dual_monarchy_desc: "#header $dual_monarchy$#!\n$TOOLTIP_DELIMITER$\nA [concept_diplomatic_pact] that establishes a [concept_dual_monarchy] type [concept_subject] relationship between two [Concept('concept_country', '$concept_countries$')]."
+  dual_monarchy_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] is in a [concept_dual_monarchy] under [SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName]."
+  dual_monarchy_action_notification_name: "Demand for Union"
+  dual_monarchy_action_notification_desc: "[INITIATOR_COUNTRY.GetName] demands that we submit to them and form a [concept_dual_monarchy]."
+  dual_monarchy_action_notification_break_name: "Independence Granted"
+  dual_monarchy_action_notification_break_desc: "[INITIATOR_COUNTRY.GetName] have ended our [concept_dual_monarchy]. We are independent once again."
+  dual_monarchy_proposal_notification_break_name: "Demand for Independence"
+  dual_monarchy_proposal_notification_break_desc: "[INITIATOR_COUNTRY.GetName] are demanding that we end our [concept_dual_monarchy] with them."
+  dual_monarchy_proposal_notification_break_effects_desc: "If we accept, they will become fully independent."
+  dual_monarchy_proposal_break_accepted_name: "Independence Granted"
+  dual_monarchy_proposal_break_accepted_desc: "[TARGET_COUNTRY.GetName] accepted the demand to end our [concept_dual_monarchy]. We are independent once again."
+  dual_monarchy_proposal_break_declined_name: "Independence Refused"
+  dual_monarchy_proposal_break_declined_desc: "[TARGET_COUNTRY.GetName] refused the demand to end our [concept_dual_monarchy]."
+  dual_monarchy_proposal_third_party_break_accepted_name: "Independence Granted"
+  dual_monarchy_proposal_third_party_break_accepted_desc: "[TARGET_COUNTRY.GetName] ended their [concept_dual_monarchy] with [INITIATOR_COUNTRY.GetName], granting them full independence."
+  dual_monarchy_proposal_third_party_break_declined_name: "Independence Refused"
+  dual_monarchy_proposal_third_party_break_declined_desc: "[TARGET_COUNTRY.GetName] refused to end their [concept_dual_monarchy] with [INITIATOR_COUNTRY.GetName]."
+  subject_type_dual_monarchy: "[concept_dual_monarchy]"
+
+  dual_monarchy_effect_desc_global: "Becomes a [concept_dual_monarchy]"
+  dual_monarchy_effect_desc_first: "[TARGET_COUNTRY.GetName] becomes a [COUNTRY.GetAdjectiveNoFlag] [concept_dual_monarchy]"
+  dual_monarchy_effect_desc_third: "[AddTextIf(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self),TARGET_COUNTRY.GetNameNoFlag)][AddTextIf(Not(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self)),TARGET_COUNTRY.GetName)] becomes a [concept_dual_monarchy] of [COUNTRY.GetName]"
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+# Federation
+
+  confederation: "Federation"
+  confederation_action_name: "[concept_confederation]"
+  confederation_action_propose_name: "Make into [concept_confederation]"
+  confederation_action_break_name: "Break Confederation"
+  confederation_action_ask_to_break_name: "Demand Independence"
+  confederation_desc: "#header $confederation$#!\n$TOOLTIP_DELIMITER$\nA [concept_diplomatic_pact] that establishes a [concept_confederation] type [concept_subject] relationship between two [Concept('concept_country', '$concept_countries$')]."
+  confederation_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] is a [concept_confederation] under [SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName]."
+  confederation_action_notification_name: "Demand for Confederation"
+  confederation_action_notification_desc: "[INITIATOR_COUNTRY.GetName] demands that we submit to them and form a [concept_confederation]."
+  confederation_action_notification_break_name: "Confederation Broken"
+  confederation_action_notification_break_desc: "[INITIATOR_COUNTRY.GetName] has dissolved our [concept_confederation]."
+  confederation_proposal_notification_break_name: "Demand for Independence"
+  confederation_proposal_notification_break_desc: "[INITIATOR_COUNTRY.GetName] are demanding that we end our [concept_confederation] with them."
+  confederation_proposal_notification_break_effects_desc: "If we accept, they will become fully independent."
+  confederation_proposal_break_accepted_name: "Independence Granted"
+  confederation_proposal_break_accepted_desc: "[TARGET_COUNTRY.GetName] accepted the demand to end our [concept_confederation]. We are independent once again."
+  confederation_proposal_break_declined_name: "Independence Refused"
+  confederation_proposal_break_declined_desc: "[TARGET_COUNTRY.GetName] refused the demand to end our [concept_confederation]."
+  confederation_proposal_third_party_break_accepted_name: "Independence Granted"
+  confederation_proposal_third_party_break_accepted_desc: "[TARGET_COUNTRY.GetName] ended their [concept_confederation] with [INITIATOR_COUNTRY.GetName], granting them full independence."
+  confederation_proposal_third_party_break_declined_name: "Independence Refused"
+  confederation_proposal_third_party_break_declined_desc: "[TARGET_COUNTRY.GetName] refused to end their [concept_confederation] with [INITIATOR_COUNTRY.GetName]."
+  subject_type_confederation: "[concept_confederation]"
+
+
+  confederation_effect_desc_global: "Becomes a [concept_confederation]"
+  confederation_effect_desc_first: "[TARGET_COUNTRY.GetName] becomes a [COUNTRY.GetAdjectiveNoFlag] [concept_confederation]"
+  confederation_effect_desc_third: "[AddTextIf(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self),TARGET_COUNTRY.GetNameNoFlag)][AddTextIf(Not(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self)),TARGET_COUNTRY.GetName)] becomes a [concept_confederation] of [COUNTRY.GetName]"
+
+  DIPLOMATIC_ACCEPTANCE_CONFEDERATION: "We are in a [concept_confederation] with [SCOPE.GetRootScope.GetCountry.GetName]"
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+# Confederation of the Rhine
+
+  confederation_of_the_rhine: "Confederation of the Rhine"
+  confederation_of_the_rhine_action_name: "[concept_confederation_of_the_rhine]"
+  confederation_of_the_rhine_action_propose_name: "Make into [concept_confederation_of_the_rhine]"
+  confederation_of_the_rhine_action_break_name: "Break Confederation of the Rhine"
+  confederation_of_the_rhine_action_ask_to_break_name: "Demand Independence"
+  confederation_of_the_rhine_desc: "#header $confederation_of_the_rhine$#!\n$TOOLTIP_DELIMITER$\nA [concept_diplomatic_pact] that establishes a [concept_confederation_of_the_rhine] type [concept_subject] relationship between two [Concept('concept_country', '$concept_countries$')]."
+  confederation_of_the_rhine_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] is a [concept_confederation_of_the_rhine] under [SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName]"
+  confederation_of_the_rhine_action_notification_name: "Demand for beccomee a member of the Confederation of the Rhine"
+  confederation_of_the_rhine_action_notification_desc: "[INITIATOR_COUNTRY.GetName] demands that we submit to them and form a [concept_confederation_of_the_rhine]."
+  confederation_of_the_rhine_action_notification_break_name: "Confederation of the Rhine Broken"
+  confederation_of_the_rhine_action_notification_break_desc: "[INITIATOR_COUNTRY.GetName] has dissolved our [concept_confederation_of_the_rhine]."
+  confederation_of_the_rhine_proposal_notification_break_name: "Demand for Independence"
+  confederation_of_the_rhine_proposal_notification_break_desc: "[INITIATOR_COUNTRY.GetName] are demanding that we end our [concept_confederation_of_the_rhine] with them."
+  confederation_of_the_rhine_proposal_notification_break_effects_desc: "If we accept, they will become fully independent."
+  confederation_of_the_rhine_proposal_break_accepted_name: "Independence Granted"
+  confederation_of_the_rhine_proposal_break_accepted_desc: "[TARGET_COUNTRY.GetName] accepted the demand to end our [concept_confederation_of_the_rhine]. We are independent once again."
+  confederation_of_the_rhine_proposal_break_declined_name: "Independence Refused"
+  confederation_of_the_rhine_proposal_break_declined_desc: "[TARGET_COUNTRY.GetName] refused the demand to end our [concept_confederation_of_the_rhine]."
+  confederation_of_the_rhine_proposal_third_party_break_accepted_name: "Independence Granted"
+  confederation_of_the_rhine_proposal_third_party_break_accepted_desc: "[TARGET_COUNTRY.GetName] ended their [concept_confederation_of_the_rhine] with [INITIATOR_COUNTRY.GetName], granting them full independence."
+  confederation_of_the_rhine_proposal_third_party_break_declined_name: "Independence Refused"
+  confederation_of_the_rhine_proposal_third_party_break_declined_desc: "[TARGET_COUNTRY.GetName] refused to end their [concept_confederation_of_the_rhine] with [INITIATOR_COUNTRY.GetName]."
+  subject_type_confederation_of_the_rhine: "[concept_confederation_of_the_rhine]"
+  confederation_of_the_rhine_effect_desc_global: "Becomes a member of the [concept_confederation_of_the_rhine]"
+  confederation_of_the_rhine_effect_desc_first: "[TARGET_COUNTRY.GetName] becomes a [COUNTRY.GetAdjectiveNoFlag] [concept_confederation_of_the_rhine]"
+  confederation_of_the_rhine_effect_desc_third: "[AddTextIf(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self),TARGET_COUNTRY.GetNameNoFlag)][AddTextIf(Not(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self)),TARGET_COUNTRY.GetName)] becomes a [concept_confederation_of_the_rhine] of [COUNTRY.GetName]"
+  DIPLOMATIC_ACCEPTANCE_CONFEDERATION: "We are in a [concept_confederation_of_the_rhine] with [SCOPE.GetRootScope.GetCountry.GetName]"
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+# Chartered Company
+
+  chartered_company: "Chartered Company"
+  chartered_company_action_name: "[concept_chartered_company]"
+  chartered_company_action_propose_name: "Make into [concept_chartered_company]"
+  chartered_company_action_break_name: "Revoke Charter"
+  chartered_company_action_ask_to_break_name: "Demand Independence"
+  chartered_company_desc: "#header $chartered_company$#!\n$TOOLTIP_DELIMITER$\nA [concept_diplomatic_pact] that establishes a [concept_chartered_company] type [concept_subject] relationship between two [Concept('concept_country', '$concept_countries$')]."
+  chartered_company_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] is a [concept_chartered_company] under [SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName]."
+  chartered_company_action_notification_name: "Demand for Union"
+  chartered_company_action_notification_desc: "[INITIATOR_COUNTRY.GetName] demands that we submit to them and form a [concept_chartered_company]."
+  chartered_company_action_notification_break_name: "Charter Revoked"
+  chartered_company_action_notification_break_desc: "[INITIATOR_COUNTRY.GetName] has dissolved our [concept_chartered_company]."
+  chartered_company_proposal_notification_break_name: "Demand for Independence"
+  chartered_company_proposal_notification_break_desc: "[INITIATOR_COUNTRY.GetName] are demanding that we end our [concept_chartered_company] with them."
+  chartered_company_proposal_notification_break_effects_desc: "If we accept, they will become fully independent."
+  chartered_company_proposal_break_accepted_name: "Independence Granted"
+  chartered_company_proposal_break_accepted_desc: "[TARGET_COUNTRY.GetName] accepted the demand to end our [concept_chartered_company]. We are independent once again."
+  chartered_company_proposal_break_declined_name: "Independence Refused"
+  chartered_company_proposal_break_declined_desc: "[TARGET_COUNTRY.GetName] refused the demand to end our [concept_chartered_company]."
+  chartered_company_proposal_third_party_break_accepted_name: "Independence Granted"
+  chartered_company_proposal_third_party_break_accepted_desc: "[TARGET_COUNTRY.GetName] ended their [concept_chartered_company] with [INITIATOR_COUNTRY.GetName], granting them full independence."
+  chartered_company_proposal_third_party_break_declined_name: "Independence Refused"
+  chartered_company_proposal_third_party_break_declined_desc: "[TARGET_COUNTRY.GetName] refused to end their [concept_chartered_company] with [INITIATOR_COUNTRY.GetName]."
+  subject_type_chartered_company: "[concept_chartered_company]"
+
+
+  chartered_company_effect_desc_global: "Becomes a [concept_chartered_company]"
+  chartered_company_effect_desc_first: "[TARGET_COUNTRY.GetName] becomes a [COUNTRY.GetAdjectiveNoFlag] [concept_chartered_company]"
+  chartered_company_effect_desc_third: "[AddTextIf(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self),TARGET_COUNTRY.GetNameNoFlag)][AddTextIf(Not(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self)),TARGET_COUNTRY.GetName)] becomes a [concept_chartered_company] of [COUNTRY.GetName]"
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+# Colony
+
+  colony: "Colony"
+  colony_action_name: "[concept_colony]"
+  colony_action_propose_name: "Make into [concept_colony]"
+  colony_action_break_name: "Grant Independence"
+  colony_action_ask_to_break_name: "Demand Independence"
+  colony_desc: "#header $colony$#!\n$TOOLTIP_DELIMITER$\nA [concept_diplomatic_pact] that establishes a [concept_colony] type [concept_subject] relationship between two [Concept('concept_country', '$concept_countries$')]."
+  colony_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] is a [concept_colony] of [SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName]."
+  colony_action_notification_name: "Demand for Union"
+  colony_action_notification_desc: "[INITIATOR_COUNTRY.GetName] demands that we submit to them and form a [concept_colony]."
+  colony_action_notification_break_name: "Independence Granted"
+  colony_action_notification_break_desc: "[INITIATOR_COUNTRY.GetName] have ended our [concept_colony]. We are independent once again."
+  colony_proposal_notification_break_name: "Demand for Independence"
+  colony_proposal_notification_break_desc: "[INITIATOR_COUNTRY.GetName] are demanding that we end our [concept_colony] with them."
+  colony_proposal_notification_break_effects_desc: "If we accept, they will become fully independent."
+  colony_proposal_break_accepted_name: "Independence Granted"
+  colony_proposal_break_accepted_desc: "[TARGET_COUNTRY.GetName] accepted the demand to end our [concept_colony]. We are independent once again."
+  colony_proposal_break_declined_name: "Independence Refused"
+  colony_proposal_break_declined_desc: "[TARGET_COUNTRY.GetName] refused the demand to end our [concept_colony]."
+  colony_proposal_third_party_break_accepted_name: "Independence Granted"
+  colony_proposal_third_party_break_accepted_desc: "[TARGET_COUNTRY.GetName] ended their [concept_colony] with [INITIATOR_COUNTRY.GetName], granting them full independence."
+  colony_proposal_third_party_break_declined_name: "Independence Refused"
+  colony_proposal_third_party_break_declined_desc: "[TARGET_COUNTRY.GetName] refused to end their [concept_colony] with [INITIATOR_COUNTRY.GetName]."
+  subject_type_colony: "[concept_colony]"
+
+  colony_effect_desc_global: "Becomes a [concept_colony]"
+  colony_effect_desc_first: "[TARGET_COUNTRY.GetName] becomes a [COUNTRY.GetAdjectiveNoFlag] [concept_colony]"
+  colony_effect_desc_third: "[AddTextIf(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self),TARGET_COUNTRY.GetNameNoFlag)][AddTextIf(Not(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self)),TARGET_COUNTRY.GetName)] becomes a [concept_colony] of [COUNTRY.GetName]"
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+
+# Defensive Pact
+
+  defensive_pact_confederation: "Defensive Pact"
+  defensive_pact_confederation_action_name: "[concept_defensive_pact_confederation]"
+  defensive_pact_confederation_action_propose_name: "Form [concept_defensive_pact_confederation]"
+  defensive_pact_confederation_action_break_name: "End [concept_defensive_pact_confederation]"
+  defensive_pact_confederation_action_notification_name: "[concept_defensive_pact_confederation] with [INITIATOR_COUNTRY.GetName]"
+  defensive_pact_confederation_action_notification_desc: "We have formed a [concept_defensive_pact_confederation] with [INITIATOR_COUNTRY.GetName]."
+  defensive_pact_confederation_desc:1 "#header $defensive_pact_confederation$#!\n$TOOLTIP_DELIMITER$\nA [concept_diplomatic_pact] that establishes a [concept_defensive_pact_confederation] between two [Concept('concept_country', '$concept_countries$')]."
+  defensive_pact_confederation_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] and [SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] have an [concept_defensive_pact_confederation]."
+  defensive_pact_confederation_proposal_notification_name: "Proposal for [concept_defensive_pact_confederation]"
+  defensive_pact_confederation_proposal_notification_desc: "[INITIATOR_COUNTRY.GetName] wishes to enter into a [concept_defensive_pact_confederation] with us."
+  defensive_pact_confederation_proposal_notification_effects_desc: "$defensive_pact_confederation_desc$"
+  defensive_pact_confederation_proposal_accepted_name: "[concept_defensive_pact_confederation] Accepted"
+  defensive_pact_confederation_proposal_accepted_desc: "[TARGET_COUNTRY.GetName] accepted our proposal for a [concept_defensive_pact_confederation]."
+  defensive_pact_confederation_proposal_declined_name: "[concept_defensive_pact_confederation] Declined"
+  defensive_pact_confederation_proposal_declined_desc: "[TARGET_COUNTRY.GetName] declined our proposal for a [concept_defensive_pact_confederation]."
+  defensive_pact_confederation_action_notification_break_name: "[concept_defensive_pact_confederation] with [INITIATOR_COUNTRY.GetName] broken"
+  defensive_pact_confederation_action_notification_break_desc: "[INITIATOR_COUNTRY.GetName] have broken off their [concept_defensive_pact_confederation] with us."
+  defensive_pact_confederation_proposal_third_party_accepted_name: "[concept_defensive_pact_confederation] Signed"
+  defensive_pact_confederation_proposal_third_party_accepted_desc: "[INITIATOR_COUNTRY.GetName] and [TARGET_COUNTRY.GetName] entered into a [concept_defensive_pact_confederation]."
+  defensive_pact_confederation_proposal_third_party_declined_name: "[concept_defensive_pact_confederation] Rejected"
+  defensive_pact_confederation_proposal_third_party_declined_desc: "[TARGET_COUNTRY.GetName] refused to enter into a [concept_defensive_pact_confederation] with [INITIATOR_COUNTRY.GetName]."
+  defensive_pact_confederation_action_notification_third_party_break_name: "[concept_defensive_pact_confederation] Broken"
+  defensive_pact_confederation_action_notification_third_party_break_desc: "[INITIATOR_COUNTRY.GetName] broke off their [concept_defensive_pact_confederation] with [TARGET_COUNTRY.GetName]."
+
+  defensive_pact_confederation_effect_desc_global: "Enters into a [concept_defensive_pact_confederation]"
+  defensive_pact_confederation_effect_desc_first: "[TARGET_COUNTRY.GetName] enters into a [concept_defensive_pact_confederation] with [COUNTRY.GetAdjectiveNoFlag]"
+  defensive_pact_confederation_effect_desc_third: "[AddTextIf(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self),TARGET_COUNTRY.GetNameNoFlag)][AddTextIf(Not(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self)),TARGET_COUNTRY.GetName)] enters into a [concept_defensive_pact_confederation] with [COUNTRY.GetName]"
+
+  defensive_pact_confederation_trigger_desc_global: "Is in a [concept_defensive_pact_confederation]"
+  defensive_pact_confederation_trigger_false_desc_global: "Is #b not#! in a [concept_defensive_pact_confederation]"
+  defensive_pact_confederation_trigger_desc_first: "[TARGET_COUNTRY.GetName] is in a [concept_defensive_pact_confederation] with [COUNTRY.GetAdjectiveNoFlag]"
+  defensive_pact_confederation_trigger_false_desc_first: "[TARGET_COUNTRY.GetName] is #b not#! in a [concept_defensive_pact_confederation] with [COUNTRY.GetAdjectiveNoFlag]"
+  defensive_pact_confederation_trigger_desc_third: "[AddTextIf(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self),TARGET_COUNTRY.GetNameNoFlag)][AddTextIf(Not(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self)),TARGET_COUNTRY.GetName)] is in a [concept_defensive_pact_confederation] with [COUNTRY.GetName]"
+  defensive_pact_confederation_trigger_false_desc_third: "[AddTextIf(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self),TARGET_COUNTRY.GetNameNoFlag)][AddTextIf(Not(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self)),TARGET_COUNTRY.GetName)] is #b not#! in a [concept_defensive_pact_confederation] with [COUNTRY.GetName]"
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################

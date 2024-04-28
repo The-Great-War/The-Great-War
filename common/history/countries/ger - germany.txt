@@ -1,0 +1,54 @@
+COUNTRIES = {
+	c:GER = {
+		effect_starting_technology_1922_tech_major = yes
+
+		set_tax_level = medium
+		
+		# Laws 
+		activate_law = law_type:law_monarchy
+		activate_law = law_type:law_wealth_voting
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_women_in_the_workplace
+		activate_law = law_type:law_compulsory_primary_school
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_supremacy # Poles were even excluded from Landrat posts in 1832. Germanization policies were in full swing by the mid-1830s
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_militarized_police
+		activate_law = law_type:law_commercialized_agriculture
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_mass_conscription
+		activate_law = law_type:law_censorship	
+
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 1
+		}
+		
+		ig:ig_landowners = { 
+			set_interest_group_name = ig_junkers
+			remove_ideology = ideology_paternalistic
+			add_ideology = ideology_junker_paternalistic
+		}
+
+		ig:ig_devout = {
+			set_interest_group_name = ig_evangelical_church
+		}
+		
+
+		add_declared_interest = region_italy
+
+		trigger_event = { 
+			id = stance.1 
+			days = 0
+			popup = yes
+		}
+	}
+}

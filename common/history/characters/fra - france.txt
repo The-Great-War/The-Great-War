@@ -1,0 +1,13 @@
+﻿CHARACTERS = {
+	c:FRA ?= {
+		create_character = {
+			template = fra_armand_fallieres_template
+		}
+		create_character = {
+			template = fra_raymond_poincare_template
+		}
+		create_character = {
+			template = fra_emile_loubet_template
+		}
+	}
+}

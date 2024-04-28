@@ -1,0 +1,32 @@
+﻿# China - CHI
+
+chi_guangxu_character_template = { #Guangxu last emperor of Great Qing
+	first_name = Guangxu
+	last_name = Aisin_Gioro
+	ruler = yes
+	historical = yes
+	female = no
+	birth_date = 1871.8.14
+	interest_group = ig_landowners
+	ideology = ideology_reformer
+	culture = cu:manchu
+	traits = {
+		reserved
+	}
+}
+
+# Japan - JAP
+
+jap_meiji_yamato_template = {
+    first_name = "Meiji"
+    last_name = "Yamato"
+    historical = yes
+    ruler = yes
+    birth_date = 1852.1.1
+    dna = dna_emperor_meiji
+    interest_group = ig_industrialists
+    traits = {
+        innovative
+        charismatic
+    }
+}

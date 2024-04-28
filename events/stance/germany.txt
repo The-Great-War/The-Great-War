@@ -1,0 +1,71 @@
+﻿namespace = stance
+stance.1 = {
+	type = country_event # can be country_event, character_event, or state_event
+	placement = root
+	title = stance.1.t
+	desc = stance.1.d
+	flavor = stance.1.f
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+immediate = {
+        c:AUS = {
+            save_scope_as = aus_nation_scope
+        }
+        c:GBR = {
+            save_scope_as = gbr_nation_scope
+        }
+		c:FRA = {
+            save_scope_as = fra_nation_scope
+        }
+		c:RUS = {
+            save_scope_as = rus_nation_scope
+        }
+		c:GER = { 
+			save_scope_as = ger_nation_scope
+		}
+		cu:north_german = {
+			save_scope_as = german_culture_scope
+		}
+    }
+    
+    trigger = {
+        exists = c:GER		#Unless your event is triggered by another event or decision
+        this = c:GER		#You should use common/on_actions to include it in a pulse
+	}
+
+	event_image = {
+        # There are two types of event images: video and texture
+        # video should be a bk2 (Bink Video) file
+		video = "gfx/event_pictures/unspecific_politicians_arguing.bk2"
+        # Static images are called 'texture' instead
+        # texture should be a dds (DirectDraw Surface) file
+        # texture = "gfx/texture.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+
+	option = {
+		name = stance.1.1
+		add_variable = stance1
+		custom_tooltip = stance.1.1.tt
+    }
+    
+	option = {
+		name = stance.1.2
+		add_variable = stance2
+		custom_tooltip = stance.1.2.tt
+    }
+	
+	option = {
+		name = stance.1.3
+		add_variable = stance3
+		custom_tooltip = stance.1.3.tt
+    }
+
+	option = {
+		name = stance.1.4
+		add_variable = stance3
+		custom_tooltip = stance.1.4.tt
+    }
+}

@@ -1,0 +1,13 @@
+COUNTRIES = {
+	c:LIT = {
+		effect_starting_technology_1922_tech_minor = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_wealth_voting
+		activate_law = law_type:law_freedom_of_conscience
+		
+        set_ruling_interest_groups = {
+        	ig_landowners
+        }
+	}
+}

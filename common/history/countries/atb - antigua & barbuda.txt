@@ -1,0 +1,52 @@
+﻿COUNTRIES = {
+	c:ATB = {
+		
+		effect_starting_technology_tier_1_tech = yes
+
+		set_tax_level = medium
+		
+		
+		
+		# Laws
+		activate_law = law_type:law_professional_army
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_compulsory_primary_school
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_multicultural
+		activate_law = law_type:law_resettlement_enticement
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_laissez_faire
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_public_health_insurance
+		activate_law = law_type:law_guaranteed_liberties
+		activate_law = law_type:law_worker_protections
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_womens_suffrage
+		activate_law = law_type:law_slavery_banned
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_limited_protections
+
+			
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 3
+		}
+
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 1
+		}
+		
+		ig:ig_devout = { 
+			set_interest_group_name = ig_anglican_church
+		}
+
+		ig:ig_trade_unions = {
+			set_ig_suppression = yes
+		}
+	}
+}

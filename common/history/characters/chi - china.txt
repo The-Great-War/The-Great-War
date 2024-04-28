@@ -1,0 +1,9 @@
+﻿CHARACTERS = {
+	c:CHI ?= {
+	
+		create_character = {
+			template = chi_guangxu_character_template
+		}
+		
+	}
+}

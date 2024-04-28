@@ -1,0 +1,23 @@
+﻿multi_alliance = {
+	type = country
+	text = {
+		trigger = {
+			is_target_in_global_variable_list = {
+				name = central_powers
+				target = PREV
+			}
+		}
+		localization_key = central_powers
+		fallback = yes
+	}
+
+	text = {
+		trigger = {
+			is_target_in_global_variable_list = {
+				name = entente
+				target = PREV
+			}
+		}
+		localization_key = entente
+	}
+}

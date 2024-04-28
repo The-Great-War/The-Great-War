@@ -1,0 +1,122 @@
+﻿namespace = mali_collapse
+
+# Independent British East India Company decides how to proceed
+
+mali_collapse.1 = {
+	type = country_event
+	placement = root
+	hidden = yes
+
+	title = "Mali collapse"
+	
+	duration = 3
+	
+	trigger = {
+	}
+
+	immediate = {
+		capital = {
+			save_scope_as = capital_scope
+		}
+		
+		# All remaining Central American states secede
+		if = {
+			limit = {
+				exists = s:STATE_INNER_MAURITANIA.region_state:MAL
+				s:STATE_INNER_MAURITANIA.region_state:MAL = {
+					is_capital = no
+				}
+			}
+			create_country = {
+				tag = MUR
+				origin = this
+				state = s:STATE_INNER_MAURITANIA.region_state:MAL
+			}
+			c:MUR = { save_scope_as = scope_MUR }
+			if = {
+				limit = { exists = s:STATE_MAURITANIA.region_state:MAL }
+				s:STATE_MAURITANIA.region_state:MAL = { set_state_owner = c:MUR }
+			}
+		}
+		if = {
+			limit = {
+				exists = s:STATE_SENEGAL.region_state:MAL
+				s:STATE_SENEGAL.region_state:MAL = {
+					is_capital = no
+				}
+			}
+			create_country = {
+				tag = SEN
+				origin = this
+				state = s:STATE_SENEGAL.region_state:MAL
+			}
+            c:SEN = { save_scope_as = scope_SEN }
+			if = {
+				limit = { exists = s:STATE_GAMBIA.region_state:MAL }
+				s:STATE_GAMBIA.region_state:MAL = { set_state_owner = c:SEN }
+			}
+        }
+		if = {
+			limit = {
+				exists = s:STATE_GUINEA.region_state:MAL
+				s:STATE_GUINEA.region_state:MAL = {
+					is_capital = no
+				}
+			}
+			create_country = {
+				tag = GIU
+				origin = this
+				state = s:STATE_GUINEA.region_state:MAL
+			}
+        }
+		if = {
+			limit = {
+				exists = s:STATE_VOLTA.region_state:MAL
+				s:STATE_VOLTA.region_state:MAL = {
+					is_capital = no
+				}
+			}
+			create_country = {
+				tag = BRK
+				origin = this
+				state = s:STATE_VOLTA.region_state:MAL
+			}
+        }
+		if = {
+			limit = {
+				exists = s:STATE_NIGER.region_state:MAL
+				s:STATE_NIGER.region_state:MAL = {
+					is_capital = no
+				}
+			}
+			create_country = {
+				tag = NIG
+				origin = this
+				state = s:STATE_NIGER.region_state:MAL
+			}
+            c:NIG = { save_scope_as = scope_NIG}
+			if = {
+				limit = { exists = s:STATE_OUTER_HAUSALAND.region_state:MAL }
+				s:STATE_OUTER_HAUSALAND.region_state:MAL = { set_state_owner = c:NIG }
+			}
+        }
+		if = {
+			limit = {
+				exists = s:STATE_IVORY_COAST.region_state:MAL
+				s:STATE_IVORY_COAST.region_state:MAL = {
+					is_capital = no
+				}
+			}
+			create_country = {
+				tag = IVO
+				origin = this
+				state = s:STATE_IVORY_COAST.region_state:MAL
+			}
+            c:IVO = { save_scope_as = scope_IVO}
+			if = {
+				limit = { exists = s:STATE_WINDWARD_COAST.region_state:MAL }
+				s:STATE_WINDWARD_COAST.region_state:MAL = { set_state_owner = c:IVO }
+			}
+        }
+	}
+}

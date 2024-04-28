@@ -1,0 +1,860 @@
+﻿POPS = {
+ 	s:STATE_BIHAR = { 
+ 		region_state:BIC = { 
+ 			create_pop = {
+ 				culture = bihari
+ 				size = 20228606
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				size = 192
+ 			}
+ 			create_pop = {
+ 				culture = bihari
+ 				religion = sunni
+ 				size = 1258675
+ 			}
+ 		}
+ 	}
+ 	s:STATE_NORTH_BENGAL = { 
+ 		region_state:BIC = { 
+ 			create_pop = {
+ 				culture = bengali
+ 				religion = hindu
+ 				size = 25478272
+ 			}
+ 			create_pop = {
+ 				culture = bengali
+ 				size = 8841956
+ 			}
+ 		}
+ 	}
+ 	s:STATE_ASSAM = { 
+ 		region_state:BIC = { 
+ 			create_pop = {
+ 				culture = assamese
+ 				religion = hindu
+ 				size = 2083765
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				size = 96
+ 			}
+ 			create_pop = {
+ 				culture = thai
+ 				religion = animist
+ 				size = 1869774
+ 			}
+ 			create_pop = {
+ 				culture = manipuri
+ 				size = 1484211
+ 			}
+ 			create_pop = {
+ 				culture = assamese
+ 				size = 1320988
+ 			}
+ 			create_pop = {
+ 				culture = bengali
+ 				size = 1219084
+ 			}
+ 		}
+ 	}
+ 	s:STATE_DELHI = { 
+ 		region_state:BIC = { 
+ 			create_pop = {
+ 				culture = avadhi
+ 				religion = hindu
+ 				size = 18203274
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				size = 304
+ 			}
+ 			create_pop = {
+ 				culture = kanauji
+ 				size = 6026761
+ 			}
+ 			create_pop = {
+ 				culture = panjaBIC
+ 				religion = sunni
+ 				size = 1079716
+ 			}
+ 			create_pop = {
+ 				culture = avadhi
+ 				size = 439828
+ 			}
+ 			create_pop = {
+ 				culture = kanauji
+ 				religion = sunni
+ 				size = 683962
+ 			}
+ 			create_pop = {
+ 				culture = panjaBIC
+ 				size = 203858
+ 			}
+ 			create_pop = {
+ 				culture = nepali
+ 				size = 91965
+ 			}
+ 		}
+ 	}
+ 	s:STATE_AWADH = { 
+ 		region_state:BIC = { 
+ 			create_pop = {
+ 				culture = avadhi
+ 				religion = hindu
+ 				size = 12063146
+ 			}
+ 			create_pop = {
+ 				culture = nepali
+ 				size = 1115627
+ 			}
+ 			create_pop = {
+ 				culture = kanauji
+ 				size = 1831140
+ 			}
+ 			create_pop = {
+ 				culture = avadhi
+ 				size = 1723611
+ 			}
+ 			create_pop = {
+ 				culture = kanauji
+ 				religion = sunni
+ 				size = 1200564
+ 			}
+ 		}
+ 	}
+ 	s:STATE_GUJARAT = { 
+ 		region_state:BIC = { 
+ 			create_pop = {
+ 				culture = gujarati
+ 				size = 16739412
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				size = 32
+ 			}
+ 			create_pop = {
+ 				culture = gujarati
+ 				religion = animist
+ 				size = 87144
+ 			}
+ 			create_pop = {
+ 				culture = sindi
+ 				size = 348166
+ 			}
+ 		}
+ 	}
+ 	s:STATE_CENTRAL_INDIA = { 
+ 		region_state:BIC = { 
+ 			create_pop = {
+ 				culture = marathi
+ 				size = 13344200
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				size = 96
+ 			}
+ 			create_pop = {
+ 				culture = avadhi
+ 				size = 159897
+ 			}
+ 		}
+ 	}
+ 	s:STATE_KASHMIR = { 
+ 		region_state:BIC = { 
+ 			create_pop = {
+ 				culture = kashmiri
+ 				size = 11311666
+ 			}
+ 			create_pop = {
+ 				culture = panjaBIC
+ 				size = 37687
+ 			}
+ 			create_pop = {
+ 				culture = tibetan
+ 				religion = mahayana
+ 				size = 444879
+ 			}
+ 			create_pop = {
+ 				culture = kashmiri
+ 				religion = hindu
+ 				size = 249111
+ 			}
+ 			create_pop = {
+ 				culture = pashtun
+ 				size = 37687
+ 			}
+ 		}
+ 	}
+ 	s:STATE_PUNJAB = { 
+ 		region_state:BIC = { 
+ 			create_pop = {
+ 				culture = nepali
+ 				size = 1427787
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				size = 3405
+ 			}
+ 			create_pop = {
+ 				culture = avadhi
+ 				religion = hindu
+ 				size = 326641
+ 			}
+ 			create_pop = {
+ 				culture = irish
+ 				size = 104
+ 			}
+ 			create_pop = {
+ 				culture = boer
+ 				size = 238
+ 			}
+ 			create_pop = {
+ 				culture = panjaBIC
+ 				religion = sunni
+ 				size = 36909
+ 			}
+ 			create_pop = {
+ 				culture = irish
+ 				religion = protestant
+ 				size = 22
+ 			}
+ 			create_pop = {
+ 				culture = franco_canadian
+ 				size = 7
+ 			}
+ 			create_pop = {
+ 				culture = anglo_canadian
+ 				size = 12
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				religion = jewish
+ 				size = 2
+ 			}
+ 			create_pop = {
+ 				culture = scottish
+ 				size = 40
+ 			}
+ 			create_pop = {
+ 				culture = scottish
+ 				religion = catholic
+ 				size = 2
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				religion = catholic
+ 				size = 3
+ 			}
+ 			create_pop = {
+ 				culture = australian
+ 				size = 25
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				religion = theravada
+ 				size = 1
+ 			}
+ 			create_pop = {
+ 				culture = panjaBIC
+ 				religion = hindu
+ 				size = 30242
+ 			}
+ 		}
+ 	}
+ 	s:STATE_NAGPUR = { 
+ 		region_state:BIC = { 
+ 			create_pop = {
+ 				culture = kanauji
+ 				size = 1500819
+ 			}
+ 			create_pop = {
+ 				culture = kanauji
+ 				religion = animist
+ 				size = 1421179
+ 			}
+ 			create_pop = {
+ 				culture = marathi
+ 				size = 3856471
+ 			}
+ 			create_pop = {
+ 				culture = avadhi
+ 				size = 249976
+ 			}
+ 			create_pop = {
+ 				culture = telegu
+ 				size = 334936
+ 			}
+ 			create_pop = {
+ 				culture = telegu
+ 				religion = sunni
+ 				size = 28535
+ 			}
+ 			create_pop = {
+ 				culture = telegu
+ 				religion = animist
+ 				size = 170274
+ 			}
+ 		}
+ 	}
+ 	s:STATE_SOUTH_BENGAL = { 
+ 		region_state:BIC = { 
+ 			create_pop = {
+ 				culture = bengali
+ 				religion = hindu
+ 				size = 19573854
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				size = 18548
+ 			}
+ 			create_pop = {
+ 				culture = bengali
+ 				religion = animist
+ 				size = 119030
+ 			}
+ 			create_pop = {
+ 				culture = bengali
+ 				size = 6658161
+ 			}
+ 		}
+ 	}
+ 	s:STATE_SINDH = { 
+ 		region_state:BIC = { 
+ 			create_pop = {
+ 				culture = sindi
+ 				size = 11651159
+ 			}
+ 			create_pop = {
+ 				culture = lacustrine_bantu
+ 				size = 31006
+ 			}
+ 			create_pop = {
+ 				culture = sindi
+ 				religion = shiite
+ 				size = 24383
+ 			}
+ 			create_pop = {
+ 				culture = sindi
+ 				religion = hindu
+ 				size = 247780
+ 			}
+ 		}
+ 	}
+ 	s:STATE_RAJPUTANA = { 
+ 		region_state:BIC = { 
+ 			create_pop = {
+ 				culture = rajput
+ 				size = 17400476
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				size = 48
+ 			}
+ 			create_pop = {
+ 				culture = avadhi
+ 				size = 655442
+ 			}
+ 		}
+ 	}
+ 	s:STATE_CEYLON = { 
+ 		region_state:CEY = { 
+ 			create_pop = {
+ 				culture = sinhala
+ 				size = 1855182
+ 			}
+ 			create_pop = {
+ 				culture = lacustrine_bantu
+ 				religion = catholic
+ 				size = 700
+ 			}
+ 			create_pop = {
+ 				culture = tamil
+ 				size = 214836
+ 			}
+ 			create_pop = {
+ 				culture = mashriqi
+ 				religion = sunni
+ 				size = 31930
+ 			}
+ 			create_pop = {
+ 				culture = sinhala
+ 				religion = sunni
+ 				size = 23984
+ 			}
+ 			create_pop = {
+ 				culture = malay
+ 				size = 16390
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				size = 5523
+ 			}
+ 			create_pop = {
+ 				culture = sinhala
+ 				religion = catholic
+ 				size = 36200
+ 			}
+ 			create_pop = {
+ 				culture = sinhala
+ 				religion = protestant
+ 				size = 12000
+ 			}
+ 			create_pop = {
+ 				culture = british
+ 				religion = theravada
+ 				size = 5
+ 			}
+ 			create_pop = {
+ 				culture = tamil
+ 				religion = theravada
+ 				size = 42
+ 			}
+ 		}
+ 	}
+ 	s:STATE_INDIAN_OCEAN_TERRITORY = { 
+ 		region_state:FRA = { 
+ 			create_pop = {
+ 				culture = french
+ 				size = 30246
+ 			}
+ 			create_pop = {
+ 				culture = afro_antillean
+ 				size = 68046
+ 			}
+ 			create_pop = {
+ 				culture = french
+ 				religion = protestant
+ 				size = 16
+ 			}
+ 			create_pop = {
+ 				culture = afro_antillean
+ 				religion = animist
+ 				size = 5989
+ 			}
+ 			create_pop = {
+ 				culture = swahili
+ 				size = 2000
+ 			}
+ 			create_pop = {
+ 				culture = occitan
+ 				size = 120
+ 			}
+ 			create_pop = {
+ 				culture = corsican
+ 				size = 18
+ 			}
+ 			create_pop = { 
+ 				culture = occitan
+ 				religion = protestant
+ 				size = 22
+ 			}
+ 			create_pop = { 
+ 				culture = north_italian
+ 				size = 7
+ 			}
+ 			create_pop = { 
+ 				culture = catalan
+ 				size = 14
+ 			}
+ 		}
+ 		region_state:GBR = { 
+ 			create_pop = { 
+ 				culture = british
+ 				size = 1036
+ 			}
+ 			create_pop = { 
+ 				culture = french
+ 				size = 2088
+ 			}
+ 			create_pop = { 
+ 				culture = afro_antillean
+ 				size = 94612
+ 			}
+ 			create_pop = { 
+ 				culture = afro_caribbean
+ 				size = 5900
+ 			}
+ 			create_pop = { 
+ 				culture = british
+ 				religion = catholic
+ 				size = 2
+ 			}
+ 			create_pop = { 
+ 				culture = australian
+ 				size = 23
+ 			}
+ 			create_pop = { 
+ 				culture = anglo_canadian
+ 				size = 5
+ 			}
+ 			create_pop = { 
+ 				culture = scottish
+ 				size = 46
+ 			}
+ 			create_pop = { 
+ 				culture = scottish
+ 				religion = catholic
+ 				size = 2
+ 			}
+ 		}
+ 	}
+ 	s:STATE_ORISSA = { 
+ 		region_state:BIC = { 
+ 			create_pop = { 
+ 				culture = oriya
+ 				size = 1357086
+ 			}
+ 			create_pop = { 
+ 				culture = british
+ 				size = 216
+ 			}
+ 			create_pop = { 
+ 				culture = irish
+ 				size = 51
+ 			}
+ 			create_pop = { 
+ 				culture = boer
+ 				size = 89
+ 			}
+ 			create_pop = { 
+ 				culture = oriya
+ 				religion = animist
+ 				size = 176358
+ 			}
+ 			create_pop = { 
+ 				culture = bengali
+ 				size = 16400
+ 			}
+ 			create_pop = { 
+ 				culture = irish
+ 				religion = protestant
+ 				size = 11
+ 			}
+ 			create_pop = { 
+ 				culture = scottish
+ 				size = 20
+ 			}
+ 			create_pop = { 
+ 				culture = anglo_canadian
+ 				size = 1
+ 			}
+ 			create_pop = { 
+ 				culture = british
+ 				religion = catholic
+ 				size = 1
+ 			}
+ 			create_pop = { 
+ 				culture = scottish
+ 				religion = catholic
+ 				size = 1
+ 			}
+ 			create_pop = { 
+ 				culture = australian
+ 				size = 12
+ 			}
+ 			create_pop = { 
+ 				culture = british
+ 				religion = jewish
+ 				size = 1
+ 			}
+ 		}
+ 	}
+ 	s:STATE_CIRCARS = { 
+ 		region_state:BIC = { 
+ 			create_pop = { 
+ 				culture = telegu
+ 				size = 9766910
+ 			}
+ 			create_pop = { 
+ 				culture = british
+ 				size = 596
+ 			}
+ 			create_pop = { 
+ 				culture = kannada
+ 				size = 336100
+ 			}
+ 			create_pop = { 
+ 				culture = telegu
+ 				religion = sunni
+ 				size = 133652
+ 			}
+ 			create_pop = { 
+ 				culture = kannada
+ 				religion = shiite
+ 				size = 8600
+ 			}
+ 		}
+ 	}
+ 	s:STATE_MYSORE = { 
+ 		region_state:BIC = { 
+ 			create_pop = { 
+ 				culture = kannada
+ 				religion = hindu
+ 				size = 3653801
+ 			}
+ 			create_pop = { 
+ 				culture = irish
+ 				size = 69
+ 			}
+ 			create_pop = { 
+ 				culture = kannada
+ 				size = 340844
+ 			}
+ 			create_pop = { 
+ 				culture = british
+ 				size = 126
+ 			}
+ 			create_pop = { 
+ 				culture = irish
+ 				religion = protestant
+ 				size = 16
+ 			}
+ 			create_pop = { 
+ 				culture = anglo_canadian
+ 				size = 1
+ 			}
+ 			create_pop = { 
+ 				culture = british
+ 				religion = jewish
+ 				size = 1
+ 			}
+ 			create_pop = { 
+ 				culture = scottish
+ 				size = 20
+ 			}
+ 			create_pop = { 
+ 				culture = british
+ 				religion = catholic
+ 				size = 2
+ 			}
+ 			create_pop = { 
+ 				culture = australian
+ 				size = 12
+ 			}
+ 			create_pop = { 
+ 				culture = scottish
+ 				religion = catholic
+ 				size = 1
+ 			}
+ 		}
+ 	}
+ 	s:STATE_TRAVANCORE = { 
+ 		region_state:BIC = { 
+ 			create_pop = { 
+ 				culture = malayalam
+ 				size = 1515142
+ 			}
+ 			create_pop = { 
+ 				culture = malayalam
+ 				religion = sunni
+ 				size = 532985
+ 			}
+ 			create_pop = { 
+ 				culture = malayalam
+ 				religion = oriental_orthodox
+ 				size = 235996
+ 			}
+ 			create_pop = { 
+ 				culture = british
+ 				size = 263
+ 			}
+ 			create_pop = { 
+ 				culture = irish
+ 				size = 161
+ 			}
+ 			create_pop = { 
+ 				culture = boer
+ 				size = 258
+ 			}
+ 			create_pop = { 
+ 				culture = malayalam
+ 				religion = catholic
+ 				size = 232404
+ 			}
+ 			create_pop = { 
+ 				culture = malayalam
+ 				religion = shiite
+ 				size = 12400
+ 			}
+ 			create_pop = { 
+ 				culture = irish
+ 				religion = protestant
+ 				size = 35
+ 			}
+ 			create_pop = { 
+ 				culture = british
+ 				religion = jewish
+ 				size = 2
+ 			}
+ 			create_pop = { 
+ 				culture = scottish
+ 				religion = catholic
+ 				size = 2
+ 			}
+ 			create_pop = { 
+ 				culture = scottish
+ 				size = 40
+ 			}
+ 			create_pop = { 
+ 				culture = british
+ 				religion = catholic
+ 				size = 4
+ 			}
+ 			create_pop = { 
+ 				culture = australian
+ 				size = 21
+ 			}
+ 			create_pop = { 
+ 				culture = british
+ 				religion = theravada
+ 				size = 1
+ 			}
+ 			create_pop = { 
+ 				culture = anglo_canadian
+ 				size = 8
+ 			}
+ 			create_pop = { 
+ 				culture = franco_canadian
+ 				size = 3
+ 			}
+ 		}
+ 	}
+ 	s:STATE_MADRAS = { 
+ 		region_state:FRA = { 
+ 			create_pop = { 
+ 				culture = french
+ 				size = 452
+ 			}
+ 			create_pop = { 
+ 				culture = tamil
+ 				religion = catholic
+ 				size = 17932
+ 			}
+ 			create_pop = { 
+ 				culture = tamil
+ 				size = 182139
+ 			}
+ 		}
+ 		region_state:BIC = { 
+ 			create_pop = { 
+ 				culture = tamil
+ 				size = 12733182
+ 			}
+ 			create_pop = { 
+ 				culture = british
+ 				size = 30408
+ 			}
+ 			create_pop = { 
+ 				culture = tamil
+ 				religion = protestant
+ 				size = 91144
+ 			}
+ 			create_pop = { 
+ 				culture = kannada
+ 				size = 906000
+ 			}
+ 			create_pop = { 
+ 				culture = tamil
+ 				religion = sunni
+ 				size = 565100
+ 			}
+ 			create_pop = { 
+ 				culture = tamil
+ 				religion = catholic
+ 				size = 109376
+ 			}
+ 		}
+ 	}
+ 	s:STATE_HYDERABAD = { 
+ 		region_state:BIC = { 
+ 			create_pop = { 
+ 				culture = telegu
+ 				size = 4765643
+ 			}
+ 			create_pop = { 
+ 				culture = avadhi
+ 				size = 984909
+ 			}
+ 			create_pop = { 
+ 				culture = marathi
+ 				size = 3187194
+ 			}
+ 			create_pop = { 
+ 				culture = avadhi
+ 				religion = shiite
+ 				size = 36572
+ 			}
+ 			create_pop = { 
+ 				culture = kannada
+ 				size = 60018
+ 			}
+ 			create_pop = { 
+ 				culture = kannada
+ 				religion = hindu
+ 				size = 1164904
+ 			}
+ 		}
+ 	}
+ 	s:STATE_BOMBAY = { 
+ 		region_state:POR = { 
+ 			create_pop = { 
+ 				culture = portuguese
+ 				size = 5685
+ 			}
+ 			create_pop = { 
+ 				culture = marathi
+ 				religion = catholic
+ 				size = 364753
+ 			}
+ 			create_pop = { 
+ 				culture = marathi
+ 				size = 75852
+ 			}
+ 		}
+ 		region_state:BIC = { 
+ 			create_pop = { 
+ 				culture = british
+ 				size = 37747
+ 			}
+ 			create_pop = { 
+ 				culture = marathi
+ 				size = 10362290
+ 			}
+ 			create_pop = { 
+ 				culture = kannada
+ 				religion = hindu
+ 				size = 2033238
+ 			}
+ 			create_pop = { 
+ 				culture = sindi
+ 				religion = jewish
+ 				size = 8352
+ 			}
+ 			create_pop = { 
+ 				culture = sindi
+ 				size = 872304
+ 			}
+ 			create_pop = { 
+ 				culture = kannada
+ 				size = 409976
+ 			}
+ 			create_pop = { 
+ 				culture = gujarati
+ 				religion = animist
+ 				size = 504040
+ 			}
+ 			create_pop = { 
+ 				culture = marathi
+ 				religion = catholic
+ 				size = 98608
+ 			}
+ 			create_pop = { 
+ 				culture = sindi
+ 				religion = shiite
+ 				size = 45504
+ 			}
+ 		}
+ 	}
+}

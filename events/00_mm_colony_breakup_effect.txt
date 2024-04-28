@@ -1,0 +1,948 @@
+﻿namespace = colony_breakup_effect
+
+colony_breakup_effect.1 = {
+	type = country_event
+	placement = root
+	hidden = yes
+
+	title = "Mali change his primary culture"
+	
+	duration = 3
+	
+	trigger = {
+	}
+	
+	immediate = {	
+		if = {
+			limit = {
+				this = c:MAL
+				is_subject = no
+				is_at_war = no
+			}
+			c:MAL = {
+				remove_primary_culture = cu:french 
+				add_primary_culture = cu:bambara 
+				add_primary_culture = cu:fulbe 
+				set_state_religion = rel:sunni
+				every_scope_character = {
+					limit = {
+						OR = {
+							culture = cu:french
+						}
+					}
+					kill_character = yes
+				}
+			}
+ #           trigger_event = {
+ #               id = mali_collapse.1
+  #              days = 0
+   #             popup = no
+   #         }
+		}
+	}
+}
+
+colony_breakup_effect.2 = {
+	type = country_event
+	placement = root
+	hidden = yes
+
+	title = "Country change his primary culture COG"
+	
+	duration = 3
+	
+	trigger = {
+	}
+	
+	immediate = {	
+		if = {
+			limit = {
+				this = c:COG
+				is_subject = no
+				is_at_war = no
+			}
+			c:COG = {
+				remove_primary_culture = cu:french 
+				add_primary_culture = cu:bambara 
+				add_primary_culture = cu:fulbe 
+				set_state_religion = rel:sunni
+				every_scope_character = {
+					limit = {
+						OR = {
+							culture = cu:french
+						}
+					}
+					kill_character = yes
+				}
+			}
+		}
+	}
+}
+
+colony_breakup_effect.3 = {
+	type = country_event
+	placement = root
+	hidden = yes
+
+	title = "Country change his primary culture DAH"
+	
+	duration = 3
+	
+	trigger = {
+	}
+	
+	immediate = {	
+		if = {
+			limit = {
+				this = c:DAH 
+				is_subject = no
+				is_at_war = no
+			}
+			c:DAH = {
+				remove_primary_culture = cu:french 
+				add_primary_culture = cu:fon 
+				set_state_religion = rel:animist
+				every_scope_character = {
+					limit = {
+						OR = {
+							culture = cu:french
+						}
+					}
+					kill_character = yes
+				}
+			}
+		}
+	}
+}
+
+colony_breakup_effect.4 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture SUD"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:SUD 
+                is_subject = no
+                is_at_war = no
+            }
+            c:SUD = {
+                remove_primary_culture = cu:british
+                add_primary_culture = cu:sudanese
+                add_primary_culture = cu:beja
+                add_primary_culture = cu:bedouin
+                set_state_religion = rel:sunit
+                every_scope_character = {
+                    limit = {
+                        OR = {
+                            culture = cu:british
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.5 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture DFR"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:DFR 
+                is_subject = no
+                is_at_war = no
+            }
+            c:DFR = {
+                remove_primary_culture = cu:british
+                add_primary_culture = cu:fur 
+                add_primary_culture = cu:bedouin
+                set_state_religion = rel:animist
+                every_scope_character = {
+                    limit = {
+                        OR = {
+                            culture = cu:british
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.6 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture UGA"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:UGA 
+                is_subject = no
+                is_at_war = no
+            }
+            c:UGA = {
+                remove_primary_culture = cu:british
+                add_primary_culture = cu:baganda
+                add_primary_culture = cu:lacustrine_bantu
+                set_state_religion = rel:animist
+                every_scope_character = {
+                    limit = {
+                        OR = {
+                            culture = cu:british
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.7 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture KEN"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:KEN 
+                is_subject = no
+                is_at_war = no
+            }
+            c:KEN = {
+                remove_primary_culture = cu:british
+                add_primary_culture = cu:lacustrine_bantu
+                set_state_religion = rel:animist
+                every_scope_character = {
+                    limit = {
+                        OR = {
+                            culture = cu:british
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.8 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture MWI"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:MWI 
+                is_subject = no
+                is_at_war = no
+            }
+            c:MWI = {
+                remove_primary_culture = cu:british
+                add_primary_culture = cu:lunda
+                add_primary_culture = cu:chewa
+                set_state_religion = rel:animist
+                every_scope_character = {
+                    limit = {
+                        OR = {
+                            culture = cu:british
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.9 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture ZIM"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:ZIM 
+                is_subject = no
+                is_at_war = no
+            }
+            c:ZIM = {
+                remove_primary_culture = cu:british
+                add_primary_culture = cu:shona
+                add_primary_culture = cu:nguni
+                set_state_religion = rel:animist
+                every_scope_character = {
+                    limit = {
+                        OR = {
+                            culture = cu:british
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.10 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture TSW"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:TSW 
+                is_subject = no
+                is_at_war = no
+            }
+            c:TSW = {
+                remove_primary_culture = cu:british
+                add_primary_culture = cu:tswana
+                set_state_religion = rel:animist
+                every_scope_character = {
+                    limit = {
+                        OR = {
+                            culture = cu:british
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.11 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture GAM"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:GAM 
+                is_subject = no
+                is_at_war = no
+            }
+            c:GAM = {
+                remove_primary_culture = cu:british
+                add_primary_culture = cu:fulbe
+                set_state_religion = rel:animist
+                every_scope_character = {
+                    limit = {
+                        OR = {
+                            culture = cu:british
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.12 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture SIL"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:SIL 
+                is_subject = no
+                is_at_war = no
+            }
+            c:SIL = {
+                remove_primary_culture = cu:british
+                add_primary_culture = cu:afro_caribbean
+                set_state_religion = rel:protestent
+                every_scope_character = {
+                    limit = {
+                        OR = {
+                            culture = cu:british
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.13 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture ASH"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:ASH 
+                is_subject = no
+                is_at_war = no
+            }
+            c:ASH = {
+                remove_primary_culture = cu:british
+                add_primary_culture = cu:akan
+                set_state_religion = rel:animist
+                every_scope_character = {
+                    limit = {
+                        OR = {
+                            culture = cu:british
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.14 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture ERI"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:ERI 
+                is_subject = no
+                is_at_war = no
+            }
+            c:ERI = {
+                remove_primary_culture = cu:north_italian
+                remove_primary_culture = cu:south_italian
+                add_primary_culture = cu:tigray
+                add_primary_culture = cu:afar
+                set_state_religion = rel:sunit
+                every_scope_character = {
+                    limit = {
+                        or  = {
+                            culture = cu:north_italian
+                            culture = cu:south_italian
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.15 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture SOL"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:SOL 
+                is_subject = no
+                is_at_war = no
+            }
+            c:SOL = {
+                remove_primary_culture = cu:north_italian
+                remove_primary_culture = cu:south_italian
+                add_primary_culture = cu:somali
+                set_state_religion = rel:sunit
+                every_scope_character = {
+                    limit = {
+                        or  = {
+                            culture = cu:north_italian
+                            culture = cu:south_italian
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.16 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture TRI"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:TRI 
+                is_subject = no
+                is_at_war = no
+            }
+            c:TRI = {
+                remove_primary_culture = cu:north_italian
+                remove_primary_culture = cu:south_italian
+                add_primary_culture = cu:maghrebi
+                set_state_religion = rel:sunit
+                every_scope_character = {
+                    limit = {
+                        or  = {
+                            culture = cu:north_italian
+                            culture = cu:south_italian
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.17 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture ITC"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:ITC 
+                is_subject = no
+                is_at_war = no
+            }
+            c:ITC = {
+                remove_primary_culture = cu:north_italian
+                remove_primary_culture = cu:south_italian
+                add_primary_culture = cu:maghrebi
+                set_state_religion = rel:sunit
+                every_scope_character = {
+                    limit = {
+                        or  = {
+                            culture = cu:north_italian
+                            culture = cu:south_italian
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.18 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture TAN"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:TAN 
+                is_subject = no
+                is_at_war = no
+            }
+            c:TAN = {
+                remove_primary_culture = cu:north_german
+                remove_primary_culture = cu:south_german
+                add_primary_culture = cu:swahili
+                add_primary_culture = cu:yao
+                add_primary_culture = cu:lacustrine_bantu
+                set_state_religion = rel:animist
+                every_scope_character = {
+                    limit = {
+                        or  = {
+                            culture = cu:north_german
+                            culture = cu:south_german
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.19 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture CMU"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:CMU 
+                is_subject = no
+                is_at_war = no
+            }
+            c:CMU = {
+                remove_primary_culture = cu:north_german
+                remove_primary_culture = cu:south_german
+                add_primary_culture = cu:fang
+                set_state_religion = rel:animist
+                every_scope_character = {
+                    limit = {
+                        or  = {
+                            culture = cu:north_german
+                            culture = cu:south_german
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.20 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture TOG"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:TOG 
+                is_subject = no
+                is_at_war = no
+            }
+            c:TOG = {
+                remove_primary_culture = cu:north_german
+                remove_primary_culture = cu:south_german
+                add_primary_culture = cu:ewe
+                set_state_religion = rel:animist
+                every_scope_character = {
+                    limit = {
+                        or  = {
+                            culture = cu:north_german
+                            culture = cu:south_german
+                        }
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.21 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture MOZ"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:MOZ 
+                is_subject = no
+                is_at_war = no
+            }
+            c:MOZ = {
+                remove_primary_culture = cu:portuguese
+                add_primary_culture = cu:makua
+                add_primary_culture = cu:tonga
+                add_primary_culture = cu:sena
+                set_state_religion = rel:animist
+                every_scope_character = {
+                    limit = {
+                        culture = cu:portuguese
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.22 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture ANG"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:ANG 
+                is_subject = no
+                is_at_war = no
+            }
+            c:ANG = {
+                remove_primary_culture = cu:portuguese
+                add_primary_culture = cu:bakongo
+                add_primary_culture = cu:ovimbundu
+                set_state_religion = rel:animist
+                every_scope_character = {
+                    limit = {
+                        culture = cu:portuguese
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}  
+
+colony_breakup_effect.23 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture ZAM"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:ZAM 
+                is_subject = no
+                is_at_war = no
+            }
+            c:ZAM = {
+                remove_primary_culture = cu:british
+                add_primary_culture = cu:bakongo
+                add_primary_culture = cu:ovimbundu
+                set_state_religion = rel:animist
+                every_scope_character = {
+                    limit = {
+                        culture = cu:british
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+} 
+
+colony_breakup_effect.24 = {
+    type = country_event
+    placement = root
+    hidden = yes
+
+    title = "Country change his primary culture SOK"
+    
+    duration = 3
+    
+    trigger = {
+    }
+    
+    immediate = {    
+        if = {
+            limit = {
+                this = c:SOK 
+                is_subject = no
+                is_at_war = no
+            }
+            c:SOK = {
+                remove_primary_culture = cu:british
+                add_primary_culture = cu:hausa
+                add_primary_culture = cu:fulbe
+                set_state_religion = rel:sunit
+                every_scope_character = {
+                    limit = {
+                        culture = cu:british
+                    }
+                    kill_character = yes
+                }
+            }
+        }
+    }
+}
+
+colony_breakup_effect.25 = {
+	type = country_event
+	placement = root
+	hidden = yes
+
+	title = "Mali change his primary culture"
+	
+	duration = 3
+	
+	trigger = {
+	}
+	
+	immediate = {	
+		if = {
+			limit = {
+				this = c:MAL
+				is_subject = no
+				is_at_war = no
+			}
+            trigger_event = {
+                id = mali_collapse.1
+                days = 0
+                popup = no
+            }
+		}
+	}
+}
+
+colony_breakup_effect.26 = {
+	type = country_event
+	placement = root
+	hidden = yes
+
+	title = "Country change his primary culture COG"
+	
+	duration = 3
+	
+	trigger = {
+	}
+	
+	immediate = {	
+		if = {
+			limit = {
+				this = c:COG
+				is_subject = no
+				is_at_war = no
+			}
+            trigger_event = {
+                id = congo_collapse.1
+                days = 0
+                popup = no
+            }
+		}
+	}
+}
