@@ -56,6 +56,16 @@ ai_strategy_default = {
 	# Using this value in other strategies will function additively
 	diplomatic_play_neutrality = {
 		value = 50 
+		if = {
+            limit = {
+                scope:diplomatic_play ?= {
+                    is_diplomatic_play_type = dp_revolution
+                }
+             #   has_law = law_type:law_council_republic
+            }
+            add = 100 #adds neutrality
+        } 
+
 	}
 	
 	# Added to base boldness in diplomatic plays	
