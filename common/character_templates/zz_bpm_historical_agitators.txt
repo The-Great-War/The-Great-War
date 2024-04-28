@@ -1649,24 +1649,6 @@ agitator_giuseppe_mazzini = {
 	}
 }
 
-rus_lenin_character_template = {
-    first_name = Vladimir
-    last_name = Lenin
-    historical = yes
-    birth_date = 1870.4.22
-    is_agitator = yes
-    female = no
-    culture = cu:russian
-    religion = rel:atheist
-    interest_group = ig_trade_unions
-    ideology = ideology_vanguardist
-    dna = dna_lenin
-    traits = {
-        firebrand
-        charismatic
-        reckless
-    }
-}
 
 fra_delescluze_character_template = {
     first_name = Louis_Charles
@@ -1811,24 +1793,7 @@ rus_mikhail_bakunin_character_template = {
         bigoted
 	}
 }
-rus_leon_trotsky_character_template = {
-    first_name = Leon_2
-	last_name = Trotsky
-	historical = yes
-	culture = cu:ashkenazi
-	religion = rel:atheist
-	female = no
-    is_agitator = yes
-	interest_group = ig_armed_forces
-	ideology = ideology_vanguardist
-	birth_date = 1879.10.26
-	dna = dna_trotsky
-	traits = {
-		innovative
-        charismatic
-        persistent
-	}
-}
+
 rus_jaroslaw_dabrowski_character_template = {
     first_name = Jaroslaw
     last_name = Dabrowski

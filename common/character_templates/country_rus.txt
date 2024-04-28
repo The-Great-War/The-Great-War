@@ -24,22 +24,19 @@ RUS_nicholas_ii = { #Nicholas II, son of Alexander III
 	}
 }
 
-RUS_michael_ii = { #Mikhail Romanov
-	first_name = Mikhail
-	last_name = Romanov
-	historical = yes
-	heir = yes
-	birth_date = 1878.5.9
-	interest_group = ig_landowners
-	ideology = ideology_moderate
-	traits = {
-		basic_artillery_commander 
-		tactful 
-	}
-	trait_generation = {
-		
-	}
-}
+# RUS_michael_ii = { #Mikhail Romanov
+# 	first_name = Mikhail
+# 	last_name = Romanov
+# 	historical = yes
+# 	heir = yes
+# 	birth_date = 1878.5.9
+# 	interest_group = ig_landowners
+# 	ideology = ideology_moderate
+# 	traits = {
+# 		basic_artillery_commander 
+# 		tactful 
+# 	}
+# }
 
 RUS_alexei_ii = { #Alexei Romanov, son of Nicholas II
 	first_name = Alexei
@@ -53,9 +50,6 @@ RUS_alexei_ii = { #Alexei Romanov, son of Nicholas II
 		sickly 
 		romantic
 		arrogant
-	}
-	trait_generation = {
-		
 	}
 }
 
@@ -90,8 +84,6 @@ RUS_stolypin = {
 	ideology = ideology_reformer
 	interest_group = ig_landowners
 	birth_date = 1862.4.14
-	traits = {
-	}
 }
 
 
@@ -110,7 +102,6 @@ RUS_kerensky = {
 		persistent
 	}
 }
-
 
 RUS_chernov = {
 	first_name = Viktor
@@ -144,7 +135,35 @@ RUS_milyukov = {
 	}
 }
 
-# add Guchkov later
+RUS_guchkov = {
+	first_name = Alexander
+	last_name = Guchkov
+	historical = yes
+	culture = cu:russian
+	religion = rel:orthodox
+	female = no
+    ig_leader = yes
+	interest_group = ig_landowners
+	ideology = ideology_reformer
+	birth_date = 1862.26.10
+	traits = {
+		
+	}
+}
+
+RUS_martov = {
+	first_name = Julius
+	last_name = Martov
+	historical = yes
+	culture = cu:ashkenazi
+	female = no
+    ig_leader = yes
+	interest_group = ig_trade_unions
+	ideology = ideology_social_democrat
+	birth_date = 1873.4.4
+	traits = {
+	}
+}
 
 # agitators
 
@@ -157,7 +176,7 @@ rus_leon_trotsky_character_template = {
 	female = no
     is_agitator = yes
 	interest_group = ig_armed_forces
-	ideology = ideology_vanguardist
+	ideology = ideology_trotskist
 	birth_date = 1879.10.26
 	dna = dna_trotsky
 	traits = {
@@ -175,7 +194,6 @@ rus_lenin_character_template = {
 	historical = yes
 	birth_date = 1870.4.22
 	is_agitator = yes
-	ig_leader = yes
 	female = no
 	culture = cu:russian
 	religion = rel:atheist
@@ -188,20 +206,5 @@ rus_lenin_character_template = {
         	reckless
         	literary
 			direct
-	}
-}
-
-RUS_martov = {
-	first_name = Julius
-	last_name = Martov
-	historical = yes
-	culture = cu:ashkenazi
-	female = no
-    is_agitator = yes
-	interest_group = ig_trade_unions
-	ideology = ideology_social_democrat
-	birth_date = 1873.4.4
-	traits = {
-	
 	}
 }

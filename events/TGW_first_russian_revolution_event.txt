@@ -1,0 +1,113 @@
+﻿namespace = first_rus_rev
+
+first_rus_rev.1 = { # bloody sunday
+    type = country_event
+    placement = root
+    hidden = no
+
+    title = first_rus_rev.1.t
+    desc = first_rus_rev.1.d
+    flavor = first_rus_rev.1.f
+    icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+	
+	duration = 3
+
+    trigger = {
+		#triggered by je
+    }
+
+    event_image = {
+		video = "votp_agitator_speaking"
+	}
+	
+	category = revolution
+
+    option = {
+        name = first_rus_rev.1.1
+        activate_law = law_type:law_universal_suffrage
+		activate_law = law_type:law_worker_protections
+		activate_law = law_type:law_elected_bureaucrats
+		ig:ig_landowners = {
+			add_approval = -5
+		}
+    }
+	
+	option = {
+        name = first_rus_rev.1.2
+        add_radicals = {
+			value = very_large_radicals
+			strata = poor
+		}
+    }
+}
+
+first_rus_rev.2 = { #October manifesto
+    type = country_event
+    placement = root
+    hidden = no
+
+    title = first_rus_rev.2.t
+    desc = first_rus_rev.2.d
+    flavor = first_rus_rev.2.f
+    icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+	
+	duration = 3
+
+    trigger = {
+		#triggered by je
+    }
+
+    event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+	
+	category = revolution
+
+    option = {
+        name = first_rus_rev.2.1 # make concessions
+		c:RUS = {
+			activate_law = law_type:law_universal_suffrage
+			activate_law = law_type:law_cultural_exclusion
+			activate_law = law_type:law_right_of_assembly
+			activate_law = law_type:law_poor_laws
+			activate_law = law_type:law_freedom_of_conscience
+			add_loyalists = {
+				value = medium_loyalists
+				strata = poor
+			}
+		}
+		c:RUS = {
+			create_character = {
+				template = rus_leon_trotsky_character_template
+			}
+			create_character = {
+				template = RUS_chernov
+			}
+			create_character = {
+				template = RUS_guchkov
+			}
+			create_character = {
+				template = RUS_martov
+			}
+        }
+		add_journal_entry = { 
+			type = stolypin_reforms_je
+		}
+    }
+	
+	option = { # refuse
+        name = first_rus_rev.2.2
+        add_radicals = {
+			value = very_large_radicals
+			strata = poor
+		}
+    }
+}

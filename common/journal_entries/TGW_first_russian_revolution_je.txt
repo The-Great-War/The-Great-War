@@ -1,0 +1,79 @@
+﻿first_rus_rev_je = {
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	group = je_group_internal_affairs
+
+	is_shown_when_inactive = {
+		c:RUS = root
+	}
+
+	possible = {
+		c:RUS = root
+		c:RUS = {
+			has_technology_researched = socialism
+			any_civil_war = {
+				civil_war_progress >= 0.3
+			}
+			any_political_movement = {
+				political_movement_radicalism >= 30
+			}
+		}
+	}
+	
+	immediate = {
+		trigger_event = { id = first_rus_rev.1 popup = yes }
+	}
+
+	complete = {
+		c:RUS = {
+			any_civil_war = {
+				civil_war_progress >= 0.8
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = {
+			id = first_rus_rev.2
+		}
+	}
+
+	fail = {
+		OR = {
+			NOT  = { has_law = law_type:law_monarchy }
+			has_law = law_type:law_census_voting
+			has_law = law_type:law_universal_suffrage
+			c:RUS = { has_revolution = yes }
+		}
+	}
+}
+
+stolypin_reforms_je = {
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	group = je_group_internal_affairs
+
+	complete = {
+		c:RUS = {
+			NOT = {
+				has_law = law_type:law_traditionalism
+				has_law = law_type:law_isolationism 
+				has_law = law_type:law_serfdom
+				has_law = law_type:law_tenant_farmers
+				has_law = law_type:law_land_based_taxation
+				has_law = law_type:law_consumption_based_taxation
+			}
+		}
+	}
+
+	on_complete = {
+		add_loyalists = {
+			value = medium_loyalists
+		}
+	}
+	
+	fail = {
+	
+	}
+}
