@@ -79,23 +79,6 @@ RUS_alexander_iii = { #Alexander III, second son of Alexander II
 	}
 }
 
-RUS_nicholas_ii = { #Nicholas II, son of Alexander III
-	first_name = Nikolai
-	last_name = Romanov
-	historical = yes
-	heir = yes
-	birth_date = 1868.5.18
-	dna = dna_tsar_nicolas_02
-	interest_group = ig_reactionaries
-	ideology = ideology_authoritarian
-	traits = {
-		imperious 
-		pious
-	}
-	trait_generation = {
-		
-	}
-}
 
 RUS_george_i = { #Georgy Romanov
 	first_name = Georgy
