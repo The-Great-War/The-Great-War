@@ -1,0 +1,118 @@
+﻿je_tgw_danube = {
+	icon = "gfx/interface/icons/generic_icons/truce.dds"
+
+	group = je_group_historical_content
+
+	immediate = {
+		set_variable = {
+			name = tgw_je_danube_progress
+			value = 0
+		}
+	}
+
+	is_progressing = {
+		government_legitimacy >= 50
+		ig:ig_landowners = {
+			bpm_ig_is_popular = yes
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_tgw_danube_in_civil_war
+				trigger = {
+					any_civil_war = {
+						civil_war_progress > 0.10
+					}
+				}
+			}
+			triggered_desc = {
+				desc = je_tgw_danube_in_process
+				trigger = {
+					capital = {
+						turmoil >= 0.25
+					}
+				}
+			}
+			triggered_desc = {
+				desc = je_tgw_danube_high_support
+				trigger = {
+					scope:journal_entry = {
+						is_progressing = yes
+					}
+					government_legitimacy >= 75
+				}
+			}
+			triggered_desc = {
+				desc = je_tgw_danube_medium_support
+				trigger = {
+					scope:journal_entry = {
+						is_progressing = yes
+					}
+					government_legitimacy >= 50
+				}
+			}
+			triggered_desc = {
+				desc = je_tgw_danube_low_support
+				trigger = {
+					government_legitimacy < 50
+				}
+			}
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = "bpm_je_progress_complete"
+			has_variable = tgw_je_danube_progress
+			var:tgw_je_danube_progress >= 100
+		}
+		OR = {
+			is_enacting_law = law_type:law_confederated
+			has_law = law_type:law_confederated
+		}
+		custom_tooltip = {
+			text = "tgw_root_ruler_is_liberal"
+			ruler = {
+				bpm_leader_is_liberal = yes
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = tgw_danube_event.1 popup = yes }
+	}
+
+	fail = {
+		any_civil_war = {
+			civil_war_progress > 0.75
+		}
+	}
+
+	on_fail = {
+	}
+
+	on_weekly_pulse = {
+		effect = {
+			tgw_je_danube_progress_rate_update = yes
+			bpm_handle_steady_var_growth = {
+				VARIABLE = tgw_je_danube_progress
+			}
+		}
+	}
+
+	current_value = {
+		value = var:tgw_je_danube_progress
+	}
+
+	goal_add_value = {
+		value = 100
+	}
+
+	progressbar = yes
+
+	weight = 100
+
+	should_be_pinned_by_default = yes
+}

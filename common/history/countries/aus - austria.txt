@@ -53,5 +53,8 @@
 		create_character = {
 			template = AUS_franz_ferdinand
 		}
+				add_journal_entry = {
+			type = je_tgw_danube
+		}
 	}
 }

@@ -1,0 +1,88 @@
+﻿namespace = tgw_african_independence
+
+tgw_african_independence.1 = {
+  type = country_event
+  placement = root
+  hidden = no
+
+  title = tgw_african_independence.1.t
+  desc = tgw_african_independence.1.d
+  flavor = tgw_african_independence.1.f
+  icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+
+  on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+  on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+
+  duration = 3
+
+  trigger = {
+    #triggered by je
+  }
+
+  event_image = {
+    video = "votp_agitator_speaking"
+  }
+
+
+
+  # ethnostate
+  option = {
+    name = tgw_african_independence.1.1
+    custom_tooltip = {
+      text = "tgw_african_independence_tooltip1"
+    }
+    activate_law = law_type:law_racial_segregation
+  }
+
+
+  # african cultures
+  option = {
+    name = tgw_african_independence.1.2
+    custom_tooltip = {
+      text = "tgw_african_independence_tooltip"
+    }
+
+
+
+    every_scope_culture = {
+      if = {
+        limit = {
+          NOT = {
+            has_discrimination_trait = european_heritage
+          }
+        }
+        ROOT = {
+          add_primary_culture = PREV
+        }
+      }
+    }
+
+    every_primary_culture = {
+      if = {
+        limit = {
+          has_discrimination_trait = european_heritage
+        }
+        ROOT = {
+          remove_primary_culture = PREV
+        }
+      }
+    }
+
+    make_independent = yes
+    custom_tooltip = {
+      ROOT = {
+        every_scope_character = {
+          kill_character = {
+            hidden = yes
+            value = yes
+          }
+        }
+      }
+    }
+
+
+
+
+  }
+}

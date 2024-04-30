@@ -1,0 +1,42 @@
+﻿namespace = tgw_danube_event
+
+tgw_danube_event.1 = {
+  type = country_event
+  placement = root
+  hidden = no
+
+  title = tgw_danube_event.1.t
+  desc = tgw_danube_event.1.d
+  flavor = tgw_danube_event.1.f
+  icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+
+  on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+  on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+
+  duration = 3
+
+  trigger = {
+    #triggered by je
+  }
+
+  event_image = {
+    video = "votp_agitator_speaking"
+  }
+
+
+  option = {
+    name = tgw_danube_event.1.1
+    custom_tooltip = {
+      text = "tgw_danube_event_tooltip"
+    }
+    set_variable = is_danube
+    add_primary_culture = cu:slovak
+    add_primary_culture = cu:serb
+    add_primary_culture = cu:czech
+    add_primary_culture = cu:romanian
+    add_primary_culture = cu:slovene
+    add_primary_culture = cu:polish
+    add_primary_culture = cu:ukrainian
+  }
+}

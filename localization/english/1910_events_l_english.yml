@@ -30,3 +30,17 @@
  first_rus_rev.2.f: "flavor"
  first_rus_rev.2.1: "We have no choise"
  first_rus_rev.2.2: "Never!"
+ tgw_utils.2.t: "The Matter of [SCOPE.sCountry('target').GetNameNoFormatting]"
+ tgw_utils.2.d: "With local rule now being delegated to interim [SCOPE.sCountry('target').GetAdjectiveNoFormatting] rulers, it becomes more and more vain to pretend we do not stand to gain anything from asserting our will when it comes to their governance in one fell swoop."
+ tgw_utils.2.f: ""The ink is still drying on the treaties, but what good would it bring us to let them control their own affairs if we're clearly the best for the job?""
+ tgw_utils.2.1.t: "Direct rule from [SCOPE.GetRootScope.GetCountry.GetCapital.GetCityHubName]!"
+ tgw_utils.2.3.t: "Permit the establishment of a parliament."
+
+
+  tgw_african_independence.1.t: "Our Post-Independence Fate"
+  tgw_african_independence.1.d: "The long-overdue day [SCOPE.GetRootScope.GetCountry.GetName] has been waiting for has arrived. We are no longer shackled and stymied by the whims of our erstwhile colonial governors, and while the basic postulates of our independence have been fulfilled, we nevertheless have a very important decision to make. "
+ tgw_african_independence.1.f: ""We must either keep the status quo by privileging Europeans in our society, or grant concessions to the natives that reside in our country.""
+ tgw_african_independence.1.1: "There is absolutely no need for these foolish notions of 'equality'. It is clear that #italic we#! are better than #italic them#!."
+ tgw_african_independence_tooltip1: "Our country will begin entrenching segregationist ideals. Voting will be allowed only for those of European descent."
+ tgw_african_independence.1.2: "Down with the colonial institutions!"
+ tgw_african_independence_tooltip: "An interim government comprising of natives will be instated - initially as a Parliamentary Republic. This may lead to propensity for strongman rule in the future, as it may be seen as illegitimate."

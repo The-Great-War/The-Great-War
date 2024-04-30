@@ -1,3 +1,15 @@
+DEFAULT = {
+		flag_definition = {
+		coa = RUS_soviet_union
+		priority = 150000 # need to override the DEFAULT
+		trigger = { 
+			coa_def_communist_flag_trigger = yes
+		}
+	}
+}
+
+
+
 JAP = {
 	flag_definition = {
 		coa = JAP
@@ -78,9 +90,11 @@ AUS = { # Austria
 	flag_definition = {
 		coa = KUK
 		subject_canton = KUK
-		priority = 100
+		priority = 2000
 		trigger = {
-			scope:actor = { country_has_primary_culture = cu:hungarian }
+			scope:actor = { 
+				has_variable = is_danube
+			 }
 		}
 	}
 	flag_definition = {

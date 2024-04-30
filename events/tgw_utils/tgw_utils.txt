@@ -1,5 +1,6 @@
 ﻿namespace = tgw_utils
 
+# Tidy up commie laws for revolt tags
 tgw_utils.1 = {
 	type = country_event
 	placement = root
@@ -15,6 +16,36 @@ tgw_utils.1 = {
 				activate_law = law_type:law_socialist_labor_unions
 				activate_law = law_type:law_cooperative_ownership
 			}
+		}
+	}
+}
+
+
+tgw_utils.2 = {
+	type = country_event
+	placement = root
+	hidden = no
+	title = tgw_utils.2.t
+	flavor = tgw_utils.2.f
+	desc = tgw_utils.2.d
+	event_image = {
+		video = "southamerica_election"
+	}
+	trigger = {
+	}
+
+	# personal union
+	option = {
+		name = tgw_utils.2.1.t
+		scope:target = {
+			change_subject_type = subject_type_personal_union
+		}
+	}
+	#parliamentary republic
+	option = {
+		name = tgw_utils.2.3.t
+		scope:target = {
+			activate_law = law_type:law_parliamentary_republic
 		}
 	}
 }

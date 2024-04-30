@@ -142,7 +142,7 @@ TRI = {
 	
 	tier = principality
 	
-	cultures = { north_italian south_italian }
+	cultures = { maghrebi }
 	capital = STATE_TRIPOLI
 	is_named_from_capital = yes
 }
