@@ -26,8 +26,5 @@
 		
 		# agitators
 		
-		create_character = {
-			template = rus_lenin_character_template
-		}
 	}
 }
