@@ -16,18 +16,6 @@
 				}
 			}
 			triggered_desc = {
-				desc = party_bolsheviks
-				trigger = {
-					country_has_primary_culture = cu:russian
-					any_interest_group = {
-						leader = {
-							has_ideology = ideology:ideology_leninist
-							has_ideology = ideology:ideology_trotskist
-						}
-					}
-				}
-			}
-			triggered_desc = {
 				desc = party_russian_socialist_democratic_workers_party
 				trigger = {
 					country_has_primary_culture = cu:russian

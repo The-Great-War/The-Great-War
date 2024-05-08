@@ -83,38 +83,4 @@ usa_lincoln_character_template = {
         chance = 100
     }   
 }
-usa_roosevelt_character_template = {
-    first_name = Theodore_2
-    last_name = Roosevelt
-    historical = yes
-    culture = cu:yankee
-    female = no
-    religion = protestant
-    ideology = ideology_reformer
-    interest_group = ig_liberals
-    birth_date = 1858.8.28
-    traits = {
-        celebrity_commander
-        explorer
-        brave
-    }   
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:USA
-            this = c:USA
-        }
-        interest_group_trigger = {
-            is_marginal = no
-            OR = {
-                is_interest_group_type = ig_liberals
-                is_interest_group_type = ig_radicals
-                is_interest_group_type = ig_intelligentsia
-                is_interest_group_type = ig_industrialists
-                is_interest_group_type = ig_rural_folk
-            } 
-        }   
-        earliest_usage_date = 1882.1.1
-        latest_usage_date = 1919.1.1
-        chance = 100
-    }   
-}
+

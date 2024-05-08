@@ -1,0 +1,73 @@
+﻿DIPLOMATIC_PLAYS = {
+	c:CHI = {
+		create_diplomatic_play = {
+			name = boxer_rebellion
+		
+			target_country = c:GBR
+			
+			war = yes
+			
+			type = dp_force_recognition
+			add_target_backers = {
+				c:RUS
+				c:USA
+				c:JAP
+				c:GER
+				c:ITA
+				c:FRA
+				c:AUS
+			}
+			add_war_goal = {
+				holder = c:GBR
+				type = open_market
+				target_country = c:CHI
+			}
+			add_war_goal = {
+				holder = c:GBR
+				type = war_reparations
+				target_country = c:CHI
+			}
+			add_war_goal = {
+				holder = c:RUS
+				type = war_reparations
+				target_country = c:CHI
+			}
+			add_war_goal = {
+				holder = c:RUS
+				type = take_treaty_port
+				target_state = s:STATE_SHENGJING.region_state:CHI
+			}
+			add_war_goal = {
+				holder = c:GER
+				war = yes
+				type = war_reparations
+				target_country = c:CHI
+			}
+			add_war_goal = {
+				holder = c:AUS
+				type = war_reparations
+				target_country = c:CHI
+			}
+			add_war_goal = {
+				holder = c:FRA
+				type = war_reparations
+				target_country = c:CHI
+			}
+			add_war_goal = {
+				holder = c:USA
+				type = war_reparations
+				target_country = c:CHI
+			}
+			add_war_goal = {
+				holder = c:JAP
+				type = war_reparations
+				target_country = c:CHI
+			}
+			add_war_goal = {
+				holder = c:ITA
+				type = war_reparations
+				target_country = c:CHI
+			}
+		}			
+	}
+}

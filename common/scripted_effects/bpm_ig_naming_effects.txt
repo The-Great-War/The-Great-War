@@ -10,10 +10,6 @@
 
 bpm_rename_agpop_ig = {
 	if = {
-		limit = { country_has_primary_culture = cu:russian }
-		ig:ig_agrarian_populists ?= { set_interest_group_name = ig_narodniks }
-	}
-	else_if = {
 		limit = { ig:ig_agrarian_populists ?= { bpm_ig_is_socialist = yes } }
 		ig:ig_agrarian_populists ?= { set_interest_group_name = ig_agrarian_socialists }
 	}
@@ -26,10 +22,6 @@ bpm_rename_anarchists_ig = {
 	if = {
 		limit = { ig:ig_anarchists ?= { has_ideology = ideology:ideology_dop_anarcho_syndicalist } }
 		ig:ig_anarchists ?= { set_interest_group_name = ig_anarcho_syndicalists }
-	}
-	else_if = {
-		limit = { country_has_primary_culture = cu:russian }
-		ig:ig_anarchists ?= { set_interest_group_name = ig_narodniks_anarchist }
 	}
 	else = {
 		ig:ig_anarchists ?= { set_interest_group_name = ig_anarchists }
@@ -56,6 +48,10 @@ bpm_rename_refsoc_ig = {
 		ig:ig_reformist_socialists ?= { set_interest_group_name = ig_possibilists }
 	}
 	else_if = {
+		limit = { country_has_primary_culture = cu:russian }
+		ig:ig_reformist_socialists ?= { set_interest_group_name = ig_mensheviks }
+	}
+	else_if = {
 		limit = { this = c:GBR }
 		ig:ig_reformist_socialists ?= { set_interest_group_name = ig_fabian_socialists }
 	}
@@ -79,6 +75,10 @@ bpm_rename_revsoc_ig = {
 		}
 		ig:ig_revolutionist_socialists ?= { set_interest_group_name = ig_revolutionist_social_democrats }
 	}
+	else_if = {
+		limit = { country_has_primary_culture = cu:russian }
+		ig:ig_revolutionist_socialists ?= { set_interest_group_name = ig_bolsheviks }
+	}
 	else = {
 		ig:ig_revolutionist_socialists ?= { set_interest_group_name = ig_revolutionist_socialists }
 	}
@@ -88,13 +88,6 @@ bpm_rename_socialist_ig = {
 	if = {
 		limit = { ig:ig_revolutionist_socialists ?= { bpm_ig_enabled = yes } }
 		ig:ig_socialists ?= { set_interest_group_name = ig_independent_socialists }
-	}
-	else_if = {
-		limit = {
-			this = c:RUS
-			NOT = { has_variable = bpm_je_zapadniks_and_slavophiles_over }
-		}
-		ig:ig_socialists ?= { set_interest_group_name = ig_zapadniks_socialist }
 	}
 	else = {
 		ig:ig_socialists ?= { set_interest_group_name = ig_socialists }
@@ -125,13 +118,6 @@ bpm_rename_radlib_ig = {
 		}
 	}
 	# Below: still-radical radicals
-	else_if = {
-		limit = {
-			this = c:RUS
-			NOT = { has_variable = bpm_je_zapadniks_and_slavophiles_over }
-		}
-		ig:ig_radicals ?= { set_interest_group_name = ig_zapadniks }
-	}
 	else = {
 		ig:ig_radicals ?= { set_interest_group_name = ig_radicals }
 	}
@@ -153,13 +139,6 @@ bpm_rename_liberal_ig = {
 			}
 		}
 		ig:ig_liberals ?= { set_interest_group_name = ig_moderate_liberals }
-	}
-	else_if = {
-		limit = {
-			this = c:RUS
-			NOT = { has_variable = bpm_je_zapadniks_and_slavophiles_over }
-		}
-		ig:ig_liberals ?= { set_interest_group_name = ig_zapadniks_moderate }
 	}
 	else_if = {
 		limit = {
@@ -250,13 +229,6 @@ bpm_rename_conservative_ig = {
 	}
 	else_if = {
 		limit = {
-			this = c:RUS
-			NOT = { has_variable = bpm_je_zapadniks_and_slavophiles_over }
-		}
-		ig:ig_conservatives ?= { set_interest_group_name = ig_slavophiles_moderate }
-	}
-	else_if = {
-		limit = {
 			bpm_country_is_pre_constitutional = yes
 		}
 		ig:ig_conservatives ?= { set_interest_group_name = ig_conservative_reformers }
@@ -278,13 +250,6 @@ bpm_rename_reactionary_ig = {
 			this = c:SPA
 		}
 		ig:ig_reactionaries ?= { set_interest_group_name = ig_carlists }
-	}
-	else_if = {
-		limit = {
-			this = c:RUS
-			NOT = { has_variable = bpm_je_zapadniks_and_slavophiles_over }
-		}
-		ig:ig_reactionaries ?= { set_interest_group_name = ig_slavophiles }
 	}
 	else_if = {
 		limit = {
@@ -317,6 +282,163 @@ bpm_rename_reactionary_ig = {
 	}
 }
 
+bmp_rename_landowners_ig = {
+	# Squattocracy
+	if = {
+		limit = {
+			country_has_primary_culture = cu:australian
+		}
+		ig:ig_landowners = {
+			set_interest_group_name = ig_squattocracy
+		}
+	}
+	# Local Governors
+	else_if = {
+		limit = {
+			c:TUR ?= this
+		}
+		ig:ig_landowners = {
+			set_interest_group_name = ig_local_governors
+		}
+	}
+	# Junkers
+	else_if = {
+		limit = {
+			c:GER ?= this
+		}
+		ig:ig_landowners = {
+			set_interest_group_name = ig_junkers
+			bpm_ig_make_junker_paternalistic = yes
+		}
+	}
+	# Kulaks
+	else_if = {
+		limit = {
+			c:RUS ?= this
+			c:RUS = {
+				has_law = law_type:law_council_republic
+			}
+		}
+		ig:ig_landowners = {
+			set_interest_group_name = ig_kulaks
+		}
+	}
+	# Gentry Assembly
+	else_if = {
+		limit = {
+			c:RUS ?= this
+		}
+		ig:ig_landowners = {
+			set_interest_group_name = ig_gentry_assembly
+		}
+	}
+	# Ali'i
+	else_if = {
+		limit = {
+			country_has_primary_culture = cu:hawaiian
+		}
+		ig:ig_landowners = {
+			set_interest_group_name = ig_alii
+		}
+	}
+	# Landed Gentry
+	else_if = {
+		limit = {
+			c:GBR ?= this
+		}
+		ig:ig_landowners = { 
+			set_interest_group_name = ig_landed_gentry
+		}
+	}
+	# Yangban Officials
+	else_if = {
+		limit = {
+			c:KOR ?= this
+		}
+		ig:ig_landowners = { 
+			set_interest_group_name = ig_yangban
+			bpm_ig_make_scholar_paternalistic = yes
+		}
+	}
+	# Scholar Officials
+	else_if = {
+		limit = {
+			c:CHI ?= this
+		}
+		ig:ig_landowners = { 
+			set_interest_group_name = ig_scholar_officials
+			bpm_ig_make_scholar_paternalistic = yes
+		}
+	}
+	# Pious Spanish Landowners
+	else_if = {
+		limit = {
+			country_has_primary_culture = cu:spanish
+		}
+		ig:ig_landowners = {
+			bpm_remove_all_rel_ideologies = yes
+			add_ideology = ideology_rel_radical_moralist
+		}
+	}
+	# Aristocracy of Officials
+	else_if = {
+		limit = {
+			country_has_primary_culture = cu:norwegian
+		}
+		ig:ig_landowners = {
+			set_interest_group_name = ig_aristocracy_of_officials
+		}
+	}
+	# Southern Planters
+	else_if = {
+		limit = {
+			OR = {
+				AND = {
+					c:USA ?= this
+					NOT = { exists = c:CSA }
+				}
+				country_has_primary_culture = cu:dixie
+			}
+		}
+		ig:ig_landowners = {
+			set_interest_group_name = ig_southern_planters
+			bpm_ig_make_republican_paternalistic = yes
+		}
+	}
+	# Caudillo Ideology
+	else_if = {
+		limit = {
+			OR = {
+				country_has_primary_culture = cu:platinean
+				country_has_primary_culture = cu:south_andean
+				country_has_primary_culture = cu:north_andean
+				country_has_primary_culture = cu:central_american
+				country_has_primary_culture = cu:mexican
+			}
+		}
+		ig:ig_landowners = {
+			bpm_ig_make_caudillismo = yes
+		}
+	}
+}
+
+bmp_rename_industrialists_ig = {
+	if = {
+		limit = {
+			c:RUS ?= this
+			c:RUS = {
+				AND = {
+					has_law = law_type:law_council_republic
+					has_law = law_type:law_cooperative_ownership
+				}
+			}
+		}
+		ig:ig_industrialists = { 
+			set_interest_group_name = ig_nepmen
+		}
+	}
+}
+
 bpm_rename_igs = {
 	bpm_rename_trade_unions_ig = yes
 	bpm_rename_agpop_ig = yes
@@ -330,4 +452,6 @@ bpm_rename_igs = {
 	bpm_rename_marlib_ig = yes
 	bpm_rename_conservative_ig = yes
 	bpm_rename_reactionary_ig = yes
+	bmp_rename_landowners_ig = yes
+	bmp_rename_industrialists_ig = yes
 }

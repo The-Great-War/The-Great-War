@@ -205,10 +205,10 @@
   dyn_c_Konbaung_Empire:0 "Konbaung Empire"
   dyn_c_French_Empire:0 "French Empire"
   dyn_c_Austrian_Empire:0 "Austrian Empire"
-  dyn_c_Russian_Empire:0 "Russian Empire"  
   dyn_c_German_Empire:0 "German Empire"  
-  dyn_c_German_Reich:0 "German Reich"  
-  dyn_c_Russian_ussr:0 "Union of Soviet Socialist Republics"  
+  dyn_c_German_Reich:0 "German Reich"
+  
+  dyn_c_Russian_ussr:0 "Union of Soviet Socialist Republics"
   dyn_c_ukraine:0 "Ukrainian SSR"  
   dyn_c_Lithuanian_SSR:0 "Lithuanian SSR"  
   dyn_c_Latvian_SSR:0 "Latvian SSR"  
@@ -222,6 +222,14 @@
   dyn_c_Turkmen_SSR:0 "Turkmen SSR"  
   dyn_c_Tajik_SSR:0 "Tajik SSR"  
   dyn_c_Uzbek_SSR:0 "Uzbek SSR"  
+  
+  dyn_c_russian_provisional_gov:0 "Russian Provisional Government"
+  dyn_c_russian_republic:0 "Russian Republic"
+  dyn_c_russian_empire:0 "Russian Empire"
+  dyn_c_russian_sfsr:0 "Russian Soviet Federal Socialist Republic"
+  dyn_c_russian_federation:0 "Russian Federation"
+  dyn_c_russian_ssr:0 "Russian Soviet Socialist Republic"
+  dyn_c_russian_anarchy:0 "Russian Anarchy Commune"
 
   ############################################################################################################################################
   ############################################################################################################################################
