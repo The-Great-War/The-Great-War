@@ -1,6 +1,4 @@
-﻿
-
-ITC = {
+﻿ITC = {
 	dynamic_country_name = {
 		name = dyn_c_Italian_Cyrenaica
 		adjective = ITC_ADJ

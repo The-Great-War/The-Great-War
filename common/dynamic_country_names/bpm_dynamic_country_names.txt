@@ -12,6 +12,12 @@
 			scope:actor ?= {
 				coa_communist_trigger = yes
 			}
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_federated
+					has_law = law_type:law_confederated
+				}
+			}
 		}
 	}
 	# Proletarian Socialists
