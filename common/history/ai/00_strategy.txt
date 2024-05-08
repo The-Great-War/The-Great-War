@@ -9,11 +9,6 @@
 			50 = { set_strategy = ai_strategy_conservative_agenda }
 			50 = { set_strategy = ai_strategy_progressive_agenda }
 		}
-	}	
-	c:SAR ?= {
-		set_strategy = ai_strategy_industrial_expansion		
-		set_strategy = ai_strategy_maintain_power_balance
-		set_strategy = ai_strategy_progressive_agenda
 	}
 	c:BRZ ?= {
 		random_list = {
@@ -37,7 +32,7 @@
 			25 = { set_strategy = ai_strategy_progressive_agenda }
 		}
 	}		
-	c:SIC ?= {
+	c:ITA ?= {
 		random_list = {	
 			75 = { set_strategy = ai_strategy_resource_expansion }
 			25 = { set_strategy = ai_strategy_industrial_expansion }
@@ -60,32 +55,16 @@
 			25 = { set_strategy = ai_strategy_industrial_expansion }
 		}	
 		set_strategy = ai_strategy_maintain_power_balance
-		random_list = {
-			75 = { set_strategy = ai_strategy_conservative_agenda }
-			25 = { set_strategy = ai_strategy_progressive_agenda }
-		}
+		set_strategy = ai_strategy_conservative_agenda
 	}
 	c:FRA ?= {
-		random_list = {	
-			50 = { set_strategy = ai_strategy_industrial_expansion }
-			25 = { set_strategy = ai_strategy_agricultural_expansion }
-			25 = { set_strategy = ai_strategy_resource_expansion }		
-		}	
-		random_list = {	
-			75 = { set_strategy = ai_strategy_maintain_power_balance }
-			25 = { set_strategy = ai_strategy_economic_imperialism }	
-		}
-		random_list = {	
-			50 = { set_strategy = ai_strategy_progressive_agenda }
-			50 = { set_strategy = ai_strategy_conservative_agenda }	
-		}				
-	}	
-	c:PRU ?= {
-		random_list = {	
-			65 = { set_strategy = ai_strategy_industrial_expansion }
-			35 = { set_strategy = ai_strategy_resource_expansion }
-		}	
+		set_strategy = ai_strategy_industrial_expansion
 		set_strategy = ai_strategy_maintain_power_balance
+		set_strategy = ai_strategy_progressive_agenda
+	}	
+	c:GER ?= {
+		set_strategy = ai_strategy_industrial_expansion
+		set_strategy = ai_strategy_economic_imperialism
 		set_strategy = ai_strategy_conservative_agenda
 	}
 	c:RUS ?= {
@@ -93,8 +72,8 @@
 			55 = { set_strategy = ai_strategy_agricultural_expansion }
 			35 = { set_strategy = ai_strategy_placate_population }
 			10 = { set_strategy = ai_strategy_resource_expansion }
-		}			
-		set_strategy = ai_strategy_colonial_expansion
+		}
+		set_strategy = ai_strategy_maintain_power_balance
 		set_strategy = ai_strategy_conservative_agenda
 	}	
 	c:TUR ?= {
@@ -115,13 +94,9 @@
 		set_strategy = ai_strategy_progressive_agenda
 	}
 	c:USA ?= {
-		random_list = {	
-			50 = { set_strategy = ai_strategy_industrial_expansion }
-			25 = { set_strategy = ai_strategy_resource_expansion }
-			25 = { set_strategy = ai_strategy_plantation_economy }
-		}		
+		set_strategy = ai_strategy_industrial_expansion	
 		set_strategy = ai_strategy_economic_imperialism
-		set_strategy = ai_strategy_conservative_agenda
+		set_strategy = ai_strategy_progressive_agenda
 	}
 	c:EGY ?= {
 		random_list = {	
@@ -137,15 +112,12 @@
 			25 = { set_strategy = ai_strategy_agricultural_expansion }
 		}			
 		set_strategy = ai_strategy_armed_isolationism
-		set_strategy = ai_strategy_maintain_mandate_of_heaven
+		set_strategy = ai_strategy_progressive_agenda
 	}
 	c:JAP ?= {
-		random_list = {	
-			75 = { set_strategy = ai_strategy_placate_population }
-			25 = { set_strategy = ai_strategy_agricultural_expansion }
-		}			
-		set_strategy = ai_strategy_armed_isolationism
-		set_strategy = ai_strategy_conservative_agenda
+		set_strategy = ai_strategy_industrial_expansion
+		set_strategy = ai_strategy_territorial_expansion
+		set_strategy = ai_strategy_progressive_agenda
 	}		
 }	
 

@@ -1,8 +1,0 @@
-﻿CHARACTERS = {
-	c:URU = {
-		# Landowner
-		create_character = {
-			template = URU_Carlos_Anaya
-		}
-	}
-}

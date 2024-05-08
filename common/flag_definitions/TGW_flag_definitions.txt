@@ -908,7 +908,7 @@ RUS = { # Russia
 	#	}
 	flag_definition = {
 		coa = RUS_republic
-		subject_canton = RUS_republic
+		subject_canton = RUS
 		priority = 10
 		trigger = {
 			coa_def_republic_flag_trigger = yes
