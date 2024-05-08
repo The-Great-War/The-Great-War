@@ -80,7 +80,7 @@ first_rus_rev.2 = { #October manifesto
 			activate_law = law_type:law_poor_laws
 			activate_law = law_type:law_freedom_of_conscience
 			add_loyalists = {
-				value = medium_loyalists
+				value = 0.1
 				strata = poor
 			}
 		}
@@ -98,8 +98,14 @@ first_rus_rev.2 = { #October manifesto
 				template = RUS_martov
 			}
         }
-		add_journal_entry = { 
-			type = stolypin_reforms_je
+		
+		if = {
+			limit = {
+				character:RUS_stolypin = { is_character_alive = yes }
+			}
+			add_journal_entry = { 
+				type = stolypin_reforms_je
+			}
 		}
     }
 	
