@@ -1,78 +1,78 @@
 ﻿namespace = first_rus_rev
 
 first_rus_rev.1 = { # bloody sunday
-    type = country_event
-    placement = root
-    hidden = no
+	type = country_event
+	placement = root
+	hidden = no
 
-    title = first_rus_rev.1.t
-    desc = first_rus_rev.1.d
-    flavor = first_rus_rev.1.f
-    icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	title = first_rus_rev.1.t
+	desc = first_rus_rev.1.d
+	flavor = first_rus_rev.1.f
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
 
 
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-    on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
-	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+
 	duration = 3
 
-    trigger = {
+	trigger = {
 		#triggered by je
-    }
+	}
 
-    event_image = {
+	event_image = {
 		video = "votp_agitator_speaking"
 	}
-	
+
 	category = revolution
 
-    option = {
-        name = first_rus_rev.1.1
-        activate_law = law_type:law_universal_suffrage
+	option = {
+		name = first_rus_rev.1.1
+		activate_law = law_type:law_universal_suffrage
 		activate_law = law_type:law_worker_protections
 		activate_law = law_type:law_elected_bureaucrats
 		ig:ig_landowners = {
 			add_approval = -5
 		}
-    }
-	
+	}
+
 	option = {
-        name = first_rus_rev.1.2
-        add_radicals = {
+		name = first_rus_rev.1.2
+		add_radicals = {
 			value = very_large_radicals
 			strata = poor
 		}
-    }
+	}
 }
 
 first_rus_rev.2 = { #October manifesto
-    type = country_event
-    placement = root
-    hidden = no
+	type = country_event
+	placement = root
+	hidden = no
 
-    title = first_rus_rev.2.t
-    desc = first_rus_rev.2.d
-    flavor = first_rus_rev.2.f
-    icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	title = first_rus_rev.2.t
+	desc = first_rus_rev.2.d
+	flavor = first_rus_rev.2.f
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
 
 
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-    on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
-	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+
 	duration = 3
 
-    trigger = {
+	trigger = {
 		#triggered by je
-    }
+	}
 
-    event_image = {
+	event_image = {
 		video = "europenorthamerica_political_extremism"
 	}
-	
+
 	category = revolution
 
-    option = {
-        name = first_rus_rev.2.1 # make concessions
+	option = {
+		name = first_rus_rev.2.1 # make concessions
 		c:RUS = {
 			activate_law = law_type:law_universal_suffrage
 			activate_law = law_type:law_cultural_exclusion
@@ -97,17 +97,102 @@ first_rus_rev.2 = { #October manifesto
 			create_character = {
 				template = RUS_martov
 			}
-        }
-		add_journal_entry = { 
+		}
+		add_journal_entry = {
 			type = stolypin_reforms_je
 		}
-    }
-	
+	}
+
 	option = { # refuse
-        name = first_rus_rev.2.2
-        add_radicals = {
+		name = first_rus_rev.2.2
+		add_radicals = {
 			value = very_large_radicals
 			strata = poor
 		}
-    }
+	}
 }
+
+
+first_rus_rev.3 = { #Bolshevik Revolution
+	type = country_event
+	placement = root
+	hidden = no
+
+	title = first_rus_rev.3.t
+	desc = first_rus_rev.3.d
+	flavor = first_rus_rev.3.f
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+
+	duration = 3
+
+	trigger = {
+		#triggered by je
+	}
+
+	event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+
+	category = revolution
+
+	option = { # 1
+		name = first_rus_rev.3.1
+		create_dynamic_country = {
+			origin = root
+			cede_state_trigger = {
+				owner = c:RUS
+				OR = {
+					region = sr:region_russia
+					region = sr:region_dnieper
+					region = sr:region_caucasus
+					region = sr:region_baltic
+				}
+				pop_type_percent_state = {
+					target = pop_type:laborers
+					value >= 0.6
+				}
+			}
+			color = "red_dark"
+			on_created = {
+				set_global_variable = {
+					name = soviets
+					value = this
+				}
+				bpm_setup_country = yes
+				trigger_event = { id = bpm_ideology_soft_compat_events.1 }
+				trigger_event = { id = bpm_ideology_soft_compat_events.2 }
+				trigger_event = { id = bpm_ideology_soft_compat_events.4 }
+				bpm_refresh_parties = yes
+				bpm_make_single_party = yes
+				activate_law = law_type:law_council_republic
+				activate_law = law_type:law_cooperative_ownership
+
+				c:RUS = {
+					random_scope_character = {
+						limit = {
+							has_template = rus_lenin_character_template
+						}
+						add_character_role = politician
+						transfer_character = global_var:soviets
+						set_character_as_ruler = yes
+					}
+				}
+				c:RUS = {
+					create_diplomatic_play = {
+						target_country = global_var:soviets
+						escalation = 100
+						war = yes
+						initiator = global_var:soviets
+						type = dp_revolution
+						handle_annexation_as_civil_war = yes
+					}
+				}
+			}
+		}
+	}
+}
+

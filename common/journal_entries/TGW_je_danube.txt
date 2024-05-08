@@ -85,9 +85,7 @@
 	}
 
 	fail = {
-		any_civil_war = {
-			civil_war_progress > 0.75
-		}
+		always = no
 	}
 
 	on_fail = {

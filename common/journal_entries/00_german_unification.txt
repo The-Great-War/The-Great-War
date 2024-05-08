@@ -4,5 +4,11 @@
 je_german_unification = {
 }
 
+je_german_unification_idea = {
+}
+
 je_south_german_unification = {
+}
+
+je_schleswig_holstein_question = {
 }
