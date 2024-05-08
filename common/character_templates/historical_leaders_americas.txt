@@ -16,3 +16,21 @@
         set_variable = is_married
     }
 }
+usa_roosevelt_character_template = {
+    first_name = Theodore_2
+    last_name = Roosevelt
+    historical = yes
+    culture = cu:yankee
+    female = no
+    religion = protestant
+    ideology = ideology_reformer
+    interest_group = ig_liberals
+	ig_leader = yes
+    birth_date = 1858.8.28
+	dna = dna_roosevelt
+    traits = {
+        celebrity_commander
+        explorer
+        brave
+    }  
+}

@@ -69,11 +69,14 @@ stolypin_reforms_je = {
 
 	on_complete = {
 		add_loyalists = {
-			value = medium_loyalists
+			value = 0.1
 		}
 	}
 	
 	fail = {
-	
+		OR = {
+			has_law = law_type:law_serfdom
+			
+		}
 	}
 }

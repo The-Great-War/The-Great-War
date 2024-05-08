@@ -546,19 +546,167 @@ LAT = {
 	}
 }
 RUS = {
+#	dynamic_country_name = { 
+#		name = dyn_c_Russian_ussr 
+#		adjective = RUS_ADJ
+#		
+#		is_main_tag_only = yes
+#		priority = 300
+#		
+#		possible = {
+#			exists = c:RUS
+#			THIS = c:RUS
+#		}
+#		trigger = {
+#			AND = {
+#				coa_def_communist_flag_trigger = yes
+#				scope:actor = {
+#					OR = {
+#						has_law = law_type:law_federated
+#						has_law = law_type:law_confederated
+#					}
+#				}
+#			}
+#		}
+#	}
 	dynamic_country_name = {
-		name = dyn_c_Russian_Empire
+		name = dyn_c_russian_anarchy
 		adjective = RUS_ADJ
-
+		
 		is_main_tag_only = yes
-		priority = 250
+		priority = 300
+		
+		possible = {
+			exists = c:RUS
+			THIS = c:RUS
+		}
+		trigger = {
+			AND = {
+				scope:actor = {
+					has_law = law_type:law_anarchy
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_russian_sfsr 
+		adjective = RUS_ADJ
+		
+		is_main_tag_only = yes
+		priority = 150
+		
+		possible = {
+			exists = c:RUS
+			THIS = c:RUS
+		}
+		trigger = {
+			AND = {
+				coa_def_communist_flag_trigger = yes
+				scope:actor = {
+					OR = {
+						has_law = law_type:law_federated
+						has_law = law_type:law_confederated
+					}
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_russian_ssr
+		adjective = RUS_ADJ
+		
+		is_main_tag_only = yes
+		priority = 100
+		
+		possible = {
+			exists = c:RUS
+			THIS = c:RUS
+		}
+		trigger = {
+			AND = {
+				coa_def_communist_flag_trigger = yes
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_russian_provisional_gov
+		adjective = RUS_ADJ
+		
+		is_main_tag_only = yes
+		priority = 100
+		
+		possible = {
+			exists = c:RUS
+			THIS = c:RUS
+		}
+		trigger = {
+			AND = {
+				coa_def_republic_flag_trigger = yes
+				scope:actor = {
+					has_revolution = YES
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_russian_federation
+		adjective = RUS_ADJ
+		
+		is_main_tag_only = yes
+		priority = 1
 
 		possible = {
 			exists = c:RUS
 			THIS = c:RUS
-			trigger = {
-				coa_absolute_monarchy_trigger = yes
+		}
+		trigger = {
+			AND = {
+				coa_def_republic_flag_trigger = yes
+				scope:actor = {
+					OR = {
+						has_law = law_type:law_federated
+						has_law = law_type:law_confederated
+					}
+				}
 			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_russian_republic
+		adjective = RUS_ADJ
+		
+		is_main_tag_only = yes
+		priority = 1
+
+		possible = {
+			exists = c:RUS
+			THIS = c:RUS
+		}
+		trigger = {
+			AND = {
+				coa_def_republic_flag_trigger = yes
+				scope:actor = {
+					OR = {
+						has_law = law_type:law_unitary
+						has_law = law_type:law_devolved
+					}
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_russian_empire
+		adjective = RUS_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+
+		possible = {
+			exists = c:RUS
+			THIS = c:RUS
+		}
+		trigger = {
+			coa_def_monarchy_flag_trigger = yes
 		}
 	}
 }

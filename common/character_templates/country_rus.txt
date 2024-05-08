@@ -9,7 +9,7 @@ RUS_nicholas_ii = { #Nicholas II, son of Alexander III
 	heir = yes
 	birth_date = 1868.5.18
 	dna = dna_tsar_nicolas_02
-	interest_group = ig_landowners
+	interest_group = ig_reactionaries
 	ideology = ideology_authoritarian
 	traits = {
 		imperious
@@ -44,7 +44,7 @@ RUS_alexei_ii = { #Alexei Romanov, son of Nicholas II
 	historical = yes
 	heir = yes
 	birth_date = 1904.8.12
-	interest_group = ig_landowners
+	interest_group = ig_reactionaries
 	ideology = ideology_jingoist_leader
 	traits = {
 		sickly 
@@ -73,6 +73,22 @@ RUS_witte = {
 	}
 }
 
+RUS_antony_vadkovsky = {
+	first_name = Antony
+	last_name = Vadkovsky
+	historical = yes
+	ig_leader = yes
+	culture = cu:russian
+	female = no
+	religion = orthodox
+	ideology = ideology_center_leader
+	interest_group = ig_devout
+	birth_date = 1846.9.15
+	traits = {
+	
+	}
+}
+
 RUS_stolypin = {
 	first_name = Pyotr
 	last_name = Stolypin
@@ -81,9 +97,12 @@ RUS_stolypin = {
 	culture = cu:russian
 	female = no
 	religion = orthodox
-	ideology = ideology_reformer
-	interest_group = ig_landowners
+	ideology = ideology_land_reformer
+	interest_group = ig_reactionaries
 	birth_date = 1862.4.14
+	traits = {
+		cruel
+	}
 }
 
 
@@ -103,7 +122,7 @@ RUS_kerensky = {
 	}
 }
 
-RUS_chernov = {
+RUS_chernov = {		# appears after FRR (First Russian Revolution)
 	first_name = Viktor
 	last_name = Chernov
 	historical = yes
@@ -111,7 +130,7 @@ RUS_chernov = {
 	religion = rel:orthodox
 	female = no
     ig_leader = yes
-	interest_group = ig_rural_folk
+	interest_group = ig_trade_unions
 	ideology = ideology_social_democrat
 	birth_date = 1873.12.7
 	traits = {
@@ -127,7 +146,7 @@ RUS_milyukov = {
 	religion = rel:orthodox
 	female = no
     ig_leader = yes
-	interest_group = ig_intelligentsia
+	interest_group = ig_liberals
 	ideology = ideology_liberal_leader
 	birth_date = 1859.1.27
 	traits = {
@@ -135,7 +154,7 @@ RUS_milyukov = {
 	}
 }
 
-RUS_guchkov = {
+RUS_guchkov = {		# appears after FRR
 	first_name = Alexander
 	last_name = Guchkov
 	historical = yes
@@ -145,20 +164,36 @@ RUS_guchkov = {
     ig_leader = yes
 	interest_group = ig_landowners
 	ideology = ideology_reformer
-	birth_date = 1862.26.10
+	birth_date = 1862.10.26
 	traits = {
 		
 	}
 }
 
-RUS_martov = {
+RUS_durnovo = {		# appears after FRR
+	first_name = Pyotr
+	last_name = Durnovo
+	historical = yes
+	culture = cu:russian
+	religion = rel:orthodox
+	female = no
+    ig_leader = yes
+	interest_group = ig_conservatives
+	ideology = ideology_reformer
+	birth_date = 1842.12.5
+	traits = {
+		
+	}
+}
+
+RUS_martov = {		# appears after FRR
 	first_name = Julius
 	last_name = Martov
 	historical = yes
 	culture = cu:ashkenazi
 	female = no
     ig_leader = yes
-	interest_group = ig_trade_unions
+	interest_group = ig_reformist_socialists
 	ideology = ideology_social_democrat
 	birth_date = 1873.4.4
 	traits = {
@@ -167,7 +202,7 @@ RUS_martov = {
 
 # agitators
 
-rus_leon_trotsky_character_template = {
+rus_leon_trotsky_character_template = {		# appears after FRR
     first_name = Leon_2
 	last_name = Trotsky
 	historical = yes
@@ -187,7 +222,7 @@ rus_leon_trotsky_character_template = {
 	}
 }
 
-rus_lenin_character_template = {
+rus_lenin_character_template = {	# will appear with Bolshevic uprising
 	# Vladimir Lenin
 	first_name = Vladimir
    	last_name = Lenin
@@ -197,7 +232,7 @@ rus_lenin_character_template = {
 	female = no
 	culture = cu:russian
 	religion = rel:atheist
-	interest_group = ig_trade_unions
+	interest_group = ig_revolutionist_socialists
 	ideology = ideology_leninist
 	dna = dna_lenin
 	traits = {

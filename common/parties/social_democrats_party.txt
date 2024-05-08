@@ -42,13 +42,6 @@ social_democrat_party = {
 				}
 			}
 			triggered_desc = {
-				desc = party_menshevik_party
-				trigger = {
-					country_has_primary_culture = cu:russian
-					has_law = law_type:law_council_republic
-				}
-			}
-			triggered_desc = {
 				desc = party_socialist_revolutionary_party
 				trigger = {
 					country_has_primary_culture = cu:russian

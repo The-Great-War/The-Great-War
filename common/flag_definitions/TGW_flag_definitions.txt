@@ -1,16 +1,4 @@
-DEFAULT = {
-		flag_definition = {
-		coa = RUS_soviet_union
-		priority = 150000 # need to override the DEFAULT
-		trigger = { 
-			coa_def_communist_flag_trigger = yes
-		}
-	}
-}
-
-
-
-JAP = {
+﻿JAP = {
 	flag_definition = {
 		coa = JAP
 		subject_canton = JAP
@@ -90,11 +78,9 @@ AUS = { # Austria
 	flag_definition = {
 		coa = KUK
 		subject_canton = KUK
-		priority = 2000
+		priority = 100
 		trigger = {
-			scope:actor = { 
-				has_variable = is_danube
-			 }
+			scope:actor = { country_has_primary_culture = cu:hungarian }
 		}
 	}
 	flag_definition = {
@@ -363,7 +349,7 @@ AHU = {
 XIB = {
 	flag_definition = {
 		coa = XIB_sub
-		allow_overlord_canton = nno
+		allow_overlord_canton = no
 		priority = 1
 	}
 }
@@ -906,42 +892,44 @@ COG = {
 	}
 }
 RUS = { # Russia
-	flag_definition = {
-		coa = RUS_imperial
-		allow_overlord_canton = yes
-		subject_canton = RUS_imperial
-		priority = 1
-	}
-	flag_definition = {
-		coa = RUS_absolute_monarchy
-		subject_canton = RUS
-		priority = 20
-		trigger = {
-			coa_def_absolute_monarchy_flag_trigger = yes
-		}
-	}
+	#	flag_definition = {
+	#		coa = RUS_imperial
+	#		allow_overlord_canton = yes
+	#		subject_canton = RUS_imperial
+	#		priority = 1
+	#	}
+	#	flag_definition = {
+	#		coa = RUS_republic	# RUS_absolute_monarchy
+	#		subject_canton = RUS
+	#		priority = 20
+	#		trigger = {
+	#			coa_def_absolute_monarchy_flag_trigger = yes
+	#		}
+	#	}
 	flag_definition = {
 		coa = RUS_republic
-		subject_canton = RUS_republic
+		subject_canton = RUS
 		priority = 10
 		trigger = {
 			coa_def_republic_flag_trigger = yes
-		}
-	}
-	flag_definition = {
-		coa = RUS_dictatorship
-		subject_canton = RUS_dictatorship
-		priority = 20
-		trigger = {
+			coa_def_monarchy_flag_trigger = yes
 			coa_def_dictatorship_flag_trigger = yes
 		}
 	}
+	#	flag_definition = {
+	#		coa = RUS_dictatorship
+	#		subject_canton = RUS_dictatorship
+	#		priority = 20
+	#		trigger = {
+	#			coa_def_dictatorship_flag_trigger = yes
+	#		}
+	#	}
 	flag_definition = {
 		coa = RUS_oligarchy
 		subject_canton = RUS_oligarchy
-		priority = 25
+		priority = 30
 		trigger = {
-			coa_def_absolute_monarchy_flag_trigger = yes
+			coa_def_oligarchy_flag_trigger = yes
 		}
 	}
 	flag_definition = {

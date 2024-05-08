@@ -318,7 +318,7 @@
 			OR = {
 				this = c:GBR
 				this = c:AUS
-				this = c:PRU
+				this = c:GER
 				this = c:SPA
 				this = c:DAI
 			}
@@ -354,7 +354,7 @@
 	every_country = {
 		limit = { 
 			OR = {
-				this = c:PRU
+				this = c:GER
 				this = c:FRA
 				this = c:USA
 			}
