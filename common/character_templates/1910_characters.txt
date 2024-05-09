@@ -11,9 +11,7 @@ tur_abdulhamid_template = {
     ideology = ideology_moderate
 }
 
-
-
-
+	### AUSTRIA
 
 AUS_franz_ferdinand = {
 	first_name = franz_ferdinand
@@ -30,3 +28,58 @@ AUS_franz_ferdinand = {
 	}
 }
 
+	### ENGLAND
+
+gbr_king_edward_vii = { # Edward VII heir NEEDS TO BE REMADE BY DEVELOPER MAKING UK
+    first_name = Edward
+    last_name = Hannover
+    historical = yes
+    heir = yes
+    female = no
+    noble = yes
+    birth_date = 1841.11.9
+    culture = cu:british
+    interest_group = ig_industrialists
+    ideology = ideology_moderate
+    traits = {
+      direct
+    }
+}
+
+	### GERMANY
+	
+ger_wilhelm_II_hohenzollern_template = {
+    # Wilhelm II of Germany
+    first_name = Wilhelm
+    last_name = "von_Hohenzollern"
+    historical = yes
+    ruler = yes # both ruler and general
+    is_general = yes # both ruler and general
+	birth_date = 1859.01.27
+    hq = region_north_germany
+    interest_group = ig_armed_forces
+    ideology= ideology_royalist
+    traits = {
+		
+    }
+    on_created = {
+        set_variable = is_married
+    }
+}
+
+	### ITALY
+	
+ita_victor_emmanuel_iii_template = {
+    # Victor Emmanuel III
+    first_name = "Vittorio_Emanuele"
+    last_name = "di_Savoia"
+    historical = yes
+	ruler = yes
+    birth_date = 1869.11.11
+    dna = dna_king_victor_emmanuel_02
+    interest_group = ig_landowners
+    ideology = ideology_market_liberal
+    traits = {
+        ambitious
+    }
+}

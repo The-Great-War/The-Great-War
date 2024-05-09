@@ -30,3 +30,14 @@ jap_meiji_yamato_template = {
         charismatic
     }
 }
+
+jap_taisho_yamato_template = {
+	first_name = "Taisho"
+	last_name = "Yamato"
+	historical = yes
+	heir = yes
+	birth_date = 1879.1.1
+	interest_group = ig_industrialists
+	traits = {
+	}
+}

@@ -40,10 +40,29 @@
 			set_interest_group_name = ig_peasants
 		}
 
+		ig:ig_industrialists = {
+			add_modifier = {
+				name = meiji_favored_ig
+				months = normal_modifier_time
+			}
+		}
+		
+		ig:ig_landowners = {
+			set_interest_group_name = ig_landowners
+		}
+		
+		ig:ig_armed_forces = {
+			set_interest_group_name = ig_armed_forces
+			remove_ideology = ideology_bakufu
+		}
+
 		set_global_variable = meiji_restoration_complete
+		set_global_variable = fall_of_the_samurai_global_var
 		set_variable = meiji_var
 		set_variable = meiji_reforms_complete_var
+		set_variable = meiji_restoration_complete
 
 		set_state_religion = rel:shinto
+		
 	}
 }

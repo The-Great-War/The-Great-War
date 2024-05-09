@@ -1780,9 +1780,9 @@ CHI = {
 DAI = {
 	color = { 136  117  90 }
 	
-	country_type = unrecognized
+	country_type = colonial
 	
-	tier = kingdom
+	tier = principality
 	
 	cultures = { french }
 	capital = STATE_TONKIN

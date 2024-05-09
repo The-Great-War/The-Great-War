@@ -243,3 +243,24 @@ rus_lenin_character_template = {	# will appear with Bolshevic uprising
 			direct
 	}
 }
+
+RUS_stalin = { # will appear with Bolshevic uprising
+	# Joseph Stalin
+	first_name = Joseph
+   	last_name = Stalin
+	historical = yes
+	birth_date = 1878.12.18
+	is_agitator = yes
+	female = no
+	culture = cu:georgian
+	religion = rel:atheist
+	interest_group = ig_socialists
+	ideology = ideology_leninist
+	dna = dna_stalin
+	traits = {
+        	wrathful
+			brave
+			imposing
+			direct
+	}
+}

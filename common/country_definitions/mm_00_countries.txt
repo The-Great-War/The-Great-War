@@ -1,5 +1,14 @@
 ﻿
+AUS = {
+	color = { 244  244  244 }
 
+	country_type = recognized
+
+	tier = empire
+	
+	cultures = { north_german hungarian }
+	capital = STATE_AUSTRIA
+}
 SEY = {
 	color = { 52  33  1 }
 	
