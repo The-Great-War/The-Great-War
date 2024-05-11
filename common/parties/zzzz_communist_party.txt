@@ -382,7 +382,7 @@
 				}
 			}
 			add = {
-				value = 20
+				value = 100
 				desc = "bpm_from_revsoc"
 			}
 		}

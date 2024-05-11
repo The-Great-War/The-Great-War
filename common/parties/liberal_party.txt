@@ -248,14 +248,16 @@ liberal_party = {
 	}
 	available_for_interest_group = {
 		bpm_ig_enabled = yes
+		NOT = { leader = { has_ideology = ideology:ideology_leninist }}
 		NOT = { bpm_is_party_banned = { PARTY = liberal_party } }
 		owner = {
 			country_has_voting_franchise = yes
 		}
-		leader = { # far right won't join liberal parties
+		leader = { # far right or far left  won't join liberal parties
 			NOR = {
 				bpm_leader_is_reactionary = yes
 				bpm_leader_is_fascist = yes
+				bpm_leader_is_communist = yes
 			}
 		}
 		NAND = { # far left won't join liberal parties

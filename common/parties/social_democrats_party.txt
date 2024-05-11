@@ -264,6 +264,7 @@ social_democrat_party = {
 		owner = { has_technology_researched = labor_movement }
 		bpm_ig_enabled = yes
 		NOT = { bpm_is_party_banned = { PARTY = social_democrat_party } }
+		
 		owner = {
 			any_interest_group = {
 				bpm_ig_is_proletarian = yes

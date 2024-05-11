@@ -7,12 +7,9 @@
 		priority = 10
 
 		trigger = {
-			exists = scope:actor
-			scope:actor = global_var:soviets
 			scope:actor ?= {
+				global_var:soviets ?= THIS
 				coa_communist_trigger = yes
-			}
-			scope:actor = {
 				OR = {
 					has_law = law_type:law_federated
 					has_law = law_type:law_confederated
