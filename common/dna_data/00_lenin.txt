@@ -4,8 +4,8 @@ dna_lenin = {
     portrait_info = {
 
   
-   genes={      hair_color={ 201 72 117 72 }
-        skin_color={ 26 30 26 30 }
+	genes={      hair_color={ 201 72 117 72 }
+		skin_color={ 26 30 26 30 }
         eye_color={ 1 255 209 127 }
         gene_cheek_fat={ "cheek_fat" 76 "cheek_fat" 150 }
         gene_cheek_forward={ "cheek_forward" 156 "cheek_forward" 121 }
@@ -117,7 +117,7 @@ dna_lenin = {
         necklaces={ "no_necklace" 0 "all_necklaces" 0 }
         legwear={ "european_legwear_colors" 0 "all_legwear" 0 }
         headgear={ "slavic_headgear_agitator_lenin" 0 "all_headgear" 0 }
- }
+	}
 }
 
 

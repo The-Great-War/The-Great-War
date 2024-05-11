@@ -161,68 +161,6 @@ gbr_temple_character_template = { # Viscount Palmerston
     }   
 }
 
-# Prussia - PRU
-pru_bismarck_character_template = {
-    first_name = Otto
-    last_name = von_Bismarck
-    historical = yes
-    culture = cu:north_german
-    female = no
-    religion = protestant
-    ideology = ideology_corporatist_leader
-    interest_group = ig_landowners
-    birth_date = 1815.4.1
-    traits = {
-        experienced_political_operator
-        masterful_diplomat
-        direct
-    }   
-    interest_group_leader_usage = {
-        country_trigger = {
-            OR = {
-                AND = { 
-                    exists = c:PRU
-                    this = c:PRU
-                }
-                AND = { 
-                    NOT = { exists = c:PRU }
-                    exists = c:GER
-                    this = c:GER
-                    c:GER = { owns_entire_state_region = STATE_BRANDENBURG }
-                }
-                NOT = {
-                    has_global_variable = bismarck_variable
-                }
-            }
-        }
-        interest_group_trigger = {
-            is_marginal = no
-            is_interest_group_type = ig_landowners
-        }   
-        earliest_usage_date = 1847.1.1
-        latest_usage_date = 1884.1.1
-        chance = 75
-    }   
-}
-
-pru_wilhelm_IV_hohenzollern_template = {
-    # Frederick William IV of Prussia
-    first_name = "Friedrich_Wilhelm"
-    last_name = "von_Hohenzollern"
-    historical = yes
-    heir = yes
-    age = 41
-    interest_group = ig_conservatives
-    ideology = ideology_royalist
-    traits = {
-        reserved
-        romantic
-    }
-    on_created = {
-        set_variable = is_married
-    }
-}
-
 # Turkey & the Ottoman Empire - TUR
 tur_koca_mustafa_reshid_pasha = { # Damad (or Damat) Mehmed Asi Pasha, grand vizier in 1852-1853
     first_name = Damad_Mehmed

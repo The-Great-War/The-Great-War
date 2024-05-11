@@ -4,6 +4,9 @@
 		create_character = {
 			template = jap_meiji_yamato_template
 		}
+		create_character = {
+			template = jap_taisho_yamato_template
+		}
 		
 	}
 }

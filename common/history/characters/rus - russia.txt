@@ -24,6 +24,10 @@
 			template = RUS_milyukov
 		}
 		
+		create_character = {
+			template = RUS_antony_vadkovsky
+		}
+		
 		# agitators
 		
 	}
