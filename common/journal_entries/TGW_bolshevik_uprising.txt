@@ -9,6 +9,18 @@
 
 	possible = {
 		c:RUS = root
+		AND = {
+			custom_tooltip = {
+				text = is_in_world_war
+				subject = root
+				has_global_variable = world_war
+				global_var:world_war = {
+					any_scope_play_involved = {
+						this = c:RUS
+					}
+				}
+			}
+		}
 	}
 
 	immediate = {

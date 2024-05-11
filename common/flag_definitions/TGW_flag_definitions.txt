@@ -930,6 +930,15 @@ RUS = { # Russia
 		priority = 30
 		trigger = {
 			coa_def_oligarchy_flag_trigger = yes
+			ANS = {
+				coa_def_monarchy_flag_trigger = yes
+				has_global_variable = world_war
+				global_var:world_war = {
+					any_scope_play_involved = {
+						this = c:RUS
+					}
+				}
+			}
 		}
 	}
 	flag_definition = {

@@ -232,7 +232,13 @@ rus_lenin_character_template = {	# will appear with Bolshevic uprising
 	female = no
 	culture = cu:russian
 	religion = rel:atheist
-	interest_group = ig_revolutionist_socialists
+	if = {
+		limit = { has_global_variable = global_socialists_split_var }
+		interest_group = ig_revolutionist_socialists
+	}
+	else = {
+		interest_group = ig_socialists
+	}
 	ideology = ideology_leninist
 	dna = dna_lenin
 	traits = {

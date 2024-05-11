@@ -1,0 +1,30 @@
+﻿soviet_union_je = {
+	icon = "gfx/interface/icons/event_icons/bolshevik_icon.dds"
+
+	group = je_group_internal_affairs
+
+	is_shown_when_inactive = {
+		has_global_variable = soviets
+		THIS = global_var:soviets
+	}
+
+	possible = {
+		has_global_variable = soviets
+		THIS = global_var:soviets
+		THIS = {
+			is_revolutionary = NO
+		}
+	}
+
+	complete = {
+		
+	}
+
+	on_complete = {
+		
+	}
+
+	fail = {
+		has_law = law_type:law_monarchy
+	}
+}

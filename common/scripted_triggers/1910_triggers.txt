@@ -100,5 +100,5 @@ is_in_central_powers = {
 }
 
 cede_bolshevik_states = {
-always = yes
+	always = yes
 }
