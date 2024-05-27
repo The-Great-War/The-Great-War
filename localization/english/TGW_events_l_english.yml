@@ -16,26 +16,35 @@
  world_war_1.1.1: "Outrageous! We must hold Serbia accountable."
  world_war_1.2.t: "bbb"
  world_war_1.2.d: "b"
- rus_lenin_1.1.t: "Lenin has returned to Russia!"
- rus_lenin_1.1.d: "description"
- rus_lenin_1.1.f: "flavor"
- rus_lenin_1.1.1: "Victory will be ours!"
+ 
+ october_revolution.1.t: "Lenin has Returned to Russia!"
+ october_revolution.1.d: "description"
+ october_revolution.1.f: "flavor"
+ october_revolution.1.1: "Lenin comes to Russia"
+ 
+ october_revolution.2.t: "October Revolution" 
+ october_revolution.2.d: "description" 
+ october_revolution.2.f: "flavor"
+ october_revolution.2.1: "play as USSR" 
+ october_revolution.2.2: "keep playing as Russia"
+ 
  first_rus_rev.1.t: "Bloody Sunday"
  first_rus_rev.1.d: "After the unfulfilled demands of strikes in the capital, the priest and the workers came to the Winter Palace to ask the Emperor to sign a collective petition about workers’ needs. They are not armed, so it won't be that difficult to disperse them..."
  first_rus_rev.1.f: "Sign the petition or I’ll follow you home and kill your dog."
  first_rus_rev.1.1: "Sign the petition"
  first_rus_rev.1.2: "What а nonsense! I have to leave the capital, sure the army will decide everything on its own"
+ 
  first_rus_rev.2.t: "October Manifesto"
  first_rus_rev.2.d: "we can't take it anymore"
  first_rus_rev.2.f: "flavor"
  first_rus_rev.2.1: "We have no choise"
  first_rus_rev.2.2: "Never!"
+ 
  tgw_utils.2.t: "The Matter of [SCOPE.sCountry('target').GetNameNoFormatting]"
  tgw_utils.2.d: "With local rule now being delegated to interim [SCOPE.sCountry('target').GetAdjectiveNoFormatting] rulers, it becomes more and more vain to pretend we do not stand to gain anything from asserting our will when it comes to their governance in one fell swoop."
  tgw_utils.2.f: ""The ink is still drying on the treaties, but what good would it bring us to let them control their own affairs if we're clearly the best for the job?""
  tgw_utils.2.1.t: "Direct rule from [SCOPE.GetRootScope.GetCountry.GetCapital.GetCityHubName]!"
  tgw_utils.2.3.t: "Permit the establishment of a parliament."
-
 
   tgw_african_independence.1.t: "Our Post-Independence Fate"
   tgw_african_independence.1.d: "The long-overdue day [SCOPE.GetRootScope.GetCountry.GetName] has been waiting for has arrived. We are no longer shackled and stymied by the whims of our erstwhile colonial governors, and while the basic postulates of our independence have been fulfilled, we nevertheless have a very important decision to make. "
@@ -44,3 +53,5 @@
  tgw_african_independence_tooltip1: "Our country will begin entrenching segregationist ideals. Voting will be allowed only for those of European descent."
  tgw_african_independence.1.2: "Down with the colonial institutions!"
  tgw_african_independence_tooltip: "An interim government comprising of natives will be instated - initially as a Parliamentary Republic. This may lead to propensity for strongman rule in the future, as it may be seen as illegitimate."
+ 
+ 

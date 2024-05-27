@@ -5,6 +5,7 @@ bpm_leader_is_communist = {
 		has_ideology = ideology:ideology_communist
 		has_ideology = ideology:ideology_vanguardist
 		has_ideology = ideology:ideology_leninist
+		has_ideology = ideology:ideology_trotskist
 	}
 }
 

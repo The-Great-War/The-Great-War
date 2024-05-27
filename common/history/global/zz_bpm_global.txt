@@ -1,10 +1,10 @@
 ﻿GLOBAL = {
 	bpm_set_vanilla_ideologies_list = yes
-
+	
 	every_country = {
 		bpm_setup_country = yes
 	}
-
+	
 	every_country = {
 		trigger_event = { id = bpm_ideology_soft_compat_events.1 }
 		trigger_event = { id = bpm_ideology_soft_compat_events.2 }
@@ -24,8 +24,18 @@
 			level = 3
 		}
 	}
+	
+	set_global_variable = first_intl_started_var
+	set_global_variable = first_intl_chain_complete_var
+	set_global_variable = first_intl_disunited_var
 
 	every_country = {
 		activate_law = law_type:law_all_labor_unions_allowed
 	}
+	
+	every_country = {
+		limit = { has_technology_researched = socialism }
+		bpm_initialize_socialists = yes
+	}
+
 }

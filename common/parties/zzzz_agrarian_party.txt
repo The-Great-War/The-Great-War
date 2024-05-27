@@ -110,10 +110,22 @@ agrarian_party = {
 				}
 			}
 			triggered_desc = {
+				desc = party_socialist_revolutionary_party
+				trigger = {
+					country_has_primary_culture = cu:russian
+					any_interest_group = {
+						is_member_of_party = owner.party:agrarian_party
+						OR = {
+							bpm_ig_is_socialist = yes
+							bpm_leader_is_socialist = yes
+						}
+					}
+				}
+			}
+			triggered_desc = {
 				desc = party_agrarian_rus
 				trigger = {
-					exists = c:RUS
-					THIS = c:RUS
+					country_has_primary_culture = cu:russian
 				}
 			}
 			triggered_desc = {

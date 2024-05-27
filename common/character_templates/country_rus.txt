@@ -44,12 +44,15 @@ RUS_alexei_ii = { #Alexei Romanov, son of Nicholas II
 	historical = yes
 	heir = yes
 	birth_date = 1904.8.12
-	interest_group = ig_reactionaries
+	interest_group = ig_conservatives
 	ideology = ideology_jingoist_leader
 	traits = {
 		sickly 
 		romantic
 		arrogant
+	}
+	trait_generation = {
+		
 	}
 }
 
@@ -130,8 +133,8 @@ RUS_chernov = {		# appears after FRR (First Russian Revolution)
 	religion = rel:orthodox
 	female = no
     ig_leader = yes
-	interest_group = ig_trade_unions
-	ideology = ideology_social_democrat
+	interest_group = ig_agrarian_populists
+	ideology = ideology_agrarian_socialist_leader
 	birth_date = 1873.12.7
 	traits = {
 		persistent
@@ -233,7 +236,7 @@ rus_lenin_character_template = {	# will appear with Bolshevic uprising
 	female = no
 	culture = cu:russian
 	religion = rel:atheist
-	interest_group = ig_trade_unions
+	interest_group = ig_socialists
 	ideology = ideology_leninist
 	dna = dna_lenin
 	traits = {
@@ -263,5 +266,62 @@ RUS_stalin = { # will appear with Bolshevic uprising
 			brave
 			imposing
 			direct
+	}
+}
+
+# generals
+
+rus_general_brusilov = {
+	first_name = Aleksei
+	last_name = Brusilov
+	historical = yes
+	culture = cu:russian
+	female = no
+	ideology = ideology_moderate # argued for the abdication of Tsar Nicholas II
+	commander_rank = default
+	interest_group = ig_armed_forces
+	birth_date = 1853.8.31
+	traits = {
+		expert_offensive_planner
+		innovative
+		direct
+	}
+	commander_usage = {
+		country_trigger = {
+			exists = c:RUS
+			this = c:RUS
+			c:RUS = { owns_entire_state_region = STATE_GEORGIA } 
+		}
+		role = general
+		earliest_usage_date = 1874.1.1
+		latest_usage_date = 1920.1.1	
+		chance = 50
+	}
+}
+
+rus_general_wrangel = {
+	first_name = Pyotr
+	last_name = Wrangel
+	historical = yes
+	culture = cu:russian
+	female = no
+	ideology = ideology_royalist
+	commander_rank = default
+	interest_group = ig_landowners
+	birth_date = 1878.8.27
+	traits = {
+		experienced_offensive_planner
+		popular_commander
+		direct
+	}
+	commander_usage = {
+		country_trigger = {
+			exists = c:RUS
+			this = c:RUS
+		}
+		role = general
+		earliest_usage_date = 1914.1.1
+		latest_usage_date = 1936.1.1	
+		chance = 50
 	}
 }
