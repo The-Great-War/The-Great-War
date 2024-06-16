@@ -1,7 +1,9 @@
 ﻿l_english:
  PARTY_FULL_NAME:0 "$NAME$ ([concept_party])"
  party_bolsheviks:1 "Bolshevik Party"
- party_russian_communist_party_bolsheviks:0 "Russian Communist Party of Bolshevik"
+ party_russian_communist_party_bolsheviks:0 "Russian Communist Party of Bolsheviks"
+ party_russian_socialist_democratic_workers_party:0 "Russian SD Workers' Party"
+ party_rsdwp_b:0 "RSDWP(B)"
  party_communist:0 "Communist Party"
  party_liberal:0 "Liberal Party"
  party_nazis:0 "Nazi Party"
@@ -190,9 +192,7 @@
  party_psoe:0 "PSOE"
  party_portuguese_socialist_party:0 "Portuguese Socialist Party"
  party_ftsf:0 "FTSF"
- party_menshevik_party:0 "Menshevik Party"
- party_socialist_revolutionary_party:0 "Socialist Revolutionary Party"
- party_russian_socialist_democratic_workers_party:0 "Russian SD Workers Party"
+ party_rsdwp_m:0 "RSDWP(M)"
  party_labor_party:0 "Labor Party"
  party_social_democratic_workers_party:0 "Social Democratic Workers' Party"
  party_finnish_labor_party:0 "Finnish Labor Party"
@@ -232,6 +232,8 @@
  party_kke:0 "KKE"
 
 #agrarian_party
+ party_agrarian_rus:0 "Agrarian Russian Party"
+ party_socialist_revolutionary_party:0 "Socialist Revolutionary Party"
  party_irish_national_land_league:0 "Irish National Land League"
  party_independent_agriculture_party:0 "Independent Agriculture Party"
  party_farmers_party:0 "Farmer's Party"

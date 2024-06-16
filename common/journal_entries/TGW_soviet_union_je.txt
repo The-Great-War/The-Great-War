@@ -1,16 +1,22 @@
-﻿soviet_union_je = {
+﻿je_tgw_soviet_union = {
 	icon = "gfx/interface/icons/event_icons/bolshevik_icon.dds"
 
 	group = je_group_internal_affairs
 
 	is_shown_when_inactive = {
-		has_global_variable = soviets
-		THIS = global_var:soviets
+		custom_tooltip = {
+			text = je_tgw_is_soviet_union
+			has_global_variable = soviets
+			THIS = global_var:soviets
+		}
 	}
 
 	possible = {
-		has_global_variable = soviets
-		THIS = global_var:soviets
+		custom_tooltip = {
+			text = je_tgw_is_soviet_union
+			has_global_variable = soviets
+			THIS = global_var:soviets
+		}
 		THIS = {
 			is_revolutionary = NO
 		}
@@ -25,6 +31,25 @@
 	}
 
 	fail = {
-		has_law = law_type:law_monarchy
+		NOT = { has_law = law_type:law_council_republic }
+	}
+}
+
+je_tgw_su_collectivization = {
+
+	icon = "gfx/interface/icons/event_icons/bolshevik_icon.dds"
+
+	group = je_group_internal_affairs
+	
+	complete = {
+		has_law = law_type:law_collectivized_agriculture
+	}
+
+	on_complete = {
+		
+	}
+
+	fail = {
+		NOT = { has_law = law_type:law_council_republic }
 	}
 }

@@ -369,7 +369,7 @@ je_bpm_second_international = {
 			limit = { has_global_variable = bpm_je_second_intl_progress }
 			custom_tooltip = {
 				text = "bpm_je_progress_complete"
-				global_var:bpm_je_second_intl_progress >= 100
+				global_var:bpm_je_second_intl_progress >= 30
 			}
 		}
 	}

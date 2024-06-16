@@ -3,7 +3,33 @@
 	name = {
 		first_valid = {
 			triggered_desc = {
-				desc = party_bolsheviks
+				desc = party_russian_communist_party_bolsheviks
+				trigger = {
+					country_has_primary_culture = cu:russian
+					has_law = law_type:law_single_party_state
+					any_interest_group = {
+						leader = {
+							has_ideology = ideology:ideology_leninist
+							has_ideology = ideology:ideology_trotskist
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_rsdwp_b
+				trigger = {
+					country_has_primary_culture = cu:russian
+					has_global_variable = global_socialists_split_var
+					any_interest_group = {
+						leader = {
+							has_ideology = ideology:ideology_leninist
+							has_ideology = ideology:ideology_trotskist
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_russian_socialist_democratic_workers_party
 				trigger = {
 					country_has_primary_culture = cu:russian
 				}

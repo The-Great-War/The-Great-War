@@ -23,15 +23,15 @@ social_democrat_party = {
 			triggered_desc = {
 				desc = party_socdem_por
 				trigger = {
-					exists = c:POR
-					THIS = c:POR
+					exists = c:IRE
+					THIS = c:IRE
 				}
 			}
 			triggered_desc = {
-				desc = party_labour_party
+				desc = party_portuguese_socialist_party
 				trigger = {
-					exists = c:IRE
-					THIS = c:IRE
+					exists = c:POR
+					THIS = c:POR
 				}
 			}
 			triggered_desc = {
@@ -42,10 +42,31 @@ social_democrat_party = {
 				}
 			}
 			triggered_desc = {
-				desc = party_menshevik_party
+				desc = party_russian_socialist_democratic_workers_party
 				trigger = {
-					exists = c:RUS
-					THIS = c:RUS
+					country_has_primary_culture = cu:russian
+					any_active_party = {
+						party:communist_party
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_rsdwp_m
+				trigger = {
+					country_has_primary_culture = cu:russian
+					has_global_variable = global_socialists_split_var
+					any_interest_group = {
+						leader = {
+							has_ideology = ideology:ideology_leninist
+							has_ideology = ideology:ideology_trotskist
+						}
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_labor_party
+				trigger = {
+					country_has_primary_culture = cu:russian
 				}
 			}
 			triggered_desc = {
@@ -91,7 +112,7 @@ social_democrat_party = {
 				}
 			}
 			triggered_desc = {
-				desc = party_socdem_jap
+				desc = party_common_peoples_party
 				trigger = {
 					exists = c:JAP
 					THIS = c:JAP
@@ -109,13 +130,6 @@ social_democrat_party = {
 				trigger = {
 					exists = c:TUR
 					THIS = c:TUR
-				}
-			}
-			triggered_desc = {
-				desc = party_socdem_egy
-				trigger = {
-					exists = c:EGY
-					THIS = c:EGY
 				}
 			}
 			triggered_desc = {
@@ -164,13 +178,6 @@ social_democrat_party = {
 				}
 			}
 			triggered_desc = {
-				desc = party_spdao
-				trigger = {
-					exists = c:AUS
-					THIS = c:AUS
-				}
-			}
-			triggered_desc = {
 				desc = party_sdp
 				trigger = {
 					OR = {
@@ -180,7 +187,7 @@ social_democrat_party = {
 				}
 			}
 			triggered_desc = {
-				desc = party_socdem_ita
+				desc = party_psi
 				trigger = {
 					OR = {
 						country_has_primary_culture = cu:north_italian

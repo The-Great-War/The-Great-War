@@ -76,7 +76,6 @@ stolypin_reforms_je = {
 	fail = {
 		OR = {
 			has_law = law_type:law_serfdom
-			
 		}
 	}
 }
