@@ -69,3 +69,14 @@ tur_enver_pasha_character_template = {
         chance = 50
     }
 }
+
+tur_abdulhamid_template = {
+    first_name = Abdulhamid # II
+    last_name = Osmanoglu
+    historical = yes
+    ruler = yes
+    birth_date = 1842.9.21
+    interest_group = ig_landowners
+    culture = cu:turkish
+    ideology = ideology_royalist
+}
