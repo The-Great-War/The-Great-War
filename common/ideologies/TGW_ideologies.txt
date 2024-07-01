@@ -1,3 +1,5 @@
+﻿### Russia
+
 ideology_leninist = {
     icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_leninist.dds"
 
@@ -76,13 +78,117 @@ ideology_leninist = {
 
     possible = {
         owner = {
+			OR = {
+				country_has_primary_culture = cu:russian
+				country_has_primary_culture = cu:ukrainian
+				country_has_primary_culture = cu:byelorussian
+				country_has_primary_culture = cu:kazak
+			}
             has_technology_researched = socialism
         }
+		scope:interest_group = { 
+			bpm_ig_enabled = yes
+			OR = {
+				is_interest_group_type = ig_trade_unions
+				is_interest_group_type = ig_socialists
+				is_interest_group_type = ig_revolutionist_socialists
+				is_interest_group_type = ig_armed_forces
+			}
+		}
+		scope:interest_group = {
+			NOR = {
+				bpm_ig_is_traditionalist = yes
+				bpm_ig_is_fascist = yes
+			}
+		}
     }
 
     leader_weight = {
-        value = 0
-    }
+		# Very likely for revsocs after Second Intl
+		if = {
+			limit = {
+				scope:interest_group = {
+					bpm_ig_is_revolutionary_socialist = yes
+				}
+				has_global_variable = second_intl_chain_complete_var
+			}
+			add = 50
+		}
+		# More likely for socialists
+		if = {
+			limit = {
+				scope:interest_group = {
+					OR = {
+						bpm_ig_is_radical_socialist = yes
+						has_ideology = ideology:ideology_eco_agrarian_socialist
+					}
+				}
+			}
+			add = 50
+		}
+		# Somewhat likely for unions
+		if = {
+			limit = {
+				scope:interest_group = {
+					bpm_ig_is_proletarian = yes
+				}
+			}
+			add = 30
+		}
+		# More likely for angry IG's outside of council republic
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_law = law_type:law_council_republic }
+				}
+				scope:interest_group = {
+					NOT = { is_interest_group_type = ig_armed_forces }
+					ig_approval <= -5
+				}
+			}
+			add = 100
+		}
+		# More likely when SoL is low outside of council republic
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_law = law_type:law_council_republic }
+					average_sol <= 10
+				}
+			}
+			add = 50
+		}
+		value = {
+			value = 100
+			if = {
+				limit = {
+					owner = { has_variable = communism_1_done }
+				}
+				multiply = 3
+			}
+			if = {
+				limit = {
+					owner = { has_variable = election_communist_support }
+				}
+				multiply = 2
+			}
+		}
+		# Syndicalism JE's influence shifts chances
+		multiply = {
+			if = {
+				limit = { 
+					has_variable = bpm_je_syndicalism 
+					var:bpm_je_syndicalism >= 33
+				}
+				add = 66
+				subtract = var:bpm_je_syndicalism
+				add = 33
+				divide = 66
+			} else = {
+				value = 1
+			}
+		}
+	}
 }
 
 ideology_trotskist = {
@@ -138,14 +244,253 @@ ideology_trotskist = {
 
     possible = {
         owner = {
+			OR = {
+				country_has_primary_culture = cu:russian
+				country_has_primary_culture = cu:ukrainian
+				country_has_primary_culture = cu:byelorussian
+				country_has_primary_culture = cu:kazak
+			}
             has_technology_researched = socialism
         }
+		scope:interest_group = { 
+			bpm_ig_enabled = yes
+			OR = {
+				is_interest_group_type = ig_trade_unions
+				is_interest_group_type = ig_socialists
+				is_interest_group_type = ig_revolutionist_socialists
+				is_interest_group_type = ig_armed_forces
+			}
+		}
+		scope:interest_group = {
+			NOR = {
+				bpm_ig_is_traditionalist = yes
+				bpm_ig_is_fascist = yes
+			}
+		}
+    }
+
+    leader_weight = {
+		# Very likely for revsocs after Second Intl
+		if = {
+			limit = {
+				scope:interest_group = {
+					bpm_ig_is_revolutionary_socialist = yes
+				}
+				has_global_variable = second_intl_chain_complete_var
+			}
+			add = 50
+		}
+		# More likely for socialists
+		if = {
+			limit = {
+				scope:interest_group = {
+					OR = {
+						bpm_ig_is_radical_socialist = yes
+						has_ideology = ideology:ideology_eco_agrarian_socialist
+					}
+				}
+			}
+			add = 50
+		}
+		# Somewhat likely for unions
+		if = {
+			limit = {
+				scope:interest_group = {
+					bpm_ig_is_proletarian = yes
+				}
+			}
+			add = 30
+		}
+		# More likely for angry IG's outside of council republic
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_law = law_type:law_council_republic }
+				}
+				scope:interest_group = {
+					NOT = { is_interest_group_type = ig_armed_forces }
+					ig_approval <= -5
+				}
+			}
+			add = 100
+		}
+		# More likely when SoL is low outside of council republic
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_law = law_type:law_council_republic }
+					average_sol <= 10
+				}
+			}
+			add = 50
+		}
+		value = {
+			value = 100
+			if = {
+				limit = {
+					owner = { has_variable = communism_1_done }
+				}
+				multiply = 3
+			}
+			if = {
+				limit = {
+					owner = { has_variable = election_communist_support }
+				}
+				multiply = 2
+			}
+		}
+		# Syndicalism JE's influence shifts chances
+		multiply = {
+			if = {
+				limit = { 
+					has_variable = bpm_je_syndicalism 
+					var:bpm_je_syndicalism >= 33
+				}
+				add = 66
+				subtract = var:bpm_je_syndicalism
+				add = 33
+				divide = 66
+			} else = {
+				value = 1
+			}
+		}
+	}
+}
+
+### Turkey
+
+ideology_ottomanist_leader = {
+    icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_patriotic.dds"
+
+    character_ideology = yes
+
+    lawgroup_governance_principles = {
+        law_monarchy = disapprove
+    }
+
+    lawgroup_citizenship = {
+        law_ethnostate = strongly_disapprove
+		law_national_supremacy = strongly_disapprove
+		law_racial_segregation = disapprove
+		law_cultural_exclusion = neutral
+		law_multicultural = approve
+    }
+	
+	lawgroup_church_and_state = {
+		law_freedom_of_conscience = agree
+	}
+
+    possible = {
+		owner = {
+			country_has_primary_culture = cu:turkish
+		}
     }
 
     leader_weight = {
         value = 0
     }
 }
+
+ideology_unionist_leader = {
+    icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_ethno_nationalist.dds"
+
+    character_ideology = yes
+	
+	lawgroup_distribution_of_power = {
+		law_oligarchy = strongly_approve
+		law_autocracy = approve
+		law_technocracy = neutral
+		law_anarchy = disapprove
+	}
+	
+	lawgroup_patry_laws = {
+		law_party_single = strongly_approve
+	}
+
+    lawgroup_citizenship = {
+        law_ethnostate = strongly_approve
+		law_national_supremacy = strongly_approve
+		law_racial_segregation = neutral
+		law_cultural_exclusion = disapprove
+		law_multicultural = strongly_disapprove
+    }
+	
+	lawgroup_church_and_state = {
+		law_state_religion = strongly_approve
+		law_freedom_of_conscience = neutral
+		law_state_atheism = strongly_disapprove
+		law_total_separation = strongly_disapprove
+	}
+
+    possible = {
+		scope:interest_group = { bpm_ig_enabled = yes }
+        owner = {
+			country_has_primary_culture = cu:turkish
+		}
+		scope:interest_group = {
+			bpm_ig_is_left_wing = no
+		}
+    }
+
+    leader_weight = {
+		value = 25
+		# more likely for the right
+		if = {
+			limit = {
+				scope:interest_group = {
+					bpm_ig_is_traditionalist = yes
+				}
+			}
+			add = 50
+		}
+		# less likely for unions
+		if = {
+			limit = {
+				scope:interest_group = {
+					bpm_ig_is_labor = yes
+				}
+			}
+			add = -75
+		}
+	}
+}
+
+ideology_hamidian_constitutionalist_leader = {
+    icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_royalist.dds"
+
+    character_ideology = yes
+	
+	lawgroup_governance_principles = {
+		law_monarchy = strongly_approve
+		law_parliamentary_republic = neutral
+		law_council_republic = strongly_disapprove
+	}
+	
+	lawgroup_distribution_of_power = {
+		law_census_voting = strongly_approve
+		law_landed_voting = strongly_approve
+		law_wealth_voting = approve
+		law_universal_suffrage = neutral
+		law_autocracy = neutral
+		law_oligarchy = strongly_disapprove
+	}
+	
+	lawgroup_patry_laws = {
+		law_party_single = strongly_disapprove
+	}
+
+    possible = {
+        owner = {
+			country_has_primary_culture = cu:turkish
+		}
+    }
+
+    leader_weight = {
+        value = 0
+    }
+}
+
+### Other
 
 ideology_jingoist_leader = { # soft-removed by no attraction, superseded by ultranationalism (ethnonationalism)
     icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_jingoist.dds"
@@ -174,3 +519,4 @@ ideology_jingoist_leader = { # soft-removed by no attraction, superseded by ultr
         value = 0
     }
 }
+

@@ -1,13 +1,13 @@
-﻿namespace = october_revolution
+﻿namespace = tgw_october_revolution
 
-october_revolution.1 = { # lenin appearence 
+tgw_october_revolution.1 = { # lenin appearence 
 	type = country_event
 	placement = root
 	hidden = no
 	
-	title = october_revolution.1.t
-	desc = october_revolution.1.d
-	flavor = october_revolution.1.f
+	title = tgw_october_revolution.1.t
+	desc = tgw_october_revolution.1.d
+	flavor = tgw_october_revolution.1.f
 	icon = "gfx/interface/icons/event_icons/event_protest.dds"
 	
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -23,10 +23,10 @@ october_revolution.1 = { # lenin appearence
 		video = "votp_agitator_speaking"
 	}
 
-	category = revolution
+	# category = revolution
 	
 	option = { 
-		name = october_revolution.1.1
+		name = tgw_october_revolution.1.a
 		default_option = yes
 		
 		create_character = {
@@ -35,7 +35,7 @@ october_revolution.1 = { # lenin appearence
 		}
 		
 		trigger_event = {
-			id = october_revolution.2
+			id = tgw_october_revolution.2
 			popup = yes
 			# months = 6
 			weeks = 1
@@ -43,14 +43,14 @@ october_revolution.1 = { # lenin appearence
 	}
 }
 
-october_revolution.2 = { #Bolshevik Revolution
+tgw_october_revolution.2 = { #Bolshevik Revolution
 	type = country_event
 	placement = root
 	hidden = no
 
-	title = october_revolution.2.t
-	desc = october_revolution.2.d
-	flavor = october_revolution.2.f
+	title = tgw_october_revolution.2.t
+	desc = tgw_october_revolution.2.d
+	flavor = tgw_october_revolution.2.f
 	icon = "gfx/interface/icons/event_icons/event_protest.dds"
 
 
@@ -67,9 +67,11 @@ october_revolution.2 = { #Bolshevik Revolution
 		video = "europenorthamerica_political_extremism"
 	}
 
-	category = revolution
-	
-	immediate = {
+	# category = revolution
+
+	option = {
+		name = tgw_october_revolution.2.a
+		default_option = yes
 		create_dynamic_country = {
 			origin = root
 			capital = STATE_INGRIA
@@ -135,7 +137,7 @@ october_revolution.2 = { #Bolshevik Revolution
 			}
 		}
 		
-		set_global_variable = october_revolution_started
+		set_global_variable = tgw_october_revolution_started
 
 		c:RUS = {
 			every_character = {
@@ -168,16 +170,108 @@ october_revolution.2 = { #Bolshevik Revolution
 				handle_annexation_as_civil_war = yes
 			}
 		}
-	}
-
-	option = {	# play as Soviets
-		name = october_revolution.2.1
-		default_option = yes
-		
 		play_as = global_var:soviets
 	}
 	
-	option = { 	# keep playing as Russia
-		name = october_revolution.2.2
+	option = {
+		create_dynamic_country = {
+			origin = root
+			capital = STATE_INGRIA
+			cede_state_trigger = {
+				owner = c:RUS
+				OR = {
+					region = sr:region_russia
+					region = sr:region_dnieper
+					region = sr:region_caucasus
+					region = sr:region_baltic
+				}
+				OR = {
+					pop_type_percent_state = {
+						target = pop_type:laborers
+						value >= 0.4
+					}
+					pop_type_percent_state = {
+						target = pop_type:peasants
+						value >= 0.6
+					}
+				}
+			}
+			color = "red_dark"
+			on_created = {
+				set_global_variable = {
+					name = soviets
+					value = this
+				}
+				
+				bpm_setup_country = yes
+				trigger_event = { id = bpm_ideology_soft_compat_events.1 }
+				trigger_event = { id = bpm_ideology_soft_compat_events.2 }
+				trigger_event = { id = bpm_ideology_soft_compat_events.4 }
+				activate_law = law_type:law_council_republic
+				activate_law = law_type:law_cooperative_ownership
+				activate_law = law_type:law_federated
+				activate_law = law_type:law_universal_suffrage
+				activate_law = law_type:law_multicultural
+				activate_law = law_type:law_regressive_tax
+				activate_law = law_type:law_total_separation
+				activate_law = law_type:law_right_of_assembly
+				activate_law = law_type:law_homesteading
+				activate_law = law_type:law_appointed_bureaucrats
+				activate_law = law_type:law_all_labor_unions_allowed
+				
+				# activate_law = law_type:law_party_socialist_only
+
+				every_interest_group = {
+					remove_ruling_interest_group = yes
+				}
+				ig:ig_socialists = {
+					add_ruling_interest_group = yes
+				}
+				bpm_refresh_parties = yes
+				
+				global_var:soviets = {
+					set_capital = STATE_INGRIA
+					set_variable = {
+						name = prev_country		# tag of a coountry that became soviet union
+						value = root
+					}
+				}
+			}
+		}
+		
+		set_global_variable = tgw_october_revolution_started
+
+		c:RUS = {
+			every_character = {
+				limit = {
+					OR = {
+						bpm_leader_is_socialist
+						bpm_leader_is_anarchist
+						bpm_leader_is_communist
+					}
+				}
+				transfer_character = global_var:soviets
+				add_character_role = politician
+				set_as_interest_group_leader = yes
+			}
+		}
+		random_scope_character = {
+			limit = { has_template = rus_lenin_character_template }
+			transfer_character = global_var:soviets
+			add_character_role = politician
+			set_as_interest_group_leader = yes
+			set_character_as_ruler = yes
+		}
+		c:RUS = {
+			create_diplomatic_play = {
+				target_country = global_var:soviets
+				escalation = 100
+				war = yes
+				initiator = global_var:soviets
+				type = dp_revolution
+				handle_annexation_as_civil_war = yes
+			}
+		}
+		name = tgw_october_revolution.2.b
 	}
 }
