@@ -14,7 +14,10 @@
         bg_lead_mining = 24
         bg_logging = 17
         bg_fishing = 10
-        bg_rubber = 40
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 40
     }
     naval_exit_id = 3052
 }
@@ -37,12 +40,15 @@ STATE_NORTH_BORNEO = {
         bg_sulfur_mining = 36
         bg_logging = 20
         bg_fishing = 8
-        bg_rubber = 20
     }
     resource = {
         type = "bg_gold_fields"
         depleted_type = "bg_gold_mining"
         undiscovered_amount = 8
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 16
     }
     naval_exit_id = 3055
 }
@@ -65,13 +71,16 @@ STATE_WEST_BORNEO = {
         bg_lead_mining = 30
         bg_logging = 17
         bg_fishing = 7
-        bg_rubber = 20
     }
     resource = {
         type = "bg_gold_fields"
         depleted_type = "bg_gold_mining"
         undiscovered_amount = 6
         discovered_amount = 4
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 12
     }
     naval_exit_id = 3052
 }
@@ -93,8 +102,14 @@ STATE_EAST_BORNEO = {
         bg_coal_mining = 28
         bg_logging = 20
         bg_fishing = 9
-        bg_oil_extraction = 80
-        bg_rubber = 30
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 28
+    }
+    resource = {
+        type = "bg_oil_extraction"
+        undiscovered_amount = 40
     }
     naval_exit_id = 3125
 }
@@ -103,6 +118,7 @@ STATE_WEST_JAVA = {
     id = 544
     subsistence_building = "building_subsistence_rice_paddies"
     provinces = { "x5CC6B6" "x6345B2" "x71D392" "x975BCA" "xA0DFEF" "xB944CF" "xCE4107" "xD70117" }
+    traits = { "state_trait_volcanic_soil" }
     city = "x5CC6B6"
     port = "xD70117"
     farm = "x975BCA"
@@ -115,8 +131,14 @@ STATE_WEST_JAVA = {
         bg_sulfur_mining = 32
         bg_logging = 8
         bg_fishing = 11
-        bg_rubber = 12
-        bg_oil_extraction = 10
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 12
+    }
+    resource = {
+        type = "bg_oil_extraction"
+        undiscovered_amount = 10
     }
     naval_exit_id = 3052
 }
@@ -126,7 +148,7 @@ STATE_EAST_JAVA = {
     subsistence_building = "building_subsistence_rice_paddies"
     provinces = { "x1D38B7" "x2060EF" "x5C2239" "x5C2250" "xA0E070" "xA8B603" "xAD1F3C" "xC226AF" "xD91A27" "xEF70EC" }
     impassable = { "x5C2250" "x5C2239" }
-    traits = { "state_trait_natural_harbors" }
+    traits = { "state_trait_natural_harbors" "state_trait_volcanic_soil" }
     city = "x1D38B7"
     port = "x1D38B7"
     farm = "xD91A27"
@@ -138,8 +160,14 @@ STATE_EAST_JAVA = {
         bg_sulfur_mining = 40
         bg_logging = 7
         bg_fishing = 8
-        bg_rubber = 12
-        bg_oil_extraction = 10
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 12
+    }
+    resource = {
+        type = "bg_oil_extraction"
+        undiscovered_amount = 10
     }
     naval_exit_id = 3052
 }
@@ -148,6 +176,7 @@ STATE_CENTRAL_JAVA = {
     id = 912
     subsistence_building = "building_subsistence_rice_paddies"
     provinces = { "x01B3D5" "x143969" "x14F9F5" "x20DF70" "x62742E" "x727A46" "x9C517C" "xA06070" "xA12ED1" "xD19D2E" "xEB0621" }
+    traits = { "state_trait_volcanic_soil" }
     city = "xD19D2E"
     port = "xA06070"
     farm = "xA06070"
@@ -159,7 +188,10 @@ STATE_CENTRAL_JAVA = {
         bg_sulfur_mining = 32
         bg_logging = 6
         bg_fishing = 4
-        bg_rubber = 30
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 8
     }
     naval_exit_id = 3052
 }
@@ -181,7 +213,10 @@ STATE_NORTH_SUMATRA = {
         bg_sulfur_mining = 48
         bg_logging = 29
         bg_fishing = 13
-        bg_rubber = 30
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 28
     }
     naval_exit_id = 3120
 }
@@ -202,8 +237,14 @@ STATE_SOUTH_SUMATRA = {
         bg_sulfur_mining = 48
         bg_logging = 29
         bg_fishing = 13
-        bg_rubber = 28
-        bg_oil_extraction = 10
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 28
+    }
+    resource = {
+        type = "bg_oil_extraction"
+        undiscovered_amount = 10
     }
     naval_exit_id = 3120
 }
@@ -224,8 +265,14 @@ STATE_ACEH = {
         bg_sulfur_mining = 20
         bg_logging = 14
         bg_fishing = 8
-        bg_rubber = 18
-        bg_oil_extraction = 10
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 18
+    }
+    resource = {
+        type = "bg_oil_extraction"
+        undiscovered_amount = 10
     }
     naval_exit_id = 3051
 }
@@ -247,8 +294,14 @@ STATE_WESTERN_NEW_GUINEA = {
         bg_logging = 20
         bg_fishing = 9
         bg_whaling = 2
-        bg_rubber = 8
-        bg_oil_extraction = 10
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 8
+    }
+    resource = {
+        type = "bg_oil_extraction"
+        undiscovered_amount = 10
     }
     naval_exit_id = 3125
 }
@@ -267,7 +320,10 @@ STATE_MOLUCCAS = {
     capped_resources = {
         bg_logging = 4
         bg_fishing = 6
-        bg_rubber = 5
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 4
     }
     naval_exit_id = 3125
 }
@@ -288,7 +344,10 @@ STATE_CELEBES = {
         bg_iron_mining = 27
         bg_logging = 14
         bg_fishing = 4
-        bg_rubber = 30
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 4
     }
     naval_exit_id = 3125
 }
@@ -311,8 +370,14 @@ STATE_EASTERN_NEW_GUINEA = {
         bg_logging = 16
         bg_fishing = 10
         bg_whaling = 2
-        bg_rubber = 12
-        bg_oil_extraction = 10
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 12
+    }
+    resource = {
+        type = "bg_oil_extraction"
+        undiscovered_amount = 10
     }
     naval_exit_id = 3129
 }
@@ -334,7 +399,10 @@ STATE_SUNDA_ISLANDS = {
         bg_sulfur_mining = 40
         bg_logging = 17
         bg_fishing = 10
-        bg_rubber = 8
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 8
     }
     naval_exit_id = 3052
 }
@@ -355,7 +423,10 @@ STATE_MINDANAO = {
         bg_iron_mining = 36
         bg_logging = 14
         bg_fishing = 8
-        bg_rubber = 10
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 10
     }
     naval_exit_id = 3055
 }
@@ -376,7 +447,10 @@ STATE_LUZON = {
         bg_iron_mining = 24
         bg_logging = 20
         bg_fishing = 12
-        bg_rubber = 15
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 4
     }
     naval_exit_id = 3056
 }
@@ -396,7 +470,11 @@ STATE_VISAYAS = {
         bg_iron_mining = 30
         bg_logging = 18
         bg_fishing = 10
-        bg_rubber = 14
+        bg_coal_mining = 5
+    }
+    resource = {
+        type = "bg_rubber"
+        undiscovered_amount = 4
     }
     naval_exit_id = 3127
 }
@@ -426,7 +504,7 @@ STATE_EAST_MICRONESIA = {
     id = 1000
     subsistence_building = "building_subsistence_fishing_villages"
     provinces = { "x527F6C" "x808011" "x808090" "x80C011" "xCD1EA0" "xF5DBBF" }
-    impassable = { "x808090" "x808011" "x527F6C" }
+    impassable = { "x808090" "x527F6C" }
     traits = { "state_trait_severe_malaria" }
     city = "x808011"
     port = "x808011"
@@ -469,9 +547,9 @@ STATE_NAURU = {
     subsistence_building = "building_subsistence_fishing_villages"
     provinces = { "x418382" "xC041F0" }
     traits = { "state_trait_severe_malaria" }
-    city = "x808090"
+    city = "x418382"
     port = "xC041F0"
-    farm = "xC041F0"
+    farm = "x418382"
     arable_land = 5
     arable_resources = { "bg_rice_farms" "bg_coffee_plantations" "bg_banana_plantations" }
     capped_resources = {
@@ -505,7 +583,6 @@ STATE_VANUATU = {
     id = 1003
     subsistence_building = "building_subsistence_fishing_villages"
     provinces = { "x504090" "x5178BC" "x75A377" }
-    impassable = { "x75A377" }
     traits = { "state_trait_severe_malaria" }
     city = "x75A377"
     port = "x504090"
@@ -584,7 +661,6 @@ STATE_TONGA = {
     id = 1020
     subsistence_building = "building_subsistence_fishing_villages"
     provinces = { "x208030" "xA7F8A1" "xC00010" "xD98CDA" }
-    impassable = { "x208030" }
     traits = { "state_trait_severe_malaria" }
     city = "x208030"
     port = "xA7F8A1"

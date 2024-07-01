@@ -5,7 +5,7 @@ Includes = {
 	"jomini/jomini_mapobject.fxh"
 	"sharedconstants.fxh"
 	"distance_fog.fxh"
-	"cwp_coloroverlay.fxh"
+	"coloroverlay.fxh"
 	"fog_of_war.fxh"
 	"ssao_struct.fxh"
 	"pdxwater_game.fxh"
@@ -82,11 +82,15 @@ PixelShader =
 				PS_COLOR_SSAO Out;
 				float4 Water = float4( 0.0f, 0.0f, 1.0f, 1.0f );
 
-				#ifdef LOW_QUALITY_SHADERS
+				#if defined( LOW_QUALITY_SHADERS )
 					Water = CalcWaterLowSpec( Input );
 				#else
 					SWaterParameters Params = SetWaterParameters( Input );
-					Water = GameCalcWater( Params );
+					#if defined( POND )
+						Water = GameCalcWaterPond( Params );
+					#else
+						Water = GameCalcWater( Params );
+					#endif
 				#endif
 
 				#ifdef CANAL
@@ -107,13 +111,15 @@ PixelShader =
 				Water.rgb = GameApplyDistanceFog( Water.rgb, Input.WorldSpacePos );
 
 				// Flatmap texture and style
-				if( _FlatmapLerp > 0.0f )
-				{
-					float3 Flatmap = PdxTex2D( FlatmapTexture, Input.UV01 ).rgb;
-					Flatmap = ApplyDynamicFlatmap( Flatmap, ProvinceCoords, Input.WorldSpacePos.xz );
+				#if !defined ( POND ) && !defined( GUI_SHADER )
+					if( _FlatmapLerp > 0.0f )
+					{
+						float3 Flatmap = PdxTex2D( FlatmapTexture, Input.UV01 ).rgb;
+						Flatmap = ApplyDynamicFlatmap( Flatmap, ProvinceCoords, Input.WorldSpacePos.xz );
 
-					Water.rgb = lerp( Water.rgb, Flatmap, _FlatmapLerp );
-				}
+						Water.rgb = lerp( Water.rgb, Flatmap, _FlatmapLerp );
+					}
+				#endif
 
 				// Output
 				Out.Color = Water;
@@ -150,16 +156,32 @@ Effect water_border_lerp
 	Defines = { "JOMINIWATER_BORDER_LERP" }
 }
 
+Effect water_pond
+{
+	VertexShader = "VS_jomini_water_mesh"
+	PixelShader = "GameWaterPixelShader"
+
+	Defines = { "POND" }
+}
+Effect water_pond_mapobject
+{
+	VertexShader = "VS_jomini_water_mapobject"
+	PixelShader = "GameWaterPixelShader"
+}
 
 Effect lake
 {
 	VertexShader = "VS_jomini_water_mesh"
 	PixelShader = "GameWaterPixelShader"
+
+	Defines = { "LAKE" }
 }
 Effect lake_mapobject
 {
 	VertexShader = "VS_jomini_water_mapobject"
 	PixelShader = "GameWaterPixelShader"
+
+	Defines = { "LAKE" }
 }
 
 

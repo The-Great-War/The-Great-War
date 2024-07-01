@@ -62,6 +62,58 @@ PixelShader =
 	}
 }
 
+VertexShader =
+{
+	MainCode VS_decal_standard
+	{
+		Input = "VS_INPUT_PDXMESHSTANDARD"
+		Output = "VS_OUTPUT"
+		Code
+		[[
+			PDX_MAIN
+			{
+				VS_OUTPUT Out = ConvertOutput( PdxMeshVertexShaderStandard( Input ) );
+				Out.InstanceIndex = Input.InstanceIndices.y;
+
+				Out.WorldSpacePos.y = GetHeight( Out.WorldSpacePos.xz );
+				Out.WorldSpacePos.y += 0.01;
+				#ifdef DECAL_LOCAL
+					Out.WorldSpacePos.y += 0.01;
+				#endif
+
+				Out.Position = FixProjectionAndMul( ViewProjectionMatrix, float4( Out.WorldSpacePos.xyz, 1.0 ) );
+
+				return Out;
+			}
+		]]
+	}
+
+	MainCode VS_decal_mapobject
+	{
+		Input = "VS_INPUT_PDXMESH_MAPOBJECT"
+		Output = "VS_OUTPUT"
+		Code
+		[[
+			PDX_MAIN
+			{
+				float4x4 WorldMatrix = UnpackAndGetMapObjectWorldMatrix( Input.InstanceIndex24_Opacity8 );
+				VS_OUTPUT Out = ConvertOutput( PdxMeshVertexShader( PdxMeshConvertInput( Input ), 0, WorldMatrix ) );
+				Out.InstanceIndex = Input.InstanceIndex24_Opacity8;
+
+				Out.WorldSpacePos.y = GetHeight( Out.WorldSpacePos.xz );
+				Out.WorldSpacePos.y += 0.01;
+				#ifdef DECAL_LOCAL
+					Out.WorldSpacePos.y += 0.01;
+				#endif
+
+				Out.Position = FixProjectionAndMul( ViewProjectionMatrix, float4( Out.WorldSpacePos.xyz, 1.0 ) );
+
+				return Out;
+			}
+		]]
+	}
+}
+
 PixelShader =
 {
 	Code
@@ -94,11 +146,13 @@ PixelShader =
 			Diffuse.rgb = SoftLight( Diffuse.rgb, ColorMap, ( 1.0 - Properties.r ) );
 
 			// Color overlay pre light
-			float3 ColorOverlay;
-			float PreLightingBlend;
-			float PostLightingBlend;
-			GameProvinceOverlayAndBlend( ProvinceCoords, WorldSpacePos, ColorOverlay, PreLightingBlend, PostLightingBlend );
-			Diffuse.rgb = ApplyColorOverlay( Diffuse.rgb, ColorOverlay, PreLightingBlend );
+			#if !defined( NO_COLOROVERLAY ) && !defined( GUI_SHADER )
+				float3 ColorOverlay;
+				float PreLightingBlend;
+				float PostLightingBlend;
+				GameProvinceOverlayAndBlend( ProvinceCoords, WorldSpacePos, ColorOverlay, PreLightingBlend, PostLightingBlend );
+				Diffuse.rgb = ApplyColorOverlay( Diffuse.rgb, ColorOverlay, PreLightingBlend );
+			#endif
 
 			// Light
 			Properties.a = ScaleRoughnessByDistance( Properties.a, WorldSpacePos );
@@ -109,14 +163,16 @@ PixelShader =
 			#endif
 
 			// Color overlay post light
-			#ifndef UNDERWATER
+			#if !defined( UNDERWATER) && !defined( NO_COLOROVERLAY ) && !defined( GUI_SHADER )
 				Diffuse.rgb = ApplyColorOverlay( Diffuse.rgb, ColorOverlay, PostLightingBlend );
 				Diffuse.rgb = ApplyFogOfWar( Diffuse.rgb, WorldSpacePos );
 				Diffuse.rgb = GameApplyDistanceFog( Diffuse.rgb, WorldSpacePos );
 			#endif
 
 			// Province Highlight
-			Diffuse.rgb = ApplyHighlight( Diffuse.rgb, ProvinceCoords );
+			#if !defined( NO_COLOROVERLAY ) && !defined( GUI_SHADER )
+				Diffuse.rgb = ApplyHighlight( Diffuse.rgb, ProvinceCoords );
+			#endif
 
 			DebugReturn( Diffuse.rgb, MaterialProps, LightingProps, EnvironmentMap );
 			return Diffuse;
@@ -190,28 +246,28 @@ RasterizerState RasterizerState
 
 Effect decal_world
 {
-	VertexShader = "VS_standard"
+	VertexShader = "VS_decal_standard"
 	PixelShader = "PS_world"
 }
 
 Effect decal_world_mapobject
 {
-	VertexShader = "VS_mapobject"
+	VertexShader = "VS_decal_mapobject"
 	PixelShader = "PS_world"
 }
 
 Effect decal_local
 {
-	VertexShader = "VS_standard"
+	VertexShader = "VS_decal_standard"
 	PixelShader = "PS_local"
 
-	Defines = { "TANGENT_SPACE_NORMALS" }
+	Defines = { "TANGENT_SPACE_NORMALS" "DECAL_LOCAL" }
 }
 
 Effect decal_local_mapobject
 {
-	VertexShader = "VS_mapobject"
+	VertexShader = "VS_decal_mapobject"
 	PixelShader = "PS_local"
 
-	Defines = { "TANGENT_SPACE_NORMALS" }
+	Defines = { "TANGENT_SPACE_NORMALS" "DECAL_LOCAL" }
 }

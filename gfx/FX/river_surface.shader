@@ -4,7 +4,7 @@ Includes = {
 	"cw/terrain.fxh"
 	"sharedconstants.fxh"
 	"distance_fog.fxh"
-	"cwp_coloroverlay.fxh"
+	"coloroverlay.fxh"
 	"fog_of_war.fxh"
 	"ssao_struct.fxh"
 	"lowspec_water.fxh"
