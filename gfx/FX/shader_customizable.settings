@@ -1,0 +1,17 @@
+# Naval order emblem
+"Shader.NavalOrder.Emblem.Color" = hsv{ 0.072266 0.867188 0.850000 1.000000 }
+"Shader.NavalOrder.Emblem.Opacity" = 0.2
+"Shader.NavalOrder.Emblem.OpacityFlatmap" = 0.9
+"Shader.NavalOrder.Emblem.Size" = 0.6
+"Shader.NavalOrder.Emblem.SizeFlatmap" = 0.95
+
+"Shader.NavalOrder.Caustics.Color" = hsv{ 0.076172 1.000000 0.8500000 1.000000 }
+"Shader.NavalOrder.Caustics.Strength" = 30.0
+"Shader.NavalOrder.Caustics.Area" = 5.0
+"Shader.NavalOrder.Caustics.Uv" = 2.0
+
+"Shader.NavalOrder.Order.OffsetDistance" = 0.32
+"Shader.NavalOrder.Order.IconSize" = 0.15
+"Shader.NavalOrder.Order.CircleSize" = 1.0
+
+

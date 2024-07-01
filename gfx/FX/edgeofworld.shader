@@ -6,7 +6,7 @@ Includes = {
 	"jomini/jomini_fog.fxh"
 	"jomini/jomini_lighting.fxh"
 	"jomini/jomini_mapobject.fxh"
-	"cwp_coloroverlay.fxh"
+	"coloroverlay.fxh"
 	"distance_fog.fxh"
 	"fog_of_war.fxh"
 	"sharedconstants.fxh"

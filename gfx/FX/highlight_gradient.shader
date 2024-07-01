@@ -1,8 +1,10 @@
 Includes = {
 	"cw/fullscreen_vertexshader.fxh"
 	"cw/random.fxh"
+	"cw/utility.fxh"
 	"jomini/jomini_colormap_constants.fxh"
-	"cwp_coloroverlay.fxh"
+	"coloroverlay_utility.fxh"
+	"coloroverlay.fxh"
 }
 
 ConstantBuffer( PdxConstantBuffer0 )
@@ -47,25 +49,26 @@ PixelShader =
 				}
 				Alpha /= Samples * 2;
 
-			float CoaAlpha = 0.0;
-			int CountryId = SampleCountryIndex( Input.uv );
-			// Provinces where Controller == Owner will have CountryId -1
-			if( CountryId >= 0 )
-			{
-				for( int i = 0; i < Samples; ++i )
+				float CoaAlpha = 0.0;
+				int CountryId = SampleCountryIndex( Input.uv );
+				// Provinces where Controller == Owner will have CountryId -1
+				if( CountryId >= 0 )
 				{
-					float2 ColorIndex = PdxTex2DLod0( ProvinceColorIndirectionTexture, Input.uv + RotateDisc( DiscSamples[i].xy, Rotate ) * KernelSize ).rg;
-					int Index = ColorIndex.x * 255.0 + ColorIndex.y * 255.0 * 256.0;
-					CoaAlpha += step( 1.0f / 255.0f,  PdxReadBuffer( ProvinceControllerIdBuffer, Index ).r );
+					for( int i = 0; i < Samples; ++i )
+					{
+						float2 ColorIndex = PdxTex2DLod0( ProvinceColorIndirectionTexture, Input.uv + RotateDisc( DiscSamples[i].xy, Rotate ) * KernelSize ).rg;
+						int Index = ColorIndex.x * 255.0 + ColorIndex.y * 255.0 * 256.0;
+						CoaAlpha += step( 1.0f / 255.0f, PdxReadBuffer2( ProvinceControllerIdBuffer, Index ).r );
 
-					ColorIndex = PdxTex2DLod0( ProvinceColorIndirectionTexture, Input.uv + RotateDisc( DiscSamples[i].zw, Rotate ) * KernelSize ).rg;
-					Index = ColorIndex.x * 255.0 + ColorIndex.y * 255.0 * 256.0;
-					CoaAlpha += step( 1.0f / 255.0f,  PdxReadBuffer( ProvinceControllerIdBuffer, Index ).r );
+						ColorIndex = PdxTex2DLod0( ProvinceColorIndirectionTexture, Input.uv + RotateDisc( DiscSamples[i].zw, Rotate ) * KernelSize ).rg;
+						Index = ColorIndex.x * 255.0 + ColorIndex.y * 255.0 * 256.0;
+						CoaAlpha += step( 1.0f / 255.0f, PdxReadBuffer2( ProvinceControllerIdBuffer, Index ).r );
+					}
+					CoaAlpha /= Samples * 2;
 				}
-				CoaAlpha /= Samples * 2;
-			}
 
 
+				CoaAlpha *= 1.0 - CoaAlpha;
 				return float4( Alpha, CoaAlpha, 0, 0 );
 			}
 		]]

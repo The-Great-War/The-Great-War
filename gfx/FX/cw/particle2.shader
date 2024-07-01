@@ -1,7 +1,7 @@
 Includes = {
 	"cw/particle2.fxh"
 	"distance_fog.fxh"
-	"cwp_coloroverlay.fxh"
+	"coloroverlay.fxh"
 	"fog_of_war.fxh"
 	"ssao_struct.fxh"
 }
@@ -20,10 +20,24 @@ PixelShader =
 				float4 Color = PdxTex2D( DiffuseMap, Input.UV0 ) * Input.Color;
 				float2 ProvinceCoords = Input.WorldSpacePos.xz / _ProvinceMapSize;
 
-				float3 OverlayColor = Color.rgb;
-				OverlayColor = ApplyFogOfWar( OverlayColor, Input.WorldSpacePos );
-				OverlayColor = GameApplyDistanceFog( OverlayColor, Input.WorldSpacePos );
-				Color.rgb = lerp( Color.rgb, OverlayColor, 1.0 - _FlatmapLerp );
+				#if defined( MAP_PARTICLE ) && !defined( GUI_SHADER )
+					// Paralax offset to keep overlays at terrain level
+					float3 ToCam = normalize( CameraPosition - Input.WorldSpacePos );
+					float ParalaxDist = ( 0.0 - Input.WorldSpacePos.y ) / ToCam.y;
+					float3 ParallaxCoord = Input.WorldSpacePos + ToCam * ParalaxDist;
+					ParallaxCoord.xz = ParallaxCoord.xz / _ProvinceMapSize;
+
+					float3 ColorOverlay;
+					float PreLightingBlend;
+					float PostLightingBlend;
+					GameProvinceOverlayAndBlend( ParallaxCoord.xz, Input.WorldSpacePos, ColorOverlay, PreLightingBlend, PostLightingBlend );
+					Color.rgb = ApplyColorOverlay( Color.rgb, ColorOverlay, saturate( PreLightingBlend + PostLightingBlend ) );
+
+					float3 PostEffectsColor = Color.rgb;
+					PostEffectsColor = ApplyFogOfWar( PostEffectsColor, Input.WorldSpacePos );
+					PostEffectsColor = GameApplyDistanceFog( PostEffectsColor, Input.WorldSpacePos );
+					Color.rgb = lerp( Color.rgb, PostEffectsColor, 1.0 - _FlatmapLerp );
+				#endif
 
 				// Output
 				Out.Color = Color;
@@ -50,7 +64,8 @@ BlendState BlendState
 	BlendEnable = yes
 	SourceBlend = "SRC_ALPHA"
 	DestBlend = "INV_SRC_ALPHA"
-	WriteMask = "RED|GREEN|BLUE"
+	WriteMask = "RED|GREEN|BLUE|ALPHA"
+	BlendOpAlpha = "max"
 }
 
 BlendState AdditiveBlendState
@@ -58,7 +73,8 @@ BlendState AdditiveBlendState
 	BlendEnable = yes
 	SourceBlend = "SRC_ALPHA"
 	DestBlend = "ONE"
-	WriteMask = "RED|GREEN|BLUE"
+	WriteMask = "RED|GREEN|BLUE|ALPHA"
+	BlendOpAlpha = "max"
 }
 
 Effect ParticleTexture

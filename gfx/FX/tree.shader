@@ -11,7 +11,7 @@ Includes = {
 	"sharedconstants.fxh"
 	"distance_fog.fxh"
 	"dynamic_masks.fxh"
-	"cwp_coloroverlay.fxh"
+	"coloroverlay.fxh"
 	"fog_of_war.fxh"
 	"ssao_struct.fxh"
 }
@@ -312,28 +312,39 @@ PixelShader =
 				float2 MapCoords = Input.WorldSpacePos.xz * _WorldSpaceToTerrain0To1;
 				float2 ProvinceCoords = Input.WorldSpacePos.xz / _ProvinceMapSize;
 
-				// Dynamic mask, pre light
+
 				// Colormap blend
-				float3 ColorMap = PdxTex2D( ColorMapTree, float2( MapCoords.x, 1.0 - MapCoords.y ) ).rgb;
-				Diffuse.rgb = Overlay( Diffuse.rgb, ToGamma( ColorMap ) );
+				#if defined( COLORMAP )
+					float3 ColorMap = PdxTex2D( ColorMapTree, float2( MapCoords.x, 1.0 - MapCoords.y ) ).rgb;
+					Diffuse.rgb = Overlay( Diffuse.rgb, ToGamma( ColorMap ) );
+				#endif
 
 				// Tint blend
 				float3 Tint = PdxTex2DLod0( TintMap, float2( Input.Scale_Seed_Yaw.y, 0.5f ) ).rgb;
 				Diffuse.rgb = SoftLight( Diffuse.rgb, Tint );
 
-				#ifndef LOW_QUALITY_SHADERS
+				// Standard of living colors
+				#ifdef SOL_VISUALS
+					float SolValue = GetUserDataPrettyValue( Input.InstanceIndex );
+					ApplyStandardOfLiving( Diffuse.rgb, Input.UV0, SolValue, Input.WorldSpacePos, normalize( Input.Normal ) );
+				#endif
+
+				#if !defined( LOW_QUALITY_SHADERS ) && !defined( GUI_SHADER )
 					ApplyPollutionTrees( Diffuse, MapCoords );
 					ApplyDevastationTrees( Diffuse, MapCoords );
 				#endif
 
 				// Color overlay, pre light
-				float3 ColorOverlay;
-				float PreLightingBlend;
-				float PostLightingBlend;
-				GameProvinceOverlayAndBlend( ProvinceCoords, Input.WorldSpacePos, ColorOverlay, PreLightingBlend, PostLightingBlend );
-				Diffuse.rgb = ApplyColorOverlay( Diffuse.rgb, ColorOverlay, PreLightingBlend );
+				#if !defined( NO_COLOROVERLAY ) && !defined( GUI_SHADER )
+					float3 ColorOverlay;
+					float PreLightingBlend;
+					float PostLightingBlend;
+					GameProvinceOverlayAndBlend( ProvinceCoords, Input.WorldSpacePos, ColorOverlay, PreLightingBlend, PostLightingBlend );
+					Diffuse.rgb = ApplyColorOverlay( Diffuse.rgb, ColorOverlay, PreLightingBlend );
+				#endif
 
 				// Light and shadow
+				float3 PreLightColor = Diffuse.rgb;
 				Properties.a = ScaleRoughnessByDistance( Properties.a, Input.WorldSpacePos );
 				SMaterialProperties MaterialProps = GetMaterialProperties( Diffuse.rgb, Normal, Properties.a, Properties.g, Properties.b );
 				SLightingProperties LightingProps = GetSunLightingProperties( Input.WorldSpacePos, ShadowTexture );
@@ -346,19 +357,29 @@ PixelShader =
 					Diffuse.rgb += SecondSunColor;
 				#endif
 
-				// Effects, post light
-				Diffuse.rgb = ApplyColorOverlay( Diffuse.rgb, ColorOverlay, PostLightingBlend );
-				Diffuse.rgb = ApplyFogOfWar( Diffuse.rgb, Input.WorldSpacePos );
-				Diffuse.rgb = GameApplyDistanceFog( Diffuse.rgb, Input.WorldSpacePos );
+				// Backlight
+				#if defined( BACKLIGHT ) && !defined( LOW_QUALITY_SHADERS )
+ 					AddBacklight( Diffuse.rgb, PreLightColor, Normal, SecondLightingProps._ToLightDir );
+				#endif
 
-				// Province Highlight
-				Diffuse.rgb = ApplyHighlight( Diffuse.rgb, ProvinceCoords );
+				// Effects, post light
+				#if !defined( NO_COLOROVERLAY ) && !defined( GUI_SHADER )
+					Diffuse.rgb = ApplyColorOverlay( Diffuse.rgb, ColorOverlay, PostLightingBlend );
+					Diffuse.rgb = ApplyFogOfWar( Diffuse.rgb, Input.WorldSpacePos );
+					Diffuse.rgb = GameApplyDistanceFog( Diffuse.rgb, Input.WorldSpacePos );
+					// Province Highlight
+					Diffuse.rgb = ApplyHighlight( Diffuse.rgb, ProvinceCoords );
+				#endif
 
 				// Alpha
-				Diffuse.a *= ( 1.0f - _FlatmapLerp );
 				Diffuse.a = ApplyOpacity( Diffuse.a, Input.Position.xy, Input.InstanceIndex );
-				Diffuse.a = RescaleAlphaByMipLevel( Diffuse.a, Input.UV0, DiffuseMap) ;
-				Diffuse.a = SharpenAlpha( Diffuse.a, 0.7f ) ;
+				Diffuse.a = RescaleAlphaByMipLevel( Diffuse.a, Input.UV0, DiffuseMap ) ;
+
+				#if defined( SHARPEN_05 )
+					Diffuse.a = SharpenAlpha( Diffuse.a, 0.5f );
+				#else
+					Diffuse.a = SharpenAlpha( Diffuse.a, 0.05f );
+				#endif
 
 				clip( Diffuse.a - 0.001f );
 
@@ -455,7 +476,6 @@ RasterizerState ShadowRasterizerState
 	SlopeScaleDepthBias = 7
 }
 
-
 Effect tree
 {
 	VertexShader = VS_standard
@@ -468,13 +488,29 @@ Effect treeShadow
 	RasterizerState = ShadowRasterizerState
 }
 
+Effect tree_colormap
+{
+	VertexShader = VS_standard
+	PixelShader = PS_leaf
+
+	Defines = { "COLORMAP" "SHARPEN_05" }
+}
+Effect tree_colormapShadow
+{
+	VertexShader = VS_standard_shadow
+	PixelShader = PS_tree_shadow
+	RasterizerState = ShadowRasterizerState
+}
+
 # Map object shaders
-Effect tree_mapobject
+Effect tree_colormap_mapobject
 {
 	VertexShader = VS_mapobject
 	PixelShader = PS_leaf
+
+	Defines = { "COLORMAP" }
 }
-Effect treeShadow_mapobject
+Effect tree_colormapShadow_mapobject
 {
 	VertexShader = VS_mapobject_shadow
 	PixelShader = PS_tree_shadow_mapobject
