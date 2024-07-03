@@ -1,30 +1,12 @@
 ﻿DEFAULT = {
-	dynamic_country_name = {
-		name = dyn_c_soviet_union
-		adjective = dyn_c_soviet_union_adj
-
-		is_revolutionary = no
-		priority = 10
-
-		trigger = {
-			scope:actor ?= {
-				global_var:soviets ?= THIS
-				coa_communist_trigger = yes
-				OR = {
-					has_law = law_type:law_federated
-					has_law = law_type:law_confederated
-				}
-			}
-		}
-	}
 	# Proletarian Socialists
 	dynamic_country_name = {
 		name = bpm_generic_revolt_communist
 		adjective = bpm_generic_revolt_communist_adj
-
+		
 		is_revolutionary = yes
 		priority = 10
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -44,10 +26,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_council
 		adjective = bpm_generic_revolt_council_adj
-
+		
 		is_revolutionary = yes
 		priority = 6
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -60,10 +42,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_fascist
 		adjective = bpm_generic_revolt_fascist_adj
-
+		
 		is_revolutionary = yes
 		priority = 10
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -83,10 +65,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_radical_republic
 		adjective = bpm_generic_revolt_radical_republic_adj
-
+		
 		is_revolutionary = yes
 		priority = 1
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -108,10 +90,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_radical_monarchy
 		adjective = bpm_generic_revolt_radical_monarchy_adj
-
+		
 		is_revolutionary = yes
 		priority = 1
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -132,10 +114,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_early_agrarian_republic
 		adjective = bpm_generic_revolt_early_agrarian_republic_adj
-
+		
 		is_revolutionary = yes
 		priority = 5
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -153,10 +135,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_agrarian_republic
 		adjective = bpm_generic_revolt_agrarian_republic_adj
-
+		
 		is_revolutionary = yes
 		priority = 5
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -174,10 +156,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_early_muslim_left
 		adjective = bpm_generic_revolt_early_muslim_left_adj
-
+		
 		is_revolutionary = yes
 		priority = 6
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -199,10 +181,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_early_muslim_left
 		adjective = bpm_generic_revolt_early_muslim_left_adj
-
+		
 		is_revolutionary = yes
 		priority = 6
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -224,10 +206,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_bonapartist
 		adjective = bpm_generic_revolt_bonapartist_adj
-
+		
 		is_revolutionary = yes
 		priority = 1
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -246,10 +228,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_legitimist
 		adjective = bpm_generic_revolt_legitimist_adj
-
+		
 		is_revolutionary = yes
 		priority = 1
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -268,10 +250,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_orleanist
 		adjective = bpm_generic_revolt_orleanist_adj
-
+		
 		is_revolutionary = yes
 		priority = 1
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -290,10 +272,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_peasant
 		adjective = bpm_generic_revolt_peasant_adj
-
+		
 		is_revolutionary = yes
 		priority = 1
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -307,10 +289,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_farmer
 		adjective = bpm_generic_revolt_farmer_adj
-
+		
 		is_revolutionary = yes
 		priority = 2
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -329,10 +311,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_military
 		adjective = bpm_generic_revolt_military_adj
-
+		
 		is_revolutionary = yes
 		priority = 5
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -347,10 +329,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_reactionary_monarchy
 		adjective = bpm_generic_revolt_reactionary_monarchy_adj
-
+		
 		is_revolutionary = yes
 		priority = 1
-
+		
 		trigger = {
 
 			exists = scope:actor
@@ -386,10 +368,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_reactionary_republic
 		adjective = bpm_generic_revolt_reactionary_republic_adj
-
+		
 		is_revolutionary = yes
 		priority = 1
-
+		
 		trigger = {
 
 			exists = scope:actor
@@ -426,10 +408,10 @@
 	dynamic_country_name = {
 		name = bpm_generic_revolt_reactionary_theocracy
 		adjective = bpm_generic_revolt_reactionary_theocracy_adj
-
+		
 		is_revolutionary = yes
 		priority = 1
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -453,10 +435,10 @@
 	dynamic_country_name = {
 		name = csa_revolt_name
 		adjective = csa_revolt_name_adj
-
+		
 		is_revolutionary = yes
 		priority = 100
-
+		
 		trigger = {
 			exists = c:CSA
 			exists = c:USA
@@ -465,17 +447,17 @@
 				this = c:CSA
 			}
 			c:USA = {
-				has_journal_entry = je_acw_war
+				has_journal_entry = je_acw_war			
 			}
 		}
 	}
 	dynamic_country_name = {
 		name = fsa_revolt_name
 		adjective = fsa_revolt_name_adj
-
+		
 		is_revolutionary = yes
 		priority = 100
-
+		
 		trigger = {
 			exists = c:FSA
 			exists = scope:actor
@@ -483,7 +465,51 @@
 				this = c:FSA
 			}
 			c:USA = {
-				has_journal_entry = je_acw_war
+				has_journal_entry = je_acw_war			
+			}			
+		}
+	}
+	dynamic_country_name = {
+		name = japan_shogunate_revolt
+		adjective = japan_shogunate_revolt_adj
+		
+		is_revolutionary = yes
+		priority = 100
+		
+		trigger = {
+			exists = c:JAP
+			exists = scope:actor
+			scope:actor = {
+				country_has_primary_culture = cu:japanese
+				NOT = { has_global_variable = global_meiji_restoration_attempted }
+				ig:ig_landowners ?= {
+					bpm_is_strongest_ig_in_government = yes
+				}
+				ig:ig_reactionaries ?= {
+					is_marginal = yes
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = japan_samurai_revolt
+		adjective = japan_samurai_revolt_adj
+		
+		is_revolutionary = yes
+		priority = 100
+		
+		trigger = {
+			exists = c:JAP
+			exists = scope:actor
+			scope:actor = {
+				country_has_primary_culture = cu:japanese
+				NOT = { has_global_variable = global_meiji_restoration_attempted }
+				ig:ig_armed_forces ?= {
+					bpm_is_strongest_ig_in_government = yes
+				}
+				ig:ig_reactionaries ?= {
+					is_marginal = yes
+				}
 			}
 		}
 	}
@@ -491,10 +517,10 @@
 	dynamic_country_name = {
 		name = generic_revolt_1
 		adjective = generic_revolt_1_adj
-
+		
 		is_revolutionary = yes
 		priority = 0
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -505,10 +531,10 @@
 	dynamic_country_name = {
 		name = generic_revolt_2
 		adjective = generic_revolt_2_adj
-
+		
 		is_revolutionary = yes
 		priority = 0
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -519,10 +545,10 @@
 	dynamic_country_name = {
 		name = generic_revolt_3
 		adjective = generic_revolt_3_adj
-
+		
 		is_revolutionary = yes
 		priority = 0
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -534,11 +560,12 @@
 	dynamic_country_name = {
 		name = rsm_revolt_name
 		adjective = rsm_revolt_name_adj
-
+		
 		is_revolutionary = yes
 		priority = 100
-
+		
 		trigger = {
+			exists = c:RSM
 			scope:actor = {
 				c:RSM ?= this
 			}
@@ -548,9 +575,9 @@
 		name = colonial_admin_zanj
 		adjective = colonial_admin_zanj_adj
 		use_overlord_prefix = yes
-
+		
 		priority = 100
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -562,9 +589,9 @@
 		name = colonial_admin_ethiopia
 		adjective = colonial_admin_ethiopia_adj
 		use_overlord_prefix = yes
-
+		
 		priority = 100
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -576,9 +603,9 @@
 		name = colonial_admin_southern_africa
 		adjective = colonial_admin_southern_africa_adj
 		use_overlord_prefix = yes
-
+		
 		priority = 100
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -596,9 +623,9 @@
 		name = colonial_admin_congo
 		adjective = colonial_admin_congo_adj
 		use_overlord_prefix = yes
-
+		
 		priority = 100
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -610,9 +637,9 @@
 		name = colonial_admin_niger
 		adjective = colonial_admin_niger_adj
 		use_overlord_prefix = yes
-
+		
 		priority = 100
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -624,9 +651,9 @@
 		name = colonial_admin_senegal
 		adjective = colonial_admin_senegal_adj
 		use_overlord_prefix = yes
-
+		
 		priority = 100
-
+		
 		trigger = {
 			exists = scope:actor
 			scope:actor = {

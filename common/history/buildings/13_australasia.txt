@@ -1,0 +1,52 @@
+﻿BUILDINGS={
+	s:STATE_NEW_SOUTH_WALES={
+		region_state:AST={
+		}
+	}
+	s:STATE_VICTORIA={
+		region_state:AST={
+		}
+	}
+	s:STATE_TASMANIA={
+		region_state:AST={
+		}
+	}
+	s:STATE_QUEENSLAND={
+		region_state:AST={
+			create_building={
+				building="building_port"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+		}
+	}
+	s:STATE_SOUTH_AUSTRALIA={
+		region_state:AST={
+		}
+	}
+	s:STATE_WESTERN_AUSTRALIA={
+		region_state:AST={
+		}
+	}
+	s:STATE_NORTHERN_TERRITORY={
+		region_state:AST={
+		}
+	}
+	s:STATE_NORTH_ISLAND={
+		region_state:NZL={
+			create_building={
+				building="building_government_administration"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_organization" "pm_religious_bureaucrats" "pm_professional_bureaucrats" }
+			}
+		}
+	}
+	s:STATE_SOUTH_ISLAND={
+		region_state:NZL={
+		}
+	}
+}

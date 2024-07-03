@@ -1,4 +1,24 @@
-﻿ITC = {
+﻿DEFAULT = {
+	dynamic_country_name = {
+		name = dyn_c_soviet_union
+		adjective = dyn_c_soviet_union_adj
+
+		is_revolutionary = no
+		priority = 10
+
+		trigger = {
+			scope:actor ?= {
+				global_var:soviets ?= THIS
+				coa_communist_trigger = yes
+				OR = {
+					has_law = law_type:law_federated
+					has_law = law_type:law_confederated
+				}
+			}
+		}
+	}
+}
+ITC = {
 	dynamic_country_name = {
 		name = dyn_c_Italian_Cyrenaica
 		adjective = ITC_ADJ
