@@ -4,8 +4,6 @@ bpm_leader_is_communist = {
 	OR = {
 		has_ideology = ideology:ideology_communist
 		has_ideology = ideology:ideology_vanguardist
-		has_ideology = ideology:ideology_leninist
-		has_ideology = ideology:ideology_trotskist
 	}
 }
 
@@ -22,7 +20,6 @@ bpm_leader_is_radical_socialist = {
 		bpm_leader_is_anarchist = yes
 		has_ideology = ideology:ideology_socialist_leader
 		has_ideology = ideology:ideology_syndicalist
-		has_ideology = ideology:ideology_leninist
 	}
 }
 

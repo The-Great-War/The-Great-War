@@ -5,7 +5,7 @@
 		add_technology_researched = pan-nationalism
 		
 		
-		set_market_capital = STATE_GUANGDONG	
+		set_market_capital = STATE_SHAOZHOU	
 		
 		activate_law = law_type:law_monarchy
 		activate_law = law_type:law_autocracy 
@@ -17,14 +17,18 @@
 		activate_law = law_type:law_censorship	
 		activate_law = law_type:law_poor_laws
 		activate_law = law_type:law_closed_borders
+		activate_law = law_type:law_isolationism
+		activate_law = law_type:law_unitary
 		
-		set_government_wage_level = high
-		set_tax_level = low
+		set_government_wage_level = low
+		set_tax_level = high
 
 		set_variable = {
 			name = china_warlord_explosion
 			value = 0
 		}
 		add_journal_entry = { type = je_warlord_china }
+		
+		change_infamy = 70
 	}
 }

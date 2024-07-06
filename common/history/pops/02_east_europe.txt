@@ -1,5 +1,5 @@
 ﻿POPS = {
-	s:STATE_INGRIA = { #DONE
+	s:STATE_INGRIA = {  
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
@@ -80,7 +80,7 @@
 			}
 		}
 	}
-	s:STATE_TVER = { #DONE
+	s:STATE_TVER = {  
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
@@ -92,7 +92,7 @@
 			}
 		}
 	}
-	s:STATE_KURSK = { #DONE
+	s:STATE_KURSK = {  
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
@@ -104,7 +104,7 @@
 			}
 		}
 	}
-	s:STATE_NOVGOROD = { #DONE
+	s:STATE_NOVGOROD = {  
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
@@ -140,7 +140,7 @@
 				size = 179840
 			}
 			create_pop = {
-				culture = south_german
+				culture = north_german
 				size = 8960
 			}
 			create_pop = {
@@ -179,7 +179,7 @@
 		}
 	}
 	s:STATE_SILESIA = {
-		region_state:PRU = {
+		region_state:GER = {
 			create_pop = {
 				culture = north_german
 				size = 1319008
@@ -205,7 +205,7 @@
 		}
 	}
 	s:STATE_WEST_PRUSSIA = {
-		region_state:PRU = {
+		region_state:GER = {
 			create_pop = {
 				culture = north_german
 				size = 452400
@@ -231,7 +231,7 @@
 		}
 	}
 	s:STATE_EAST_PRUSSIA = {
-		region_state:PRU = {
+		region_state:GER = {
 			create_pop = {
 				culture = north_german
 				size = 629796
@@ -258,7 +258,7 @@
 		}
 	}
 	s:STATE_POSEN = {
-		region_state:PRU = {
+		region_state:GER = {
 			create_pop = {
 				culture = north_german
 				size = 540400
@@ -285,7 +285,7 @@
 				size = 1740004
 			}
 			create_pop = {
-				culture = south_german
+				culture = north_german
 				size = 28000
 			}
 			create_pop = {
@@ -303,7 +303,7 @@
 				size = 172396
 			}
 			create_pop = {
-				culture = south_german
+				culture = north_german
 				size = 4000
 			}
 			create_pop = {
@@ -327,7 +327,7 @@
 				size = 1544404
 			}
 			create_pop = {
-				culture = south_german
+				culture = north_german
 				size = 20004
 			}
 			create_pop = {
@@ -348,7 +348,7 @@
 				size = 932400
 			}
 			create_pop = {
-				culture = south_german
+				culture = north_german
 				size = 149596
 			}
 			create_pop = {
@@ -378,7 +378,7 @@
 				size = 288000
 			}
 			create_pop = {
-				culture = south_german
+				culture = north_german
 				size = 144796
 			}
 			create_pop = {
@@ -416,11 +416,11 @@
 				size = 316400
 			}
 			create_pop = {
-				culture = south_german
+				culture = north_german
 				size = 379204
 			}
 			create_pop = {
-				culture = south_german
+				culture = north_german
 				religion = protestant
 				size = 1100
 			}
@@ -442,7 +442,7 @@
 	s:STATE_DELVIDEK = {
 		region_state:AUS = {
 			create_pop = {
-				culture = south_german
+				culture = north_german
 				size = 197200
 			}
 			create_pop = {
@@ -470,7 +470,7 @@
 	s:STATE_BANAT = {
 		region_state:AUS = {
 			create_pop = {
-				culture = south_german
+				culture = north_german
 				size = 312640
 			}
 			create_pop = {
@@ -512,7 +512,7 @@
 				size = 237000
 			}
 			create_pop = {
-				culture = south_german
+				culture = north_german
 				size = 152800
 			}
 			create_pop = {
@@ -570,7 +570,7 @@
 				size = 60000
 			}
 			create_pop = {
-				culture = south_german
+				culture = north_german
 				size = 40080
 			}
 		}
@@ -591,7 +591,7 @@
 				size = 732000
 			}
 			create_pop = {
-				culture = south_german
+				culture = north_german
 				size = 1792
 			}
 			create_pop = {
@@ -616,7 +616,7 @@
 				size = 388000
 			}
 			create_pop = {
-				culture = south_german
+				culture = north_german
 				size = 3008
 			}
 			create_pop = {
@@ -656,11 +656,11 @@
 				size = 144400
 			}
 			create_pop = {
-				culture = south_german
+				culture = north_german
 				size = 32000
 			}
 		}
-		region_state:MOL = { # Ballpark estimate: 1,358,409 total for 1836, guessing that its recorded 1859 census marked a 7.77% growth over 1836 or that 1836 is 92.79% of the 1859 census, drawn from a trendline of Transylvanian censuses 1784-1850
+		region_state:ROM = { # Ballpark estimate: 1,358,409 total for 1836, guessing that its recorded 1859 census marked a 7.77% growth over 1836 or that 1836 is 92.79% of the 1859 census, drawn from a trendline of Transylvanian censuses 1784-1850
 			create_pop = {
 				culture = romanian
 				size = 1241552
@@ -673,7 +673,7 @@
 		}
 	}
 	s:STATE_WALLACHIA = { # Ballpark estimate: 2,227,865 total for 1836, guessing that its recorded 1859 census marked a 7.77% growth over 1836 or that 1836 is 92.79% of the 1859 census, drawn from a trendline of Transylvanian censuses 1784-1850
-		region_state:WAL = {
+		region_state:ROM = {
 			create_pop = {
 				culture = romanian
 				size = 2107689

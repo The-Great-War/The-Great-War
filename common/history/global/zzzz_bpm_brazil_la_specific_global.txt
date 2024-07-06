@@ -332,9 +332,7 @@
 		limit = {
 			OR = { 
 				THIS = c:BOL 
-				THIS = c:NPU
-				THIS = c:SPU
-				THIS = c:IQU
+				THIS = c:PEU
 			}
 		}
 
@@ -352,9 +350,7 @@
 	every_country = {
 		limit = {
 			OR = { 
-				THIS = c:NPU
-				THIS = c:SPU
-				THIS = c:IQU
+				THIS = c:PEU
 			}
 		}
 

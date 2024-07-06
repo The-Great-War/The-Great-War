@@ -1,41 +1,8 @@
 ﻿### Venezuela character template file ###
 
-VNZ_Jose_Maria_Ponce = {
-	# José María Vargas Ponce
-	first_name = "Jose_Maria"
-	last_name = "Vargas"
-	historical = yes
-	ruler = yes
-	ig_leader = yes
-	birth_date = 1786.3.10
-	dna = dna_president_jose_maria_vargas
-	interest_group = ig_conservatives #ig_intelligentsia
-	ideology = ideology_moderate
-	traits = {
-		meticulous
-	}
-	trait_generation = { }
-}
 
 ### Interest Group Leaders ###
 
-VNZ_Jose_Paez = {
-	# José Antonio Páez
-	first_name = "JosE_"
-	last_name = "PA_ez"
-	historical = yes
-	ig_leader = yes
-	is_general = yes
-	birth_date = 1790.6.13
-	interest_group = ig_reactionaries #ig_armed_forces
-	ideology = ideology_authoritarian
-	traits = {
-		direct
-		ambitious
-		traditionalist_commander
-	}
-	trait_generation = { }
-}
 
 VNZ_Jose_Monagas = {
 	# José Monagas, president of Venezuela in the 1840s and 50s

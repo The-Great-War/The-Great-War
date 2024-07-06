@@ -66,32 +66,20 @@ DIPLOMACY = {
 			type = dual_monarchy
 		}
     }
-	# c:RUS = {
-		# create_diplomatic_pact = {
-			# country = c:FIN
-			# type = personal_union
-		# }
-		# create_diplomatic_pact = {
-			# country = c:ROM
-			# type = protectorate
-		# }
-		# create_diplomatic_pact = {
-			# country = c:POL
-			# type = puppet
-		# }
-		# create_diplomatic_pact = {
-			# country = c:EST
-			# type = puppet
-		# }
-		# create_diplomatic_pact = {
-			# country = c:LAT
-			# type = puppet
-		# }
-		# create_diplomatic_pact = {
-			# country = c:LIT
-			# type = puppet
-		# }
-	# }
+	c:RUS = {
+		create_diplomatic_pact = {
+			country = c:FIN
+			type = personal_union
+		}
+		create_diplomatic_pact = {
+			country = c:ROM
+			type = protectorate
+		}
+		create_diplomatic_pact = {
+			country = c:UBD
+			type = puppet
+		}
+	}
 	c:NET = {
 		create_diplomatic_pact = {
 			country = c:DEI

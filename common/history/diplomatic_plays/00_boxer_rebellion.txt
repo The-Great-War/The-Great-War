@@ -7,7 +7,7 @@
 			
 			war = yes
 			
-			type = dp_force_recognition
+			type = dp_force_nationalization
 			add_target_backers = {
 				c:RUS
 				c:USA
@@ -17,6 +17,42 @@
 				c:FRA
 				c:AUS
 			}
+			add_war_goal = {
+				holder = c:CHI
+				type = force_nationalization
+				target_country = c:RUS
+			}
+			add_war_goal = {
+				holder = c:CHI
+				type = force_nationalization
+				target_country = c:USA
+			}
+			add_war_goal = {
+				holder = c:CHI
+				type = force_nationalization
+				target_country = c:JAP
+			}
+			add_war_goal = {
+				holder = c:CHI
+				type = force_nationalization
+				target_country = c:GER
+			}
+			add_war_goal = {
+				holder = c:CHI
+				type = force_nationalization
+				target_country = c:ITA
+			}
+			add_war_goal = {
+				holder = c:CHI
+				type = force_nationalization
+				target_country = c:FRA
+			}
+			add_war_goal = {
+				holder = c:CHI
+				type = force_nationalization
+				target_country = c:AUS
+			}
+			
 			add_war_goal = {
 				holder = c:GBR
 				type = open_market
