@@ -7,7 +7,7 @@ Includes = {
 	"jomini/jomini_province_overlays.fxh"
 	"sharedconstants.fxh"
 	"distance_fog.fxh"
-	"cwp_coloroverlay.fxh"
+	"coloroverlay.fxh"
 	"dynamic_masks.fxh"
 	"fog_of_war.fxh"
 }

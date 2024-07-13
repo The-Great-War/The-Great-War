@@ -10,9 +10,11 @@
 			add_ideology = ideology_buddhist_moralist
 		}
 
-		ig:ig_landowners = { 
-			set_interest_group_name = ig_yangban
+		ig:ig_landowners = {
 			add_ruling_interest_group = yes
 		}
+		
+		set_variable = korean_empire_taken
+		set_variable = KOR_korean_empire_declared
 	}
 }

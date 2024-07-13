@@ -95,8 +95,7 @@ PixelShader =
 		SampleModeU = "Wrap"
 		SampleModeV = "Wrap"
 	}
-
-	TextureSampler FlagTexture
+	TextureSampler CompanyTexture
 	{
 		Ref = PdxMeshCustomTexture0
 		MagFilter = "Linear"
@@ -121,7 +120,6 @@ PixelShader =
 		Ref = CountryUnitColors03
 		type = float4
 	}
-
 }
 
 VertexStruct VS_OUTPUT
@@ -467,10 +465,18 @@ PixelShader =
 			{
 				PS_COLOR_SSAO Out;
 
-				SStandardMeshUserData UserData = GetStandardMeshUserData( Input.InstanceIndex );
-
-				#ifdef UNDERWATER
+				#if defined( UNDERWATER )
 					clip( _WaterHeight - Input.WorldSpacePos.y + 0.1 ); // +0.1 to avoid gap between water and mesh
+				#endif
+
+				#if defined( GUI_SHADER )
+					clip( Input.WorldSpacePos.y + 0.005 ); // Small offset to avoid issues
+				#endif
+
+				#if defined( HUB_BUILDING )
+					SBuildingMeshUserdata UserData = GetBuildingMeshUserData( Input.InstanceIndex );
+				#else
+					SStandardMeshUserData UserData = GetStandardMeshUserData( Input.InstanceIndex );
 				#endif
 
 				float2 MapCoords = Input.WorldSpacePos.xz * _WorldSpaceToTerrain0To1;
@@ -479,6 +485,8 @@ PixelShader =
 
 				float4 Diffuse = PdxTex2D( DiffuseMap, DIFFUSE_UV_SET );
 				float4 Properties = PdxTex2D( PropertiesMap, PROPERTIES_UV_SET );
+
+				int CountryIndex = SampleCountryIndex( MapCoords );
 
 				// Alpha
 				Diffuse.a = ApplyOpacity( Diffuse.a, Input.Position.xy, Input.InstanceIndex );
@@ -503,22 +511,26 @@ PixelShader =
 				#endif
 
 				#if defined( UNIT_COLOR ) || defined( UNIT_COLOR_DEBUG )
-					float4 ChannelMask = PdxTex2D( ChannelMaskMap, DIFFUSE_UV_SET );
+					float4 UnitChannelMask = PdxTex2D( ChannelMaskMap, DIFFUSE_UV_SET );
 
-					#if defined( UNIT_COLOR_DEBUG )
-						int CountryIndex = SampleCountryIndex( MapCoords );
-						float3 CountryColor01 = ToLinear( PdxReadBuffer4( CountryUnitColorBuffer01, CountryIndex ).rgb );
-						float3 CountryColor02 = ToLinear( PdxReadBuffer4( CountryUnitColorBuffer02, CountryIndex ).rgb );
-						float3 CountryColor03 = ToLinear( PdxReadBuffer4( CountryUnitColorBuffer03, CountryIndex ).rgb );
-					#else
-						float3 CountryColor01 = ToLinear( PdxReadBuffer4( CountryUnitColorBuffer01, UserData._CountryIndex ).rgb );
-						float3 CountryColor02 = ToLinear( PdxReadBuffer4( CountryUnitColorBuffer02, UserData._CountryIndex ).rgb );
-						float3 CountryColor03 = ToLinear( PdxReadBuffer4( CountryUnitColorBuffer03, UserData._CountryIndex ).rgb );
+					#if !defined( UNIT_COLOR_DEBUG )
+						CountryIndex = UserData._CountryIndex;
 					#endif
 
-					Diffuse.rgb = lerp( Diffuse.rgb, Diffuse.rgb * CountryColor01 * ChannelMask.r, ChannelMask.r );
-					Diffuse.rgb = lerp( Diffuse.rgb, Diffuse.rgb * CountryColor02 * ChannelMask.g, ChannelMask.g );
-					Diffuse.rgb = lerp( Diffuse.rgb, Diffuse.rgb * CountryColor03 * ChannelMask.b, ChannelMask.b );
+					float3 CountryColor01 = ToLinear( PdxReadBuffer4( CountryUnitColorBuffer01, CountryIndex ).rgb );
+					float3 CountryColor02 = ToLinear( PdxReadBuffer4( CountryUnitColorBuffer02, CountryIndex ).rgb );
+					float3 CountryColor03 = ToLinear( PdxReadBuffer4( CountryUnitColorBuffer03, CountryIndex ).rgb );
+
+					Diffuse.rgb = lerp( Diffuse.rgb, Diffuse.rgb * CountryColor01 * UnitChannelMask.r, UnitChannelMask.r );
+					Diffuse.rgb = lerp( Diffuse.rgb, Diffuse.rgb * CountryColor02 * UnitChannelMask.g, UnitChannelMask.g );
+					Diffuse.rgb = lerp( Diffuse.rgb, Diffuse.rgb * CountryColor03 * UnitChannelMask.b, UnitChannelMask.b );
+				#endif
+
+				#if defined( PB_COLOR )
+					float4 PbChannelMask = PdxTex2D( ChannelMaskMap, DIFFUSE_UV_SET );
+					float3 PowerBlocColor = ToLinear( GetPowerBlocColor( UserData._PowerBlocIndex ) );
+
+					Diffuse.rgb = lerp( Diffuse.rgb, Diffuse.rgb * PowerBlocColor * PbChannelMask.r, PbChannelMask.r );
 				#endif
 
 				// Standard of living
@@ -529,26 +541,72 @@ PixelShader =
 
 				// Coa Flag - Second UV Set
 				#if defined( COA_TEXTURE ) || defined( COA_TEXTURE_OVERLAY )
-					float2 CoaUV = UNIQUE_UV_SET;
-					float4 OffsetScale = UserData._OffsetAndScale;
-					CoaUV = OffsetScale.xy + CoaUV * OffsetScale.zw;
+					float2 CoaUV = mod( UNIQUE_UV_SET, 1.0 );
+					CountryIndex = UserData._CountryIndex;
 
-					float3 CoaColor = ToLinear( PdxTex2D( FlagTexture, CoaUV ).rgb );
+					#if defined( PB_TEXTURE_MEMBER_01 )
+						CountryIndex = (int)PdxReadBuffer4( PowerBlocMiscDataBuffer, UserData._PowerBlocIndex ).r;
+					#elif defined( PB_TEXTURE_MEMBER_02 )
+						CountryIndex = (int)PdxReadBuffer4( PowerBlocMembersDataBuffer, UserData._PowerBlocIndex ).r;
+					#elif defined( PB_TEXTURE_MEMBER_03 )
+						CountryIndex = (int)PdxReadBuffer4( PowerBlocMembersDataBuffer, UserData._PowerBlocIndex ).g;
+					#elif defined( PB_TEXTURE_MEMBER_04 )
+						CountryIndex = (int)PdxReadBuffer4( PowerBlocMembersDataBuffer, UserData._PowerBlocIndex ).b;
+					#elif defined( PB_TEXTURE_MEMBER_05 )
+						CountryIndex = (int)PdxReadBuffer4( PowerBlocMembersDataBuffer, UserData._PowerBlocIndex ).a;
+					#endif
+
+					float4 CoaOffsetScale = PdxReadBuffer4( CountryCoaUvBuffer, CountryIndex );
+					CoaUV = CoaOffsetScale.xy + CoaUV * CoaOffsetScale.zw;
+
+					float3 CoaColor = ToLinear( PdxTex2D( CoaAtlas, CoaUV ).rgb );
 
 					if ( UNIQUE_UV_SET.x > 0.0 && UNIQUE_UV_SET.x < 1.0 && UNIQUE_UV_SET.y > 0.0 && UNIQUE_UV_SET.y < 1.0 )
 					{
-						#if defined( COA_TEXTURE )
-							Diffuse.rgb *= CoaColor;
-						#endif
-
 						#if defined( COA_TEXTURE_OVERLAY )
 							Diffuse.rgb = Overlay( Diffuse.rgb, CoaColor );
+						#else
+							Diffuse.rgb *= CoaColor;
 						#endif
 					}
 				#endif
 
+				// PowerBloc Emblem - Second UV Set
+				#if defined( PB_TEXTURE ) || defined( PB_TEXTURE_OVERLAY )
+					float2 PbUv = mod( UNIQUE_UV_SET, 1.0 );
+					float4 PbOffsetScale = PdxReadBuffer4( PowerBlocUvBuffer, UserData._PowerBlocIndex );
+					PbUv = PbOffsetScale.xy + PbUv * PbOffsetScale.zw;
+
+					float4 PowerBlocCoaColor = ToLinear( PdxTex2D( PowerBlocAtlas, PbUv ) );
+					PowerBlocCoaColor.rgb = PowerBlocCoaColor.rgb * POWERBLOC_COLOR_MULTIPLIER;
+
+					if ( UNIQUE_UV_SET.x > 0.0 && UNIQUE_UV_SET.x < 1.0 && UNIQUE_UV_SET.y > 0.0 && UNIQUE_UV_SET.y < 1.0 )
+					{
+						#if defined( PB_TEXTURE_OVERLAY )
+							Diffuse.rgb = Overlay( Diffuse.rgb, PowerBlocCoaColor.rgb );
+						#else
+							Diffuse.rgb = lerp( Diffuse.rgb, PowerBlocCoaColor.rgb, PowerBlocCoaColor.a );
+						#endif
+					}
+				#endif
+
+				// Company Icon
+				#if defined( HUB_BUILDING ) && defined( HUB_SIGN )
+					if ( UserData._HasCompanyTexture >= 1.0 )
+					{
+						float2 IconUv = mod( UNIQUE_UV_SET, 1.0 );
+						if ( UNIQUE_UV_SET.x > 0.0 && UNIQUE_UV_SET.x < 1.0 && UNIQUE_UV_SET.y > 0.0 && UNIQUE_UV_SET.y < 1.0 )
+						{
+							float3 CompanyColor = PdxTex2D( CompanyTexture, IconUv ).rgb;
+							Diffuse.rgb = Overlay( Diffuse.rgb, CompanyColor.rgb );
+						}
+					}
+				#endif
+
 				// Devastation
-				ApplyDevastationBuilding( Diffuse.rgb, Input.WorldSpacePos.xz, LocalHeight, DIFFUSE_UV_SET );
+				#if !defined( GUI_SHADER )
+					ApplyDevastationBuilding( Diffuse.rgb, Input.WorldSpacePos.xz, LocalHeight, DIFFUSE_UV_SET );
+				#endif
 
 				// Revolution flag
 				#ifdef REVOLUTIONFLAG
@@ -579,14 +637,12 @@ PixelShader =
 				#endif
 
 				// Color overlay, pre light
-				#ifndef UNDERWATER
-					#ifndef NO_BORDERS
-						float3 ColorOverlay;
-						float PreLightingBlend;
-						float PostLightingBlend;
-						GameProvinceOverlayAndBlend( ProvinceCoords, Input.WorldSpacePos, ColorOverlay, PreLightingBlend, PostLightingBlend );
-						Diffuse.rgb = ApplyColorOverlay( Diffuse.rgb, ColorOverlay, PreLightingBlend );
-					#endif
+				#if !defined( NO_COLOROVERLAY ) && !defined( GUI_SHADER ) && !defined( UNDERWATER )
+					float3 ColorOverlay;
+					float PreLightingBlend;
+					float PostLightingBlend;
+					GameProvinceOverlayAndBlend( ProvinceCoords, Input.WorldSpacePos, ColorOverlay, PreLightingBlend, PostLightingBlend );
+					Diffuse.rgb = ApplyColorOverlay( Diffuse.rgb, ColorOverlay, PreLightingBlend );
 				#endif
 
 				// Light and shadow
@@ -614,32 +670,32 @@ PixelShader =
 
 				// Nighttime lights and visuals
 				#if defined( EMISSIVE_NIGHT ) || defined( EMISSIVE_NIGHT_RANDOM )
-						float ActivationThreshold = 0.05;
-						float ShouldActivate = 1.0;
-						float4 LightColor = _NightLightColor;
+					float ActivationThreshold = 0.05;
+					float ShouldActivate = 1.0;
+					float4 LightColor = _NightLightColor;
 
-						#if defined( HUB_BUILDING )
-							ActivationThreshold = GetUserDataRandomValueCity( Input.InstanceIndex );
-							#if defined( EMISSIVE_NIGHT_RANDOM )
-								ShouldActivate = clamp( GetUserDataShouldLightActivate( Input.InstanceIndex ), 0.0f, 1.0f );
-							#endif
-							LightColor = GetUserDataBuildingLightColor( Input.InstanceIndex );
+					#if defined( HUB_BUILDING )
+						ActivationThreshold = GetUserDataRandomValueCity( Input.InstanceIndex );
+						#if defined( EMISSIVE_NIGHT_RANDOM )
+							ShouldActivate = clamp( GetUserDataShouldLightActivate( Input.InstanceIndex ), 0.0f, 1.0f );
 						#endif
+						LightColor = GetUserDataBuildingLightColor( Input.InstanceIndex );
+					#endif
 
-						float DayNightModifier = Remap( _DayNightValue, _LightsActivateBegin, _LightsActivateEnd, 0.0, 1.0 );
-						float LightValue = saturate( Remap( DayNightModifier, ActivationThreshold, _LightsFadeTime + ActivationThreshold, 0.0, 1.0 ) );
-						if ( DayNightModifier > ActivationThreshold )
-						{
-							Color += NormalSample.b * LightColor.rgb * LightColor.a * LightValue * ShouldActivate;
-						}
+					float DayNightModifier = Remap( _DayNightValue, _LightsActivateBegin, _LightsActivateEnd, 0.0, 1.0 );
+					float LightValue = saturate( Remap( DayNightModifier, ActivationThreshold, _LightsFadeTime + ActivationThreshold, 0.0, 1.0 ) );
+					if ( DayNightModifier > ActivationThreshold )
+					{
+						Color += NormalSample.b * LightColor.rgb * LightColor.a * LightValue * ShouldActivate;
+					}
 				#endif
 
 				// Effects, post light
-				#ifndef UNDERWATER
-					#ifndef NO_BORDERS
+				#if !defined( UNDERWATER )
+					#if !defined( NO_COLOROVERLAY ) && !defined( GUI_SHADER )
 						Color = ApplyColorOverlay( Color, ColorOverlay, PostLightingBlend );
 					#endif
-					#ifndef NO_FOG
+					#if !defined( NO_FOG )
 						if( _FlatmapLerp < 1.0 )
 						{
 							float3 Unfogged = Color;
@@ -656,7 +712,9 @@ PixelShader =
 				#endif
 
 				// Province Highlight
-				Color = ApplyHighlight( Color, ProvinceCoords );
+				#if !defined( GUI_SHADER )
+					Color = ApplyHighlight( Color, ProvinceCoords );
+				#endif
 
 				// Flatmap
 				#ifdef FLATMAP
@@ -672,10 +730,8 @@ PixelShader =
 
 				// SSAO
 				float3 SSAOColor_ = _SSAOColorMesh.rgb + GameCalculateDistanceFogFactor( Input.WorldSpacePos );
-				#ifndef UNDERWATER
-					#ifndef NO_BORDERS
-						SSAOColor_ = SSAOColor_ + PostLightingBlend;
-					#endif
+				#if !defined( NO_COLOROVERLAY ) && !defined( GUI_SHADER ) && !defined( UNDERWATER )
+					SSAOColor_ = SSAOColor_ + PostLightingBlend;
 				#endif
 				Out.SSAOColor = float4( saturate ( SSAOColor_ ), Diffuse.a);
 
@@ -707,7 +763,7 @@ PixelShader =
 
 				// Settings;
 				float3 OutlineColorPicker = vec3( 0.06 );
-				float AlphaMultiplier = 0.8;
+				float AlphaMultiplier = 0.95;
 
 				// Texture masks
 				float4 UnitMasks = PdxTex2D( DiffuseMap, DIFFUSE_UV_SET );
@@ -721,8 +777,7 @@ PixelShader =
 				Alpha = Alpha * AlphaMultiplier;
 				Alpha = ApplyOpacity( Alpha, Input.Position.xy, Input.InstanceIndex );
 
-				int CountryIndex = SampleCountryIndex( MapCoords );
-				float4 CountryColor = PdxTex2DLoad0( CountryColors, int2( CountryIndex, 0 ) );
+				float4 CountryColor = PdxTex2DLoad0( CountryColors, int2( UserData._CountryIndex, 0 ) );
 
 				// Colors
 				float3 Color = OutlineColorPicker;
@@ -745,7 +800,7 @@ PixelShader =
 
 				float3 SSAOColor_ = _SSAOColorMesh.rgb + GameCalculateDistanceFogFactor( Input.WorldSpacePos );
 				#ifndef UNDERWATER
-					#ifndef NO_BORDERS
+					#ifndef NO_COLOROVERLAY
 						SSAOColor_ = SSAOColor_ + PostLightingBlend;
 					#endif
 				#endif
@@ -918,31 +973,12 @@ Effect standard_flag_revolution
 	VertexShader = "VS_sine_animation"
 	PixelShader = "PS_standard"
 
-	Defines = { "REVOLUTIONFLAG" "IG_USERDATA" }
+	Defines = { "REVOLUTIONFLAG" }
 }
 Effect standard_flag_revolutionShadow
 {
 	VertexShader = "VS_sine_animation_shadow"
 	PixelShader = "PixelPdxMeshStandardShadow"
-	RasterizerState = ShadowRasterizerState
-}
-
-
-# Flatmap
-Effect flatmap_alpha_blend_no_borders
-{
-	VertexShader = "VS_standard"
-	PixelShader = "PS_standard"
-	BlendState = "alpha_blend"
-	DepthStencilState = "DepthStencilStateAlphaBlend"
-	RasterizerState = FlatmapRasterizerState
-	Defines = { "NO_BORDERS" "NO_FOG"  }
-}
-Effect flatmap_alpha_blend_no_bordersShadow
-{
-	VertexShader = "VS_standard_shadow"
-	PixelShader = "PixelPdxMeshAlphaBlendShadow"
-	Defines = { "NO_FOG" }
 	RasterizerState = ShadowRasterizerState
 }
 
@@ -1019,30 +1055,12 @@ Effect standard_flag_revolution_mapobject
 	VertexShader = "VS_sine_animation_mapobject"
 	PixelShader = "PS_standard"
 
-	Defines = { "REVOLUTIONFLAG" "IG_USERDATA" }
+	Defines = { "REVOLUTIONFLAG" }
 }
 Effect standard_flag_revolutionShadow_mapobject
 {
 	VertexShader = "VS_sine_animation_shadow_mapobject"
 	PixelShader = "PS_jomini_mapobject_shadow"
-	RasterizerState = ShadowRasterizerState
-}
-
-# Flatmap
-Effect flatmap_alpha_blend_no_borders_mapobject
-{
-	VertexShader = "VS_mapobject"
-	PixelShader = "PS_standard"
-	BlendState = "alpha_blend"
-	DepthStencilState = "DepthStencilStateAlphaBlend"
-	RasterizerState = FlatmapRasterizerState
-	Defines = { "NO_BORDERS" "NO_FOG" "FLATMAP"  }
-}
-Effect flatmap_alpha_blend_no_bordersShadow_mapobject
-{
-	VertexShader = "VS_jomini_mapobject_shadow"
-	PixelShader = "PS_jomini_mapobject_shadow_alphablend"
-	Defines = { "NO_FOG" "FLATMAP" }
 	RasterizerState = ShadowRasterizerState
 }
 
@@ -1053,4 +1071,5 @@ Effect flatmap_unit
 	PixelShader = "PS_flatmap_unit"
 
 	BlendState = "alpha_blend"
+	DepthStencilState = "DepthStencilStateAlphaBlend"
 }

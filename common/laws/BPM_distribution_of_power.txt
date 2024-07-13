@@ -20,9 +20,9 @@ law_autocracy = {
 		scripted_effect_parties_disappearence = yes
 		if = {
 			limit = {
-				has_modifier = missouri_compromise
+				has_modifier = bpm_missouri_compromise
 			}
-			remove_modifier = missouri_compromise
+			remove_modifier = bpm_missouri_compromise
 		}
 	}
 
@@ -48,11 +48,7 @@ law_autocracy = {
 		value = 0
 		
 		if = {
-			limit = { 
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-                scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}
@@ -70,9 +66,9 @@ law_military_junta = {
 		scripted_effect_parties_disappearence = yes
 		if = {
 			limit = {
-				has_modifier = missouri_compromise
+				has_modifier = bpm_missouri_compromise
 			}
-			remove_modifier = missouri_compromise
+			remove_modifier = bpm_missouri_compromise
 		}
 	}
 
@@ -111,11 +107,7 @@ law_military_junta = {
 		value = 0
 		
 		if = {
-			limit = { 
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-                scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}
@@ -139,9 +131,9 @@ law_oligarchy = {
 		scripted_effect_parties_disappearence = yes
 		if = {
 			limit = {
-				has_modifier = missouri_compromise
+				has_modifier = bpm_missouri_compromise
 			}
-			remove_modifier = missouri_compromise
+			remove_modifier = bpm_missouri_compromise
 		}
 	}
 
@@ -170,11 +162,7 @@ law_oligarchy = {
 		value = 0
 		
 		if = {
-			limit = { 
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-                scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}
@@ -312,11 +300,7 @@ law_landed_voting = {
 		value = 0
 		
 		if = {
-			limit = { 
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-                scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}
@@ -394,11 +378,7 @@ law_wealth_voting = {
 		value = 0
 		
 		if = {
-			limit = { 
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-                scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}
@@ -479,11 +459,7 @@ law_census_voting = {
 		value = 0
 		
 		if = {
-			limit = { 
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-                scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}
@@ -562,11 +538,7 @@ law_universal_suffrage = {
 		value = 0
 		
 		if = {
-			limit = { 
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-                scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}
@@ -585,6 +557,11 @@ law_anarchy = {
 	
 	unlocking_laws = {
 		law_council_republic
+	}
+
+	disallowing_laws = {
+		law_devolved
+		law_unitary
 	}
 	
 	modifier = {
@@ -642,11 +619,7 @@ law_anarchy = {
 		value = 0
 		
 		if = {
-			limit = { 
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-                scope:law = var:desired_law_var
-			}
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
 	}

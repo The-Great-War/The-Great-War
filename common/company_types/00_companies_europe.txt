@@ -12,7 +12,7 @@ company_ccci = {
 	}
 	
 	potential = {
-		country_has_primary_culture = cu:french
+		country_has_primary_culture = cu:wallonian
 	}
 	
 	possible = {
@@ -539,14 +539,14 @@ company_nokia = {
 	attainable = {
 		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
 			any_scope_state = {
-				state_region = s:STATE_SOUTHERN_FINLAND
+				state_region = s:STATE_UUSIMAA
 			}
 		}
 	}		
 	
 	possible = {
 		any_scope_state = {
-			state_region = s:STATE_SOUTHERN_FINLAND
+			state_region = s:STATE_UUSIMAA
 			is_incorporated = yes
 			any_scope_building = {
 				is_building_type = building_paper_mills

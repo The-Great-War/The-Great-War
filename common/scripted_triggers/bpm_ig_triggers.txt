@@ -4,9 +4,7 @@ bpm_ig_is_revolutionary_socialist = {
 	custom_tooltip = {
 		text = "tooltip_bpm_ig_is_revolutionary_socialist"
 		has_ideology = ideology:ideology_gov_radical_proletarian
-		NOT = {
-			bpm_ig_is_anarchist = yes
-		}
+		bpm_ig_is_anarchist = no
 	}
 }
 
@@ -41,7 +39,7 @@ bpm_ig_is_reformist_socialist = {
 	}
 }
 
-bmp_ig_is_syndicalist = {
+bpm_ig_is_syndicalist = {
 	custom_tooltip = {
 		text = "tooltip_bpm_ig_is_syndicalist"
 		OR = {
@@ -96,7 +94,7 @@ bpm_ig_is_proletarian_socialist = {
 		OR = {
 			bpm_ig_is_party_socialist = yes
 			bpm_ig_is_anarchist = yes
-			bmp_ig_is_syndicalist = yes
+			bpm_ig_is_syndicalist = yes
 		}
 	}
 }
@@ -305,6 +303,16 @@ bpm_ig_is_market_liberal = {
 
 # CONSERVATIVE IGS
 
+bpm_ig_is_religious = {
+	custom_tooltip = {
+		text = "tooltip_bpm_ig_is_religious"
+		OR = {
+			has_ideology = ideology:ideology_rel_moralist
+			has_ideology = ideology:ideology_rel_radical_moralist
+		}
+	}
+}
+
 bpm_ig_is_anti_welfare = {
 	custom_tooltip = {
 		text = "tooltip_bpm_ig_is_anti_welfare"
@@ -500,7 +508,10 @@ bpm_ig_is_institutional = {
 			is_interest_group_type = ig_landowners
 			is_interest_group_type = ig_petty_bourgeoisie
 			is_interest_group_type = ig_rural_folk
-			is_interest_group_type = ig_trade_unions
+			AND = {
+				is_interest_group_type = ig_trade_unions
+				NOT = { owner = { has_law = law_type:law_illegal_labor_unions } }
+			}
 		}
 	}
 }
@@ -783,4 +794,12 @@ bpm_ig_is_very_radical_opposition = {
 bpm_is_strongest_ig_in_government = {
 	is_in_government = yes
 	is_strongest_ig_in_government = yes
+}
+
+# Used by Great Terror repeatable law to pick IGs to decimate
+bpm_ig_is_great_terror_target = {
+	AND = {
+		bpm_ig_is_ideological = yes
+		is_in_government = no
+	}
 }

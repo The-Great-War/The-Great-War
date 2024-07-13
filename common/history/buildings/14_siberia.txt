@@ -3,112 +3,42 @@
 		region_state:RUS={
 			create_building={
 				building="building_iron_mine"
-				level=6
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:RUS"
+						levels=2
+						region="STATE_URAL"
+					}
+				}
 				reserves=1
-				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_nitroglycerin_building_iron_mine" "pm_no_steam_automation" "pm_rail_transport_mine" "pm_privately_owned_building_iron_mine" }
-			}
-			create_building={
-				building="building_coal_mine"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine" "pm_nitroglycerin_building_coal_mine" "pm_no_steam_automation" "pm_rail_transport_mine" "pm_privately_owned_building_coal_mine" }
+				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
 			create_building={
 				building="building_logging_camp"
-				level=6
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:RUS"
+						levels=2
+						region="STATE_URAL"
+					}
+				}
 				reserves=1
-				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" "pm_privately_owned_building_logging_camp" }
-			}
-			create_building={
-				building="building_lead_mine"
-				level=8
-				reserves=1
-				activate_production_methods={ "pm_atmospheric_engine_pump_building_lead_mine" "pm_nitroglycerin_building_lead_mine" "pm_no_steam_automation" "pm_rail_transport_mine" "pm_privately_owned_building_lead_mine" }
-			}
-			create_building={
-				building="building_rye_farm"
-				level=40
-				reserves=1
-				activate_production_methods={ "pm_privately_owned" "pm_potatoes" "pm_tools_disabled" "pm_soil_enriching_farming" }
-			}
-			create_building={
-				building="building_railway"
-				level=7
-				reserves=1
-				activate_production_methods={ "pm_steam_trains" "pm_no_passenger_trains" "pm_government_run_building_railway" }
-			}
-			create_building={
-				building="building_steel_mills"
-				level=4
-				reserves=1
-				activate_production_methods={ "pm_open_hearth_process" "pm_automation_disabled" "pm_privately_owned_industry" }
+				activate_production_methods={ "pm_saw_mills" "pm_road_carts" "pm_no_equipment" "pm_hardwood" }
 			}
 		}
 	}
 	s:STATE_TOMSK={
 		region_state:RUS={
-			create_building={
-				building="building_logging_camp"
-				level=5
-				reserves=1
-				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" "pm_privately_owned_building_logging_camp" }
-			}
-			create_building={
-				building="building_rye_farm"
-				level=10
-				reserves=1
-				activate_production_methods={ "pm_privately_owned" "pm_potatoes" "pm_tools_disabled" "pm_soil_enriching_farming" }
-			}
-			create_building={
-				building="building_railway"
-				level=5
-				reserves=1
-				activate_production_methods={ "pm_steam_trains" "pm_no_passenger_trains" "pm_government_run_building_railway" }
-			}
-			create_building={
-				building="building_government_administration"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_vertical_filing_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
-			}
-			create_building={
-				building="building_university"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_scholastic_education" "pm_religious_academia" }
-			}
 		}
 	}
 	s:STATE_TUVA={
-		region_state:RUS={
-			create_building={
-				building="building_logging_camp"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" "pm_privately_owned_building_logging_camp" }
-			}
+		region_state:CHI={
 		}
 	}
 	s:STATE_TOBOLSK={
 		region_state:RUS={
-			create_building={
-				building="building_logging_camp"
-				level=5
-				reserves=1
-				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" "pm_privately_owned_building_logging_camp" }
-			}
-			create_building={
-				building="building_rye_farm"
-				level=10
-				reserves=1
-				activate_production_methods={ "pm_privately_owned" "pm_potatoes" "pm_tools_disabled" "pm_soil_enriching_farming" }
-			}
-			create_building={
-				building="building_railway"
-				level=5
-				reserves=1
-				activate_production_methods={ "pm_steam_trains" "pm_no_passenger_trains" "pm_government_run_building_railway" }
-			}
 		}
 	}
 	s:STATE_UPPER_YENISEYSK={
@@ -119,98 +49,52 @@
 		region_state:RUS={
 		}
 	}
-	s:STATE_NENETSIA={
-		region_state:RUS={
-		}
-	}
 	s:STATE_CHUKOTKA={
 		region_state:RUS={
 		}
 	}
 	s:STATE_KAMCHATKA={
 		region_state:RUS={
-			create_building={
-				building="building_port"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_industrial_port" }
-			}
 		}
 	}
 	s:STATE_OKHOTSK={
 		region_state:RUS={
 			create_building={
 				building="building_port"
-				level=1
+				add_ownership={
+					country={
+						country="c:RUS"
+						levels=1
+					}
+				}
 				reserves=1
-				activate_production_methods={ "pm_industrial_port" }
-			}
-			create_building={
-				building="building_fishing_wharf"
-				level=5
-				reserves=1
-				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_privately_owned_building_fishing_wharf" }
+				activate_production_methods={ "pm_anchorage" }
 			}
 		}
 	}
 	s:STATE_YAKUTSK={
 		region_state:RUS={
-			create_building={
-				building="building_rye_farm"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_privately_owned" "pm_soil_enriching_farming" "pm_tools_disabled" "pm_potatoes" }
-			}
 		}
 	}
 	s:STATE_TRANS_BAIKAL={
 		region_state:RUS={
 			create_building={
-				building="building_sulfur_mine"
-				level=22
+				building="building_iron_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:RUS"
+						levels=1
+						region="STATE_INGRIA"
+					}
+				}
 				reserves=1
-				activate_production_methods={ "pm_atmospheric_engine_pump_building_sulfur_mine" "pm_nitroglycerin_building_sulfur_mine" "pm_privately_owned_building_sulfur_mine" "pm_rail_transport_mine" "pm_no_steam_automation" }
-			}
-			create_building={
-				building="building_logging_camp"
-				level=5
-				reserves=1
-				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" "pm_privately_owned_building_logging_camp" }
-			}
-			create_building={
-				building="building_rye_farm"
-				level=13
-				reserves=1
-				activate_production_methods={ "pm_privately_owned" "pm_potatoes" "pm_tools_disabled" "pm_soil_enriching_farming" }
-			}
-			create_building={
-				building="building_railway"
-				level=5
-				reserves=1
-				activate_production_methods={ "pm_steam_trains" "pm_no_passenger_trains" "pm_government_run_building_railway" }
+				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
 		}
 	}
 	s:STATE_IRKUTSK={
 		region_state:RUS={
-			create_building={
-				building="building_logging_camp"
-				level=5
-				reserves=1
-				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" "pm_privately_owned_building_logging_camp" }
-			}
-			create_building={
-				building="building_rye_farm"
-				level=40
-				reserves=1
-				activate_production_methods={ "pm_privately_owned" "pm_potatoes" "pm_tools_disabled" "pm_soil_enriching_farming" }
-			}
-			create_building={
-				building="building_railway"
-				level=5
-				reserves=1
-				activate_production_methods={ "pm_steam_trains" "pm_no_passenger_trains" "pm_government_run_building_railway" }
-			}
 		}
 	}
 }

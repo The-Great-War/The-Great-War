@@ -76,19 +76,7 @@ DIPLOMACY = {
 			type = protectorate
 		}
 		create_diplomatic_pact = {
-			country = c:POL
-			type = puppet
-		}
-		create_diplomatic_pact = {
-			country = c:EST
-			type = puppet
-		}
-		create_diplomatic_pact = {
-			country = c:LAT
-			type = puppet
-		}
-		create_diplomatic_pact = {
-			country = c:LIT
+			country = c:UBD
 			type = puppet
 		}
 	}
