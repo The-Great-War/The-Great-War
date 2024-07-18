@@ -1,0 +1,4 @@
+COUNTRIES = {
+	c:UZB = {
+	}
+}

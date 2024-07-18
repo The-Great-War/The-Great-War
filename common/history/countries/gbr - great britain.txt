@@ -10,10 +10,6 @@
 			add_ruling_interest_group = yes
 		}
 		
-		set_tariffs_export_priority = g:grain
-		set_tariffs_import_priority = g:fabric
-		set_tariffs_import_priority = g:wood
-		
 		effect_starting_technology_1922_tech_major = yes
 
 		set_tax_level = medium
@@ -31,8 +27,8 @@
 		activate_law = law_type:law_right_of_assembly
 		activate_law = law_type:law_commercialized_agriculture
 		activate_law = law_type:law_national_supremacy
-		activate_law = law_type:law_protectionism # Corn Laws, babyyy
-		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_free_trade
+		activate_law = law_type:law_laissez_faire
 		activate_law = law_type:law_religious_schools
 		activate_law = law_type:law_per_capita_based_taxation
 		activate_law = law_type:law_colonial_resettlement

@@ -1,0 +1,24 @@
+﻿DIPLOMACY = {
+	c:GBR ?= {
+		create_diplomatic_pact = {
+			country = c:BEL
+			type = guarantee_independence
+		}		
+	}
+	c:RUS ?= {
+		create_diplomatic_pact = {
+			country = c:KOR
+			type = guarantee_independence
+		}
+		create_diplomatic_pact = {
+			country = c:SER
+			type = guarantee_independence
+		}	
+	}
+	c:JAP ?= {
+		create_diplomatic_pact = {
+			country = c:KOR
+			type = guarantee_independence
+		}		
+	}
+}

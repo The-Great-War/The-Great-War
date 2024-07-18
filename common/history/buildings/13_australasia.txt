@@ -13,13 +13,6 @@
 	}
 	s:STATE_QUEENSLAND={
 		region_state:AST={
-			create_building={
-				building="building_port"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_anchorage" }
-			}
 		}
 	}
 	s:STATE_SOUTH_AUSTRALIA={
@@ -36,13 +29,6 @@
 	}
 	s:STATE_NORTH_ISLAND={
 		region_state:NZL={
-			create_building={
-				building="building_government_administration"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_simple_organization" "pm_religious_bureaucrats" "pm_professional_bureaucrats" }
-			}
 		}
 	}
 	s:STATE_SOUTH_ISLAND={

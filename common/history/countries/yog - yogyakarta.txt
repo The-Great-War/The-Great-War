@@ -1,1 +1,4 @@
-﻿
+﻿COUNTRIES = {
+	c:YOG = {
+	}
+}

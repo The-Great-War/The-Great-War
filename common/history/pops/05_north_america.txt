@@ -10,7 +10,7 @@
 				size = 27544
 			}		
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 86263
 			}
 			create_pop = {
@@ -28,11 +28,11 @@
 				size = 35992
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 118392
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				religion = jewish
 				size = 200
 			}
@@ -57,40 +57,30 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 2135000
-			}
-			create_pop = {
-				culture = yankee
-				religion = jewish
-				size = 2000
-			}
-			create_pop = {
-				culture = yankee
-				religion = catholic
-				size = 39996
+				size = 5267358
 			}
 			create_pop = {
 				culture = afro_american
-				size = 20004
+				size = 99238
 			}
 			create_pop = {
 				culture = irish
-				size = 16000
+				size = 900167
 			}
 			create_pop = {
 				culture = iroquoian
-				size = 8000
+				size = 4711
 			}
 		}
 	}
 	s:STATE_VIRGINIA = { # population of VA proper minus Fairfax County, which had its population figures added to DC to inflate the pop count there
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 423597
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				religion = catholic
 				size = 48000
 			}
@@ -420,7 +410,7 @@
 				size = 12635
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 33857
 			}
 			create_pop = {
@@ -443,33 +433,19 @@
 			create_pop = {
 				culture = cajun
 				religion = catholic
-				size = 9642
+				size = 130
 			}
 			create_pop = {
-				culture = dixie
-				size = 138666
+				culture = yankee
+				size = 2729068
 			}
 			create_pop = {
 				culture = north_german
 				size = 2000
 			}
 			create_pop = {
-				culture = yankee
-				size = 165204
-			}
-			create_pop = {
-				culture = dixie
-				religion = catholic
-				size = 3996
-			}
-			create_pop = {
 				culture = afro_american
-				size = 1072 # 569 free in 1830, 1574 free in 1840
-			}
-			create_pop = {
-				
-				culture = afro_american
-				size = 38928
+				size = 161234
 			}
 			create_pop = {
 				culture = irish
@@ -568,11 +544,11 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 1092200
+				size = 3602304
 			}
 			create_pop = {
 				culture = afro_american
-				size = 16008
+				size = 96000
 			}
 			create_pop = {
 				culture = north_german
@@ -587,7 +563,7 @@
 	s:STATE_KENTUCKY = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 239988
 			}
 			create_pop = {
@@ -612,7 +588,7 @@
 	s:STATE_TENNESSEE = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 369604
 			}
 			create_pop = {
@@ -645,7 +621,7 @@
 	s:STATE_MISSISSIPPI = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 172804
 			}
 			create_pop = {
@@ -662,7 +638,7 @@
 	s:STATE_ALABAMA = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 329008
 			}
 			create_pop = {
@@ -675,7 +651,7 @@
 				size = 229998
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				religion = catholic
 				size = 16004
 			}
@@ -692,7 +668,7 @@
 	s:STATE_FLORIDA = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 47996
 			}
 			create_pop = {
@@ -719,11 +695,11 @@
 	s:STATE_GEORGIA = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 329836
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				religion = jewish
 				size = 1000
 			}
@@ -745,7 +721,7 @@
 	s:STATE_WEST_VIRGINIA = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 160916
 			}
 			create_pop = {
@@ -758,7 +734,7 @@
 				size = 1808 # don't have easy numbers for WV's free non-white population, but ~10% of the enslaved population seems to roughly track
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				religion = catholic
 				size = 28000
 			}
@@ -771,7 +747,7 @@
 			# minus 42176 free/38242 slaves that have been ceded to DC to inflate its pop figure
 			# aim for 535947 pops for Mega-Maryland (Megaland?) in total
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 251997
 			}
 			# Maryland: 52938 free in 1830, 62078 free in 1840
@@ -793,7 +769,7 @@
 	s:STATE_DELAWARE = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 77000
 			}
 	
@@ -814,25 +790,15 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 1250496
-			}
-			create_pop = {
-				culture = yankee
-				religion = jewish
-				size = 2000
-			}
-			create_pop = {
-				culture = yankee
-				religion = catholic
-				size = 144008
+				size = 5159121
 			}
 			create_pop = {
 				culture = irish
-				size = 59800
+				size = 450135
 			}
 			create_pop = {
 				culture = afro_american
-				size = 43996
+				size = 156845
 			}
 		}
 	}
@@ -857,11 +823,15 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 452400
+				size = 3770238
+			}
+			create_pop = {
+				culture = irish
+				size = 964635
 			}
 			create_pop = {
 				culture = afro_american
-				size = 4000
+				size = 85000
 			}
 		}
 	}
@@ -942,7 +912,7 @@
 	s:STATE_NORTH_CAROLINA = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 492500
 			}
 			create_pop = {
@@ -987,11 +957,11 @@
 	s:STATE_SOUTH_CAROLINA = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 253836
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				religion = jewish
 				size = 1000
 			}
@@ -1013,16 +983,10 @@
 	s:STATE_HAWAIIAN_ISLANDS = {
 		region_state:USA = {
 			create_pop = {
-				pop_type = clergy
-				culture = yankee
-				religion = protestant
-				size = 100
-			}
-			create_pop = {
 				pop_type = capitalists
 				culture = yankee
 				religion = protestant
-				size = 450
+				size = 900
 			}
 			create_pop = {
 				pop_type = capitalists
@@ -1046,7 +1010,11 @@
 			}
 			create_pop = {
 				culture = han
-				size = 50000
+				size = 25767
+			}
+			create_pop = {
+				culture = japanese
+				size = 61111
 			}
 		}
 	}
@@ -1323,7 +1291,7 @@
 	s:STATE_TEXAS = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 42224
 			}
 			create_pop = {
@@ -1453,7 +1421,15 @@
 		region_state:USA = {
 			create_pop = {
 				culture = hokan
-				size = 52000
+				size = 14000
+			}
+			create_pop = {
+				culture = yankee
+				size = 1086222
+			}
+			create_pop = {
+				culture = afro_american
+				size = 11000
 			}
 			create_pop = {
 				culture = mexican
@@ -1461,8 +1437,6 @@
 			}
 		}
 	}
-	# 97864 in 1830, 127586 in 1840
-	# working total of 112724
 	s:STATE_SONORA = {
 		region_state:MEX = {
 			create_pop = {

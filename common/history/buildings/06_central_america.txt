@@ -62,99 +62,27 @@
 				reserves=1
 				activate_production_methods={ "pm_no_organization" }
 			}
-			create_building={
-				building="building_port"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_anchorage" }
-			}
 		}
 	}
 	s:STATE_GUATEMALA={
 		region_state:GUA={
-			create_building={
-				building="building_port"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_anchorage" }
-			}
 		}
 		region_state:BLZ={
-			create_building={
-				building="building_port"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_anchorage" }
-			}
 		}
 	}
 	s:STATE_HONDURAS={
 		region_state:HON={
-			create_building={
-				building="building_port"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_anchorage" }
-			}
-			create_building={
-				building="building_cotton_plantation"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
-			}
 		}
 	}
 	s:STATE_NICARAGUA={
 		region_state:NIC={
-			create_building={
-				building="building_port"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_anchorage" }
-			}
-			create_building={
-				building="building_banana_plantation"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts" }
-			}
 		}
 	}
 	s:STATE_COSTA_RICA={
 		region_state:COS={
-			create_building={
-				building="building_port"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_anchorage" }
-			}
-			create_building={
-				building="building_tobacco_plantation"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts" }
-			}
 		}
 	}
 	s:STATE_PANAMA={
-		region_state:PNM={
-			create_building={
-				building="building_artillery_foundries"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_cannons" "pm_automation_disabled" }
-			}
-		}
 		region_state:CLM={
 			create_building={
 				building="building_coffee_plantation"
@@ -182,6 +110,8 @@
 				reserves=1
 				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts" }
 			}
+		}
+		region_state:USA={
 		}
 	}
 	s:STATE_HAITI={
@@ -251,20 +181,6 @@
 	}
 	s:STATE_SANTO_DOMINGO={
 		region_state:DOM={
-			create_building={
-				building="building_tobacco_plantation"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts" }
-			}
-			create_building={
-				building="building_port"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_anchorage" }
-			}
 		}
 	}
 	s:STATE_PUERTO_RICO={
@@ -273,29 +189,6 @@
 	}
 	s:STATE_BAHAMAS={
 		region_state:BAH={
-			create_building={
-				building="building_port"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_anchorage" }
-			}
-			create_building={
-				building="building_banana_plantation"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts" }
-			}
-		}
-		region_state:TCI={
-			create_building={
-				building="building_fishing_wharf"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
-			}
 		}
 	}
 	s:STATE_WEST_INDIES={
@@ -365,31 +258,10 @@
 			}
 		}
 		region_state:BWI={
-			create_building={
-				building="building_fishing_wharf"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
-			}
 		}
 	}
 	s:STATE_JAMAICA={
 		region_state:JAM={
-			create_building={
-				building="building_port"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_basic_port" }
-			}
-			create_building={
-				building="building_livestock_ranch"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
-			}
 		}
 	}
 	s:STATE_CUBA={
@@ -485,13 +357,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
-			}
-			create_building={
-				building="building_motor_industry"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_automation_disabled" }
 			}
 		}
 	}

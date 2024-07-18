@@ -891,6 +891,32 @@ COG = {
 		}
 	}
 }
+FIN = { # Finland
+	flag_definition = {
+		coa = FIN
+		allow_overlord_canton = yes	
+		coa_with_overlord_canton = FIN_subject		
+		subject_canton = FIN
+		priority = 1
+	}
+	flag_definition = {
+		coa = FIN_subject_RUS
+		allow_overlord_canton = yes		
+		subject_canton = FIN
+		priority = 2
+		trigger = { 
+			coa_def_russian_ensign_trigger = yes
+		}
+	}	
+	flag_definition = {
+		coa = FIN_fascist
+		subject_canton = FIN_fascist
+		priority = 10
+		trigger = { 
+			coa_def_fascist_flag_trigger = yes
+		}
+	}	
+}
 RUS = { # Russia
 	#	flag_definition = {
 	#		coa = RUS_imperial
@@ -908,7 +934,7 @@ RUS = { # Russia
 	#	}
 	flag_definition = {
 		coa = RUS_republic
-		subject_canton = RUS
+		subject_canton = RUS_republic
 		priority = 10
 		trigger = {
 			coa_def_republic_flag_trigger = yes

@@ -263,13 +263,6 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
 			}
-			create_building={
-				building="building_construction_sector"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_wooden_buildings" }
-			}
 		}
 	}
 	s:STATE_BOLIVAR={
@@ -312,13 +305,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
-			}
-			create_building={
-				building="building_paper_mills"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
 			}
 		}
 	}
@@ -586,57 +572,15 @@
 	s:STATE_PASTAZA={
 		region_state:PEU={
 		}
+		region_state:ECU={
+		}
 	}
 	s:STATE_TARAPACA={
-		region_state:SPU={
-			create_building={
-				building="building_livestock_ranch"
-				add_ownership={
-					building={
-						type="building_livestock_ranch"
-						country="c:SPU"
-						levels=1
-						region="STATE_TARAPACA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
-			}
-			create_building={
-				building="building_port"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_anchorage" }
-			}
+		region_state:CHL={
 		}
 	}
 	s:STATE_ANTOFAGASTA={
-		region_state:BOL={
-			create_building={
-				building="building_fishing_wharf"
-				add_ownership={
-					building={
-						type="building_fishing_wharf"
-						country="c:BOL"
-						levels=1
-						region="STATE_ANTOFAGASTA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
-			}
-			create_building={
-				building="building_port"
-				add_ownership={
-					country={
-						country="c:BOL"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_basic_port" }
-			}
+		region_state:CHL={
 		}
 	}
 	s:STATE_SANTA_CRUZ={
@@ -804,13 +748,6 @@
 				reserves=1
 				activate_production_methods={ "pm_no_organization" }
 			}
-			create_building={
-				building="building_banana_plantation"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts" }
-			}
 		}
 	}
 	s:STATE_POTOSI={
@@ -884,35 +821,14 @@
 	}
 	s:STATE_LIMA={
 		region_state:PEU={
-			create_building={
-				building="building_government_administration"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_simple_organization" "pm_religious_bureaucrats" "pm_professional_bureaucrats" }
-			}
 		}
 	}
 	s:STATE_ICA={
 		region_state:PEU={
-			create_building={
-				building="building_banana_plantation"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts" }
-			}
 		}
 	}
 	s:STATE_AREQUIPA={
 		region_state:PEU={
-			create_building={
-				building="building_port"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_anchorage" }
-			}
 		}
 	}
 	s:STATE_URUGUAY={
@@ -977,13 +893,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_organization" "pm_religious_bureaucrats" "pm_professional_bureaucrats" }
-			}
-			create_building={
-				building="building_tobacco_plantation"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts" }
 			}
 		}
 	}
@@ -1124,13 +1033,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts" }
-			}
-			create_building={
-				building="building_artillery_foundries"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_cannons" "pm_automation_disabled" }
 			}
 		}
 	}

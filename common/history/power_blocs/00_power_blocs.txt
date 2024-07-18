@@ -88,5 +88,25 @@
 				add_principle = principle_external_trade_1
 			}
 		}
-	}	
+	}
+	
+	c:FRA = {
+		create_power_bloc = {
+			name = FRENCH_COLONIAL_EMPIRE
+			map_color = { 0 38 84 }
+
+			founding_date = 1830.5.12
+			identity = identity_trade_league
+			principle = principle_internal_trade_3
+
+		}
+		if = {
+			limit = {
+				has_dlc_feature = power_bloc_features
+			}
+			power_bloc = {
+				add_principle = principle_colonial_offices_2
+			}
+		}
+	}
 }

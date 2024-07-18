@@ -55,7 +55,7 @@
 			
 			add_war_goal = {
 				holder = c:GBR
-				type = open_market
+				type = foreign_investment_rights
 				target_country = c:CHI
 			}
 			add_war_goal = {

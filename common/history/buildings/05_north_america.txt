@@ -2161,11 +2161,7 @@
 		}
 	}
 	s:STATE_UTAH={
-		region_state:MEX={
-		}
-		region_state:NVJ={
-		}
-		region_state:UTE={
+		region_state:USA={
 		}
 	}
 	s:STATE_SOUTH_CAROLINA={
@@ -2260,51 +2256,14 @@
 	}
 	s:STATE_QUEBEC={
 		region_state:CAN={
-			create_building={
-				building="building_port"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_anchorage" }
-			}
 		}
 	}
 	s:STATE_NEWFOUNDLAND={
 		region_state:NEW={
-			create_building={
-				building="building_port"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_anchorage" }
-			}
-			create_building={
-				building="building_logging_camp"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
-			}
-		}
-		region_state:FRA={
 		}
 	}
 	s:STATE_ALBERTA={
 		region_state:CAN={
-			create_building={
-				building="building_logging_camp"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
-			}
-			create_building={
-				building="building_government_administration"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_simple_organization" "pm_hereditary_bureaucrats" "pm_secular_bureaucrats" }
-			}
 		}
 	}
 	s:STATE_BRITISH_COLUMBIA={
@@ -2333,13 +2292,6 @@
 	}
 	s:STATE_BERMUDA={
 		region_state:BMD={
-			create_building={
-				building="building_government_administration"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_simple_organization" "pm_professional_bureaucrats" "pm_secular_bureaucrats" }
-			}
 		}
 	}
 	s:STATE_TEXAS={
@@ -2495,7 +2447,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
+				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_no_secondary" }
 			}
 			create_building={
 				building="building_vineyard_plantation"
@@ -2565,13 +2517,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
-			}
-			create_building={
-				building="building_coffee_plantation"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "default_building_coffee_plantation" "pm_road_carts" }
 			}
 		}
 	}
@@ -3094,8 +3039,6 @@
 				reserves=1
 				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts" }
 			}
-		}
-		region_state:UCA={
 		}
 	}
 	s:STATE_BAJA_CALIFORNIA={
