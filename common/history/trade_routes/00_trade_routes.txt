@@ -1,4 +1,68 @@
 TRADE_ROUTES = {
+	c:GBR ?= {
+		create_trade_route = {
+			goods = wood
+			level = 10
+			direction = import
+			target = c:RUS.market
+		}
+	}
+	c:GBR ?= {
+		create_trade_route = {
+			goods = grain
+			level = 10
+			direction = import
+			target = c:RUS.market
+		}
+	}
+	c:GBR ?= {
+		create_trade_route = {
+			goods = silk
+			level = 10
+			direction = import
+			target = c:CHI.market
+		}
+	}
+	c:GBR ?= {
+		create_trade_route = {
+			goods = oil
+			level = 2
+			direction = import
+			target = c:USA.market
+		}
+	}
+	c:GER ?= {
+		create_trade_route = {
+			goods = oil
+			level = 1
+			direction = import
+			target = c:USA.market
+		}
+	}
+	c:GER ?= {
+		create_trade_route = {
+			goods = oil
+			level = 1
+			direction = import
+			target = c:RUS.market
+		}
+	}
+	c:GER ?= {
+		create_trade_route = {
+			goods = silk
+			level = 5
+			direction = import
+			target = c:AUS.market
+		}
+	}
+	c:GER ?= {
+		create_trade_route = {
+			goods = meat
+			level = 5
+			direction = import
+			target = c:RUS.market
+		}
+	}
 	c:RUS ?= {
 		create_trade_route = {
 			goods = dye
@@ -6,4 +70,13 @@ TRADE_ROUTES = {
 			direction = import
 			target = c:GBR.market
 		}
+	}
+	c:RUS ?= {
+		create_trade_route = {
+			goods = engines
+			level = 10
+			direction = import
+			target = c:GBR.market
+		}
+	}
 }

@@ -674,7 +674,7 @@
 				add_ownership={
 					country={
 						country="c:RUS"
-						levels=3
+						levels=1
 					}
 				}
 				reserves=1
@@ -792,7 +792,7 @@
 				add_ownership={
 					country={
 						country="c:RUS"
-						levels=5
+						levels=10
 					}
 				}
 				reserves=1
@@ -1025,7 +1025,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 		}
 	}
@@ -1047,7 +1047,7 @@
 				add_ownership={
 					country={
 						country="c:RUS"
-						levels=5
+						levels=10
 					}
 				}
 				reserves=1
@@ -1096,7 +1096,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_no_luxury_clothes" "pm_traditional_looms" "pm_sewing_machines" }
+				activate_production_methods={ "pm_traditional_looms" "pm_no_luxury_clothes" "pm_sewing_machines" }
 			}
 			create_building={
 				building="building_furniture_manufacturies"
@@ -1151,7 +1151,7 @@
 				add_ownership={
 					country={
 						country="c:RUS"
-						levels=4
+						levels=5
 					}
 				}
 				reserves=1
@@ -1228,11 +1228,11 @@
 				add_ownership={
 					country={
 						country="c:RUS"
-						levels=10
+						levels=8
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 		}
 	}
@@ -1319,7 +1319,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_tools_disabled" "pm_citrus_orchards" "pm_fertilization" }
+				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools_disabled" }
 			}
 			create_building={
 				building="building_glassworks"
@@ -1341,7 +1341,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 		}
 	}
@@ -1382,7 +1382,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -1405,7 +1405,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_tools_disabled" "pm_citrus_orchards" "pm_fertilization" }
+				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools_disabled" }
 			}
 			create_building={
 				building="building_textile_mills"
@@ -1667,7 +1667,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 		}
 	}
@@ -1839,7 +1839,7 @@
 					}
 					country={
 						country="c:RUS"
-						levels=7
+						levels=5
 					}
 				}
 				reserves=1
@@ -1919,11 +1919,11 @@
 				add_ownership={
 					country={
 						country="c:RUS"
-						levels=3
+						levels=1
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_rye_farm"
@@ -2046,7 +2046,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -2063,7 +2063,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_tools_disabled" "pm_citrus_orchards" "pm_fertilization" }
+				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools_disabled" }
 			}
 			create_building={
 				building="building_coal_mine"
@@ -2081,7 +2081,7 @@
 				add_ownership={
 					country={
 						country="c:RUS"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
@@ -2119,6 +2119,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_blister_steel_process" "pm_automation_disabled" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:RUS"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steel_frame_buildings" }
 			}
 		}
 	}
@@ -2213,7 +2224,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_chemical_plants"
@@ -2248,6 +2259,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_lathe" "pm_no_luxuries" "pm_automation_disabled" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:RUS"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steel_frame_buildings" }
 			}
 		}
 	}
@@ -2377,7 +2399,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -2394,7 +2416,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_tools_disabled" "pm_citrus_orchards" "pm_fertilization" }
+				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools_disabled" }
 			}
 			create_building={
 				building="building_port"
@@ -2479,7 +2501,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 		}
 	}
@@ -2591,6 +2613,17 @@
 				reserves=1
 				activate_production_methods={ "pm_general_training" }
 			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:RUS"
+						levels=3
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steel_frame_buildings" }
+			}
 		}
 	}
 	s:STATE_ROSTOV={
@@ -2606,7 +2639,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -2693,7 +2726,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_tools_disabled" "pm_citrus_orchards" "pm_fertilization" }
+				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools_disabled" }
 			}
 			create_building={
 				building="building_barracks"
@@ -2904,7 +2937,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -2915,7 +2948,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_tools_disabled" "pm_citrus_orchards" "pm_fertilization" }
+				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools_disabled" }
 			}
 		}
 	}
@@ -2942,7 +2975,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_tools_disabled" "pm_citrus_orchards" "pm_fertilization" }
+				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools_disabled" }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -2955,7 +2988,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_vineyard_plantation"
@@ -3037,6 +3070,10 @@
 						country="c:GBR"
 						levels=3
 					}
+					country={
+						country="c:RUS"
+						levels=1
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_no_passenger_trains" }
@@ -3073,6 +3110,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_blister_steel_process" "pm_automation_disabled" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:RUS"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steel_frame_buildings" }
 			}
 		}
 	}
@@ -3217,7 +3265,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_rye_farm"
@@ -3365,7 +3413,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 		}
 	}
@@ -3572,7 +3620,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 		}
 	}
@@ -3852,7 +3900,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_tools_disabled" "pm_citrus_orchards" "pm_fertilization" }
+				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools_disabled" }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -3865,7 +3913,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_railway"
@@ -3898,7 +3946,7 @@
 				add_ownership={
 					country={
 						country="c:RUS"
-						levels=3
+						levels=2
 					}
 				}
 				reserves=1

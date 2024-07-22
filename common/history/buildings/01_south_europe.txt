@@ -1,14 +1,190 @@
 ﻿BUILDINGS={
 	s:STATE_LOMBARDY={
 		region_state:ITA={
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_wooden_buildings" }
+			}
+			create_building={
+				building="building_iron_mine"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_PIEDMONT={
 		region_state:ITA={
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_wooden_buildings" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=3
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			create_building={
+				building="building_coal_mine"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_iron_mine"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
+			create_building={
+				building="building_motor_industry"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_automation_disabled" }
+			}
+			create_building={
+				building="building_steel_mills"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_blister_steel_process" "pm_automation_disabled" }
+			}
+			create_building={
+				building="building_lead_mine"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_lead_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_tooling_workshops"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=11
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_crude_tools" "pm_automation_disabled" }
+			}
+			create_building={
+				building="building_furniture_manufacturies"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=6
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_handcrafted_furniture" "pm_no_luxuries" "pm_automation_disabled" }
+			}
 		}
 	}
 	s:STATE_SARDINIA={
 		region_state:ITA={
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
 		}
 	}
 	s:STATE_MALTA={
@@ -24,7 +200,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_simple_fishing" }
+				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_port"
@@ -35,12 +211,45 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 		}
 	}
 	s:STATE_UMBRIA={
 		region_state:ITA={
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_wooden_buildings" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
 		}
 	}
 	s:STATE_CORSICA={
@@ -56,7 +265,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_sheep_farms" "pm_standard_fences" "pm_butchering_tools" }
+				activate_production_methods={ "pm_slaughterhouses" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_fishing_wharf"
@@ -82,50 +291,537 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
 			}
+			create_building={
+				building="building_barracks"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_no_organization" }
+			}
 		}
 	}
 	s:STATE_CAMPANIA={
 		region_state:ITA={
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
 		}
 	}
 	s:STATE_CALABRIA={
 		region_state:ITA={
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_wooden_buildings" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			create_building={
+				building="building_coal_mine"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
 		}
 	}
 	s:STATE_APULIA={
 		region_state:ITA={
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_wooden_buildings" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
 		}
 	}
 	s:STATE_ABRUZZO={
 		region_state:ITA={
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
 		}
 	}
 	s:STATE_SAVOY={
 		region_state:FRA={
+			create_building={
+				building="building_railway"
+				add_ownership={
+					country={
+						country="c:FRA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					country={
+						country="c:FRA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_steam_donkey_building_logging_camp" "pm_rail_transport_building_logging_camp" }
+			}
+			create_building={
+				building="building_barracks"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_no_organization" }
+			}
 		}
 	}
 	s:STATE_EMILIA={
 		region_state:ITA={
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_wooden_buildings" }
+			}
+			create_building={
+				building="building_iron_mine"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
 		}
 	}
 	s:STATE_TUSCANY={
 		region_state:ITA={
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_wooden_buildings" }
+			}
+			create_building={
+				building="building_iron_mine"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_sulfur_mine"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_sulfur_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
+			create_building={
+				building="building_explosives_factory"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=6
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_leblanc_process" }
+			}
+			create_building={
+				building="building_chemical_plants"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_artificial_fertilizers" }
+			}
+			create_building={
+				building="building_paper_mills"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=6
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
+			}
 		}
 	}
 	s:STATE_ROMAGNA={
 		region_state:ITA={
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_wooden_buildings" }
+			}
+			create_building={
+				building="building_sulfur_mine"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_sulfur_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
 		}
 	}
 	s:STATE_LAZIO={
 		region_state:ITA={
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_wooden_buildings" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
 		}
 	}
 	s:STATE_VENETIA={
 		region_state:ITA={
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_wooden_buildings" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			create_building={
+				building="building_coal_mine"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
 		}
 	}
 	s:STATE_SICILY={
 		region_state:ITA={
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_wooden_buildings" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=3
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
+			create_building={
+				building="building_sulfur_mine"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=11
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_sulfur_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_chemical_plants"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=4
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_artificial_fertilizers" }
+			}
+			create_building={
+				building="building_explosives_factory"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=4
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_leblanc_process" }
+			}
 		}
 	}
 	s:STATE_TOLEDO={
@@ -996,7 +1692,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 		}
 	}
@@ -1365,6 +2061,32 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
 			}
+			create_building={
+				building="building_furniture_manufacturies"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:POR"
+						levels=2
+						region="STATE_ESTREMADURA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_handcrafted_furniture" "pm_no_luxuries" "pm_automation_disabled" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:POR"
+						levels=1
+						region="STATE_ESTREMADURA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_ALENTEJO={
@@ -1394,6 +2116,19 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_furniture_manufacturies"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:POR"
+						levels=1
+						region="STATE_ESTREMADURA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_handcrafted_furniture" "pm_no_luxuries" "pm_automation_disabled" }
 			}
 		}
 	}
@@ -1864,7 +2599,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_farming" "pm_citrus_orchards" "pm_tools_disabled" }
+				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools" }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -1877,7 +2612,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
+				activate_production_methods={ "pm_slaughterhouses" "pm_sheep_farms" "pm_barbed_wire_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -1890,7 +2625,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_steam_donkey_building_logging_camp" "pm_road_carts" }
 			}
 		}
 	}
@@ -1920,7 +2655,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_farming" "pm_citrus_orchards" "pm_tools_disabled" }
+				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools" }
 			}
 			create_building={
 				building="building_vineyard_plantation"
@@ -1933,7 +2668,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "default_building_vineyard_plantation" "pm_road_carts" }
+				activate_production_methods={ "default_building_vineyard_plantation" "pm_steam_rail_transport" }
 			}
 			create_building={
 				building="building_port"
@@ -1944,7 +2679,14 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_no_passenger_trains" }
 			}
 		}
 	}
@@ -1959,7 +2701,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+				activate_production_methods={ "pm_vertical_filing_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -1978,7 +2720,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_farming" "pm_citrus_orchards" "pm_tools_disabled" }
+				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools" }
 			}
 			create_building={
 				building="building_vineyard_plantation"
@@ -1991,7 +2733,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "default_building_vineyard_plantation" "pm_road_carts" }
+				activate_production_methods={ "default_building_vineyard_plantation" "pm_steam_rail_transport" }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -2004,7 +2746,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
+				activate_production_methods={ "pm_slaughterhouses" "pm_sheep_farms" "pm_barbed_wire_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -2023,7 +2765,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_steam_donkey_building_logging_camp" "pm_road_carts" }
 			}
 			create_building={
 				building="building_fishing_wharf"
@@ -2033,6 +2775,12 @@
 						country="c:AUS"
 						levels=2
 						region="STATE_CROATIA"
+					}
+					building={
+						type="building_financial_district"
+						country="c:AUS"
+						levels=1
+						region="STATE_TRANSDANUBIA"
 					}
 				}
 				reserves=1
@@ -2047,7 +2795,25 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
+			}
+			create_building={
+				building="building_shipyards"
+				add_ownership={
+					country={
+						country="c:AUS"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_metal_shipbuilding" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_no_passenger_trains" }
 			}
 		}
 	}
@@ -2062,7 +2828,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+				activate_production_methods={ "pm_vertical_filing_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -2075,7 +2841,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_farming" "pm_citrus_orchards" "pm_tools_disabled" }
+				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools" }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -2088,7 +2854,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
+				activate_production_methods={ "pm_slaughterhouses" "pm_sheep_farms" "pm_barbed_wire_fences" "pm_unrefrigerated" }
 			}
 		}
 	}
@@ -2111,7 +2877,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_pig_iron" "pm_automation_disabled" }
+				activate_production_methods={ "pm_rubber_grips" "pm_automation_disabled" }
 			}
 			create_building={
 				building="building_shipyards"
@@ -2122,9 +2888,13 @@
 						levels=1
 						region="STATE_ISTRIA"
 					}
+					country={
+						country="c:AUS"
+						levels=1
+					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_basic_shipbuilding" }
+				activate_production_methods={ "pm_metal_shipbuilding" }
 			}
 			create_building={
 				building="building_military_shipyards"
@@ -2135,7 +2905,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden" }
+				activate_production_methods={ "pm_military_shipbuilding_steam" }
 			}
 			create_building={
 				building="building_fishing_wharf"
@@ -2159,7 +2929,14 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_no_passenger_trains" }
 			}
 		}
 	}
@@ -2189,7 +2966,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 		}
 	}

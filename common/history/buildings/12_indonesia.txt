@@ -22,8 +22,30 @@
 	}
 	s:STATE_NORTH_BORNEO={
 		region_state:NRB={
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:NRB"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
 		}
 		region_state:SRW={
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:SRW"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
 		}
 		region_state:BRU={
 			create_building={
@@ -37,10 +59,32 @@
 				reserves=1
 				activate_production_methods={ "pm_no_organization" }
 			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:BRU"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
 		}
 	}
 	s:STATE_WEST_BORNEO={
 		region_state:DEI={
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:DEI"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
 		}
 	}
 	s:STATE_EAST_BORNEO={
@@ -63,7 +107,7 @@
 				add_ownership={
 					country={
 						country="c:DEI"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
@@ -233,7 +277,7 @@
 				add_ownership={
 					country={
 						country="c:DEI"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
@@ -388,6 +432,17 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:DEI"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
 		}
 	}
 	s:STATE_CENTRAL_JAVA={
@@ -518,6 +573,17 @@
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:DEI"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
 		}
 	}
 	s:STATE_NORTH_SUMATRA={
@@ -624,6 +690,28 @@
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
+			create_building={
+				building="building_dye_plantation"
+				add_ownership={
+					country={
+						country="c:DEI"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_dye_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:DEI"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
 		}
 	}
 	s:STATE_ACEH={
@@ -641,10 +729,32 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_tools_disabled" "pm_fig_orchards_building_rice_farm" }
 			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:DEI"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
 		}
 	}
 	s:STATE_WESTERN_NEW_GUINEA={
 		region_state:DEI={
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:DEI"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
 		}
 	}
 	s:STATE_MOLUCCAS={
@@ -680,7 +790,7 @@
 				add_ownership={
 					country={
 						country="c:DEI"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
@@ -695,7 +805,7 @@
 				add_ownership={
 					country={
 						country="c:DEI"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
@@ -720,6 +830,49 @@
 		region_state:PPU={
 		}
 		region_state:PPN={
+			create_building={
+				building="building_banana_plantation"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:GER"
+						levels=1
+						region="STATE_ANHALT"
+					}
+					building={
+						type="building_financial_district"
+						country="c:GER"
+						levels=2
+						region="STATE_WEST_PRUSSIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:GER"
+						levels=2
+						region="STATE_WURTTEMBERG"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:PPN"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
 		}
 	}
 	s:STATE_SUNDA_ISLANDS={
@@ -768,7 +921,7 @@
 				add_ownership={
 					country={
 						country="c:DEI"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
@@ -803,6 +956,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:PHI"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_port" }
 			}
 		}
 	}
@@ -947,6 +1111,17 @@
 				reserves=1
 				activate_production_methods={ "pm_no_organization" }
 			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:PHI"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_port" }
+			}
 		}
 	}
 	s:STATE_WEST_MICRONESIA={
@@ -965,6 +1140,25 @@
 	}
 	s:STATE_NAURU={
 		region_state:GER={
+			create_building={
+				building="building_whaling_station"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:GER"
+						levels=1
+						region="STATE_BAVARIA"
+					}
+					building={
+						type="building_financial_district"
+						country="c:GER"
+						levels=2
+						region="STATE_BADEN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_whaling" "pm_unrefrigerated" }
+			}
 		}
 	}
 	s:STATE_FIJI={
@@ -981,6 +1175,17 @@
 	}
 	s:STATE_BOUGAINVILLE={
 		region_state:PPN={
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:PPN"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
 		}
 	}
 	s:STATE_TAHITI={

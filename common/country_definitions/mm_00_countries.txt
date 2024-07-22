@@ -868,9 +868,9 @@ PPN = {
 	
 	country_type = unrecognized
 
-	tier = principality
+	tier = colonial
 	
-	cultures = { melanesian }
+	cultures = { north_german }
 	capital = STATE_EASTERN_NEW_GUINEA
 }
 KAZ = {

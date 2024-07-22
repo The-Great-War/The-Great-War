@@ -12,7 +12,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_tools_disabled" "pm_citrus_orchards" "pm_fertilization" }
+				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools_disabled" }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -25,7 +25,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_tea_plantation"
@@ -70,7 +70,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_tools_disabled" "pm_citrus_orchards" "pm_fertilization" }
+				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools_disabled" }
 			}
 			create_building={
 				building="building_tobacco_plantation"
@@ -96,7 +96,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_lead_mine"
@@ -168,7 +168,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_tools_disabled" "pm_citrus_orchards" "pm_fertilization" }
+				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools_disabled" }
 			}
 		}
 	}
@@ -224,7 +224,7 @@
 				add_ownership={
 					country={
 						country="c:RUS"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
@@ -376,7 +376,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_butchering_tools" "pm_standard_fences" "pm_sheep_farms" }
+				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_sulfur_mine"
@@ -463,6 +463,35 @@
 	}
 	s:STATE_CENTRAL_HIGHLANDS={
 		region_state:AFG={
+			create_building={
+				building="building_opium_plantation"
+				add_ownership={
+					country={
+						country="c:AFG"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={
+						country="c:AFG"
+						levels=15
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_no_passenger_trains" }
+			}
 		}
 	}
 	s:STATE_NORTHERN_BALUCHISTAN={
@@ -476,7 +505,7 @@
 				add_ownership={
 					country={
 						country="c:AFG"
-						levels=1
+						levels=6
 					}
 				}
 				reserves=1
@@ -493,10 +522,32 @@
 				reserves=1
 				activate_production_methods={ "pm_religious_bureaucrats" "pm_hereditary_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
+			create_building={
+				building="building_opium_plantation"
+				add_ownership={
+					country={
+						country="c:AFG"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_BALKH={
 		region_state:AFG={
+			create_building={
+				building="building_opium_plantation"
+				add_ownership={
+					country={
+						country="c:AFG"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_QUETTA={
@@ -527,6 +578,17 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
+			create_building={
+				building="building_opium_plantation"
+				add_ownership={
+					country={
+						country="c:AFG"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_KABUL={
@@ -536,7 +598,7 @@
 				add_ownership={
 					country={
 						country="c:AFG"
-						levels=1
+						levels=6
 					}
 				}
 				reserves=1

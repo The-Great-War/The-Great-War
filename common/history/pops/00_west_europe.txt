@@ -242,7 +242,7 @@
 		region_state:GBR = {
 			create_pop = {
 				culture = british
-				size = 2543604
+				size = 5087208
 			}
 			create_pop = {
 				culture = british
@@ -1328,7 +1328,7 @@
 		region_state:GER = {
 			create_pop = {
 				culture = north_german
-				size = 1558704
+				size = 4213546
 			}
 			create_pop = {
 				culture = ashkenazi

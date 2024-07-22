@@ -154,6 +154,12 @@
 						levels=8
 						region="STATE_LOWER_EGYPT"
 					}
+					building={
+						type="building_manor_house"
+						country="c:GBR"
+						levels=1
+						region="STATE_HOME_COUNTIES"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
@@ -188,7 +194,7 @@
 					building={
 						type="building_manor_house"
 						country="c:EGY"
-						levels=2
+						levels=12
 						region="STATE_LOWER_EGYPT"
 					}
 				}
@@ -621,7 +627,7 @@
 				add_ownership={
 					country={
 						country="c:FRA"
-						levels=2
+						levels=3
 					}
 				}
 				reserves=1
@@ -649,7 +655,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
+				activate_production_methods={ "pm_fertilization" "pm_no_secondary" "pm_tools_disabled" }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -662,7 +668,25 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_ranch" "pm_unrefrigerated" "pm_standard_fences" "pm_open_air_stockyards" }
+				activate_production_methods={ "pm_slaughterhouses" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+					country={
+						country="c:FRA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
+			create_building={
+				building="building_barracks"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_no_organization" }
 			}
 		}
 	}
@@ -690,7 +714,25 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
+				activate_production_methods={ "pm_fertilization" "pm_no_secondary" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+					country={
+						country="c:FRA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
+			create_building={
+				building="building_barracks"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_no_organization" }
 			}
 		}
 	}
@@ -731,7 +773,25 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
+				activate_production_methods={ "pm_fertilization" "pm_no_secondary" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+					country={
+						country="c:FRA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
+			create_building={
+				building="building_barracks"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_no_organization" }
 			}
 		}
 	}
@@ -930,6 +990,17 @@
 	}
 	s:STATE_MAURITANIA={
 		region_state:MAL={
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:MAL"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
 		}
 	}
 	s:STATE_INNER_MAURITANIA={
@@ -938,6 +1009,19 @@
 	}
 	s:STATE_EASTERN_MALI={
 		region_state:MAL={
+			create_building={
+				building="building_opium_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:FRA"
+						levels=1
+						region="STATE_GUYENNE"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_WESTERN_MALI={

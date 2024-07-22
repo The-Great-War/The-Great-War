@@ -88,7 +88,7 @@
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
-				size = 6887500
+				size = 5486126
 			}
 		}
 	}

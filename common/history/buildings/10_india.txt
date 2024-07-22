@@ -57,6 +57,10 @@
 						levels=20
 						region="STATE_HOME_COUNTIES"
 					}
+					country={
+						country="c:BIC"
+						levels=5
+					}
 				}
 				reserves=1
 				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
@@ -118,6 +122,17 @@
 				reserves=1
 				activate_production_methods={ "default_building_dye_plantation" "pm_road_carts" }
 			}
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
+			}
 		}
 	}
 	s:STATE_NORTH_BENGAL={
@@ -174,6 +189,10 @@
 						levels=20
 						region="STATE_HOME_COUNTIES"
 					}
+					country={
+						country="c:BIC"
+						levels=5
+					}
 				}
 				reserves=1
 				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
@@ -192,6 +211,14 @@
 						country="c:GBR"
 						levels=3
 						region="STATE_HOME_COUNTIES"
+					}
+					country={
+						country="c:BIC"
+						levels=10
+					}
+					country={
+						country="c:GBR"
+						levels=10
 					}
 				}
 				reserves=1
@@ -215,6 +242,39 @@
 				}
 				reserves=1
 				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_tea_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_no_passenger_trains" }
+			}
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
 			}
 		}
 	}
@@ -246,6 +306,10 @@
 						levels=12
 						region="STATE_HOME_COUNTIES"
 					}
+					country={
+						country="c:BIC"
+						levels=5
+					}
 				}
 				reserves=1
 				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
@@ -268,6 +332,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
 			}
 		}
 	}
@@ -360,6 +435,10 @@
 						levels=12
 						region="STATE_HOME_COUNTIES"
 					}
+					country={
+						country="c:BIC"
+						levels=5
+					}
 				}
 				reserves=1
 				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
@@ -396,6 +475,28 @@
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=10
+					}
+					country={
+						country="c:GBR"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_wheat_farm"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
+			}
 		}
 	}
 	s:STATE_AWADH={
@@ -428,6 +529,10 @@
 						levels=14
 						region="STATE_HOME_COUNTIES"
 					}
+					country={
+						country="c:BIC"
+						levels=5
+					}
 				}
 				reserves=1
 				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
@@ -455,6 +560,28 @@
 	}
 	s:STATE_GUJARAT={
 		region_state:BIC={
+			create_building={
+				building="building_opium_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
+			}
 		}
 	}
 	s:STATE_CENTRAL_INDIA={
@@ -472,18 +599,120 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
+			create_building={
+				building="building_tea_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_opium_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_KASHMIR={
 		region_state:BIC={
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=10
+					}
+					building={
+						type="building_manor_house"
+						country="c:GBR"
+						levels=1
+						region="STATE_HOME_COUNTIES"
+					}
+					country={
+						country="c:GBR"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_PUNJAB={
 		region_state:BIC={
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=10
+					}
+					country={
+						country="c:GBR"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_wheat_farm"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
+			}
 		}
 	}
 	s:STATE_NAGPUR={
 		region_state:BIC={
+			create_building={
+				building="building_tea_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_opium_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=5
+					}
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
+			}
 		}
 	}
 	s:STATE_SOUTH_BENGAL={
@@ -584,6 +813,14 @@
 						levels=2
 						region="STATE_SOUTH_BENGAL"
 					}
+					country={
+						country="c:BIC"
+						levels=10
+					}
+					country={
+						country="c:GBR"
+						levels=10
+					}
 				}
 				reserves=1
 				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
@@ -625,24 +862,123 @@
 				add_ownership={
 					country={
 						country="c:BIC"
-						levels=2
+						levels=3
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
 			}
+			create_building={
+				building="building_tea_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_opium_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_no_passenger_trains" }
+			}
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=5
+					}
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
+			}
 		}
 	}
 	s:STATE_SINDH={
 		region_state:BIC={
+			create_building={
+				building="building_opium_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_wheat_farm"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
+			}
 		}
 	}
 	s:STATE_RAJPUTANA={
 		region_state:BIC={
+			create_building={
+				building="building_opium_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
+			}
 		}
 	}
 	s:STATE_CEYLON={
 		region_state:CEY={
+			create_building={
+				building="building_tea_plantation"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=30
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_INDIAN_OCEAN_TERRITORY={
@@ -679,7 +1015,7 @@
 					building={
 						type="building_manor_house"
 						country="c:GBR"
-						levels=1
+						levels=2
 						region="STATE_HOME_COUNTIES"
 					}
 				}
@@ -695,12 +1031,38 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_anchorage" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 		}
 	}
 	s:STATE_ORISSA={
 		region_state:BIC={
+			create_building={
+				building="building_opium_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=5
+					}
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
+			}
 		}
 	}
 	s:STATE_CIRCARS={
@@ -812,6 +1174,32 @@
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
+			create_building={
+				building="building_tea_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=5
+					}
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
+			}
 		}
 	}
 	s:STATE_MYSORE={
@@ -836,9 +1224,39 @@
 						country="c:BIC"
 						levels=2
 					}
+					country={
+						country="c:GBR"
+						levels=2
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_gold_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_tea_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=5
+					}
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
 			}
 		}
 	}
@@ -856,6 +1274,21 @@
 				}
 				reserves=1
 				activate_production_methods={ "default_building_coffee_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=5
+					}
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
 			}
 		}
 	}
@@ -1009,10 +1442,58 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
 			}
+			create_building={
+				building="building_tea_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=5
+					}
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
+			}
 		}
 	}
 	s:STATE_HYDERABAD={
 		region_state:BIC={
+			create_building={
+				building="building_tea_plantation"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
+			}
 		}
 	}
 	s:STATE_BOMBAY={
@@ -1131,6 +1612,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					country={
+						country="c:BIC"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
 			}
 		}
 	}

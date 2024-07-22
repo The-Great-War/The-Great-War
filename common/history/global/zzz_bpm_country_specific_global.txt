@@ -303,12 +303,22 @@
 		limit = {
 			OR = {
 				this = c:GBR
-				this = c:AUS
 				this = c:SPA
 				this = c:RUS
 			}
 		}
 		activate_law = law_type:law_devolved
+		set_institution_investment_level = {
+			institution = institution_centralization
+			level = 1
+		}
+	}
+	
+	every_country = {
+		limit = {
+			this = c:AUS
+		}
+		activate_law = law_type:law_confederated
 		set_institution_investment_level = {
 			institution = institution_centralization
 			level = 1

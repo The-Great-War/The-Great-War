@@ -701,11 +701,11 @@
 		region_state:RUS = {
 			create_pop = {
 				culture = ukrainian
-				size = 872404
+				size = 610682
 			}
 			create_pop = {
 				culture = russian
-				size = 270677
+				size = 532398
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -723,13 +723,18 @@
 				culture = bulgarian
 				size = 19032
 			}
+			create_pop = {
+				culture = english
+				pop_type = capitalists
+				size = 3000
+			}
 		}
 	}
 	s:STATE_BESSARABIA = {
 		region_state:RUS = {
 			create_pop = {
 				culture = romanian
-				size = 1530604
+				size = 1377543
 			}
 			create_pop = {
 				culture = ukrainian
@@ -737,11 +742,11 @@
 			}
 			create_pop = {
 				culture = russian
-				size = 600514
+				size = 120102
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 318876
+				size = 222600
 			}
 			create_pop = {
 				culture = bulgarian
@@ -851,11 +856,11 @@
 		region_state:RUS = {
 			create_pop = {
 				culture = kalmyk
-				size = 106587
+				size = 89123
 			}
 			create_pop = {
 				culture = russian
-				size = 221071
+				size = 180564
 			}
 			create_pop = {
 				culture = mongol

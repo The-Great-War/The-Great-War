@@ -934,13 +934,9 @@ RUS = { # Russia
 	#	}
 	flag_definition = {
 		coa = RUS_republic
-		subject_canton = RUS_republic
-		priority = 10
-		trigger = {
-			coa_def_republic_flag_trigger = yes
-			coa_def_monarchy_flag_trigger = yes
-			coa_def_dictatorship_flag_trigger = yes
-		}
+		allow_overlord_canton = yes	
+		subject_canton = RUS_imperial
+		priority = 1
 	}
 	#	flag_definition = {
 	#		coa = RUS_dictatorship
@@ -953,10 +949,10 @@ RUS = { # Russia
 	flag_definition = {
 		coa = RUS_oligarchy
 		subject_canton = RUS_oligarchy
-		priority = 30
+		priority = 10
 		trigger = {
 			coa_def_oligarchy_flag_trigger = yes
-			ANS = {
+			AND = {
 				coa_def_monarchy_flag_trigger = yes
 				has_global_variable = world_war
 				global_var:world_war = {

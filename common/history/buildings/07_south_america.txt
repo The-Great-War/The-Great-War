@@ -116,6 +116,17 @@
 				reserves=1
 				activate_production_methods={ "pm_anchorage" }
 			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					country={
+						country="c:FRA"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_steam_donkey_building_logging_camp" "pm_rail_transport_building_logging_camp" }
+			}
 		}
 		region_state:GBR={
 			create_building={
@@ -136,11 +147,11 @@
 				add_ownership={
 					country={
 						country="c:GBR"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_anchorage" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 		}
 	}
@@ -1488,12 +1499,23 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_anchorage" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 		}
 	}
 	s:STATE_PARA={
 		region_state:BRZ={
+			create_building={
+				building="building_rubber_plantation"
+				add_ownership={
+					country={
+						country="c:BRZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_MARANHAO={
@@ -1537,10 +1559,32 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
 			}
+			create_building={
+				building="building_rubber_plantation"
+				add_ownership={
+					country={
+						country="c:BRZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_AMAZONAS={
 		region_state:BRZ={
+			create_building={
+				building="building_rubber_plantation"
+				add_ownership={
+					country={
+						country="c:BRZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_ACRE={
@@ -1574,6 +1618,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_rubber_plantation"
+				add_ownership={
+					country={
+						country="c:BRZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts" }
 			}
 		}
 	}
@@ -1617,6 +1672,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_rubber_plantation"
+				add_ownership={
+					country={
+						country="c:BRZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts" }
 			}
 		}
 	}
@@ -1803,6 +1869,17 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
 			}
+			create_building={
+				building="building_rubber_plantation"
+				add_ownership={
+					country={
+						country="c:BRZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_MINAS_GERAIS={
@@ -1931,6 +2008,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_rubber_plantation"
+				add_ownership={
+					country={
+						country="c:BRZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts" }
 			}
 		}
 	}
@@ -2076,6 +2164,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_rubber_plantation"
+				add_ownership={
+					country={
+						country="c:BRZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts" }
 			}
 		}
 	}
@@ -2241,6 +2340,17 @@
 				reserves=1
 				activate_production_methods={ "pm_automation_disabled" "pm_crude_tools" }
 			}
+			create_building={
+				building="building_rubber_plantation"
+				add_ownership={
+					country={
+						country="c:BRZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_RIO_GRANDE_DO_NORTE={
@@ -2283,6 +2393,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
+			create_building={
+				building="building_rubber_plantation"
+				add_ownership={
+					country={
+						country="c:BRZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts" }
 			}
 		}
 	}
@@ -2340,6 +2461,17 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
 			}
+			create_building={
+				building="building_rubber_plantation"
+				add_ownership={
+					country={
+						country="c:BRZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_PIAUI={
@@ -2369,6 +2501,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building={
+				building="building_rubber_plantation"
+				add_ownership={
+					country={
+						country="c:BRZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts" }
 			}
 		}
 	}
@@ -2412,6 +2555,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_rubber_plantation"
+				add_ownership={
+					country={
+						country="c:BRZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts" }
 			}
 		}
 	}
@@ -2520,6 +2674,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_scholastic_education" "pm_secular_academia" "pm_freedom_of_movement_no_effect" }
+			}
+			create_building={
+				building="building_rubber_plantation"
+				add_ownership={
+					country={
+						country="c:BRZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts" }
 			}
 		}
 	}

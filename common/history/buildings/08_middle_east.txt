@@ -211,8 +211,22 @@
 				reserves=1
 				activate_production_methods={ "pm_anchorage" }
 			}
+			create_building={
+				building="building_wheat_farm"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
+			}
 		}
 		region_state:KAT={
+			create_building={
+				building="building_wheat_farm"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
+			}
 		}
 	}
 	s:STATE_HEDJAZ={
