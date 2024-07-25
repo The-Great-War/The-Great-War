@@ -279,7 +279,6 @@
 			bpm_reorder_ideologies = yes
 		}
 		ig:ig_conservatives = { leader = { set_ideology = ideology:ideology_serfdom_reformer } }
-		activate_law = law_type:law_secret_police # Third section was already active during Nikolai's reign
 	}
 
 	# CENTRALIZATION LAWS
@@ -303,55 +302,23 @@
 	every_country = {
 		limit = {
 			OR = {
-				this = c:FRA
-				this = c:MEX
-				this = c:KRA
-				this = c:SWE
-				this = c:NOR
-				this = c:DEN
-				this = c:GRE
-				this = c:POR
-				this = c:EGY
-				this = c:KOR
-				country_has_primary_culture = cu:north_german
-				country_has_primary_culture = cu:south_german
-				country_has_primary_culture = cu:north_italian
+				this = c:GBR
+				this = c:SPA
+				this = c:RUS
 			}
 		}
-		activate_law = law_type:law_unitary
+		activate_law = law_type:law_devolved
 		set_institution_investment_level = {
 			institution = institution_centralization
 			level = 1
 		}
 	}
-
+	
 	every_country = {
 		limit = {
-			OR = {
-				this = c:SWI
-				this = c:ARG
-				this = c:JAP
-				this = c:SOK
-			}
+			this = c:AUS
 		}
 		activate_law = law_type:law_confederated
-		set_institution_investment_level = {
-			institution = institution_centralization
-			level = 3
-		}
-	}
-
-	every_country = {
-		limit = {
-			OR = {
-				this = c:GBR
-				this = c:AUS
-				this = c:PRU
-				this = c:SPA
-				this = c:DAI
-			}
-		}
-		activate_law = law_type:law_devolved
 		set_institution_investment_level = {
 			institution = institution_centralization
 			level = 1
@@ -382,7 +349,7 @@
 	every_country = {
 		limit = { 
 			OR = {
-				this = c:PRU
+				this = c:GER
 				this = c:FRA
 				this = c:USA
 			}
@@ -399,16 +366,14 @@
 			limit = {
 				OR = {
 					is_country_type = recognized
+					bpm_country_is_in_new_world = yes
 					this = c:CHI
 					this = c:TUR
 					this = c:KOR
 					this = c:DAI
 					this = c:JAP
-					this = c:SIA
 					this = c:PER
 					this = c:EGY
-					this = c:MAD
-					this = c:SIK
 				}
 			}
 			if = {

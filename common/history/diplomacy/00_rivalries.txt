@@ -9,10 +9,6 @@
 			country = c:GBR
 			type = rivalry
 		}
-		create_diplomatic_pact = {
-			country = c:RUS
-			type = rivalry
-		}
 	}
 	
 	c:FRA = {

@@ -1,0 +1,7 @@
+﻿je_consolidate_afghanistan = {
+
+}
+
+je_unify_afghanistan = {
+
+}

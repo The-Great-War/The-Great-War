@@ -561,7 +561,7 @@ STATE_GALICH = {
     }
     resource = {
         type = "bg_oil_extraction"
-        undiscovered_amount = 20
+        undiscovered_amount = 10
     }
 }
 
@@ -1263,7 +1263,7 @@ STATE_NENETSIA = {
     }
     resource = {
         type = "bg_oil_extraction"
-        undiscovered_amount = 30
+        undiscovered_amount = 10
     }
     naval_exit_id = 3039
 }

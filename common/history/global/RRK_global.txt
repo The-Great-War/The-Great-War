@@ -1,5 +1,5 @@
-﻿GLOBAL = {
-    every_country = {
-        activate_law = law_type:law_unitary_state
-    }
-}
+﻿# GLOBAL = {
+    # every_country = {
+        # activate_law = law_type:law_unitary_state
+    # }
+# }

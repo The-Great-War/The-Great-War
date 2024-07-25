@@ -161,7 +161,7 @@
 		region_state:GBR = {
 			create_pop = {
 				culture = british
-				size = 2657596
+				size = 5134697
 			}
 			create_pop = {
 				culture = british
@@ -242,7 +242,7 @@
 		region_state:GBR = {
 			create_pop = {
 				culture = british
-				size = 2543604
+				size = 5087208
 			}
 			create_pop = {
 				culture = british
@@ -418,7 +418,7 @@
 		region_state:FRA = {
 			create_pop = {
 				culture = french
-				size = 1852741
+				size = 3639000
 			}
 			create_pop = {
 				culture = french
@@ -432,16 +432,6 @@
 		}
 	}
 	s:STATE_PROVENCE = {
-		region_state:ITA = {
-			create_pop = {
-				culture = north_italian
-				size = 131100
-			}
-			create_pop = {
-				culture = occitan
-				size = 41100
-			}
-		}
 		region_state:FRA = {
 			create_pop = {
 				culture = occitan
@@ -1338,7 +1328,7 @@
 		region_state:GER = {
 			create_pop = {
 				culture = north_german
-				size = 1558704
+				size = 4213546
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -1711,12 +1701,6 @@
 			create_pop = {
 				culture = ashkenazi
 				size = 3996
-			}
-		}
-		region_state:MST = {
-			create_pop = {
-				culture = north_german
-				size = 85002
 			}
 		}		
 	}

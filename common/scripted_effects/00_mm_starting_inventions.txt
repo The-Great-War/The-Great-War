@@ -1,6 +1,34 @@
 ﻿
 # Starting techs
 
+effect_starting_technology_1900_russia = {
+	add_era_researched = era_2
+	add_technology_researched = improved_fertilizer
+	add_technology_researched = steam_donkey
+	add_technology_researched = dynamite
+	add_technology_researched = pumpjacks
+	add_technology_researched = steel_railway_cars
+	add_technology_researched = rotary_valve_engine
+	add_technology_researched = electrical_generation
+	add_technology_researched = vacuum_canning
+	
+	add_technology_researched = breech_loading_artillery
+	add_technology_researched = repeaters
+	add_technology_researched = modern_nursing
+	add_technology_researched = electric_telegraph
+	add_technology_researched = bolt_action_rifles
+	add_technology_researched = ironclad_tech
+	add_technology_researched = gantry_cranes
+	add_technology_researched = monitor
+	
+	add_technology_researched = steel_frame_buildings
+	add_technology_researched = pan-nationalism 
+	add_technology_researched = mutual_funds
+	add_technology_researched = camera
+	add_technology_researched = anarchism
+	add_technology_researched = socialism
+}
+
 effect_starting_technology_1922_tech_major = {
 	add_era_researched = era_3
 }

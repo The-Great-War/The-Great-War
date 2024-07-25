@@ -1,7 +1,6 @@
 ﻿COUNTRIES = {
 	c:RUS = {
-		effect_starting_technology_1922_tech_major = yes
-		add_technology_researched = napoleonic_warfare
+		effect_starting_technology_1900_russia = yes
 
 		# Laws
 		activate_law = law_type:law_monarchy

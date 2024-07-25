@@ -10,7 +10,7 @@
 				size = 27544
 			}		
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 86263
 			}
 			create_pop = {
@@ -28,11 +28,11 @@
 				size = 35992
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 118392
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				religion = jewish
 				size = 200
 			}
@@ -57,40 +57,30 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 2135000
-			}
-			create_pop = {
-				culture = yankee
-				religion = jewish
-				size = 2000
-			}
-			create_pop = {
-				culture = yankee
-				religion = catholic
-				size = 39996
+				size = 5267358
 			}
 			create_pop = {
 				culture = afro_american
-				size = 20004
+				size = 99238
 			}
 			create_pop = {
 				culture = irish
-				size = 16000
+				size = 900167
 			}
 			create_pop = {
 				culture = iroquoian
-				size = 8000
+				size = 4711
 			}
 		}
 	}
 	s:STATE_VIRGINIA = { # population of VA proper minus Fairfax County, which had its population figures added to DC to inflate the pop count there
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 423597
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				religion = catholic
 				size = 48000
 			}
@@ -109,25 +99,27 @@
 		region_state:USA = {
 			create_pop = {
 				culture = athabaskan
-				size = 12780
+				size = 29536
+			}
+			create_pop = {
+				culture = yankee
+				size = 21709
 			}
 			create_pop = {
 				culture = russian
-				size = 192
+				size = 8784
 			}
 			create_pop = {
-				culture = inuit
-				size = 1968
-			}
-		}
-		region_state:USA = {
-			create_pop = {
-				culture = athabaskan
-				size = 7000
+				culture = afro_american
+				size = 168
 			}
 			create_pop = {
-				culture = inuit
-				size = 3000
+				culture = han
+				size = 3116
+			}
+			create_pop = {
+				culture = japanese
+				size = 279
 			}
 		}
 	}
@@ -420,7 +412,7 @@
 				size = 12635
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 33857
 			}
 			create_pop = {
@@ -443,33 +435,19 @@
 			create_pop = {
 				culture = cajun
 				religion = catholic
-				size = 9642
+				size = 130
 			}
 			create_pop = {
-				culture = dixie
-				size = 138666
+				culture = yankee
+				size = 2729068
 			}
 			create_pop = {
 				culture = north_german
 				size = 2000
 			}
 			create_pop = {
-				culture = yankee
-				size = 165204
-			}
-			create_pop = {
-				culture = dixie
-				religion = catholic
-				size = 3996
-			}
-			create_pop = {
 				culture = afro_american
-				size = 1072 # 569 free in 1830, 1574 free in 1840
-			}
-			create_pop = {
-				
-				culture = afro_american
-				size = 38928
+				size = 161234
 			}
 			create_pop = {
 				culture = irish
@@ -489,7 +467,7 @@
 			}
 			create_pop = {
 				culture = yankee
-				size = 23992
+				size = 1912885
 			}
 		}
 	}
@@ -515,7 +493,11 @@
 			}
 			create_pop = {
 				culture = yankee
-				size = 28004
+				size = 1542206
+			}
+			create_pop = {
+				culture = afro_american
+				size = 3542
 			}
 		}
 	}
@@ -523,7 +505,7 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 631504
+				size = 2316641
 			}
 			create_pop = {
 				culture = irish
@@ -543,7 +525,15 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 123996
+				size = 1858367
+			}
+			create_pop = {
+				culture = french
+				size = 124000
+			}
+			create_pop = {
+				culture = english
+				size = 124000
 			}
 			create_pop = {
 				culture = algonquian
@@ -555,7 +545,7 @@
 			}
 			create_pop = {
 				culture = irish
-				size = 8000
+				size = 32000
 			}
 			create_pop = {
 				culture = yankee
@@ -568,11 +558,11 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 1092200
+				size = 3602304
 			}
 			create_pop = {
 				culture = afro_american
-				size = 16008
+				size = 96000
 			}
 			create_pop = {
 				culture = north_german
@@ -587,21 +577,12 @@
 	s:STATE_KENTUCKY = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
-				size = 239988
-			}
-			create_pop = {
 				culture = yankee
-				size = 316392
+				size = 1812176
 			}
 			create_pop = {
 				culture = afro_american
-				size = 6117 # 4917 free in 1830, 7317 free in 1840
-			}
-			create_pop = {
-				
-				culture = afro_american
-				size = 161879
+				size = 284706
 			}
 			create_pop = {
 				culture = irish
@@ -612,57 +593,39 @@
 	s:STATE_TENNESSEE = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
-				size = 369604
+				culture = yankee
+				size = 1522600
 			}
 			create_pop = {
 				culture = cherokee
-				size = 7200
-			}
-			create_pop = {
-				culture = yankee
-				size = 204800
+				size = 103
 			}
 			create_pop = {
 				culture = afro_american
-				size = 5040 # 4555 free in 1830, 5524 free in 1840
-			}
-			create_pop = {
-				
-				culture = afro_american
-				size = 142960
+				size = 480000
 			}
 			create_pop = {
 				culture = irish
 				size = 39996
-			}
-			create_pop = {
-				culture = cherokee
-				size = 2528 # 1835 Cherokee Census "Henderson Roll"
 			}
 		}
 	}
 	s:STATE_MISSISSIPPI = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
-				size = 172804
+				culture = yankee
+				size = 633575
 			}
 			create_pop = {
 				culture = afro_american
-				size = 943 # 519 free in 1830, 1366 free in 1840
-			}
-			create_pop = {
-				
-				culture = afro_american
-				size = 87057
+				size = 907630
 			}
 		}
 	}
 	s:STATE_ALABAMA = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 329008
 			}
 			create_pop = {
@@ -675,7 +638,7 @@
 				size = 229998
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				religion = catholic
 				size = 16004
 			}
@@ -692,7 +655,7 @@
 	s:STATE_FLORIDA = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 47996
 			}
 			create_pop = {
@@ -719,11 +682,11 @@
 	s:STATE_GEORGIA = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
-				size = 329836
+				culture = yankee
+				size = 1169273
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				religion = jewish
 				size = 1000
 			}
@@ -733,19 +696,14 @@
 			}
 			create_pop = {
 				culture = afro_american
-				size = 2620 # 2486 free in 1830, 2753 free in 1840
-			}
-			create_pop = {
-				
-				culture = afro_american
-				size = 256172
+				size = 1034813
 			}
 		}
 	}
 	s:STATE_WEST_VIRGINIA = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 160916
 			}
 			create_pop = {
@@ -758,7 +716,7 @@
 				size = 1808 # don't have easy numbers for WV's free non-white population, but ~10% of the enslaved population seems to roughly track
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				religion = catholic
 				size = 28000
 			}
@@ -771,7 +729,7 @@
 			# minus 42176 free/38242 slaves that have been ceded to DC to inflate its pop figure
 			# aim for 535947 pops for Mega-Maryland (Megaland?) in total
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 251997
 			}
 			# Maryland: 52938 free in 1830, 62078 free in 1840
@@ -789,11 +747,10 @@
 			}
 		}
 	}
-
 	s:STATE_DELAWARE = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 77000
 			}
 	
@@ -809,30 +766,19 @@
 			}
 		}
 	}
-
 	s:STATE_PENNSYLVANIA = {
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 1250496
-			}
-			create_pop = {
-				culture = yankee
-				religion = jewish
-				size = 2000
-			}
-			create_pop = {
-				culture = yankee
-				religion = catholic
-				size = 144008
+				size = 5159121
 			}
 			create_pop = {
 				culture = irish
-				size = 59800
+				size = 450135
 			}
 			create_pop = {
 				culture = afro_american
-				size = 43996
+				size = 156845
 			}
 		}
 	}
@@ -857,11 +803,15 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 452400
+				size = 3770238
+			}
+			create_pop = {
+				culture = irish
+				size = 964635
 			}
 			create_pop = {
 				culture = afro_american
-				size = 4000
+				size = 85000
 			}
 		}
 	}
@@ -885,7 +835,7 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 754484
+				size = 1929650
 			}
 			create_pop = {
 				culture = afro_american
@@ -942,31 +892,20 @@
 	s:STATE_NORTH_CAROLINA = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
-				size = 492500
+				culture = yankee
+				size = 1259209
 			}
 			create_pop = {
 				culture = afro_american
-				size = 21138 # 19543 free in 1830, 22732 free in 1840
-			}
-			create_pop = {
-				
-				culture = afro_american
-				size = 222862
+				size = 624000
 			}
 			create_pop = {
 				culture = cherokee
-				size = 3644 # 1835 Cherokee Census "Henderson Roll"
+				size = 5687
 			}
 		}
 	}
 	s:STATE_UTAH = {
-		region_state:USA = {
-			create_pop = {
-				culture = paiute
-				size = 3000
-			}
-		}
 		region_state:USA = {
 			create_pop = {
 				culture = paiute
@@ -977,21 +916,15 @@
 				size = 4000
 			}
 		}
-		region_state:USA = {
-			create_pop = {
-				culture = paiute
-				size = 11000
-			}
-		}
 	}
 	s:STATE_SOUTH_CAROLINA = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				size = 253836
 			}
 			create_pop = {
-				culture = dixie
+				culture = yankee
 				religion = jewish
 				size = 1000
 			}
@@ -1013,40 +946,36 @@
 	s:STATE_HAWAIIAN_ISLANDS = {
 		region_state:USA = {
 			create_pop = {
-				pop_type = clergy
-				culture = yankee
-				religion = protestant
-				size = 100
-			}
-			create_pop = {
 				pop_type = capitalists
 				culture = yankee
 				religion = protestant
-				size = 450
+				size = 900
 			}
 			create_pop = {
 				pop_type = capitalists
 				culture = british
-				size = 500
+				size = 250
 			}
 			create_pop = {
 				pop_type = capitalists
 				culture = russian
-				size = 250
+				size = 50
 			}
 			create_pop = {
 				culture = hawaiian
-				religion = protestant
-				size = 132304
+				size = 54141
 			}
 			create_pop = {
-				culture = hawaiian
-				religion = catholic
-				size = 8500
+				culture = yankee
+				size = 10000
 			}
 			create_pop = {
 				culture = han
-				size = 50000
+				size = 25767
+			}
+			create_pop = {
+				culture = japanese
+				size = 61111
 			}
 		}
 	}
@@ -1323,8 +1252,8 @@
 	s:STATE_TEXAS = {
 		region_state:USA = {
 			create_pop = {
-				culture = dixie
-				size = 42224
+				culture = yankee
+				size = 2249088
 			}
 			create_pop = {
 				culture = siouan
@@ -1344,38 +1273,16 @@
 				size = 2004
 			}
 		}
-		region_state:USA = {
-			create_pop = {
-				culture = oodham
-				size = 12000
-			}
-			create_pop = {
-				culture = mexican
-				size = 3000
-			}
-		}
-		region_state:USA = {
-			create_pop = {
-				culture = comanche
-				size = 18000
-			}
-			create_pop = {
-				culture = apache
-				size = 4000
-			}
-		}
 	}
 	s:STATE_NEVADA = {
 		region_state:USA = {
 			create_pop = {
-				culture = paiute
-				size = 22000
+				culture = yankee
+				size = 26824
 			}
-		}
-		region_state:USA = {
 			create_pop = {
 				culture = paiute
-				size = 6000
+				size = 5000
 			}
 		}
 	}
@@ -1453,7 +1360,15 @@
 		region_state:USA = {
 			create_pop = {
 				culture = hokan
-				size = 52000
+				size = 14000
+			}
+			create_pop = {
+				culture = yankee
+				size = 1086222
+			}
+			create_pop = {
+				culture = afro_american
+				size = 11000
 			}
 			create_pop = {
 				culture = mexican
@@ -1461,8 +1376,6 @@
 			}
 		}
 	}
-	# 97864 in 1830, 127586 in 1840
-	# working total of 112724
 	s:STATE_SONORA = {
 		region_state:MEX = {
 			create_pop = {
@@ -1552,10 +1465,7 @@
 			}
 		}
 	}
-	# San Luis Potosi:	302390 in 1830, 326559 in 1840, so averaging out to 314475
-	# Guanajuato:		442916 in 1830, 591401 in 1840, so averaging out to 517159
-	# Queretaro:		114437 in 1830, 122962 in 1840, so averaging out to 118699
-	# working total number of 950333
+
 	s:STATE_BAJIO = {
 		region_state:MEX = {
 			create_pop = {
@@ -1576,10 +1486,7 @@
 			}
 		}
 	}
-	# Yucatan proper: 	417947 in 1830, 420726 in 1840, so averaging out to 419337
-	# Campeche:			64053 in 1830, 72707 in 1840, so averaging out to 68380
-	# Tabasco:			58518 in 1830, 63919 in 1840, so averaging out to 61219
-	# working total number of 548936
+
 	s:STATE_YUCATAN = { 
 		region_state:MEX = {
 			create_pop = {

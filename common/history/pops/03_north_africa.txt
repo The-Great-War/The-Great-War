@@ -71,7 +71,7 @@
  				size = 1290465
  			}
  		}
- 		region_state:SEY = { 
+ 		region_state:EGY = { 
  			create_pop = {
  				culture = maghrebi
  				size = 501065
@@ -208,7 +208,7 @@
  				size = 128084
  			}
  		}
- 		region_state:SEY = { 
+ 		region_state:EGY = { 
  			create_pop = {
  				culture = maghrebi
  				size = 501065
@@ -265,7 +265,7 @@
  				size = 14
  			}
  		}
- 		region_state:DFR = { 
+ 		region_state:SUD = { 
  			create_pop = {
  				culture = fur
  				size = 199333
@@ -284,7 +284,7 @@
  				size = 8005
  			}
  		}
- 		region_state:SEY = { 
+ 		region_state:EGY = { 
  			create_pop = {
  				culture = maghrebi
  				size = 501065
@@ -828,7 +828,7 @@
  				size = 119644
  			}
  		}
- 		region_state:SEY = { 
+ 		region_state:EGY = { 
  			create_pop = {
  				culture = maghrebi
  				size = 500820

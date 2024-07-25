@@ -1,0 +1,11 @@
+﻿je_conquest_of_algeria = {
+
+}
+
+je_the_algerian_departements = {
+
+}
+
+je_reconquest_of_algeria = {
+
+}

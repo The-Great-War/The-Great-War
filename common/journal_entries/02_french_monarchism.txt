@@ -1,0 +1,7 @@
+﻿je_divided_monarchists = {
+
+}
+
+je_cement_the_rightful_dynasty = {
+
+}

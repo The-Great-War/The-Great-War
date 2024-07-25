@@ -488,10 +488,7 @@ STATE_OHIO = {
         bg_coal_mining = 60
         bg_lead_mining = 36
         bg_logging = 14
-    }
-    resource = {
-        type = "bg_oil_extraction"
-        undiscovered_amount = 10
+		bg_oil_extraction = 10
     }
 }
 
@@ -689,10 +686,7 @@ STATE_PENNSYLVANIA = {
         bg_coal_mining = 120
         bg_iron_mining = 57
         bg_logging = 23
-    }
-    resource = {
-        type = "bg_oil_extraction"
-        undiscovered_amount = 30
+		bg_oil_extraction = 30
     }
 }
 
@@ -1197,10 +1191,11 @@ STATE_TEXAS = {
         bg_sulfur_mining = 36
         bg_logging = 7
         bg_fishing = 6
+		bg_oil_extraction = 10
     }
     resource = {
         type = "bg_oil_extraction"
-        undiscovered_amount = 50
+        undiscovered_amount = 90
     }
     naval_exit_id = 3060
 }
@@ -1281,15 +1276,12 @@ STATE_CALIFORNIA = {
         bg_sulfur_mining = 40
         bg_logging = 13
         bg_fishing = 14
-    }
-    resource = {
-        type = "bg_gold_fields"
-        depleted_type = "bg_gold_mining"
-        undiscovered_amount = 12
+		bg_oil_extraction = 25
+		bg_gold_mining = 12
     }
     resource = {
         type = "bg_oil_extraction"
-        undiscovered_amount = 50
+        undiscovered_amount = 25
     }
     naval_exit_id = 3153
 }

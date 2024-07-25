@@ -5,6 +5,7 @@ COUNTRIES = {
 		set_tax_level = medium
 		
 		# Laws 
+		activate_law = law_type:law_federated
 		activate_law = law_type:law_monarchy
 		activate_law = law_type:law_wealth_voting
 		activate_law = law_type:law_freedom_of_conscience
