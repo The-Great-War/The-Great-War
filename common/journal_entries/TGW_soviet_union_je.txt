@@ -53,3 +53,4 @@ je_tgw_su_collectivization = {
 		NOT = { has_law = law_type:law_council_republic }
 	}
 }
+

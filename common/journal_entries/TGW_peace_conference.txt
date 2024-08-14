@@ -1,0 +1,24 @@
+﻿tgw_je_peace_conference = {
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+    is_shown_when_inactive = {
+        is_player = yes #this is also used in the urbanization JE
+    }
+
+    possible = {
+        hidden_trigger = { always = yes } # inspired by ETH's je_age_of_princes
+    }
+
+    on_monthly_pulse = {
+    }
+  
+    complete = {
+        hidden_trigger = { always = no }
+    }
+
+    on_complete = {
+        #trigger_event = { id = economic_unification.1 } # TBD
+    }
+
+    weight = 100
+}
