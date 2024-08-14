@@ -1,5 +1,7 @@
 ﻿namespace = world_war_1
 
+
+# Trigger the war itself
 world_war_1.1 = {
     type = country_event
     placement = root
@@ -49,6 +51,8 @@ world_war_1.1 = {
     }
 }
 
+
+# Add countries of each alliance to the war
 world_war_1.2 = {
     type = country_event
     placement = root
@@ -92,5 +96,58 @@ world_war_1.2 = {
                 COUNTRY = scope:supporting_country
             }
         }
+    }
+}
+
+
+# Peace deal
+world_war_1.3 = {
+    type = country_event
+    placement = root
+    hidden = no
+
+
+    title = world_war_1.3.t
+    desc = world_war_1.3.d
+
+trigger = {
+    # The World War I global variable has been set
+    has_global_variable = world_war_1_begun
+        
+    
+    # Germany has lost control of key territories
+    c:GER = {
+        NOT = { owns_entire_state_region = STATE_ALSACE_LORRAINE }
+        NOT = { owns_entire_state_region = STATE_RHINELAND }
+    }
+    
+    # The Ottoman Empire is close to capitulation
+    c:TUR = {
+        OR = {
+            NOT = { owns_entire_state_region = STATE_EASTERN_THRACE }
+            NOT = { owns_entire_state_region = STATE_PALESTINE }
+            has_war_exhaustion = {
+                target = c:TUR 
+                value >= 50
+            }
+        }
+    }
+    
+    # Russia has either left the war or is close to defeat
+    OR = {
+        NOT = { c:RUS = { is_subject_of = c:GER } }
+        c:RUS = {
+            OR = {
+                NOT = { owns_entire_state_region = STATE_POLAND }
+            has_war_exhaustion = {
+                target = c:RUS 
+                value >= 50
+            }
+            }
+        }
+    }
+}
+    option = {
+        name = world_war_1.3.1
     }
 }

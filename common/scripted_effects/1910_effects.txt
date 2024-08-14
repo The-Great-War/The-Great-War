@@ -93,3 +93,7 @@ enter_world_war_defender_side = {
 		}
 	}
 }
+
+begin_peace_conference = {
+	
+}
