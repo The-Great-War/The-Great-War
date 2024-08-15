@@ -151,3 +151,35 @@ trigger = {
         name = world_war_1.3.1
     }
 }
+
+
+world_war_1.4 = {
+    type = country_event
+    placement = root
+
+    title = world_war_1.4.t
+    desc = world_war_1.4.d
+    flavor = world_war_1.4.f
+
+    event_image = {
+        video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+
+    option = {
+        name = world_war_1.4.a
+        default_option = yes
+        custom_tooltip = tgw_peace_conference_demands_tooltip
+        every_country = {
+            limit = {
+                is_at_war_with = root
+            }
+            root = {
+                set_relations = { country = prev value = 0 }
+            }
+            end_war = root
+        }
+    }
+}

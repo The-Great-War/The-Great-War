@@ -102,3 +102,10 @@ is_in_central_powers = {
 cede_bolshevik_states = {
 	always = yes
 }
+
+can_utiize_diplomatic_plays = {
+	custom_tooltip = {
+		text = tgw_cant_invade_without_reason
+		always = no
+	}
+}

@@ -1,0 +1,21 @@
+﻿    tgw_peace_conference_aus_veneto = {
+	name = tgw_peace_conference_aus_veneto_name
+	desc = tgw_peace_conference_aus_veneto_desc
+
+	visible = { always = yes }
+	
+	#Country scope
+	ai_chance = {
+		base = 0
+		modifier = {
+			trigger = { bureaucracy > 0 }
+			add = 5
+		}
+	}
+
+	possible = {
+            always = yes
+	}
+
+
+}
