@@ -80,16 +80,13 @@
 			is_pop_type = aristocrats
 			is_pop_type = capitalists
 		}
-		OR = {
-			pop_employment_building_group = bg_agriculture
-			pop_employment_building_group = bg_ranching
-			pop_employment_building_group = bg_plantations
-		}
+		bpm_pop_employment_is_rural = yes
 	}
 	
 	pop_weight = {
+
 		value = 0
-		
+
 		# Always rural due to pop potential
 		add = {
 			desc = "RURAL_POP"
@@ -135,7 +132,8 @@
 				}
 				value = 1.5
 			}		
-		}	
+		}
+
 	}
 	
 	monarch_weight = {

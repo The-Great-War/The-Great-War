@@ -22,14 +22,6 @@ je_bpm_split_natlibs = {
 		}
 	}
 
-	immediate = {
-		set_variable = {
-			name = bpm_je_split_natlibs_progress
-			value = 0
-		}
-		bpm_je_split_natlibs_progress_rate_update = yes
-	}
-
 	possible = {
 		OR = {
 			AND = {
@@ -47,8 +39,11 @@ je_bpm_split_natlibs = {
 	}
 
 	complete = {
-		bpm_journal_progress_complete = {
-			VAR = bpm_je_split_natlibs_progress
+		custom_tooltip = {
+			text = "bpm_je_progress_complete"
+			scope:journal_entry = {
+				"scripted_bar_progress(je_bpm_split_natlibs_progress_bar)" >= 100
+			}
 		}
 	}
 
@@ -71,23 +66,7 @@ je_bpm_split_natlibs = {
 		}
 	}
 
-	on_weekly_pulse = {
-		effect = {
-			bpm_je_split_natlibs_progress_rate_update = yes
-			bpm_handle_steady_var_growth = {
-				VARIABLE = bpm_je_split_natlibs_progress
-			}
-		}
-	}
-
-	progressbar = yes
-	current_value = {
-		value = var:bpm_je_split_natlibs_progress
-	}
-
-	goal_add_value = {
-		add = 100
-	}
+	scripted_progress_bar = je_bpm_split_natlibs_progress_bar
 
 	weight = 100
 
@@ -111,14 +90,6 @@ je_bpm_split_marlibs = {
 		always = yes
 	}
 
-	immediate = {
-		set_variable = {
-			name = bpm_je_split_marlibs_progress
-			value = 0
-		}
-		bpm_je_split_marlibs_progress_rate_update = yes
-	}
-
 	possible = {
 		has_technology_researched = international_trade
 		hidden_trigger = { NOT = { has_variable = local_marlib_split_var } }
@@ -133,8 +104,11 @@ je_bpm_split_marlibs = {
 	}
 
 	complete = {
-		bpm_journal_progress_complete = {
-			VAR = bpm_je_split_marlibs_progress
+		custom_tooltip = {
+			text = "bpm_je_progress_complete"
+			scope:journal_entry = {
+				"scripted_bar_progress(je_bpm_split_marlibs_progress_bar)" >= 100
+			}
 		}
 	}
 
@@ -142,23 +116,7 @@ je_bpm_split_marlibs = {
 		trigger_event = { id = bpm_marlib_split.1 }
 	}
 
-	on_weekly_pulse = {
-		effect = {
-			bpm_je_split_marlibs_progress_rate_update = yes
-			bpm_handle_steady_var_growth = {
-				VARIABLE = bpm_je_split_marlibs_progress
-			}
-		}
-	}
-
-	progressbar = yes
-	current_value = {
-		value = var:bpm_je_split_marlibs_progress
-	}
-
-	goal_add_value = {
-		add = 100
-	}
+	scripted_progress_bar = je_bpm_split_marlibs_progress_bar
 
 	weight = 100
 
@@ -183,20 +141,7 @@ je_bpm_split_patcons = {
 
 	is_shown_when_inactive = {
 		#always = yes
-		NAND = {
-			country_has_primary_culture = cu:brazilian
-			ig:ig_conservatives = {
-				has_ideology = ideology:ideology_eco_slave_economy
-			}
-		}
-	}
-
-	immediate = {
-		set_variable = {
-			name = bpm_je_split_patcons_progress
-			value = 0
-		}
-		bpm_je_split_patcons_progress_rate_update = yes
+		NOT = { country_has_primary_culture = cu:brazilian }
 	}
 
 	possible = {
@@ -208,6 +153,7 @@ je_bpm_split_patcons = {
 			}
 		}
 		bpm_country_laws_no_voting = no
+		NOT = { has_modifier = bpm_missouri_compromise }
 		OR = {
 			has_technology_researched = labor_movement
 			ig:ig_socialists ?= { is_marginal = no }
@@ -218,32 +164,19 @@ je_bpm_split_patcons = {
 	}
 
 	complete = {
-		bpm_journal_progress_complete = {
-			VAR = bpm_je_split_patcons_progress
-		}
-	}
-
-	on_complete = {
-		trigger_event = { id = bpm_patcon_split.1 }
-	}
-
-	on_weekly_pulse = {
-		effect = {
-			bpm_je_split_patcons_progress_rate_update = yes
-			bpm_handle_steady_var_growth = {
-				VARIABLE = bpm_je_split_patcons_progress
+		custom_tooltip = {
+			text = "bpm_je_progress_complete"
+			scope:journal_entry = {
+				"scripted_bar_progress(je_bpm_split_patcons_progress_bar)" >= 100
 			}
 		}
-	}
+	}    
+	
+	on_complete = {
+        trigger_event = { id = bpm_patcon_split.1 }
+    }
 
-	progressbar = yes
-	current_value = {
-		value = var:bpm_je_split_patcons_progress
-	}
-
-	goal_add_value = {
-		add = 100
-	}
+	scripted_progress_bar = je_bpm_split_patcons_progress_bar
 
 	weight = 100
 
@@ -276,16 +209,26 @@ je_bpm_first_international = {
 				value = 0
 			}
 		}
+		# Make sure Peoples Springtime is set if it somehow never happened (mod conflict?)
+		set_global_variable = peoples_springtime_happened
 	}
 
 	possible = {
 		custom_tooltip = {
-			text = "bpm_je_trigger_wait_for_history"
+			text = "bpm_je_trigger_peoples_springtime_happened"
 			OR = {
 				has_global_variable = peoples_springtime_happened
-				game_date > 1870.1.1
+				game_date > 1855.1.1
 			}
-			NOT = { has_global_variable = recently_completed_peoples_springtime_je }	
+		}
+		trigger_if = {
+			limit = {
+				has_global_variable = peoples_springtime_happened
+			}
+			custom_tooltip = {
+				text = "bpm_je_trigger_peoples_springtime_not_recent"
+				NOT = { has_global_variable = recently_completed_peoples_springtime_je }
+			}
 		}
 	}
 
@@ -369,7 +312,7 @@ je_bpm_second_international = {
 			limit = { has_global_variable = bpm_je_second_intl_progress }
 			custom_tooltip = {
 				text = "bpm_je_progress_complete"
-				global_var:bpm_je_second_intl_progress >= 30
+				global_var:bpm_je_second_intl_progress >= 100
 			}
 		}
 	}
@@ -408,14 +351,6 @@ je_bpm_split_fascists = {
 		always = yes
 	}
 
-	immediate = {
-		set_variable = {
-			name = bpm_je_split_fascists_progress
-			value = 0
-		}
-		bpm_je_split_fascists_progress_rate_update = yes
-	}
-
 	possible = {
 		year > 1900
 		has_technology_researched = political_agitation
@@ -423,32 +358,19 @@ je_bpm_split_fascists = {
 	}
 
 	complete = {
-		bpm_journal_progress_complete = {
-			VAR = bpm_je_split_fascists_progress
-		}
-	}
-
-	on_complete = {
-		trigger_event = { id = bpm_fascist_split.1 }
-	}
-
-	on_weekly_pulse = {
-		effect = {
-			bpm_je_split_fascists_progress_rate_update = yes
-			bpm_handle_steady_var_growth = {
-				VARIABLE = bpm_je_split_fascists_progress
+		custom_tooltip = {
+			text = "bpm_je_progress_complete"
+			scope:journal_entry = {
+				"scripted_bar_progress(je_bpm_split_fascists_progress_bar)" >= 100
 			}
 		}
-	}
+	}    
+	
+	on_complete = {
+        trigger_event = { id = bpm_fascist_split.1 }
+    }
 
-	progressbar = yes
-	current_value = {
-		value = var:bpm_je_split_fascists_progress
-	}
-
-	goal_add_value = {
-		add = 100
-	}
+	scripted_progress_bar = je_bpm_split_fascists_progress_bar
 
 	weight = 100
 

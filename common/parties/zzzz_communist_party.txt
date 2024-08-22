@@ -3,33 +3,7 @@
 	name = {
 		first_valid = {
 			triggered_desc = {
-				desc = party_russian_communist_party_bolsheviks
-				trigger = {
-					country_has_primary_culture = cu:russian
-					has_law = law_type:law_single_party_state
-					any_interest_group = {
-						leader = {
-							has_ideology = ideology:ideology_leninist
-							has_ideology = ideology:ideology_trotskist
-						}
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_rsdwp_b
-				trigger = {
-					country_has_primary_culture = cu:russian
-					has_global_variable = global_socialists_split_var
-					any_interest_group = {
-						leader = {
-							has_ideology = ideology:ideology_leninist
-							has_ideology = ideology:ideology_trotskist
-						}
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_russian_socialist_democratic_workers_party
+				desc = party_bolsheviks
 				trigger = {
 					country_has_primary_culture = cu:russian
 				}
@@ -69,6 +43,20 @@
 						country_has_primary_culture = cu:north_italian
 						country_has_primary_culture = cu:south_italian
 					}
+				}
+			}
+			triggered_desc = {
+				desc = party_net_cpn
+				trigger = {
+					exists = c:NET
+					THIS = c:NET
+				}
+			}
+			triggered_desc = {
+				desc = party_bel_pcb
+				trigger = {
+					exists = c:BEL
+					THIS = c:BEL
 				}
 			}
 			triggered_desc = {
@@ -128,14 +116,26 @@
 				}
 			}
 			triggered_desc = {
-				desc = party_kpo
+				desc = party_cpi
 				trigger = {
-					exists = c:AUS
-					THIS = c:AUS
+					OR = {
+						AND = {
+							exists = c:BIC
+							THIS = c:BIC
+						}
+						AND = {
+							exists = c:BHT
+							THIS = c:BHT
+						}
+						AND = {
+							exists = c:HND
+							THIS = c:HND
+						}
+					}
 				}
 			}
 			triggered_desc = {
-				desc = party_jcp
+				desc = party_revsoc_jap
 				trigger = {
 					exists = c:JAP
 					THIS = c:JAP
@@ -160,6 +160,13 @@
 				trigger = {
 					exists = c:GRE
 					THIS = c:GRE
+				}
+			}
+			triggered_desc = {
+				desc = party_revsoc_aus
+				trigger = {
+					exists = c:AUS
+					THIS = c:AUS
 				}
 			}
 			triggered_desc = {
@@ -202,6 +209,13 @@
 						country_has_primary_culture = cu:yi
 						country_has_primary_culture = cu:yue
 					}
+				}
+			}
+			triggered_desc = {
+				desc = party_revsoc_kor
+				trigger = {
+					exists = c:KOR
+					THIS = c:KOR
 				}
 			}
 			triggered_desc = {
@@ -301,6 +315,14 @@
 				leader = { bpm_leader_is_right_wing = no }
 			}
 			leader = { bpm_leader_is_radical_socialist = yes }
+		}
+		trigger_if = {
+			limit = {
+				bpm_ig_is_institutional = yes
+				NOT = { is_interest_group_type = ig_trade_unions }
+			}
+			bpm_ig_is_upper_institutional = no
+			NOT = { leader = { has_ideology = ideology:ideology_moderate } }
 		}
 	}
 	join_weight = {
@@ -408,7 +430,7 @@
 				}
 			}
 			add = {
-				value = 100
+				value = 20
 				desc = "bpm_from_revsoc"
 			}
 		}

@@ -29,8 +29,13 @@
 	on_character_ig_membership = {}
 	
 	pop_potential = {
-		owner = {
-			NOT = { is_country_type = decentralized }
+		custom_tooltip = {
+			text = BPM_VALID_POP_FOR_IG
+			owner = {
+				NOT = {
+					is_country_type = decentralized
+				}
+			}
 		}
 	}
 
@@ -79,6 +84,13 @@
 				value = 100
 			}
 		}
+		else_if = {
+			limit = { is_pop_type = machinists }
+			add = {
+				desc = "POP_MACHINISTS"
+				value = 50
+			}
+		}
 		add = {
 			desc = "NONPRIMARY_CULTURE"
 
@@ -86,11 +98,7 @@
 				limit = {
 					pop_has_primary_culture = no
 					strata = middle
-					NOR = {
-						pop_employment_building_group = bg_agriculture
-						pop_employment_building_group = bg_ranching
-						pop_employment_building_group = bg_plantations
-					}
+					bpm_pop_employment_is_rural = no
 				}
 				value = 150
 			}

@@ -10,6 +10,7 @@
 # Socialists will become more anti-electoralist if:
 # * There's Censorship or even worse, Outlawed Dissent
 # * We have Secret Police (penalty for every level of institution)
+# * There have been Anti-Socialist Party bans
 # * We have angry non-marginal socialist IGs
 # * Socialist IGs are getting suppressed 
 # These factors together will form the baseline value to which the JE's progress bar will trend. 
@@ -36,7 +37,7 @@ je_bpm_socialist_electoralism = {
 			bpm_country_laws_no_voting = no
 		}
 		NOT = { has_law = law_type:law_council_republic }
-		bpm_banned_socialist_parties = no
+		# bpm_banned_socialist_parties = no
 	}
 	on_weekly_pulse = {
 		effect = {
@@ -156,6 +157,10 @@ je_bpm_propaganda_of_the_deed = {
 		#}
 	}
 
+	invalid = {
+		has_law = law_type:law_council_republic
+	}
+
 	complete = {
 		hidden_trigger = {
 			has_variable = bpm_je_propaganda_of_the_deed_initialized
@@ -163,14 +168,17 @@ je_bpm_propaganda_of_the_deed = {
 		OR = {
 			custom_tooltip = {
 				text = "je_bpm_propaganda_of_the_deed_full"
-				var:bpm_je_propaganda_of_the_deed >= 100
+				has_variable = bpm_je_propaganda_of_the_deed
+				var:bpm_je_propaganda_of_the_deed >= bpm_je_propaganda_of_the_deed_complete_threshold_value
 			}
 			custom_tooltip = {
 				text = "je_bpm_propaganda_of_the_deed_empty"
+				has_variable = bpm_je_propaganda_of_the_deed
 				var:bpm_je_propaganda_of_the_deed <= 0
 			}
 			custom_tooltip = {
 				text = "je_bpm_propaganda_of_the_deed_timeout"
+				has_variable = bpm_je_propaganda_of_the_deed_months_below
 				var:bpm_je_propaganda_of_the_deed_months_below >= 120
 			}
 		}
@@ -181,6 +189,7 @@ je_bpm_propaganda_of_the_deed = {
 		hidden_effect = {
 			if = {
 				limit = {
+					has_variable = bpm_je_propaganda_of_the_deed_months_below
 					OR = {
 						var:bpm_je_propaganda_of_the_deed_months_below >= 120
 						var:bpm_je_propaganda_of_the_deed <= 0
@@ -189,17 +198,20 @@ je_bpm_propaganda_of_the_deed = {
 				trigger_event = { id = bpm_anarchist_potd.6 popup = yes }
 			} else_if = {
 				limit = {
-					var:bpm_je_propaganda_of_the_deed >= 100
+					has_variable = bpm_je_propaganda_of_the_deed
+					var:bpm_je_propaganda_of_the_deed >= bpm_je_propaganda_of_the_deed_complete_threshold_value
 				}
 				
 				if = {
 					limit = {
-						ig:ig_anarchists = {
-							is_powerful = yes
-						}
-						any_scope_character = {
-							has_role = agitator
-							is_interest_group_type = ig_anarchists
+						OR = {
+							ig:ig_anarchists = {
+								is_powerful = yes
+							}
+							any_scope_character = {
+								has_role = agitator
+								is_interest_group_type = ig_anarchists
+							}
 						}
 					}
 					trigger_event = { id = bpm_anarchist_potd.5 popup = yes }
@@ -240,7 +252,7 @@ je_bpm_propaganda_of_the_deed = {
 			# Next bomb
 			if = {
 				limit = {
-					var:bpm_je_propaganda_of_the_deed >= 50
+					var:bpm_je_propaganda_of_the_deed >= bpm_je_propaganda_of_the_deed_decay_threshold_value
 				}
 				change_variable = {
 					name = bpm_je_propaganda_of_the_deed_бомбометр
@@ -354,6 +366,7 @@ je_bpm_agrarian_socialism = {
 		has_law = law_type:law_council_republic
 		custom_tooltip = {
 			text = "bpm_journal_final_stage"
+			has_variable = bpm_je_agrarian_socialism
 			var:bpm_je_agrarian_socialism > 66
 		}
 	}
@@ -584,7 +597,7 @@ je_bpm_syndicalism = {
 			has_variable = bpm_je_syndicalism_reached_stage_2
 		}
 		bpm_journal_progress_zero = {
-			VAR = var:bpm_je_syndicalism
+			VAR = bpm_je_syndicalism
 		}
 	}
 
@@ -620,7 +633,12 @@ je_bpm_syndicalism = {
 				}
 				ig:ig_trade_unions ?= {
 					if = {
-						limit = { bpm_ig_enabled = yes }
+						limit = { 
+							bpm_ig_enabled = yes 
+							NOT = { 
+								owner = { has_law = law_type:law_state_controlled_labor_unions } 
+							}
+						}
 						leader = { set_ideology = ideology:ideology_syndicalist }
 					}
 				}

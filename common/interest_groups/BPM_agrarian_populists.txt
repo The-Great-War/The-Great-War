@@ -41,9 +41,18 @@
 			is_pop_type = capitalists
 			is_pop_type = bureaucrats
 		}
-		owner = {
-			NOT = { is_country_type = decentralized }
-			ig:ig_agrarian_populists ?= { NOT = { has_ideology = ideology:ideology_nonexistent } }
+		custom_tooltip = {
+			text = BPM_VALID_POP_FOR_IG
+			owner = {
+				NOT = {
+					is_country_type = decentralized
+				}
+				ig:ig_agrarian_populists ?= {
+					NOT = {
+						has_ideology = ideology:ideology_nonexistent
+					}
+				}
+			}
 		}
 	}
 	
@@ -53,11 +62,7 @@
 		##### RURAL POP WEIGHTS ONLY #####
 		if = {
 			limit = { 
-				OR = {
-					pop_employment_building_group = bg_agriculture
-					pop_employment_building_group = bg_ranching
-					pop_employment_building_group = bg_plantations				
-				}
+				bpm_pop_employment_is_rural = yes
 			}
 			add = {
 				desc = "RURAL_POP"
@@ -143,6 +148,7 @@
 				}
 			}
 		}
+		
 		##### IF NOT RURAL POP AND NOT ACADEMIC, EXCLUDE #####
 		else_if = {
 			limit = { NOT = { is_pop_type = academics }  }
@@ -187,13 +193,13 @@
 				}
 			}
 		}
-		
-		##### AGRARIAN SOCIALISM #####
-		add = ig_attraction_agrarian_socialism
 
 		##### EXPENSIVE CALCS #####
 		if = {
 			limit = { owner = { bpm_performance_significant_country = yes } }
+			
+			add = ig_attraction_agrarian_socialism
+
 			multiply = {
 				desc = "LEADER_POPULARITY"
 				scope:interest_group = {

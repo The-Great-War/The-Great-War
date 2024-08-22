@@ -36,9 +36,14 @@
 	on_character_ig_membership = {}
 	
 	pop_potential = {
-		owner = { 
-			NOT = { is_country_type = decentralized }
-			has_technology_researched = rationalism
+		custom_tooltip = {
+			text = BPM_VALID_POP_FOR_IG
+			owner = {
+				NOT = {
+					is_country_type = decentralized
+				}
+				has_technology_researched = rationalism
+			}
 		}
 	}
 	
@@ -46,12 +51,10 @@
 		value = 30
 	
 		if = {
-			limit = {
-				is_pop_type = capitalists
-			}
+			limit = { strata = poor }
 			add = {
-				desc = "POP_CAPITALISTS"
-				value = 175
+				desc = "LOWER_CLASS"
+				value = 20
 			}
 		}
 		else_if = {
@@ -62,32 +65,32 @@
 			}
 		}
 		else_if = {
-			limit = { strata = poor }
+			limit = {
+				is_pop_type = capitalists
+			}
 			add = {
-				desc = "LOWER_CLASS"
-				value = 20
+				desc = "POP_CAPITALISTS"
+				value = 175
+			}
+		}
+		else_if = {
+			limit = {
+				is_pop_type = aristocrats
+			}
+			add = {
+				desc = "POP_ARISTOCRATS"
+				value = 250
 			}
 		}
 
 		# RURAL
 		if = {
 			limit = {
-				OR = {
-					pop_employment_building_group = bg_agriculture
-					pop_employment_building_group = bg_ranching
-					pop_employment_building_group = bg_plantations
-				}	
+				bpm_pop_employment_is_rural = yes
 			}
 			add = {
 				desc = "RURAL"
 				value = 50
-			}
-			if = {
-				limit = { strata = rich }
-				add = {
-					desc = "RURAL_UPPER_CLASS"
-					value = 200
-				}
 			}
 		}
 
@@ -97,9 +100,9 @@
 				scope:interest_group = { has_ideology = ideology:ideology_wel_paternalistic_welfare }
 			}
 			if = {
-				limit = { strata = rich }
+				limit = { strata = poor }
 				add = {
-					desc = "PATCON_CAPITALISTS"
+					desc = "PATCON_LOWER_CLASS"
 					value = 50
 				}
 			}
@@ -111,9 +114,9 @@
 				}
 			}
 			else_if = {
-				limit = { strata = poor }
+				limit = { strata = rich }
 				add = {
-					desc = "PATCON_LOWER_CLASS"
+					desc = "PATCON_CAPITALISTS"
 					value = 50
 				}
 			}
@@ -126,19 +129,8 @@
 			max = 1.0
 		}
 
-		multiply = ig_attraction_to_ruler_ideology_from_stability
-
 		if = {
 			limit = { owner = { bpm_performance_significant_country = yes } }
-			multiply = {
-				desc = "IN_WAR"	
-				value = 1.0
-	
-				if = {
-					limit = { owner = { is_at_war = yes } }
-					value = 1.25
-				}		
-			}
 			multiply = {
 				desc = "LEADER_POPULARITY"
 				scope:interest_group = {
@@ -167,6 +159,17 @@
 			multiply = bpm_ig_agitators_popularity
 			multiply = bpm_ig_ruler_popularity
 			multiply = ig_attraction_from_radicals_and_loyalists
+		}
+		multiply = ig_attraction_to_ruler_ideology_from_stability
+
+		multiply = {
+			desc = "AT_WAR"	
+			value = 1.0
+
+			if = {
+				limit = { owner = { is_at_war = yes } }
+				value = 1.4
+			}		
 		}
 	}
 	

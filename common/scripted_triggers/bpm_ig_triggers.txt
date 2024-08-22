@@ -163,6 +163,7 @@ bpm_ig_is_agrarian = {
 			has_ideology = ideology:ideology_eco_slave_economy
 			has_ideology = ideology:ideology_eco_serf_economy
 			has_ideology = ideology:ideology_eco_trad_isolationist
+			has_ideology = ideology:ideology_eco_agrarian_autarky
 		}
 	}
 }
@@ -373,6 +374,8 @@ bpm_ig_is_militaristic = {
 			has_ideology = ideology:ideology_mil_aristocratic_militarist
 			has_ideology = ideology:ideology_mil_mass_army
 			has_ideology = ideology:ideology_mil_emergency
+			has_ideology = ideology:ideology_mil_plutocratic_militarist
+			has_ideology = ideology:ideology_mil_institutional_militarist
 		}
 	}
 }
@@ -794,6 +797,38 @@ bpm_ig_is_very_radical_opposition = {
 bpm_is_strongest_ig_in_government = {
 	is_in_government = yes
 	is_strongest_ig_in_government = yes
+}
+
+bpm_ig_law_can_be_promised = {
+	save_temporary_scope_as = petition_law_trig
+	prev = {
+		law_stance = {
+			law = scope:petition_law_trig.type
+			value > neutral
+		}
+	}
+	NOT = {
+		prev = {
+			owner = {
+				has_law = scope:petition_law_trig.type
+			}
+		}
+	}  
+	prev = {
+		owner = { 
+			can_have_political_movement = scope:petition_law_trig.type
+		}
+	}	 			
+	can_be_enacted = yes
+}
+
+bpm_ig_wants_promise = {
+	# The government cannot make promises to itself
+	is_in_government = no
+	is_marginal = no
+	any_preferred_law = {
+		bpm_ig_law_can_be_promised = yes
+	}
 }
 
 # Used by Great Terror repeatable law to pick IGs to decimate

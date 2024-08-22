@@ -45,13 +45,7 @@
 @third = @[1/3]
 
 
-global_var:soviets = {
-	flag_definition = {
-		coa = RUS_soviet_union
-		subject_canton = RUS
-		priority = 2000
-	}
-}
+
 
 ARG = { # Argentina
 	flag_definition = {

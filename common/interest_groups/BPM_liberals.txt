@@ -36,28 +36,19 @@
 	on_character_ig_membership = {}
 	
 	pop_potential = {
-		owner = {
-			NOT = { is_country_type = decentralized }
-			has_technology_researched = rationalism
+		custom_tooltip = {
+			text = BPM_VALID_POP_FOR_IG
+			owner = {
+				NOT = {
+					is_country_type = decentralized
+				}
+				has_technology_researched = rationalism
+			}
 		}
 	}
 	
 	pop_weight = {
 		value = 40
-	
-		add = {
-			desc = "SLAVERY_DETRACTORS"
-			if = {
-				limit = {
-					owner = { NOT = { has_law = law_type:law_slavery_banned } }
-					OR = {
-						pop_has_primary_culture = no
-						state = { is_slave_state = no }
-					}
-				}
-				value = 100
-			}
-		}
 
 		if = {
 			limit = { is_pop_type = peasants }
@@ -71,6 +62,21 @@
 			add = {
 				desc = "POP_ARISTOCRATS"
 				value = 60
+			}
+			if = {
+				limit = { 
+					owner = {
+						has_law = law_type:law_monarchy
+						OR = {
+							has_law = law_type:law_oligarchy
+							has_law = law_type:law_autocracy
+						}
+					}
+				}
+				add = {
+					desc = "ARISTOCRAT_REFORMERS"
+					value = 40
+				}
 			}
 		}
 		else_if = {
@@ -94,11 +100,7 @@
 		# URBAN EMPLOYMENT
 		if = {
 			limit = {
-				NOR = {
-					pop_employment_building_group = bg_agriculture
-					pop_employment_building_group = bg_ranching
-					pop_employment_building_group = bg_plantations
-				}
+				bpm_pop_employment_is_rural = no
 			}
 			add = {
 				value = 30
@@ -123,16 +125,28 @@
 			}
 		}
 
-		multiply = {
-			desc = "UNEDUCATED"
-			value = literacy_rate
-			multiply = 1.5
-			max = 1.0
-		}
-		multiply = ig_attraction_to_ruler_ideology_from_stability
-
 		if = {
-			limit = { owner = { bpm_performance_significant_country = yes } }
+			limit = { 
+				AND = {
+					owner = { bpm_performance_significant_country = yes }
+					NOT = { owner = { has_variable = bpm_2nd_party_system } }
+				}
+			}
+
+			add = {
+				desc = "SLAVERY_DETRACTORS"
+				if = {
+					limit = {
+						owner = { NOT = { has_law = law_type:law_slavery_banned } }
+						OR = {
+							pop_has_primary_culture = no
+							state = { is_slave_state = no }
+						}
+					}
+					value = 100
+				}
+			}
+
 			multiply = {
 				desc = "LEADER_POPULARITY"
 				scope:interest_group = {
@@ -145,27 +159,17 @@
 					}
 				}
 			}
-			multiply = {
-				desc = "TRADITIONAL_MONARCHY"	
-				value = 1.0
-				
-				if = {
-					limit = { 
-						owner = {
-							has_law = law_type:law_monarchy
-							OR = {
-								has_law = law_type:law_oligarchy
-								has_law = law_type:law_autocracy
-							}
-						}
-					}
-					value = 0.75
-				}		
-			}
 			multiply = bpm_ig_agitators_popularity
 			multiply = bpm_ig_ruler_popularity
 			multiply = ig_attraction_from_radicals_and_loyalists
 		}
+		multiply = {
+			desc = "UNEDUCATED"
+			value = literacy_rate
+			multiply = 1.5
+			max = 1.0
+		}
+		multiply = ig_attraction_to_ruler_ideology_from_stability
 	}
 	
 	monarch_weight = {
