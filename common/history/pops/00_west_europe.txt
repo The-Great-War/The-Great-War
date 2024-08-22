@@ -1229,7 +1229,7 @@
 		region_state:GER = {
 			create_pop = {
 				culture = north_german
-				size = 1196400
+				size = 3165738
 			}
 			create_pop = {
 				culture = north_german
@@ -1241,32 +1241,17 @@
 				size = 2996
 			}
 		}
-		region_state:GER = {
-			create_pop = {
-				culture = north_german
-				size = 180008
-			}
-			create_pop = {
-				culture = north_german
-				religion = catholic
-				size = 16000
-			}
-		}
 	}
 	s:STATE_RHINELAND = {
 		region_state:GER = {
 			create_pop = {
 				culture = north_german
 				religion = catholic
-				size = 424000
+				size = 1400000
 			}
 			create_pop = {
 				culture = french
 				size = 8400
-			}
-			create_pop = {
-				culture = north_german
-				size = 323992
 			}
 		}
 		region_state:GER = {
@@ -1290,11 +1275,7 @@
 			create_pop = {
 				culture = north_german
 				religion = catholic
-				size = 830379
-			}
-			create_pop = {
-				culture = north_german
-				size = 179847
+				size = 1600000
 			}
 			create_pop = {
 				culture = wallonian
@@ -1312,7 +1293,7 @@
 			create_pop = {
 				culture = north_german
 				religion = catholic
-				size = 702629
+				size = 140000
 			}
 			create_pop = {
 				culture = north_german
