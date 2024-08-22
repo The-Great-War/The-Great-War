@@ -1,1 +1,13 @@
-﻿
+﻿#DEPRECATED JE'S
+je_springtime_of_the_peoples = {}
+je_risorgimento = {}
+je_belle_epoque = {}
+je_schleswig_holstein_question = {}
+je_manifest_destiny_mexico = {}
+je_sick_man_main = {}
+je_the_paris_commune_display = {}
+je_the_paris_commune_communards = {}
+je_the_paris_commune_france = {}
+je_positivist_movement = {}
+je_sale_of_alaska = {}
+je_alaska = {}

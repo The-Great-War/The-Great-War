@@ -1,0 +1,42 @@
+﻿# SHOULD NOT BE VISIBLE TO THE PLAYER!
+# for weekly pulses and such.
+je_tgw_utils = {
+	icon = "gfx/interface/icons/generic_icons/truce.dds"
+
+	group = je_group_historical_content
+
+	immediate = {
+		set_variable = {
+			name = tgw_je_danube_progress
+			value = 0
+		}
+	}
+
+
+	complete = {
+		always = no
+	}
+	possible = {
+		is_ai = yes
+	}
+
+	on_complete = {
+	}
+
+	fail = {
+		always = no
+	}
+
+	on_fail = {
+	}
+
+	on_weekly_pulse = {
+		effect = {
+		}
+	}
+	progressbar = no
+
+	weight = 100
+
+	should_be_pinned_by_default = no
+}

@@ -42,13 +42,15 @@ trigger_world_war = {
 				handle_annexation_as_civil_war = no
 
 
+				# <TODO>
+				add_war_goal = {
+					holder = $COUNTRY$
+					type = liberate_country
+					target_country = c:HUN
+				}
 
 
-				# add_war_goal = {
-				#     holder = c:AUS
-				#     type = make_protectorate
-				#     country = c:SER
-				# }
+
 			}
 		}
 
@@ -95,74 +97,87 @@ enter_world_war_defender_side = {
 }
 
 begin_peace_conference = {
-	
+
 }
 
 calculate_negotiation_score = {
-    # Reset scores
-    set_variable = { name = enemy_war_exhaustion_score value = 0 }
-    set_variable = { name = frontline_advances_score value = 0 }
-    set_variable = { name = our_war_exhaustion_score value = 1 }
+	# Reset scores
+	set_variable = { name = enemy_war_exhaustion_score value = 0 }
+	set_variable = { name = frontline_advances_score value = 0 }
+	set_variable = { name = our_war_exhaustion_score value = 1 }
 
-    # Calculate enemy war exhaustion score
-    every_country = {
-        limit = {
-            has_war_with = root
-        }
-        root = {
-            change_variable = {
-                name = enemy_war_exhaustion_score
-                add = 1
-            }
-        }
-    }
+	if = {
+		limit = {
+			NOT = {
+				has_variable = used_score
+			}
+		}
+		set_variable = { name = used_score value = 0}
+	}
 
-    # Calculate frontline advances score
-    every_state_region = {
-        limit = {
-            OR = {
-                AND = {
+	# Calculate enemy war exhaustion score
+	every_country = {
+		limit = {
+			has_war_with = $COUNTRY$
+		}
+		$COUNTRY$ ?= {
+			change_variable = {
+				name = enemy_war_exhaustion_score
+				add = 1
+			}
+		}
+	}
+
+	every_state = {
+		limit = {
+			OR = {
+				AND = {
 					is_in_central_powers = {
-						COUNTRY = root
+						COUNTRY = $COUNTRY$
 					}
-                    is_in_entente = {
+					is_in_entente = {
 						COUNTRY = owner
 					}
-                }
-                AND = {
+				}
+				AND = {
 					is_in_central_powers = {
 						COUNTRY = owner
 					}
-                    is_in_entente = {
-						COUNTRY = root
+					is_in_entente = {
+						COUNTRY = $COUNTRY$
 					}
-                }
-            }
-            
-        }
-        root = {
-            change_variable = {
-                name = frontline_advances_score
-                add = 1
-            }
-        }
-    }
+				}
+			}
 
-    # Calculate total negotiation score
-    set_variable = {
-        name = negotiation_score
-        value = 0
-    }
-    change_variable = {
-        name = negotiation_score
-        add = var:enemy_war_exhaustion_score
-    }
-    change_variable = {
-        name = negotiation_score
-        add = var:frontline_advances_score
-    }
-    change_variable = {
-        name = negotiation_score
-        subtract = var:our_war_exhaustion_score
-    }
+		}
+		#boilerplate, implement the actual calculation l8r
+		$COUNTRY$ ?= {
+			change_variable = {
+				name = frontline_advances_score
+				add = 1
+			}
+		}
+	}
+
+	# Calculate total negotiation score
+	set_variable = {
+		name = negotiation_score
+		value = 0
+	}
+	change_variable = {
+		name = negotiation_score
+		add = var:enemy_war_exhaustion_score
+	}
+	change_variable = {
+		name = negotiation_score
+		add = var:frontline_advances_score
+	}
+	change_variable = {
+		name = negotiation_score
+		subtract = var:our_war_exhaustion_score
+	}
+	change_variable = {
+		name = negotiation_score
+		subtract = var:used_score
+	}
 }

@@ -27,13 +27,27 @@
  je_tgw_is_soviet_union: "This country is Soviet Union"
  je_tgw_soviet_union: "Strengthen the Soviet government"
 
- tgw_je_peace_conference: "Press our Demands"
-tgw_je_peace_conference_reason: "It is undeniable - this Great War has gone on for long enough.\n\nThe toll on our nation and our people grows heavier by the day. As the conflict grinds on, whispers of peace negotiations have begun to circulate through the halls of power. Now, as we approach the conference table, we must carefully consider our position. What concessions are we willing to make, and what demands must we press to secure a favorable peace?\n\n #b #yellow Your Negotiation Score#!#!: [GetPlayer.MakeScope.Var('negotiation_score').GetValue|0]\n #b - From #green Enemy War Exhaustion#!#!: [GetPlayer.MakeScope.Var('enemy_war_exhaustion_score').GetValue|0]\n #b - From #green Frontline Advances#!#!: [GetPlayer.MakeScope.Var('frontline_advances_score').GetValue|0]\n #b - From #red Our War Exhaustion#!#!: [GetPlayer.MakeScope.Var('our_war_exhaustion_score').GetValue|0]"
 
-tgw_je_peace_conference_complete: "Our Negotiation Score has reached 50 or higher"
+ # PEACE CONFERENCE
+ tgw_je_peace_conference: "Press our Demands"
+ tgw_je_peace_conference_reason: "It is undeniable - this Great War has gone on for long enough.\n\nThe toll on our nation and our people grows heavier by the day. As the conflict grinds on, whispers of peace negotiations have begun to circulate through the halls of power. Now, as we approach the conference table, we must carefully consider our position. What concessions are we willing to make, and what demands must we press to secure a favorable peace?\n\n #b #yellow Your Negotiation Score#!#!: [GetPlayer.MakeScope.Var('negotiation_score').GetValue|0]\n #b - From #green Enemy War Exhaustion#!#!: [GetPlayer.MakeScope.Var('enemy_war_exhaustion_score').GetValue|0]\n #b - From #green Frontline Advances#!#!: [GetPlayer.MakeScope.Var('frontline_advances_score').GetValue|0]\n #b - From #red Our War Exhaustion#!#!: [GetPlayer.MakeScope.Var('our_war_exhaustion_score').GetValue|0]\n #b - From #red Used Score#!#!: [GetPlayer.MakeScope.Var('used_score').GetValue|0]"
+ tgw_je_peace_conference_complete: "Our Negotiation Score has reached 50 or higher"
  tgw_peace_conference_aus_veneto_name: "Reign in Venice #b #yellow (5)#!#!"
  tgw_peace_conference.1.t: "The Great War Peace Conference"
-tgw_peace_conference.1.d: "After years of brutal conflict, the Great Powers have gathered to negotiate an end to the war. Our strong position allows us to press our demands and shape the post-war world order."
-tgw_peace_conference.1.f: "The grand halls of Versailles echo with the voices of statesmen and diplomats, each vying to secure the best outcome for their nation. Maps are redrawn, empires dismantled, and a new world order takes shape before our eyes."
-tgw_peace_conference.1.a: "We will dictate the terms of peace!"
-tgw_peace_conference_demands_tooltip: "We will enforce our demands on our enemies, ending the Great War"
+ tgw_peace_conference.1.d: "After years of brutal conflict, the Great Powers have gathered to negotiate an end to the war. Our strong position allows us to press our demands and shape the post-war world order."
+ tgw_peace_conference.1.f: "The grand halls of Versailles echo with the voices of statesmen and diplomats, each vying to secure the best outcome for their nation. Maps are redrawn, empires dismantled, and a new world order takes shape before our eyes."
+ tgw_peace_conference.1.a: "We will dictate the terms of peace!"
+ tgw_peace_conference_demands_tooltip: "We will enforce our demands on our enemies, ending the Great War"
+
+
+  tgw_peace_conference_ger_poland_name: "Occupation Government in Poland #b #yellow (5)#!#!"
+
+
+ # Occitan Question
+ tgw_je_occitan_question: "The Occitan Question"
+ tgw_je_occitan_question_reason: "Ever since the French Empire first conquered the lands of the troubadours, #italic L'Hexagone #! has had trouble making the backwards villagers and subsistence farmers of Occitania abide by the culture of the Metropole.\n\nWith enough backing from the bureaucrats and implicit support through the local social contract, we can make a concrete bid to eradicate their dialects and culture once and for all.\n\nIn current conditions, the journal's progress will change by #tooltippable;tooltip:[Country.GetTooltipTag],tgw_je_occitan_question_special_tooltip [Country.MakeScope.Var('tgw_je_occitan_question_progress_rate').GetValue|+=]#! every week."
+ tgw_je_occitan_question_special_tooltip: "The progress is determined by following:\n#variable [Country.MakeScope.Var('tgw_je_occitan_question_progress_from_conflicts').GetValue|+=]#! from being in a war\n#variable [Country.MakeScope.Var('tgw_je_occitan_question_progress_from_ruler_ideology').GetValue|+=]#! from having a Republican, Ultranationalist or Authoritarian ruler"
+ tgw_occitan_question.1.t: "Dominance of the Metropole"
+ tgw_occitan_question.1.d: "Over the years, our tireless efforts to bring the southern regions and hinterlands into harmony with the rest of France have borne fruit. The once-distinct cadence of Occitan speech has gradually blended into proper French, and the Breton language is all but moribund."
+tgw_occitan_question.1.f: "Pierre Bonnet wiped the sweat from his brow as he finished arranging his wares in the Marseille marketplace. 'Ah, how times have changed,' he mused, overhearing a group of young people chattering in flawless Parisian French.\n\nHe remembered when his father's shop sign was written in Occitan, and customers haggled in the old tongue. Now, his own children spoke French without a trace of accent, their Occitan reduced to a handful of colorful phrases peppered into conversation.\n\nAs he called out his prices in crisp French, he felt a twinge of nostalgia, but also pride. 'We're all truly French now,' he thought, 'from Brittany to Provence.' A well-dressed Parisian approached his stall, and Pierre straightened up, ready to prove that a son of Occitania could be every bit as sophisticated as any northerner. '#italic Bonjour, monsieur, #!' he said with a smile, '#italic Avec quoi puis-je vous intéresser aujourd'hui? #!'" 
+tgw_occitan_question.1.a: "Vive la France unie!"

@@ -1,9 +1,9 @@
-﻿    tgw_peace_conference_aus_veneto = {
+﻿tgw_peace_conference_aus_veneto = {
 	name = tgw_peace_conference_aus_veneto_name
 	desc = tgw_peace_conference_aus_veneto_desc
 
-	visible = { always = yes }
-	
+	visible = { c:AUS ?= root }
+
 	#Country scope
 	ai_chance = {
 		base = 0
@@ -14,8 +14,145 @@
 	}
 
 	possible = {
-            always = yes
+		trigger_if = {
+			limit = {
+				has_variable = used_score
+			}
+			0 <= {
+				add = var:negotiation_score
+				subtract = 5
+			}
+
+		}
+		# If the country doesn't have the used_score variable for whatever reason..
+		trigger_else = {
+			always = no
+		}
 	}
 
+	effect = {
+		global_var:world_war ?= {
+			c:SER ?= {
 
+			}
+			add_war_goal = {
+				holder = c:AUS
+				type = conquer_state
+				target_state = c:SER.capital
+			}
+		}
+		change_variable = {
+			name = used_score
+			add = 5
+		}
+		calculate_negotiation_score = {
+			COUNTRY = root
+		}
+	}
+}
+
+
+tgw_peace_conference_ger_poland = {
+	name = tgw_peace_conference_ger_poland_name
+	desc = tgw_peace_conference_ger_poland_desc
+
+	visible = {
+		c:GER ?= root
+	}
+
+	#Country scope
+	ai_chance = {
+		base = 0
+		modifier = {
+			trigger = { bureaucracy > 0 }
+			add = 5
+		}
+	}
+
+	possible = {
+		trigger_if = {
+			limit = {
+				has_variable = used_score
+			}
+			0 <= {
+				add = var:negotiation_score
+				subtract = 5
+			}
+			s:STATE_LESSER_POLAND = {
+				any_scope_state = {
+					controller = {
+						c:GER ?= THIS
+					}
+				}
+			}
+			s:STATE_MAZOVIA = {
+				any_scope_state = {
+					controller = {
+						c:GER ?= THIS
+					}
+				}
+			}
+
+			s:STATE_GREATER_POLAND = {
+				any_scope_state = {
+					controller = {
+						c:GER ?= THIS
+					}
+				}
+			}
+
+
+		}
+		# If the country doesn't have the used_score variable for whatever reason..
+		trigger_else = {
+			always = no
+		}
+	}
+
+	effect = {
+		global_var:world_war ?= {
+			c:SER ?= {
+
+			}
+			add_war_goal = {
+				holder = root
+				type = conquer_state
+				target_state = c:SER.capital
+			}
+		}
+		change_variable = {
+			name = used_score
+			add = 5
+		}
+		calculate_negotiation_score = {
+			COUNTRY = root
+		}
+
+
+		create_country = {
+			tag = POL
+			origin = c:RUS
+			state = s:STATE_MAZOVIA.region_state:RUS
+			# <TODO> check if this really really works (and this whole script)
+			on_created = {
+				c:RUS = {
+					random_scope_state = {
+						limit = {
+							state_region = s:STATE_GREATER_POLAND
+						}
+						set_state_owner = c:POL
+					}
+					random_scope_state = {
+						limit = {
+							state_region = s:STATE_LESSER_POLAND
+						}
+						set_state_owner = c:POL
+					}
+				}
+			}
+		}
+
+
+
+	}
 }

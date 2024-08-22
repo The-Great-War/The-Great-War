@@ -44,6 +44,7 @@ tgw_je_danube_progress_rate_update = {
 			ROOT = { change_variable = { name = tgw_je_danube_progress_from_rightists_suppressed add = -0.2 } }
 		}
 
+
 		if = {
 			limit = {
 				OR = {
@@ -109,4 +110,73 @@ tgw_je_danube_progress_rate_update = {
 		}
 		change_variable = { name = tgw_je_danube_progress_rate add = var:tgw_je_danube_progress_from_radicals }
 	}
+}
+
+
+tgw_je_occitan_question_progress_rate_update = {
+	set_variable = { name = tgw_je_occitan_question_progress_rate value = 0 }
+
+	set_variable = { name = tgw_je_occitan_question_progress_from_ruler_ideology value = 0 }
+	set_variable = { name = tgw_je_occitan_question_progress_from_base value = 0 } # Base rate
+
+	# WARS --------------------------
+	set_variable = { name = tgw_je_occitan_question_progress_from_conflicts value = 0 }
+	if = {
+		limit = { is_at_war = yes }
+		change_variable = { name = tgw_je_occitan_question_progress_from_conflicts add = 0.0125 }
+	} else_if = { # Don't want wars to stack with diploplays here 
+		limit = { is_diplomatic_play_committed_participant = yes }
+		change_variable = { name = tgw_je_occitan_question_progress_from_conflicts add = 0.0125 }
+	}
+	
+			if = {
+			limit = {
+						root.ruler = {
+			OR = {
+				has_ideology = ideology:ideology_republican_leader
+				has_ideology = ideology:ideology_authoritarian
+				has_ideology = ideology:ideology_ethno_nationalist
+			}
+		}
+
+
+			}
+			ROOT = { change_variable = { name = tgw_je_occitan_question_progress_from_ruler_ideology add = 0.03125  }}
+		}
+
+
+	# TOTAL --------------------------
+	change_variable = { name = tgw_je_occitan_question_progress_rate add = var:tgw_je_occitan_question_progress_from_base }
+	change_variable = { name = tgw_je_occitan_question_progress_rate add = var:tgw_je_occitan_question_progress_from_conflicts }
+		change_variable = { name = tgw_je_occitan_question_progress_rate add = var:tgw_je_occitan_question_progress_from_radicals }
+
+		change_variable = { name = tgw_je_occitan_question_progress_rate add = var:tgw_je_occitan_question_progress_from_ruler_ideology }
+
+}
+
+
+# doesn't work for whatever reason
+# @todo
+tgw_culture_assimilation = {
+
+					every_scope_state = {
+					every_scope_pop = {
+						limit = {
+							OR = {
+								has_pop_culture = $ASSIMILATED_CULTURE$
+							}
+							root = {
+								has_variable = tgw_je_occitan_question_progress_rate
+							}
+						}
+						change_pop_culture = {
+							target = $NEW_CULTURE$
+							value = { 
+								add = root.var:tgw_je_occitan_question_progress_rate
+							 	multiply = 0.01
+							}
+						}
+
+					}
+				}
 }

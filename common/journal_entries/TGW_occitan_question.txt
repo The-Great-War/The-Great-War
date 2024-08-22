@@ -1,0 +1,96 @@
+﻿tgw_je_occitan_question = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	group = je_group_internal_affairs
+
+	is_shown_when_inactive = {
+		c:FRA ?= root
+
+	}
+	immediate = {
+		set_variable = {
+			name = tgw_je_occitan_question_progress
+			value = 0
+		}
+	}
+
+	is_progressing = {
+	}
+
+
+
+
+	possible = {
+		c:FRA ?= root
+	}
+
+
+	on_weekly_pulse = {
+		effect = {
+			tgw_je_occitan_question_progress_rate_update = yes
+			bpm_handle_steady_var_growth = {
+				VARIABLE = tgw_je_occitan_question_progress
+			}
+			root = {
+				every_scope_state = {
+					every_scope_pop = {
+						limit = {
+							OR = {
+								has_pop_culture = occitan
+								has_pop_culture = francoprovencal
+								has_pop_culture = breton
+							}
+							root = {
+								has_variable = tgw_je_occitan_question_progress_rate
+							}
+						}
+						change_pop_culture = {
+							target = cu:french
+							value = { 
+								add = root.var:tgw_je_occitan_question_progress_rate
+							 	multiply = 0.01
+							}
+						}
+
+					}
+				}
+			}
+		}
+
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = "bpm_je_progress_complete"
+			has_variable = tgw_je_occitan_question_progress
+			var:tgw_je_occitan_question_progress >= 100
+		}
+
+
+	}
+
+	on_complete = {
+		trigger_event = { id = tgw_occitan_question.1 days = 0 }
+	}
+	fail = {
+		root.ruler = {
+			bpm_leader_is_radical_socialist = yes
+		}
+	}
+
+	current_value = {
+		value = var:tgw_je_occitan_question_progress
+	}
+	on_monthly_pulse = {
+		events = {
+			#		tgw_occitan_question.1
+		}
+	}
+
+
+	goal_add_value = {
+		value = 100
+	}
+
+	progressbar = yes
+	weight = 100
+}

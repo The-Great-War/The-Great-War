@@ -99,7 +99,6 @@
 			}
 		}
 	}
-
 	current_value = {
 		value = var:tgw_je_danube_progress
 	}

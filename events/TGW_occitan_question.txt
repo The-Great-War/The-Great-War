@@ -1,0 +1,39 @@
+﻿namespace = tgw_occitan_question
+
+
+#Upon journal completion
+tgw_occitan_question.1 = {
+	type = country_event
+	placement = root
+	hidden = no
+
+	title = tgw_occitan_question.1.t
+	desc = tgw_occitan_question.1.d
+	flavor = tgw_occitan_question.1.f
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+
+	duration = 3
+
+	trigger = {
+		#triggered by je
+	}
+
+	event_image = {
+		video = "votp_agitator_speaking"
+	}
+
+
+	option = {
+		name = tgw_occitan_question.1.a
+		default_option = yes
+		root = {
+			tgw_culture_assimilation = {
+				ASSIMILATED_CULTURE = cu:occitan
+				NEW_CULTURE = cu:french
+			}
+		}
+	}
+}

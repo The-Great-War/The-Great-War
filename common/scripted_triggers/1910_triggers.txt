@@ -88,7 +88,7 @@ is_in_entente = {
 }
 
 is_in_central_powers = {
-	$COUNTRY$ = {
+	$COUNTRY$ ?= {
 		OR = {
 			is_target_in_global_variable_list = {
 				name = central_powers

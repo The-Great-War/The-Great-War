@@ -7,6 +7,7 @@
     }
 
     scripted_button = tgw_peace_conference_aus_veneto
+    scripted_button = tgw_peace_conference_ger_poland
 
 
 
@@ -25,7 +26,9 @@
 
     on_weekly_pulse = {
         effect = {
-            calculate_negotiation_score = yes
+            calculate_negotiation_score = {
+                COUNTRY = root
+            }
         }
     }
   

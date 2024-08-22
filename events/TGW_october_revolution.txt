@@ -1,5 +1,6 @@
 ﻿namespace = tgw_october_revolution
 
+# <TODO>
 tgw_october_revolution.1 = { # lenin appearence 
 	type = country_event
 	placement = root
