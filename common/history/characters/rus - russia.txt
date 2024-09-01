@@ -1,48 +1,34 @@
 CHARACTERS = {
-	c:RUS = {
+	c:RUS ?= {
 		# Royals
+
 		create_character = {
-			template = RUS_nicholas_i
+			template = RUS_nicholas_ii
+		}
+
+		# IG leaders
+
+		create_character = {
+			template = RUS_witte
+		}
+
+		create_character = {
+			template = RUS_stolypin
+		}
+
+		create_character = {
+			template = RUS_kerensky
 		}
 		
 		create_character = {
-			template = RUS_alexander_ii
-		}
-
-		# IG Leaders
-		create_character = {
-			template = RUS_alexander_von_benckendorff
-		}
-
-		create_character = {
-			template = RUS_mikhail_speransky
+			template = RUS_milyukov
 		}
 		
 		create_character = {
-			template = RUS_sergei_uvarov
+			template = RUS_antony_vadkovsky
 		}
-
-		create_character = {
-			template = RUS_filaret_drozdov
-		}
-
-		create_character = {
-			template = RUS_alexei_bobrinsky
-		}
-
-		# BPM IG characters:
-		create_character = {
-			template = rus_mikhail_bakunin_character_template
-		}
-
-		create_character = {
-			template = RUS_aleksandr_herzen
-		}
-
-		create_character = {
-			template = RUS_petr_chaadayev
-		}
-
-		# Generals and Admirals are now in 00_military_formations_europe
+		
+		# agitators
+		
 	}
 }
