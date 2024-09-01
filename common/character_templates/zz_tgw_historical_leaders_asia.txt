@@ -34,38 +34,30 @@ chi_sun_character_template = { # Sun Yat-sen
         chance = 50
     }   
 }
+
+chi_guangxu_character_template = { #Guangxu last emperor of Great Qing
+	first_name = Guangxu
+	last_name = Aisin_Gioro
+	ruler = yes
+	historical = yes
+	female = no
+	birth_date = 1871.8.14
+	interest_group = ig_landowners
+	ideology = ideology_reformer
+	culture = cu:manchu
+	traits = {
+		reserved
+	}
+}
+
 # Ottoman Empire - TUR
-tur_enver_pasha_character_template = {
-    first_name = Enver
-    last_name = Pasha
+tur_abdulhamid_template = {
+    first_name = Abdulhamid # II
+    last_name = Osmanoglu
     historical = yes
-    culture = cu:turkish # possibly albanian
-    female = no
-    religion = sunni
-    ideology = ideology_radical
-    interest_group = ig_radicals
-    birth_date = 1881.11.22
-    traits = {
-        ambitious
-        reckless
-        arrogant
-    }   
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:TUR
-            this = c:TUR
-        }
-        interest_group_trigger = {
-            is_marginal = no
-            OR = {
-                is_interest_group_type = ig_intelligentsia
-                is_interest_group_type = ig_armed_forces
-                is_interest_group_type = ig_liberals
-                is_interest_group_type = ig_radicals
-            }
-        }
-        earliest_usage_date = 1908.1.1
-        latest_usage_date = 1936.1.1
-        chance = 50
-    }
+    ruler = yes
+    birth_date = 1842.9.21
+    interest_group = ig_landowners
+    culture = cu:turkish
+    ideology = ideology_royalist
 }
