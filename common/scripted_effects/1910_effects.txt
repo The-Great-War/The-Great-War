@@ -32,6 +32,15 @@ trigger_world_war = {
 			NOT = { has_global_variable = world_war_1_begun }
 		}
 		set_global_variable = world_war_1_begun
+		set_global_variable = {
+			name = world_war_1_initiator
+			value = $INIT$
+		}
+		set_global_variable = {
+			name = world_war_1_defender
+			value = $COUNTRY$
+		}
+
 		$INIT$ = {
 			create_diplomatic_play = {
 				name = world_war_1_dp
@@ -179,5 +188,52 @@ calculate_negotiation_score = {
 	change_variable = {
 		name = negotiation_score
 		subtract = var:used_score
+	}
+}
+
+
+#I nicked this straight from Kaiserreich and you aren't allowed to tell anyone
+ger_world_war_lorraine_claims = {
+	s:STATE_LORRAINE = {
+		set_owner_of_provinces = {
+			country   = $country$
+			provinces = {
+				xB080E0
+				xC5F13A
+			}
+		}
+	}
+
+}
+
+
+
+ger_world_war_wallonia_claims = {
+	s:STATE_WALLONIA = {
+		set_owner_of_provinces = {
+			country   = $country$
+			provinces = {
+				xD001A0
+				x3A5FB9
+			}
+		}
+	}
+}
+ita_world_war_savoy_nice_claims = {
+	s:STATE_SAVOY.region_state:FRA = {
+		set_state_owner = $country$
+	}
+	s:STATE_PROVENCE = {
+		set_owner_of_provinces = {
+			country = $country$ 
+			provinces = {
+				x5080E0
+			}
+		}
+	}
+}
+ita_world_war_istria_claims = {
+	s:STATE_ISTRIA.region_state:AUS = {
+		set_state_owner = $country$
 	}
 }

@@ -49,3 +49,44 @@ tgw_utils.2 = {
 		}
 	}
 }
+
+
+tgw_utils.3 = {
+	type = country_event
+	placement = root
+	hidden = no
+	title = tgw_utils.3.t
+	flavor = tgw_utils.3.f
+	desc = tgw_utils.3.d
+	event_image = {
+		video = "southamerica_election"
+	}
+	trigger = {
+	}
+
+	# personal union
+	option = {
+		s:STATE_SOUTH_TYROL = {
+			set_owner_of_provinces = {
+				country   = c:ITA
+				provinces = {
+					xD0BF60
+					x1120FF
+				}
+			}
+		}
+
+		ger_world_war_lorraine_claims = {
+			country = c:GER
+		}
+		ger_world_war_wallonia_claims = {
+			country = c:GER
+		}
+		ita_world_war_savoy_nice_claims = {
+			country = c:ITA
+		}
+		ita_world_war_istria_claims = {
+			country = c:ITA
+		}
+	}
+}

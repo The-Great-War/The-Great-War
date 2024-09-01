@@ -38,7 +38,7 @@
 			add_war_goal = {
 				holder = c:AUS
 				type = conquer_state
-				target_state = c:SER.capital
+				target_state = c:SER.capital # <TODO>
 			}
 		}
 		change_variable = {
@@ -62,7 +62,7 @@ tgw_peace_conference_ger_poland = {
 
 	#Country scope
 	ai_chance = {
-		base = 0
+		base = 100
 		modifier = {
 			trigger = { bureaucracy > 0 }
 			add = 5
@@ -135,6 +135,18 @@ tgw_peace_conference_ger_poland = {
 			state = s:STATE_MAZOVIA.region_state:RUS
 			# <TODO> check if this really really works (and this whole script)
 			on_created = {
+				c:GER = {
+					create_diplomatic_pact = {
+						country = c:POL
+						type = personal_union
+					}
+				}
+				global_var:world_war = {
+					add_initiator_backers = {
+						c:POL
+					}
+				}
+
 				c:RUS = {
 					random_scope_state = {
 						limit = {

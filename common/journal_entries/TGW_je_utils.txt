@@ -40,3 +40,122 @@ je_tgw_utils = {
 
 	should_be_pinned_by_default = no
 }
+
+
+
+hidden_journal = {
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	is_shown_when_inactive = {
+		OR = {
+			is_ai = yes
+			NOT = { # Human players eligible only if they conquered all the AIs
+				any_country = {
+					is_ai = yes
+				}
+			}
+		}
+		OR = {
+			AND = {
+				has_global_variable = hidden_journal_main_holder
+				OR = {
+					NOT = {
+						exists = global_var:hidden_journal_main_holder
+					}
+					global_var:hidden_journal_main_holder ?= this
+					global_var:hidden_journal_main_holder ?= {
+						OR = {
+							is_country_alive = no
+							AND = {
+								is_ai = no
+								any_country = {
+									is_ai = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			NOT = {
+				has_global_variable = hidden_journal_main_holder
+			}
+		}
+	}
+
+	possible = {
+		always = yes
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					NOT = {
+						has_global_variable = hidden_journal_main_holder
+					}
+					NOT = {
+						exists = global_var:hidden_journal_main_holder
+					}
+					global_var:hidden_journal_main_holder = {
+						OR = {
+							is_country_alive = no
+							AND = {
+								is_ai = no
+								any_country = {
+									is_ai = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			set_global_variable = {
+				name  = hidden_journal_main_holder
+				value = this
+			}
+		}
+	}
+
+	invalid = {
+		OR = {
+			AND = {
+				is_ai = no
+				any_country = {
+					is_ai = yes
+				}
+			}
+			AND = {
+				has_global_variable = hidden_journal_main_holder
+				exists = global_var:hidden_journal_main_holder
+				this != global_var:hidden_journal_main_holder
+			}
+		}
+	}
+	on_weekly_pulse = {
+		effect = {
+
+			if = {
+				limit = {
+					has_global_variable = world_war_1_begun
+					has_global_variable = world_war
+					has_global_variable = world_war_1_defender
+					has_global_variable = world_war_1_initiator
+				}
+				global_var:world_war = {
+					every_scope_play_involved = {
+						global_var:world_war.war = {
+							add_war_war_support = {
+								target = prev
+								value = 100
+							}
+						}
+					}
+					debug_log = "asdf"
+				}
+			}
+		}
+	}
+	can_deactivate = yes
+	transferable   = no
+	can_revolution_inherit = no
+}
