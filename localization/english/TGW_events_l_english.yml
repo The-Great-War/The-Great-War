@@ -53,5 +53,34 @@
  tgw_african_independence_tooltip1: "Our country will begin entrenching segregationist ideals. Voting will be allowed only for those of European descent."
  tgw_african_independence.1.2: "Down with the colonial institutions!"
  tgw_african_independence_tooltip: "An interim government comprising of natives will be instated - initially as a Parliamentary Republic. This may lead to propensity for strongman rule in the future, as it may be seen as illegitimate."
- 
- 
+ tgw_world_war_1.1.1.tooltip: "An ultimatum is sent to the Serbian government demanding an immediate inquiry into the Archduke's assassination."
+world_war_1.5.t: "[SCOPE.sCountry('recipient_country').GetNameNoFlag] Refuses Co-Operation"
+
+world_war_1.5.d: "In response to the heinous assassination of our beloved [SCOPE.GetRootScope.GetCountry.GetHeir.GetPrimaryRoleTitle], we issued a stern ultimatum to [SCOPE.sCountry('recipient_country').GetNameNoFlag], demanding their full cooperation in our investigation and suppression of anti-Austrian activities. To our shock and outrage, they have flatly refused our reasonable demands, choosing instead to protect the radical elements within their borders that threaten the peace and stability of our Empire."
+
+world_war_1.5.f: "The [SCOPE.sCountry('recipient_country').GetAdjectiveNoFormatting] government's response was delivered to the embassy in Belgrade this afternoon. Their rejection of our ultimatum was unequivocal, citing concerns over national sovereignty. This blatant disregard for diplomatic norms and the gravity of the situation leaves us with no choice but to consider more forceful measures to ensure our security and honor!"
+
+world_war_1.5.1: "This is an act of war! We must mobilize immediately."
+ # <TODO>
+ world_war_1.6.t: "Germany Honors the Alliance"
+world_war_1.6.d: "In a show of unwavering support for our Empire, the German Empire has declared its intention to stand with us against [SCOPE.sCountry('recipient_country').GetNameNoFlag]. Kaiser Wilhelm II has invoked the terms of our alliance, stating that Germany views an attack on Austria-Hungary as an attack on itself. With the might of the German military behind us, we are now poised to deliver a swift and decisive blow to our enemies."
+world_war_1.6.f: "The German ambassador delivered the official statement to our foreign ministry today. The speed and decisiveness of Germany's response have caught many by surprise, including our own diplomats. It seems the Germans are eager to flex their military muscle and prove their loyalty as an ally."
+world_war_1.6.1: "Together, we shall be victorious!"
+
+
+world_war_1.7.t: "The Russian Bear Stirs"
+world_war_1.7.d: "Alarming reports have reached us that the Russian Empire has begun full mobilization of its forces. Citing its role as protector of Slavic nations, Tsar Nicholas II has ordered his vast armies to prepare for war in support of [SCOPE.sCountry('recipient_country').GetNameNoFlag]. This move threatens to escalate our localized conflict into a continental war, pitting the great powers of Europe against each other."
+world_war_1.7.f: "Our intelligence services have confirmed massive troop movements across Russia. Reservists are being called up, and trains filled with soldiers and equipment are moving westward. The sheer scale of the Russian mobilization is staggering, though we are assured by our generals that their slow bureaucracy will give us a critical time advantage."
+world_war_1.7.1: "We must act swiftly before the Russian juggernaut is ready!"
+
+
+world_war_1.8.t: "France Declares War"
+world_war_1.8.d: "The French Republic has formally declared war on Germany, honoring its alliance with Russia and seizing the opportunity to settle old scores. President Raymond Poincaré delivered a passionate speech to the French parliament, invoking the spirit of revanche and the reclamation of Alsace-Lorraine. With France's entry into the war, the conflict has truly become a European-wide affair."
+world_war_1.8.f: "The streets of Paris are filled with patriotic fervor, as young men rush to enlist and crowds sing La Marseillaise. The French military, having prepared for this moment since their defeat in 1871, is mobilizing with surprising efficiency. Their plan, known as Plan XVII, calls for a swift offensive into Alsace-Lorraine."
+world_war_1.8.1: "The alliances have been triggered. There's no turning back now."
+
+
+world_war_1.9.t: "Britain Enters the War"
+world_war_1.9.d: "The British Empire, the world's foremost naval power, has declared war on Germany and its allies. Citing the violation of Belgian neutrality by German forces, Prime Minister H. H. Asquith announced to a solemn House of Commons that Britain is honor-bound to defend Belgium and maintain the balance of power in Europe. With Britain's vast global empire now arrayed against us, this conflict has truly become a world war."
+world_war_1.9.f: "The British Expeditionary Force, though small compared to continental armies, is already being dispatched to France. More concerning is the Royal Navy, which has begun to implement a naval blockade that threatens to strangle our maritime trade. The entry of Britain brings not only its own considerable might to bear but also that of its dominions and colonies across the globe."
+world_war_1.9.1: "The world has chosen sides. Now, we must fight for our very survival!"

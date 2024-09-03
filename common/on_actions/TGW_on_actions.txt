@@ -1,0 +1,15 @@
+﻿on_monthly_pulse_country = {
+	on_actions = {
+        tgw_on_monthly_pulse_country
+	}
+}
+
+tgw_on_monthly_pulse_country = {
+    events = {
+        world_war_1.1
+        world_war_1.6
+        world_war_1.7
+        world_war_1.8
+        world_war_1.9
+    }
+}

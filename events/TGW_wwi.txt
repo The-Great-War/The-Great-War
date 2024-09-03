@@ -5,6 +5,7 @@
 world_war_1.1 = {
     type = country_event
     placement = root
+    duration = 6
     hidden = no
 
     title = world_war_1.1.t
@@ -25,7 +26,17 @@ world_war_1.1 = {
         exists = c:FRA
         exists = c:RUS
         exists = c:GBR
-        game_date >= 1911.1.1
+        game_date >= 1900.1.1
+        NOT = {
+            has_global_variable = world_war_1_begun
+            has_global_variable = world_war
+            has_global_variable = world_war_1_initial_event_fired
+        }
+        c:AUS ?= THIS
+    }
+
+    immediate = {
+        set_global_variable = world_war_1_initial_event_fired
     }
 
     event_image = {
@@ -39,20 +50,69 @@ world_war_1.1 = {
 
     option = {
         name = world_war_1.1.1
+        c:SER = {
+            save_scope_as = recipient_country
+        }
         c:AUS = {
-            trigger_world_war = {
-                COUNTRY = c:SER
-                INIT = c:AUS
-            }
-            heir = {
+            heir ?= {
                 kill_character = THIS
+            }
+            custom_tooltip = {
+                text = tgw_world_war_1.1.1.tooltip
+                # Serbian ultiatum response trigger below (always a no for now)
+                trigger_event = {
+                    id = world_war_1.5
+                    days = 30
+                }
             }
         }
     }
 }
 
 
+# Serbian ultimatum (Austria POV)
+# Only trigger this manually.
+world_war_1.5 = {
+    type = country_event
+    placement = root
+    duration = 6
+    hidden = no
+
+    title = world_war_1.5.t
+    desc = world_war_1.5.d
+    flavor = world_war_1.5.f
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+
+    trigger = {
+        c:AUS ?= THIS
+    }
+
+    event_image = {
+        # There are two types of event images: video and texture
+        # video should be a bk2 (Bink Video) file
+        video = "gfx/event_pictures/southamerica_public_figure_assassination.bk2"
+        # Static images are called 'texture' instead
+        # texture should be a dds (DirectDraw Surface) file
+        # texture = "gfx/texture.dds"
+    }
+
+    option = {
+        name = world_war_1.5.1
+        c:AUS = {
+            trigger_world_war = {
+                COUNTRY = c:SER
+                INIT = c:AUS
+            }
+        }
+    }
+}
+
 # Add countries of each alliance to the war
+# DEBUG! DO NOT USE.
 world_war_1.2 = {
     type = country_event
     placement = root
@@ -110,43 +170,43 @@ world_war_1.3 = {
     title = world_war_1.3.t
     desc = world_war_1.3.d
 
-trigger = {
-    # The World War I global variable has been set
-    has_global_variable = world_war_1_begun
-        
-    
-    # Germany has lost control of key territories
-    c:GER = {
-        NOT = { owns_entire_state_region = STATE_ALSACE_LORRAINE }
-        NOT = { owns_entire_state_region = STATE_RHINELAND }
-    }
-    
-    # The Ottoman Empire is close to capitulation
-    c:TUR = {
-        OR = {
-            NOT = { owns_entire_state_region = STATE_EASTERN_THRACE }
-            NOT = { owns_entire_state_region = STATE_PALESTINE }
-            has_war_exhaustion = {
-                target = c:TUR 
-                value >= 50
-            }
+    trigger = {
+        # The World War I global variable has been set
+        has_global_variable = world_war_1_begun
+
+
+        # Germany has lost control of key territories
+        c:GER = {
+            NOT = { owns_entire_state_region = STATE_ALSACE_LORRAINE }
+            NOT = { owns_entire_state_region = STATE_RHINELAND }
         }
-    }
-    
-    # Russia has either left the war or is close to defeat
-    OR = {
-        NOT = { c:RUS = { is_subject_of = c:GER } }
-        c:RUS = {
+
+        # The Ottoman Empire is close to capitulation
+        c:TUR = {
             OR = {
-                NOT = { owns_entire_state_region = STATE_POLAND }
-            has_war_exhaustion = {
-                target = c:RUS 
-                value >= 50
+                NOT = { owns_entire_state_region = STATE_EASTERN_THRACE }
+                NOT = { owns_entire_state_region = STATE_PALESTINE }
+                has_war_exhaustion = {
+                    target = c:TUR
+                    value >= 50
+                }
             }
+        }
+
+        # Russia has either left the war or is close to defeat
+        OR = {
+            NOT = { c:RUS = { is_subject_of = c:GER } }
+            c:RUS = {
+                OR = {
+                    NOT = { owns_entire_state_region = STATE_POLAND }
+                    has_war_exhaustion = {
+                        target = c:RUS
+                        value >= 50
+                    }
+                }
             }
         }
     }
-}
     option = {
         name = world_war_1.3.1
     }
@@ -180,6 +240,216 @@ world_war_1.4 = {
                 set_relations = { country = prev value = 0 }
             }
             end_war = root
+        }
+    }
+}
+
+
+# Germany joins the war
+world_war_1.6 = {
+    type = country_event
+    placement = root
+    duration = 3
+    hidden = no
+
+    title = world_war_1.6.t
+    desc = world_war_1.6.d
+    flavor = world_war_1.6.f
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/cannons_firing"
+
+    trigger = {
+        exists = c:AUS
+        exists = c:GER
+        has_global_variable = world_war_1_begun
+        NOT = { has_global_variable = germany_joined_ww1 }
+        c:AUS ?= THIS
+    }
+
+    immediate = {
+    }
+
+    event_image = {
+        video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+    }
+
+    option = {
+        name = world_war_1.6.1
+        c:GER = {
+            limit = {
+                is_in_central_powers = {
+                    COUNTRY = THIS
+                }
+            }
+            THIS = {
+                save_scope_as = supporting_country
+            }
+            enter_world_war_attacker_side = {
+                COUNTRY = scope:supporting_country
+            }
+            set_global_variable = germany_joined_ww1
+
+        }
+    
+    }
+}
+
+# Russia joins the war
+world_war_1.7 = {
+    type = country_event
+    placement = root
+    duration = 3
+    hidden = no
+
+    title = world_war_1.7.t
+    desc = world_war_1.7.d
+    flavor = world_war_1.7.f
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/troops_marching"
+
+    trigger = {
+        exists = c:AUS
+        exists = c:RUS
+        has_global_variable = world_war_1_begun
+        NOT = { has_global_variable = russia_mobilized_ww1 }
+        c:AUS ?= THIS
+    }
+
+    immediate = {
+    }
+
+    event_image = {
+        video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+    }
+
+    option = {
+        name = world_war_1.7.1
+        c:RUS = {
+            limit = {
+                is_in_entente = {
+                    COUNTRY = THIS
+                }
+            }
+            THIS = {
+                save_scope_as = supporting_country
+            }
+            enter_world_war_defender_side = {
+                COUNTRY = scope:supporting_country
+            }
+            set_global_variable = russia_mobilized_ww1
+            # set mass conscription too plz
+
+
+        }
+    }
+}
+
+
+# France joins the war
+world_war_1.8 = {
+    type = country_event
+    placement = root
+    duration = 3
+    hidden = no
+
+    title = world_war_1.8.t
+    desc = world_war_1.8.d
+    flavor = world_war_1.8.f
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/patriotic_speech"
+
+    trigger = {
+        exists = c:AUS
+        exists = c:FRA
+        has_global_variable = world_war_1_begun
+        has_global_variable = germany_joined_ww1
+        NOT = { has_global_variable = france_joined_ww1 }
+        c:AUS ?= THIS
+    }
+
+    immediate = {
+    }
+
+    event_image = {
+        video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+    }
+
+    option = {
+        name = world_war_1.8.1
+        c:FRA = {
+            limit = {
+                is_in_entente = {
+                    COUNTRY = THIS
+                }
+            }
+            THIS = {
+                save_scope_as = supporting_country
+            }
+            enter_world_war_defender_side = {
+                COUNTRY = scope:supporting_country
+            }
+
+        }
+        set_global_variable = france_joined_ww1
+
+    }
+
+}
+
+# UK joins the war
+world_war_1.9 = {
+    type = country_event
+    placement = root
+    duration = 3
+    hidden = no
+
+    title = world_war_1.9.t
+    desc = world_war_1.9.d
+    flavor = world_war_1.9.f
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/british_anthem"
+
+    trigger = {
+        exists = c:AUS
+        exists = c:GBR
+        has_global_variable = world_war_1_begun
+        has_global_variable = france_joined_ww1
+        NOT = { has_global_variable = britain_joined_ww1 }
+        c:AUS ?= THIS
+    }
+
+    immediate = {
+    }
+
+    event_image = {
+        video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+    }
+
+    option = {
+        name = world_war_1.9.1
+        c:GBR = {
+            limit = {
+                is_in_entente = {
+                    COUNTRY = THIS
+                }
+            }
+            THIS = {
+                save_scope_as = supporting_country
+            }
+            enter_world_war_defender_side = {
+                COUNTRY = scope:supporting_country
+            }
+                    set_global_variable = britain_joined_ww1
+
+
         }
     }
 }
