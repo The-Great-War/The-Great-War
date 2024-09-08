@@ -1,0 +1,33 @@
+﻿##### MOOD
+
+tgw_mood_tr_01 = {
+	music = "file:/TGW_soundtrack/MP3/tgw_wenn_die_soldaten.mp3"
+	name = "Wenn die Soldaten"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_02 = {
+	music = "file:/TGW_soundtrack/MP3/tgw_55_tage_in_peking.mp3"
+	name = "55 Tage in Peking"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_03 = {
+	music = "file:/TGW_soundtrack/MP3/tgw_der_machtigste_konige_im_luftrevier.mp3"
+	name = "Der machtigste Konige im Luftrevier"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_04 = {
+	music = "file:/TGW_soundtrack/MP3/tgw_slavic_farewell.mp3"
+	name = "Slavic Farewell"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
