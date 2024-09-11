@@ -52,12 +52,18 @@
 }
 
 
-tgw_peace_conference_ger_poland = {
-	name = tgw_peace_conference_ger_poland_name
-	desc = tgw_peace_conference_ger_poland_desc
+
+
+tgw_peace_conference_ger_lorraine = {
+	name = tgw_peace_conference_ger_lorraine_name
+	desc = tgw_peace_conference_ger_lorraine_desc
 
 	visible = {
 		c:GER ?= root
+		NOT = {
+			has_global_variable = tgw_peace_conference_ger_lorraine_taken
+		}
+
 	}
 
 	#Country scope
@@ -78,23 +84,8 @@ tgw_peace_conference_ger_poland = {
 				add = var:negotiation_score
 				subtract = 5
 			}
-			s:STATE_LESSER_POLAND = {
-				any_scope_state = {
-					controller = {
-						c:GER ?= THIS
-					}
-				}
-			}
-			s:STATE_MAZOVIA = {
-				any_scope_state = {
-					controller = {
-						c:GER ?= THIS
-					}
-				}
-			}
-
-			s:STATE_GREATER_POLAND = {
-				any_scope_state = {
+			s:STATE_LORRAINE = {
+				every_scope_state = {
 					controller = {
 						c:GER ?= THIS
 					}
@@ -110,25 +101,61 @@ tgw_peace_conference_ger_poland = {
 	}
 
 	effect = {
-		global_var:world_war ?= {
-			c:SER ?= {
-
-			}
-			add_war_goal = {
-				holder = root
-				type = conquer_state
-				target_state = c:SER.capital
-			}
+		set_global_variable = tgw_peace_conference_ger_lorraine_taken
+		ger_world_war_lorraine_claims = {
+			country = c:GER
 		}
-		change_variable = {
-			name = used_score
+	}
+}
+
+tgw_je_regency_council_convene = {
+	name = tgw_je_regency_council_convene_name
+	desc = tgw_je_regency_council_convene_desc
+
+	visible = {
+		c:GER ?= root
+	}
+
+	#Country scope
+	ai_chance = {
+		base = 100
+		modifier = {
+			trigger = { bureaucracy > 0 }
 			add = 5
 		}
-		calculate_negotiation_score = {
-			COUNTRY = root
+	}
+
+	possible = {
+		NOT = {
+			has_global_variable = convened_regency_council_pol
+		}
+		s:STATE_LESSER_POLAND = {
+			any_scope_state = {
+				controller = {
+					c:GER ?= THIS
+				}
+			}
+		}
+		s:STATE_MAZOVIA = {
+			any_scope_state = {
+				controller = {
+					c:GER ?= THIS
+				}
+			}
 		}
 
+		s:STATE_GREATER_POLAND = {
+			any_scope_state = {
+				controller = {
+					c:GER ?= THIS
+				}
+			}
+		}
 
+	}
+
+	effect = {
+		set_global_variable = convened_regency_council_pol
 		create_country = {
 			tag = POL
 			origin = c:RUS
@@ -163,6 +190,7 @@ tgw_peace_conference_ger_poland = {
 				}
 			}
 		}
+
 
 
 

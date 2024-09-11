@@ -1,14 +1,14 @@
-﻿tgw_je_peace_conference = {
+﻿# Press our Demands
+tgw_je_peace_conference = {
     icon = "gfx/interface/icons/event_icons/event_portrait.dds"
-    	group = je_group_internal_affairs
+    group = je_group_internal_affairs
 
     is_shown_when_inactive = {
-        is_player = yes
+        always = yes
     }
 
     scripted_button = tgw_peace_conference_aus_veneto
-    scripted_button = tgw_peace_conference_ger_poland
-
+    scripted_button = tgw_peace_conference_ger_lorraine
 
 
     possible = {
@@ -16,7 +16,7 @@
         OR = {
             is_in_central_powers = {
                 COUNTRY = root
-            } 
+            }
             is_in_entente = {
                 COUNTRY = root
             }
@@ -31,7 +31,7 @@
             }
         }
     }
-  
+
     complete = {
         always = no
         custom_tooltip = {
@@ -42,6 +42,43 @@
 
     on_complete = {
         trigger_event = { id = world_war_1.4 }
+    }
+
+    weight = 100
+}
+
+
+# (GER) Turn occupied Polish lands into a friendly puppet state
+# Assemble the Regency Council
+tgw_je_regency_council = {
+    icon = "gfx/interface/icons/law_icons/monarchy.dds"
+    group = je_group_internal_affairs
+
+    is_shown_when_inactive = {
+        always = yes
+    }
+
+    scripted_button = tgw_je_regency_council_convene
+
+
+    possible = {
+        has_global_variable = world_war_1_begun
+        has_journal_entry = tgw_je_peace_conference
+        is_in_central_powers = {
+            COUNTRY = root
+        }
+        THIS ?= c:GER
+    }
+
+
+    on_weekly_pulse = {
+    }
+
+    complete = {
+        has_global_variable = convened_regency_council_pol
+    }
+
+    on_complete = {
     }
 
     weight = 100
