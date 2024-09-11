@@ -1,0 +1,10 @@
+﻿category = {
+	id = "tgw_category_00"
+	name = "the_music_of_great_war"
+	tracks = {
+		"tgw_mood_tr_01"
+		"tgw_mood_tr_02"
+		"tgw_mood_tr_03"
+		"tgw_mood_tr_04"
+	}
+}
