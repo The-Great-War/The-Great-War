@@ -1,0 +1,113 @@
+##### MOOD
+
+tgw_mood_tr_01 = {
+	music = "file:/TGW_soundtrack/OGG/tgw_farewell_of_slavianka.ogg"
+	name = "tgw_mood_tr_01"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_02 = {
+	music = "file:/TGW_soundtrack/OGG/tgw_slavsya.ogg"
+	name = "tgw_mood_tr_02"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_03 = {
+	music = "file:/TGW_soundtrack/OGG/tgw_when_we_were_at_war.ogg"
+	name = "tgw_mood_tr_03"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_04 = {
+	music = "file:/TGW_soundtrack/OGG/tgw_on_the_hills_of_manchuria.ogg"
+	name = "tgw_mood_tr_04"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_05 = {
+	music = "file:/TGW_soundtrack/OGG/tgw_god_save_the_tsar.ogg"
+	name = "tgw_mood_tr_05"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_06 = {
+	music = "file:/TGW_soundtrack/OGG/tgw_march_of_the_siberian_riflemen.ogg"
+	name = "tgw_mood_tr_06"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_07 = {
+	music = "file:/TGW_soundtrack/OGG/tgw_amurs_waves.ogg"
+	name = "tgw_mood_tr_07"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_08 = {
+	music = "file:/TGW_soundtrack/OGG/tgw_preobrazhensky_regiment_march.ogg"
+	name = "tgw_mood_tr_08"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_09 = {
+	music = "file:/TGW_soundtrack/OGG/tgw_borodinsky_regiment_march.ogg"
+	name = "tgw_mood_tr_09"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_10 = {
+	music = "file:/TGW_soundtrack/OGG/tgw_regiments_are_marching.ogg"
+	name = "tgw_mood_tr_10"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_11 = {
+	music = "file:/TGW_soundtrack/OGG/tgw_song_of_the_volga_boatmen.ogg"
+	name = "tgw_mood_tr_11"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_12 = {
+	music = "file:/TGW_soundtrack/OGG/tgw_song_of_ural_cossacks.ogg"
+	name = "tgw_mood_tr_12"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_13 = {
+	music = "file:/TGW_soundtrack/OGG/tgw_marche_slave.ogg"
+	name = "tgw_mood_tr_13"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}
+
+tgw_mood_tr_14 = {
+	music = "file:/TGW_soundtrack/OGG/tgw_god_save_the_king_melody.ogg"
+	name = "tgw_mood_tr_14"
+	pause_factor = 50
+	mood = yes
+	can_be_interrupted = yes
+}

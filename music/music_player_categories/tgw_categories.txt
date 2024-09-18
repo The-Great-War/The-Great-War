@@ -1,10 +1,20 @@
-﻿category = {
+category = {
 	id = "tgw_category_00"
-	name = "the_music_of_great_war"
+	name = "tgw_category_00"
 	tracks = {
 		"tgw_mood_tr_01"
 		"tgw_mood_tr_02"
 		"tgw_mood_tr_03"
 		"tgw_mood_tr_04"
+		"tgw_mood_tr_05"
+		"tgw_mood_tr_06"
+		"tgw_mood_tr_07"
+		"tgw_mood_tr_08"
+		"tgw_mood_tr_09"
+		"tgw_mood_tr_10"
+		"tgw_mood_tr_11"
+		"tgw_mood_tr_12"
+		"tgw_mood_tr_13"
+		"tgw_mood_tr_14"
 	}
 }

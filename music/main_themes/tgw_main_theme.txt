@@ -1,0 +1,6 @@
+##### MAINTHEME
+
+#tgw_main_theme = {
+#	music = "event:/MUSIC/DLC/MP1/Main/01_Main_Theme_The_People"
+#	can_be_interrupted = yes
+#}
