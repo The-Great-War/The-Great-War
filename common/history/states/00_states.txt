@@ -3101,14 +3101,10 @@ STATES = {
 		add_homeland = cu:bundeli
 	}
 	s:STATE_MANDALAY = {
-		create_state = {
-			country = c:BUR
-			owned_provinces = { x212FE8 x2497E7 x26A2E9 x2FF9BD x397139 x546B18 x620442 x6E8FA2 x9070DF xA17AB8 xB7E202 xD2F36A xD5035C xE15EF6 xE2C923 }
-		}
 
 		create_state = {
 			country = c:BIC
-			owned_provinces = { x47C5A9 x234C64 xFB1A2B x634D79 xDEFDA8 x90EF60 x3E75FA x75BE27 }
+			owned_provinces = { x212FE8 x2497E7 x26A2E9 x2FF9BD x397139 x546B18 x620442 x6E8FA2 x9070DF xA17AB8 xB7E202 xD2F36A xD5035C xE15EF6 xE2C923 x47C5A9 x234C64 xFB1A2B x634D79 xDEFDA8 x90EF60 x3E75FA x75BE27 }
 		}
 		add_homeland = cu:burmese
 		add_homeland = cu:kachin
