@@ -1,4 +1,4 @@
-##### MOOD
+﻿##### MOOD
 
 tgw_mood_tr_01 = {
 	music = "file:/TGW_soundtrack/OGG/tgw_farewell_of_slavianka.ogg"

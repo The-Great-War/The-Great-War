@@ -60,29 +60,12 @@
 			set_ig_suppression = yes
 		}
 
-		add_modifier = {
-			name = modifier_haitian_independence_payments_4
-		}
-
 		set_variable = {
 			name = orleanist_restoration_var
 		}
 		set_variable = {
 			name = fra_republic_counter
 			value = 1
-		}
-		
-		add_journal_entry = {
-			type = je_bpm_july_monarchy
-		}
-
-		if = {
-			limit = {
-				has_dlc_feature = voice_of_the_people_content
-			}
-			add_journal_entry = {
-				type = je_conquest_of_algeria
-			}
 		}
 
 		add_company = company_type:company_dmc
